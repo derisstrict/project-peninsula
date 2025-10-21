@@ -6,6 +6,13 @@
 @source '../**/*.js';
 
 @theme {
-    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+    --font-sans: 'Poppins', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
         'Segoe UI Symbol', 'Noto Color Emoji';
+    
+    --color-bglight: #c7c7c7;
+    --color-light-primary: #162600;
+}
+
+.btn-primary {
+    @apply flex bg-light-primary/10 text-lime-600 text-xs p-2 rounded-lg gap-2;
 }
