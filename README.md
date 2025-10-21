@@ -1,5 +1,7 @@
-# The Peninsula Island
-Projek untuk memenuhi tugas dari sistem pembelajaran berbasis projek atau Project Based Learning (PBL).
+<br>
+<p align="center"><img width="500" alt="The Peninsula Island(1)" src="https://github.com/user-attachments/assets/a89dd069-4ed8-4770-b938-e757bb8fdc04" /></p>
+<br>
+<p align="center">Projek untuk memenuhi tugas dari sistem pembelajaran berbasis projek atau Project Based Learning (PBL)</p>
 
 ## Setup Awal
 Kalo udah selesai clone jalanin command ini satu-satu di dalam folder projek `cd <folder_projek>` atau bisa klik di address bar abistu ketik `cmd`. Untuk liat masing-masing [fungsi dari commandnya](https://medium.com/@rajvir.ahmed.shuvo/setting-up-an-existing-laravel-project-from-git-a-step-by-step-guide-7dec48bdc5f).
