@@ -9,15 +9,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     @vite('resources/css/app.css')
 </head>
-<body class="bg-bglight">
+<body class="bg-bglight text-light-primary">
     <div class="flex justify-center items-center">
-        <div class="flex max-w-7xl w-full mt-20">
-            <div class="flex flex-col max-w-lg gap-4">
-                <p class="text-6xl text-light-primary font-bold">The 
+        <div class="flex flex-col max-w-[100rem] w-full mt-50 mx-20">
+            <!-- Landing Page -->
+            <div class="relative flex flex-col max-w-4xl gap-8">
+                <p class="text-8xl font-semibold">The 
                 <br><span class="text-lime-600">Peninsula Island</span></p>
-                <p class="text-xl text-light-primary max-w-2xl">a scenic coastal park known for its lush greenery, cultural statues, and dramatic ocean views, open to the public and perfect for peaceful walks or events.</p>
+                <p class="text-2xl max-w-2xl">a scenic coastal park known for its lush greenery, cultural statues, and dramatic ocean views, open to the public and perfect for peaceful walks or events.</p>
                 <div class="flex gap-4">
-                    <div class="flex bg-lime-600/10 w-fit p-3 rounded-lg outline outline-lime-600/35">
+                    <div class="flex bg-lime-600/10 w-fit p-4 rounded-lg outline outline-lime-600/35">
                         <div class="flex gap-3">
                             <svg class="text-lime-600" width="24px" height="24px" viewBox="0 0 24 24" fill="currentColor" outline="currentColor" xmlns="http://www.w3.org/2000/svg">
                             <path d="M23 12C23 18.0751 18.0751 23 12 23C5.92487 23 1 18.0751 1 12C1 5.92487 5.92487 1 12 1C18.0751 1 23 5.92487 23 12ZM3.00683 12C3.00683 16.9668 7.03321 20.9932 12 20.9932C16.9668 20.9932 20.9932 16.9668 20.9932 12C20.9932 7.03321 16.9668 3.00683 12 3.00683C7.03321 3.00683 3.00683 7.03321 3.00683 12Z"/>
@@ -29,7 +30,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="flex bg-lime-600/10 w-fit p-3 rounded-lg outline outline-lime-600/35">
+                    <div class="flex bg-lime-600/10 w-fit p-4 rounded-lg outline outline-lime-600/35">
                         <div class="flex gap-3">
                             <svg class="text-lime-600" width="24px" height="24px" viewBox="-0.5 0 25 25" fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg">
                             <path d="M12.7003 17.1099V18.22C12.7003 18.308 12.6829 18.395 12.6492 18.4763C12.6156 18.5576 12.5662 18.6316 12.504 18.6938C12.4418 18.7561 12.3679 18.8052 12.2867 18.8389C12.2054 18.8725 12.1182 18.8899 12.0302 18.8899C11.9423 18.8899 11.8551 18.8725 11.7738 18.8389C11.6925 18.8052 11.6187 18.7561 11.5565 18.6938C11.4943 18.6316 11.4449 18.5576 11.4113 18.4763C11.3776 18.395 11.3602 18.308 11.3602 18.22V17.0801C10.9165 17.0072 10.4917 16.8468 10.1106 16.6082C9.72943 16.3695 9.39958 16.0573 9.14023 15.6899C9.04577 15.57 8.99311 15.4226 8.99023 15.27C8.99148 15.1842 9.00997 15.0995 9.04459 15.021C9.0792 14.9425 9.12927 14.8718 9.19177 14.813C9.25428 14.7542 9.32794 14.7087 9.40842 14.679C9.4889 14.6492 9.57455 14.6359 9.66025 14.6399C9.74504 14.6401 9.82883 14.6582 9.90631 14.6926C9.98379 14.7271 10.0532 14.7773 10.1102 14.8401C10.4326 15.2576 10.8657 15.5763 11.3602 15.76V13.21C10.0302 12.69 9.36023 11.9099 9.36023 10.8999C9.38027 10.3592 9.5928 9.84343 9.9595 9.44556C10.3262 9.04769 10.8229 8.79397 11.3602 8.72998V7.62988C11.3602 7.5419 11.3776 7.45482 11.4113 7.37354C11.4449 7.29225 11.4943 7.21847 11.5565 7.15625C11.6187 7.09403 11.6925 7.04466 11.7738 7.01099C11.8551 6.97732 11.9423 6.95996 12.0302 6.95996C12.1182 6.95996 12.2054 6.97732 12.2867 7.01099C12.3679 7.04466 12.4418 7.09403 12.504 7.15625C12.5662 7.21847 12.6156 7.29225 12.6492 7.37354C12.6829 7.45482 12.7003 7.5419 12.7003 7.62988V8.71997C13.0724 8.77828 13.4289 8.91103 13.7485 9.11035C14.0681 9.30967 14.3442 9.57137 14.5602 9.87988C14.6555 9.99235 14.7117 10.1329 14.7202 10.28C14.7229 10.3662 14.7084 10.4519 14.6776 10.5325C14.6467 10.613 14.6002 10.6867 14.5406 10.749C14.481 10.8114 14.4096 10.8613 14.3306 10.8958C14.2516 10.9303 14.1665 10.9487 14.0802 10.95C13.99 10.9475 13.9013 10.9257 13.8202 10.886C13.7391 10.8463 13.6675 10.7897 13.6102 10.72C13.3718 10.4221 13.0575 10.1942 12.7003 10.0601V12.3101L12.9503 12.4099C14.2203 12.9099 15.0103 13.63 15.0103 14.77C14.9954 15.3808 14.7481 15.9629 14.3189 16.3977C13.8897 16.8325 13.3108 17.0871 12.7003 17.1099ZM11.3602 11.73V10.0999C11.1988 10.1584 11.0599 10.2662 10.963 10.408C10.8662 10.5497 10.8162 10.7183 10.8203 10.8899C10.8173 11.0676 10.8669 11.2424 10.963 11.3918C11.0591 11.5413 11.1973 11.6589 11.3602 11.73ZM13.5502 14.8C13.5502 14.32 13.2203 14.03 12.7003 13.8V15.8C12.9387 15.7639 13.1561 15.6427 13.3123 15.459C13.4685 15.2752 13.553 15.0412 13.5502 14.8Z"/>
@@ -59,6 +60,15 @@
                     </div>
                 </div>
             </div>
+            <div class="flex flex-col items-center mt-25 gap-2">
+            scroll more
+            <svg class="rotate-90" width="16px" height="16px" viewBox="0 0 24 24" fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path d="M5.5 5L11.7929 11.2929C12.1834 11.6834 12.1834 12.3166 11.7929 12.7071L5.5 19" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M13.5 5L19.7929 11.2929C20.1834 11.6834 20.1834 12.3166 19.7929 12.7071L13.5 19" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>    
+            </div>
+            <img class="absolute top-30 right-0 rounded-xl outline-4 outline-lime-600/15" width="900" src="img/placeholder.jpg" alt="img-peninsula-island">
+            <!-- /Landing Page -->
         </div>
     </div>
 </body>
