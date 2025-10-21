@@ -1,2 +1,2 @@
-Project Based Learning
+Project Based Learning - The Peninsula Island
 
