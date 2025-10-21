@@ -4,7 +4,7 @@
 
 @section('content')
     <div class="flex justify-center items-center">
-        <div class="flex flex-col max-w-[100rem] w-full mt-50 mx-20">
+        <div class="flex flex-col max-w-[100rem] w-full mt-30 mx-20">
             <!-- Landing Page -->
             <div class="relative flex flex-col max-w-4xl gap-8">
                 <p class="text-8xl font-semibold">The 
@@ -60,7 +60,7 @@
             <path d="M13.5 5L19.7929 11.2929C20.1834 11.6834 20.1834 12.3166 19.7929 12.7071L13.5 19" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>    
             </div>
-            <img class="absolute top-30 right-0 rounded-xl outline-4 outline-lime-600/15" width="900" src="img/placeholder.jpg" alt="img-peninsula-island">
+            <img class="absolute top-40 right-0 rounded-xl outline-4 outline-lime-600/15" width="800" src="img/placeholder.jpg" alt="img-peninsula-island">
             <!-- /Landing Page -->
         </div>
     </div>
