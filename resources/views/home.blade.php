@@ -9,7 +9,7 @@
             <div class="relative flex flex-col max-w-4xl gap-8">
                 <p class="text-8xl font-semibold">The 
                 <br><span class="text-lime-600">Peninsula Island</span></p>
-                <p class="text-2xl max-w-2xl">a scenic coastal park known for its lush greenery, cultural statues, and dramatic ocean views, open to the public and perfect for peaceful walks or events.</p>
+                <p class="text-2xl max-w-2xl">A scenic coastal park known for its lush greenery, cultural statues, and dramatic ocean views, open to the public and perfect for peaceful walks or events.</p>
                 <div class="flex gap-4">
                     <div class="flex bg-lime-600/10 w-fit p-4 rounded-lg outline outline-lime-600/35">
                         <div class="flex gap-3">
