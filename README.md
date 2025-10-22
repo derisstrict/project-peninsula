@@ -4,7 +4,7 @@
 <p align="center">Projek untuk memenuhi tugas dari sistem pembelajaran berbasis projek atau Project Based Learning (PBL)</p>
 
 ## Setup Awal
-Kalo udah selesai clone githubnya, jalanin command ini **satu-satu** di dalam folder projek `cd <folder_projek>` atau bisa klik di address bar di file explorer abistu ketik `cmd`. Untuk liat masing-masing [fungsi dari commandnya](https://medium.com/@rajvir.ahmed.shuvo/setting-up-an-existing-laravel-project-from-git-a-step-by-step-guide-7dec48bdc5f).
+Kalo udah selesai clone githubnya, jalanin command ini **satu-satu** di dalam folder projek di cmd, untuk buka cmd di dalem folder projek bisa klik di address bar di file explorer pas lagi buka folder projek abistu ketik `cmd`, kalo gasalah dari klik kanan juga bisa untuk buka cmd tapi gatau udah lupa. Untuk liat masing-masing [fungsi dari commandnya](https://medium.com/@rajvir.ahmed.shuvo/setting-up-an-existing-laravel-project-from-git-a-step-by-step-guide-7dec48bdc5f).
 
 ```bash
 composer install
