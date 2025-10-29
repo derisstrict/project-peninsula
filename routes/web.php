@@ -21,3 +21,8 @@ Route::get('/events/events-detail', function () {
 Route::get('/blogs/blogs-detail', function () {
     return view('blogs-detail');
 });
+
+Route::get('/report', function () {
+    return view('report');
+});
+
