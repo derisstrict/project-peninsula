@@ -13,7 +13,7 @@
                 <p class="text-2xl max-w-2xl">A scenic coastal park known for its lush greenery, cultural statues, and
                     dramatic ocean views, open to the public and perfect for peaceful walks or events.</p>
                 <div class="flex gap-4">
-                    <div class="flex bg-lime-600/10 w-fit p-4 rounded-lg outline outline-lime-600/35">
+                    <div class="infobox-accent">
                         <div class="flex gap-3">
                             <svg class="text-lime-600" width="24px" height="24px" viewBox="0 0 24 24" fill="currentColor"
                                 outline="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -28,7 +28,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="flex bg-lime-600/10 w-fit p-4 rounded-lg outline outline-lime-600/35">
+                    <div class="infobox-accent">
                         <div class="flex gap-3">
                             <svg class="text-lime-600" width="24px" height="24px" viewBox="-0.5 0 25 25" fill="none"
                                 stroke="currentColor" xmlns="http://www.w3.org/2000/svg">
