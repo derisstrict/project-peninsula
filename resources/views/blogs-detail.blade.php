@@ -3,11 +3,11 @@
 @section('title', 'The Peninsula Island')
 
 @section('content')
-<a href="/blogs" class="flex items-center gap-2 bg-light-primary/15 p-2 px-4 w-fit rounded-lg hover:bg-light-primary/25 hover:text-lime-600">
+<a href="/blogs" class="btn-primary p-3 w-fit">
     <svg width="16px" height="16px" class="rotate-225" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" xmlns="http://www.w3.org/2000/svg">
     <path d="M7 17L17 7M17 7H8M17 7V16" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
     </svg>
-    <p class="text-light-primary text-sm">Back</p>
+    <p class="text-sm">Back</p>
 </a>
 <div class="flex flex-col gap-2 mt-5">
     <img class="rounded-xl self-center w-500 h-150 object-cover" src="/img/placeholder.jpg" alt="event-image">
@@ -28,8 +28,8 @@
         <x-blogs-card href="/blogs/blogs-detail" date="19 October 2025" image="/img/placeholder.jpg">Pura Bias Tugel a Temple in Peninsula Island</x-blogs-card>
     </div>
     <div class="flex justify-center">
-        <a href="/blogs" class="flex items-center gap-2 bg-light-primary/15 p-2 px-4 w-fit rounded-lg hover:bg-light-primary/25 hover:text-lime-600">
-            <p class="text-light-primary text-sm">Check out more articles</p>
+        <a href="/blogs" class="btn-primary p-3">
+            <p class="text-sm">Check out more articles</p>
             <svg width="16px" height="16px" class="rotate-45" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" xmlns="http://www.w3.org/2000/svg">
             <path d="M7 17L17 7M17 7H8M17 7V16" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
