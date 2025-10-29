@@ -1,5 +1,7 @@
 @import 'tailwindcss';
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
 @source '../../storage/framework/views/*.php';
 @source '../**/*.blade.php';
@@ -11,6 +13,8 @@
     
     --color-bglight: #c7c7c7;
     --color-light-primary: #162600;
+    --color-dark-primary: #E5E5E5;
+    --color-bgdark: #081007
 }
 
 .btn-primary {
