@@ -3,21 +3,17 @@
 @section('title', 'The Peninsula Island')
 
 @section('content')
-    <div class="flex justify-center items-center">
-        <div class="flex flex-col max-w-[100rem] w-full mt-30 mx-20">
-            <p class="text-5xl text-center text-light-primary font-semibold"><span class="text-lime-600">Discover More </span>About This Place</p>
-            <div class="relative flex bg-light-primary/15 w-fit items-center pl-3 rounded-sm p-2 gap-2 mt-20 ml-5">
-                <svg class="text-lime-600" width="24px" height="24px" stroke="currentColor" viewBox="0 0 24 24" id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg"><defs><style>.cls-1{fill:none;stroke-miterlimit:10;stroke-width:1.91px;}</style></defs><circle class="cls-1" cx="9.14" cy="9.14" r="7.64"/><line class="cls-1" x1="22.5" y1="22.5" x2="14.39" y2="14.39"/></svg>
-                <input type="text" id="search" class="w-80 outline-none" placeholder="Search">
-                <div class="absolute right-5 text-light-primary/35">enter</div>
-            </div>
-            <div class="grid grid-cols-3 mt-10">
-                <x-blogs-card href="blogs/blogs-detail" date="19 October 2025" image="img/placeholder.jpg">Pura Bias Tugel a Temple in Peninsula Island</x-blogs-card>
-                <x-blogs-card date="07 October 2025" image="img/placeholder.jpg">The Big Bounce Festival is Back! This is Huge!</x-blogs-card>
-                <x-blogs-card date="19 October 2025" image="img/placeholder.jpg">Pura Bias Tugel a Temple in Peninsula Island</x-blogs-card>
-                <x-blogs-card date="19 October 2025" image="img/placeholder.jpg">Pura Bias Tugel a Temple in Peninsula Island</x-blogs-card>
-                <x-blogs-card date="07 October 2025" image="img/placeholder.jpg">The Big Bounce Festival is Back! This is Huge!</x-blogs-card>
-                <x-blogs-card date="07 October 2025" image="img/placeholder.jpg">The Big Bounce Festival is Back! This is Huge!</x-blogs-card>
-            </div>
-        </div>    
+<p class="text-5xl text-center text-light-primary font-semibold"><span class="text-lime-600">Discover More </span>About This Place</p>
+<div class="relative flex bg-light-primary/15 w-fit items-center pl-3 rounded-sm p-2 gap-2 mt-20 ml-5">
+    <svg class="text-lime-600" width="24px" height="24px" stroke="currentColor" viewBox="0 0 24 24" id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg"><defs><style>.cls-1{fill:none;stroke-miterlimit:10;stroke-width:1.91px;}</style></defs><circle class="cls-1" cx="9.14" cy="9.14" r="7.64"/><line class="cls-1" x1="22.5" y1="22.5" x2="14.39" y2="14.39"/></svg>
+    <input type="text" id="search" class="w-80 outline-none" placeholder="Search">
+    <div class="absolute right-5 text-light-primary/35">enter</div>
+</div>
+<div class="grid grid-cols-3 mt-10">
+    <x-blogs-card href="/blogs/blogs-detail" date="19 October 2025" image="img/placeholder.jpg">Pura Bias Tugel a Temple in Peninsula Island</x-blogs-card>
+    <x-blogs-card href="/blogs/blogs-detail" date="07 October 2025" image="img/placeholder.jpg">The Big Bounce Festival is Back! This is Huge!</x-blogs-card>
+    <x-blogs-card href="/blogs/blogs-detail" date="19 October 2025" image="img/placeholder.jpg">Pura Bias Tugel a Temple in Peninsula Island</x-blogs-card>
+    <x-blogs-card href="/blogs/blogs-detail" date="19 October 2025" image="img/placeholder.jpg">Pura Bias Tugel a Temple in Peninsula Island</x-blogs-card>
+    <x-blogs-card href="/blogs/blogs-detail" date="07 October 2025" image="img/placeholder.jpg">The Big Bounce Festival is Back! This is Huge!</x-blogs-card>
+    <x-blogs-card href="/blogs/blogs-detail" date="07 October 2025" image="img/placeholder.jpg">The Big Bounce Festival is Back! This is Huge!</x-blogs-card>
 @endsection
