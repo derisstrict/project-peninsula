@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html x-data="{ toggleTheme: false }" :class="toggleTheme ? '' : 'dark'" lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,7 +11,7 @@
     <script src="https://unpkg.com/@panzoom/panzoom/dist/panzoom.min.js"></script>
     @vite('resources/css/app.css')
 </head>
-<body class="bg-bglight text-light-primary">
+<body class="bg-bglight text-light-primary dark:bg-bgdark dark:text-dark-primary">
     @include('common.navbar')
     <div class="flex justify-center items-center">
         <div class="flex flex-col max-w-[80rem] w-full mt-30 mx-20">
