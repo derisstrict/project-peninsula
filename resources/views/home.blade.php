@@ -100,8 +100,6 @@
     </div>
 </div>
 
-{{-- Where Location --}}
-<div class="max-w-6xl">
 <!-- Where's the Location -->
 <div class="relative flex flex-col">
     <p class="text-6xl font-semibold">
@@ -109,15 +107,11 @@
         <br><span class="text-lime-600">The Location</span>
     </p>
     <div class="flex items-center justify-between">
-        <p class="text-6xl font-semibold">
-            Where's
-            <br><span class="text-lime-600">The Location</span>
         <p class="mt-6 max-w-4xl text-xl">
             Peninsula Island is located in Nusa Dua, on the southeastern coast of Bali, Indonesia.
             It sits within the ITDC (Indonesia Tourism Development Corporation) complex,
             a gated resort area known for its luxury hotels and pristine beaches.
         </p>
-
         <a href="/" class="btn-primary p-4">
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 48 48">
                 <path fill="#48b564"
@@ -144,14 +138,7 @@
             </svg>
         </a>
     </div>
-
-    <p class="mt-6 max-w-3xl">
-        Peninsula Island is located in Nusa Dua, on the southeastern coast of Bali, Indonesia.
-        It sits within the ITDC (Indonesia Tourism Development Corporation) complex,
-        a gated resort area known for its luxury hotels and pristine beaches.
-    </p>
 </div>
-
 <!-- /Where's the Location -->
  
 <div class="relative max-w-6xl h-[30rem] mt-10 mx-auto mb-32 overflow-hidden rounded-2xl shadow-lg bg-gray-200">
