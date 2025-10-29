@@ -150,7 +150,6 @@
         <button id="zoomOut" class="bg-white border rounded-full p-2 shadow hover:bg-gray-100">−</button>
     </div>
 </div>
-</div>
 
 {{-- gatau dah yang ini --}}
 <script>
