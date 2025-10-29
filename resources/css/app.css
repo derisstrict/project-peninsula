@@ -14,7 +14,7 @@
 }
 
 .btn-primary {
-    @apply flex bg-light-primary/10 text-lime-600 text-xs p-2 rounded-lg gap-2 hover:bg-light-primary/15;
+    @apply flex bg-light-primary/10 text-xs rounded-lg gap-2 items-center hover:bg-light-primary/15 transition;
 }
 
 .infobox-accent {
