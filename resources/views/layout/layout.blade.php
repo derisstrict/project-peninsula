@@ -13,6 +13,10 @@
 </head>
 <body class="bg-bglight text-light-primary">
     @include('common.navbar')
-    @yield('content')
+    <div class="flex justify-center items-center">
+        <div class="flex flex-col max-w-[80rem] w-full mt-30 mx-20">
+            @yield('content')
+        </div>
+    </div>
 </body>
 </html>
