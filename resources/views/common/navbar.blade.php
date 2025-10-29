@@ -1,9 +1,9 @@
 <header>
     <div class="flex items-center justify-center p-4">
         <div class="flex gap-12 items-center">
-            <a class="hover:text-light-primary/80" href="">Home</a>
+            <a class="hover:text-light-primary/80" href="/">Home</a>
             <a class="hover:text-light-primary/80" href="">Events</a>
-            <a class="hover:text-light-primary/80" href="">Blogs</a>
+            <a class="hover:text-light-primary/80" href="/blogs">Blogs</a>
             <div class="relative" x-data="{ dropLang: false }">
                 <button @click="dropLang = !dropLang" id="dropdownLanguage" aria-expanded="false" class="relative flex gap-2 bg-light-primary/10 p-2 px-3 rounded-xl items-center cursor-pointer hover:bg-light-primary/15" type="button">
                     <svg width="24px" height="24px" viewBox="0 0 24 24" fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg">
