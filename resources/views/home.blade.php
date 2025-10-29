@@ -3,6 +3,7 @@
 @section('title', 'The Peninsula Island')
 
 @section('content')
+<div class="background-radial-blur transform -translate-y-25"></div>
 <!-- Landing Page -->
 <div class="relative flex flex-col max-w-4xl gap-8">
     <p class="text-8xl font-semibold">The
@@ -138,6 +139,7 @@
             </svg>
         </a>
     </div>
+    <div class="background-radial-blur transform -translate-y-25"></div>
 </div>
 <!-- /Where's the Location -->
  
