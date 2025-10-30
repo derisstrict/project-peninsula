@@ -40,6 +40,7 @@
             </div>
         </div>
     </div>
+
     <div class="flex flex-col gap-2">
         <p class="text-sm">Quick links</p>
         <div class="flex gap-2">
@@ -138,7 +139,7 @@
     <div class="background-radial-blur transform -translate-y-25"></div>
 </div>
 <!-- /Where's the Location -->
- 
+
 <div class="relative max-w-6xl h-[30rem] mt-10 mx-auto mb-32 overflow-hidden rounded-2xl shadow-lg bg-gray-200">
     <div id="mapContainer" class="w-full h-full cursor-grab active:cursor-grabbing" onmousedown="return false">
         <img src="./img/maps.png" alt="Map" class="w-full h-full object-cover">
@@ -238,5 +239,5 @@ window.addEventListener('mouseup', () => {
         style="background-image: url(./img/map.jpeg)">
     </div>
 </div> --}}
-
 @endsection
+
