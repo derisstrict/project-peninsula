@@ -64,4 +64,6 @@
             <!-- /Landing Page -->
         </div>
     </div>
+
+@include('common.footer')
 @endsection
