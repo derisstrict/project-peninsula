@@ -82,7 +82,7 @@
         {{-- Maps --}}
 <div class="mt-32 mb-32">
     <p class="text-6xl font-semibold text-center mb-10">
-        <span class="text-lime-600">Explore </span>What'Inside
+        <span class="text-lime-600">Explore </span>What's Inside
     </p>
 
     <div class="relative max-w-5xl h-[30rem] mx-auto mb-32 overflow-hidden rounded-2xl shadow-lg bg-gray-200">
