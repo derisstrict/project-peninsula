@@ -18,4 +18,5 @@
     <x-events-card href="/events/events-detail" date="19 October 2025" image="img/placeholder.jpg">Pura Bias Tugel a Temple in Peninsula Island</x-events-card>
     <x-events-card href="/events/events-detail" date="07 October 2025" image="img/placeholder.jpg">The Big Bounce Festival is Back! This is Huge!</x-events-card>
     <x-events-card href="/events/events-detail" date="07 October 2025" image="img/placeholder.jpg">The Big Bounce Festival is Back! This is Huge!</x-events-card>
+</div>
 @endsection

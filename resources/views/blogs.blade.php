@@ -17,4 +17,5 @@
     <x-blogs-card href="/blogs/blogs-detail" date="19 October 2025" image="img/placeholder.jpg">Pura Bias Tugel a Temple in Peninsula Island</x-blogs-card>
     <x-blogs-card href="/blogs/blogs-detail" date="07 October 2025" image="img/placeholder.jpg">The Big Bounce Festival is Back! This is Huge!</x-blogs-card>
     <x-blogs-card href="/blogs/blogs-detail" date="07 October 2025" image="img/placeholder.jpg">The Big Bounce Festival is Back! This is Huge!</x-blogs-card>
+</div>
 @endsection
