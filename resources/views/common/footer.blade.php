@@ -3,7 +3,7 @@
 <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-6 px-6 lg:gap-8 items-start">
     <div>
         <p class="text-2xl font-semibold leading-tight">The<br>
-            <span class="text-lime-600 dark:text-lime-400">Peninsula Island</span>
+            <span class="text-lime-500 dark:text-lime-650">Peninsula Island</span>
         </p>
         <p class="text-sm text-gray-600 dark:text-gray-400 mt-2">
             Lorem ipsum dolor sit amet.
@@ -11,8 +11,8 @@
     </div>
 
     <div>
-        <h4 class="font-semibold text-lime-600 dark:text-lime-300 mb-1">Social Media</h4>
-        <ul class="flex flex-col gap-2 text-sm">
+        <h4 class="font-semibold text-gray-600 dark:text-white mb-1">Social Media</h4>
+        <ul class="flex flex-col gap-4 text-sm">
             <li class="flex items-center gap-2">
                 <img src="/img/dark_instagram.png" alt="Instagram" class="w-5 h-5 block dark:hidden">
                 <img src="/img/instagram.png" alt="Instagram" class="w-5 h-5 hidden dark:block">
@@ -35,7 +35,7 @@
     </div>
 
     <div>
-        <h4 class="font-semibold text-lime-600 dark:text-lime-600 mb-1">Menu</h4>
+        <h4 class="font-semibold text-gray-600 dark:text-white mb-1">Menu</h4>
         <ul class="flex flex-col gap-4 text-sm">
             <li class="flex items-center gap-2">
                 <a href="#" class="hover:text-green-600 dark:hover:text-lime-400 transition-colors">Home</a>
@@ -78,7 +78,7 @@
 
         <p class="text-sm text-gray-600 dark:text-gray-400">
             If you’ve encountered a broken public facility let us know!<br>
-            <a href="#" class="font-semibold text-lime-600 dark:text-lime-300 hover:underline">Make a report</a>
+            <a href="#" class="font-semibold text-lime-500 dark:text-lime-700 hover:underline">Make a report</a>
         </p>
     </div>
 
