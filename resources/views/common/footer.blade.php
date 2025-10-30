@@ -35,7 +35,7 @@
     </div>
 
     <div>
-        <h4 class="font-semibold text-green-700 dark:text-lime-300 mb-1">Menu</h4>
+        <h4 class="font-semibold text-lime-600 dark:text-lime-600 mb-1">Menu</h4>
         <ul class="flex flex-col gap-4 text-sm">
             <li class="flex items-center gap-2">
                 <a href="#" class="hover:text-green-600 dark:hover:text-lime-400 transition-colors">Home</a>
