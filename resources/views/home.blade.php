@@ -238,5 +238,9 @@ window.addEventListener('mouseup', () => {
         style="background-image: url(./img/map.jpeg)">
     </div>
 </div> --}}
+<<<<<<< Updated upstream
+=======
+@endsection
+>>>>>>> Stashed changes
 
 @endsection
