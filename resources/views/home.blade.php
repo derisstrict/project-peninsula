@@ -40,6 +40,7 @@
             </div>
         </div>
     </div>
+
     <div class="flex flex-col gap-2">
         <p class="text-sm">Quick links</p>
         <div class="flex gap-2">
@@ -75,8 +76,8 @@
             stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
     </svg>
 </div>
-<img class="absolute top-40 right-0 rounded-xl outline-4 outline-lime-600/15" width="700"
-    src="img/placeholder.jpg" alt="img-peninsula-island">
+<img class="absolute h-135 w-[calc((27vw-10rem)*2)] top-40 right-0 object-cover rounded-xl outline-4 outline-lime-600/15"
+src="img/placeholder.jpg" alt="img-peninsula-island">
 <!-- /Landing Page -->
 
 {{-- Gallery Mode Switch --}}
@@ -186,7 +187,7 @@
     <div class="background-radial-blur transform -translate-y-25"></div>
 </div>
 <!-- /Where's the Location -->
- 
+
 <div class="relative max-w-6xl h-[30rem] mt-10 mx-auto mb-32 overflow-hidden rounded-2xl shadow-lg bg-gray-200">
     <div id="mapContainer" class="w-full h-full cursor-grab active:cursor-grabbing" onmousedown="return false">
         <img src="./img/maps.png" alt="Map" class="w-full h-full object-cover">
@@ -286,5 +287,5 @@ window.addEventListener('mouseup', () => {
         style="background-image: url(./img/map.jpeg)">
     </div>
 </div> --}}
-
 @endsection
+

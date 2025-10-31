@@ -10,13 +10,15 @@ class BlogsCard extends Component
 {
     public $date;
     public $image;
+    public $title;
     /**
      * Create a new component instance.
      */
-    public function __construct($date = "", $image = "")
+    public function __construct($date = "", $image = "", $title = "")
     {
         $this->date = $date;
         $this->image = $image;
+        $this->title = $title;
         //
     }
 
