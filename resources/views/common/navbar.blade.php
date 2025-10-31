@@ -15,13 +15,13 @@
                     <path d="M7.82054 20.7313C8.21107 21.1218 8.84423 21.1218 9.23476 20.7313L15.8792 14.0868C17.0505 12.9155 17.0508 11.0167 15.88 9.84497L9.3097 3.26958C8.91918 2.87905 8.28601 2.87905 7.89549 3.26958C7.50497 3.6601 7.50497 4.29327 7.89549 4.68379L14.4675 11.2558C14.8581 11.6464 14.8581 12.2795 14.4675 12.67L7.82054 19.317C7.43002 19.7076 7.43002 20.3407 7.82054 20.7313Z"/>
                     </svg>
                 </button>
-                <div x-show="dropLang" id="lang-menu" class="absolute z-10 right-50 left-0 mt-4 h-10 bg-light-primary/15 py-4 w-55 h-fit rounded-xl dark:bg-dark-primary/15">
+                <div x-show="dropLang" id="lang-menu" class="absolute z-10 right-50 left-0 mt-4 h-10 bg-dark-primary p-3 gap-2 w-50 h-fit rounded-xl dark:bg-dark-primary/15">
                     <ul class="flex flex-col">
                         <li>
-                            <a href="" class="block p-2 hover:bg-light-primary/25 dark:hover:bg-dark-primary/25">English</a>
+                            <a href="" class="block p-2 rounded-md hover:bg-light-primary/5 dark:hover:bg-dark-primary/5">English</a>
                         </li>
                         <li>
-                            <a href="" class="block p-2 hover:bg-light-primary/25 dark:hover:bg-dark-primary/25">Bahasa Indonesia</a>
+                            <a href="" class="block p-2 rounded-md hover:bg-light-primary/5 dark:hover:bg-dark-primary/5">Bahasa Indonesia</a>
                         </li>
                     </ul>
                 </div>
