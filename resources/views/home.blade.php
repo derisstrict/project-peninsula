@@ -76,8 +76,8 @@
             stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
     </svg>
 </div>
-<img class="absolute top-40 right-0 rounded-xl outline-4 outline-lime-600/15" width="700"
-    src="img/placeholder.jpg" alt="img-peninsula-island">
+<img class="absolute h-135 w-[calc((27vw-10rem)*2)] top-40 right-0 object-cover rounded-xl outline-4 outline-lime-600/15"
+src="img/placeholder.jpg" alt="img-peninsula-island">
 <!-- /Landing Page -->
     
         {{-- Maps --}}
