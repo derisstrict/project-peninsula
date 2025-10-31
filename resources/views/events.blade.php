@@ -37,7 +37,7 @@
         <path d="M7 17L17 7M17 7H8M17 7V16" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
     </svg> 
 </a>
-<div class="grid grid-cols-3 mt-10">
+<div class="grid grid-cols-3 mt-10 gap-4">
     <x-events-card href="/events/events-detail" date="19 October 2025" image="img/placeholder.jpg">Pura Bias Tugel a Temple in Peninsula Island</x-events-card>
     <x-events-card href="/events/events-detail" date="07 October 2025 - 2 December 2025" image="img/placeholder.jpg">The Big Bounce Festival is Back! This is Huge!</x-events-card>
     <x-events-card href="/events/events-detail" date="19 October 2025" image="img/placeholder.jpg">Pura Bias Tugel a Temple in Peninsula Island</x-events-card>
