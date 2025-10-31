@@ -111,7 +111,7 @@ src="img/placeholder.jpg" alt="img-peninsula-island">
         <!-- Image 3 -->
         <div class="relative group overflow-hidden rounded-xl md:col-span-2">
             <img src="./img/gallery3.jpg" alt="Beach View" 
-            class="w-full h-80 object-cover transition duration-300 group-hover:scale-110">
+            class="w-full h-80 object-cover transition duration-300 group-hover:blur-[2px] group-hover:scale-110">
             <div class="absolute inset-0 bg-black/45 transition duration-700 group-hover:bg-black/60"></div>
             <div class="absolute inset-0 flex flex-col items-center justify-center text-white text-center">
                 <h2 class="font-bold text-2xl mb-4">Explore our image collections</h2>
