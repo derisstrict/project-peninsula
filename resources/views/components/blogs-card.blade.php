@@ -1,5 +1,5 @@
 <a {{ $attributes }} class="flex gap-5 p-5 rounded-xl hover:bg-light-primary/5 dark:hover:bg-dark-primary/5 transition-colors">
-    <img class="rounded-lg w-80 h-60 content-cover" src="{{ $image }}" alt="image">
+    <img class="rounded-lg w-80 h-60 object-cover" src="{{ $image }}" alt="image">
     <div class="flex flex-col gap-2 w-full">
         <p class="text-2xl font-semibold">{{ $title }}</p>
         <div class="bg-lime-500/25 outline-2 outline-lime-500/50 w-fit rounded-lg px-2 text-sm">Other</div>
