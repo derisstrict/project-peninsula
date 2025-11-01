@@ -11,7 +11,7 @@
     <input type="text" id="search" class="w-80 outline-none" placeholder="Search">
     <div class="absolute right-5 text-light-primary/50 bg-light-primary/5 px-2 rounded-lg dark:text-dark-primary/50 dark:bg-dark-primary/5">t</div>
 </div>
-<a href="/events/events-detail" class="flex bg-lime-600/5 p-8 rounded-lg mt-10 gap-5 w-full items-center hover:bg-lime-600/10 transition-colors">
+<a x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false" href="/events/events-detail" class="flex bg-lime-600/5 p-8 rounded-lg mt-10 gap-5 w-full items-center hover:bg-lime-600/10 transition-colors">
     <img src="img/placeholder.jpg" alt="event-image" class="w-80 h-60 object-cover rounded-xl">
     <div class="flex flex-col gap-3">
         <p class="">Ongoing Event</p>
@@ -33,7 +33,10 @@
         <p class="mt-5">Starting price</p>
         <p class="text-3xl font-semibold">IDR <span class="text-lime-600">75.000</span></p>
     </div>
-    <svg width="24px" height="24px" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" class="ml-auto mr-10 transform rotate-45" xmlns="http://www.w3.org/2000/svg">
+    <svg x-show="open" x-transition:enter="transition ease-out duration-300"
+        x-transition:enter-start="opacity-0 -translate-x-5"
+        x-transition:enter-end="opacity-100 scale-100"
+        x-transition:leave="transition ease-in duration-200" x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 -translate-x-5" width="24px" height="24px" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" class="ml-auto mr-10 transform rotate-45" xmlns="http://www.w3.org/2000/svg">
         <path d="M7 17L17 7M17 7H8M17 7V16" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
     </svg> 
 </a>
