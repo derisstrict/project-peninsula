@@ -6,12 +6,12 @@
 <div class="background-radial-blur transform -translate-y-25"></div>
 <!-- Landing Page -->
 <div class="relative flex flex-col max-w-4xl gap-8">
-    <p class="text-8xl font-semibold">The
+    <p class="text-6xl font-semibold md:text-8xl">The
         <br><span class="text-lime-600">Peninsula Island</span>
     </p>
-    <p class="text-2xl max-w-2xl">A scenic coastal park known for its lush greenery, cultural statues, and
+    <p class="text-lg max-w-2xl md:text-2xl">A scenic coastal park known for its lush greenery, cultural statues, and
         dramatic ocean views, open to the public and perfect for peaceful walks or events.</p>
-    <div class="flex gap-4">
+    <div class="flex flex-col gap-4 md:flex-row">
         <div class="infobox-accent gap-3">
             <x-icon icon="time" class="text-lime-600" width="24px" height="24px" viewBox="0 0 24 24" fill="currentColor" stroke="none" xmlns="http://www.w3.org/2000/svg"></x-icon>
             <div class="flex flex-col gap-2">
@@ -47,19 +47,19 @@
     <x-icon icon="double-arrow" class="rotate-90" width="16px" height="16px" viewBox="0 0 24 24" fill="none"
         stroke="currentColor" xmlns="http://www.w3.org/2000/svg"></x-icon>
 </div>
-<img class="absolute h-135 w-[calc((27vw-10rem)*2)] top-40 right-0 object-cover rounded-xl outline-4 outline-lime-600/15"
+<img class="absolute h-135 w-[calc((27vw-10rem)*2)] hidden top-40 right-0 object-cover rounded-xl outline-4 outline-lime-600/15 xl:block"
 src="img/placeholder.jpg" alt="img-peninsula-island">
 <!-- /Landing Page -->
 
 <!-- Gallery -->
 <div class="mt-32 relative">
     <div class="flex justify-center items-center mx-auto mb-5">
-        <h1 class="text-6xl font-semibold">
+        <h1 class="text-3xl font-semibold md:text-6xl">
             Enjoy the <span class="text-lime-600">Fresh Air</span> of Nusa Dua
         </h1>
     </div>
 
-    <p class="text-center text-xl mb-5 mx-auto leading-relaxed">
+    <p class="text-center text-lg mb-5 mx-auto md:text-xl">
         Explore The Peninsula Island whether you want to view the sunsets, picnics or morning jogging.
     </p>
 
@@ -94,7 +94,7 @@ src="img/placeholder.jpg" alt="img-peninsula-island">
     
         {{-- Maps --}}
 <div class="mt-32 mb-32">
-    <p class="text-6xl font-semibold text-center mb-10">
+    <p class="text-3xl font-semibold text-center mb-10 md:text-6xl">
         <span class="text-lime-600">Explore </span>What's Inside
     </p>
 
@@ -112,17 +112,17 @@ src="img/placeholder.jpg" alt="img-peninsula-island">
 
 <!-- Where's the Location -->
 <div class="relative flex flex-col">
-    <p class="text-6xl font-semibold">
+    <p class="text-3xl font-semibold md:text-6xl">
         Where's
         <br><span class="text-lime-600">The Location</span>
     </p>
     <div class="flex flex-col justify-between xl:flex-row xl:items-center">
-        <p class="mt-6 max-w-4xl text-xl">
+        <p class="mt-6 text-lg max-w-4xl md:text-xl">
             Peninsula Island is located in Nusa Dua, on the southeastern coast of Bali, Indonesia.
             It sits within the ITDC (Indonesia Tourism Development Corporation) complex,
             a gated resort area known for its luxury hotels and pristine beaches.
         </p>
-        <a href="/" class="btn-primary p-4 w-fit md:mt-5">
+        <a href="/" class="btn-primary p-4 mt-5 self-center w-fit md:mt-5">
             <x-icon icon="google-maps" xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" viewBox="0 0 48 48"></x-icon>
             <span class="text-sm">Take me to Google Maps</span>
             <x-icon icon="external-link" width="16px" height="16px" viewBox="0 0 24 24" fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg"></x-icon>
