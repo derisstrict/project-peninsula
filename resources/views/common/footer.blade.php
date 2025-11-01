@@ -12,7 +12,7 @@
 
             <div>
                 <h4 class="font-semibold text-lime-600 mb-1">Social Media</h4>
-                <ul class="flex flex-col gap-2 text-sm">
+                <ul class="flex flex-col gap-2 text-sm justify-left">
                     <li class="flex items-center gap-2">
                         <x-icon icon="instagram" class="block" width="24px" height="24px" viewBox="2 0 20 20" fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg"></x-icon>
                         <a href="#" class="text-gray-700 dark:text-gray-300 hover:text-lime-600 transition-colors">Instagram</a>
@@ -55,7 +55,7 @@
                             EN
                             <x-icon icon="arrow-head" class="transition-transform" x-bind:class="dropLang ? 'rotate-90' : 'rotate-270'" width="16px" height="16px" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"></x-icon>
                         </button>
-                        <div x-show="dropLang" id="lang-menu" class="absolute z-10 right-50 left-0 mt-4 h-10 bg-dark-primary p-3 gap-2 w-50 h-fit rounded-xl transform -translate-y-45 dark:bg-dark-primary/15">
+                        <div x-show="dropLang" id="lang-menu" class="absolute z-10 right-50 left-0 mt-4 h-10 bg-bglight p-3 gap-2 w-50 h-fit rounded-xl transform -translate-y-45 outline-2 outline-light-primary/10 dark:bg-bgdark dark:outline-dark-primary/10">
                             <ul class="flex flex-col">
                                 <li>
                                     <a href="" class="block p-2 rounded-md hover:bg-light-primary/5 dark:hover:bg-dark-primary/5">English</a>
