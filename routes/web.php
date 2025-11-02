@@ -26,3 +26,6 @@ Route::get('/report', function () {
     return view('report');
 });
 
+Route::get('/dashboard', function () {
+    return view('dashboard');
+});

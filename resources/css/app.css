@@ -14,7 +14,8 @@
     --color-bglight: #EEEEEE;
     --color-light-primary: #162600;
     --color-dark-primary: #E5E5E5;
-    --color-bgdark: #081007
+    --color-bgdark: #081007;
+    --color-dashboard-dark: #070C10;
 }
 
 .btn-primary {
