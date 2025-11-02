@@ -11,10 +11,10 @@
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     @vite('resources/css/app.css')
 </head>
-<body class="bg-dashboard-dark text-dark-primary">
+<body class="bg-bglight text-light-primary">
     @include('common.dashboard-navbar')
         <div class="flex justify-center items-center w-full">
-            <div class="max-w-7xl mb-15">
+            <div class="max-w-7xl mb-15 mx-10">
                 @yield('content')
             </div>
         </div>

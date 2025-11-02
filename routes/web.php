@@ -29,3 +29,12 @@ Route::get('/report', function () {
 Route::get('/dashboard', function () {
     return view('dashboard');
 });
+
+Route::get('/dashboard/events', function () {
+    return view('dashboard.events');
+});
+
+Route::get('/dashboard/blogs', function () {
+    return view('dashboard.blogs');
+});
+

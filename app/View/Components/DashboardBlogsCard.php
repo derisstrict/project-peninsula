@@ -6,7 +6,7 @@ use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class BlogsCardGrid extends Component
+class DashboardBlogsCard extends Component
 {
     public $date;
     public $image;
@@ -30,6 +30,6 @@ class BlogsCardGrid extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.blogs-card-grid');
+        return view('components.dashboard-blogs-card');
     }
 }
