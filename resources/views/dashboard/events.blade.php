@@ -3,6 +3,9 @@
 @section('title', 'Dashboard')
 
 @section('content')
+<div class="relative">
+    <div class="background-radial-blur-dashboard top-0 inset-0 -translate-y-80"></div>
+</div>
 <p class="text-4xl text-center font-bold">Active <span class="text-sky-500">Events</span></p>
 <div class="flex items-center mt-10 mx-5">
     <a href="" class="btn-primary p-3 w-fit mr-auto group">
