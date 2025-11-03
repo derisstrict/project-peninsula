@@ -52,6 +52,16 @@ src="img/placeholder.jpg" alt="img-peninsula-island">
 <!-- /Landing Page -->
 
 <!-- Video -->
+ <div class="relative mt-32 rounded-xl overflow-hidden group cursor-pointer">
+    <img class="h-200 w-full object-cover" src="/img/placeholder.jpg" alt="video">
+    <div class="absolute inset-0 bg-black/45 group-hover:bg-black/65 transition-colors duration-700"></div>
+    <div class="absolute inset-0 flex flex-col gap-5 items-center justify-center">
+        <x-icon class="text-white transition-colors duration-700 group-hover:text-lime-600" icon="play" width="48px" height="48px" fill="currentColor" viewBox="-0.5 0 7 7" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"></x-icon>
+        <p class="text-white">Play the video</p>
+    </div>
+ </div>
+ <!-- /Video -->
+
 <!-- Gallery -->
 <div class="mt-32 relative">
     <div class="flex justify-center items-center mx-auto mb-5">
@@ -79,7 +89,7 @@ src="img/placeholder.jpg" alt="img-peninsula-island">
         <div class="relative group/bg overflow-hidden rounded-xl md:col-span-2">
             <img src="./img/gallery3.jpg" alt="Beach View" 
             class="w-full h-100 object-cover transition duration-300 group-hover/bg:blur-[2px] group-hover/bg:scale-110">
-            <div class="absolute inset-0 bg-black/45 transition duration-700 group-hover:bg-black/60"></div>
+            <div class="absolute inset-0 bg-black/45 transition duration-700 group-hover/bg:bg-black/60"></div>
             <div class="absolute inset-0 flex flex-col items-center justify-center text-white text-center">
                 <h2 class="font-bold text-2xl mb-4">Explore our image collections</h2>
                 <a href="#"
@@ -93,13 +103,13 @@ src="img/placeholder.jpg" alt="img-peninsula-island">
 </div>
 <!-- /Gallery -->
     
-        {{-- Maps --}}
+<!-- Spots Map -->
 <div class="mt-32 mb-32">
     <p class="text-3xl font-semibold text-center mb-10 md:text-6xl">
         <span class="text-lime-600">Explore </span>What's Inside
     </p>
 
-    <div class="relative max-w-5xl h-[30rem] mx-auto mb-32 overflow-hidden rounded-2xl shadow-lg bg-gray-200">
+    <div class="relative h-[40rem] mx-auto mb-32 overflow-hidden rounded-2xl shadow-lg bg-gray-200">
         <div id="mapContainer" class="w-full h-full cursor-grab active:cursor-grabbing" onmousedown="return false">
             <img src="./img/map.jpeg" alt="Map" class="w-full h-full object-cover">
         </div>
@@ -110,6 +120,7 @@ src="img/placeholder.jpg" alt="img-peninsula-island">
         </div>
     </div>
 </div>
+<!-- /Spots Map -->
 
 <!-- Where's the Location -->
 <div class="relative flex flex-col">
@@ -133,7 +144,8 @@ src="img/placeholder.jpg" alt="img-peninsula-island">
 </div>
 <!-- /Where's the Location -->
 
-<div class="relative max-w-6xl h-[30rem] mt-10 mx-auto mb-32 overflow-hidden rounded-2xl shadow-lg bg-gray-200">
+<!-- Google Maps -->
+<div class="relative w-full h-[40rem] mt-10 mx-auto mb-32 overflow-hidden rounded-2xl shadow-lg bg-gray-200">
     <div id="mapContainer" class="w-full h-full cursor-grab active:cursor-grabbing" onmousedown="return false">
         <img src="./img/maps.png" alt="Map" class="w-full h-full object-cover">
     </div>
@@ -144,8 +156,8 @@ src="img/placeholder.jpg" alt="img-peninsula-island">
         <button id="zoomOut" class="bg-white border rounded-full p-2 shadow hover:bg-gray-100">−</button>
     </div>
 </div>
+<!-- /Google Maps -->
 
-{{-- gatau dah yang ini --}}
 <script>
 const container = document.getElementById('mapContainer');
 const img = container.querySelector('img');
