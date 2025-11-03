@@ -51,6 +51,7 @@
 src="img/placeholder.jpg" alt="img-peninsula-island">
 <!-- /Landing Page -->
 
+<!-- Video -->
 <!-- Gallery -->
 <div class="mt-32 relative">
     <div class="flex justify-center items-center mx-auto mb-5">
