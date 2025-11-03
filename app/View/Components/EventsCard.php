@@ -17,7 +17,6 @@ class EventsCard extends Component
     {
         $this->date = $date;
         $this->image = $image;
-        //
     }
 
     /**
