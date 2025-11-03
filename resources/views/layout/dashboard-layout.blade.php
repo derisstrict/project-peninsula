@@ -14,7 +14,7 @@
 <body class="bg-bglight text-dashboard-light-primary dark:bg-bgdashboard-dark dark:text-dark-primary">
     @include('common.dashboard-navbar')
         <div class="flex justify-center items-center w-full">
-            <div class="max-w-7xl mb-15 mx-10">
+            <div class="max-w-7xl mb-15 mx-10 w-full">
                 @yield('content')
             </div>
         </div>
