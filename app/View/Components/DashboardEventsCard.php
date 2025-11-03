@@ -6,17 +6,24 @@ use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class EventsCard extends Component
+class DashboardEventsCard extends Component
 {
     public $date;
     public $image;
+    public $price;
     /**
      * Create a new component instance.
      */
-    public function __construct($date = "", $image = "")
+    public function __construct(
+        $date = "", 
+        $image = "",
+        $price = ""
+    )
+
     {
         $this->date = $date;
         $this->image = $image;
+        $this->price = $price;
     }
 
     /**
@@ -24,6 +31,6 @@ class EventsCard extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.events-card');
+        return view('components.dashboard-events-card');
     }
 }

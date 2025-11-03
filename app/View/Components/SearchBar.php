@@ -6,17 +6,17 @@ use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class EventsCard extends Component
+class SearchBar extends Component
 {
-    public $date;
-    public $image;
+    public $accent;
     /**
      * Create a new component instance.
      */
-    public function __construct($date = "", $image = "")
+    public function __construct(
+        $accent = ""
+    )
     {
-        $this->date = $date;
-        $this->image = $image;
+        $this->accent = $accent;
     }
 
     /**
@@ -24,6 +24,6 @@ class EventsCard extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.events-card');
+        return view('components.search-bar');
     }
 }
