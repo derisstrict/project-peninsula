@@ -9,7 +9,7 @@
         <x-icon icon="create" class="group-hover:text-sky-500 transition-colors" width="20px" height="20px" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"></x-icon>
         <p>Create new Event</p>   
     </a>
-    <x-search-bar></x-search-bar>
+    <x-search-bar accent="text-sky-500"></x-search-bar>
 </div>
 <div class="grid grid-cols-1 mt-5 gap-3 md:grid-cols-2 lg:grid-cols-3">
     <x-dashboard-events-card href="/events/events-detail" date="19 October 2025" image="/img/placeholder.jpg" price="335.000">Pura Bias Tugel a Temple in Peninsula Island</x-dashboard-events-card>
