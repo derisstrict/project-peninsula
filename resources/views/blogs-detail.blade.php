@@ -23,9 +23,9 @@
 <div class="flex flex-col mt-15 gap-5">
     <p class="text-4xl font-semibold">More <span class="text-lime-600">Articles</span></p>
     <div class="grid grid-cols-3">
-        <x-blogs-card href="/blogs/blogs-detail" date="19 October 2025" image="/img/placeholder.jpg">Pura Bias Tugel a Temple in Peninsula Island</x-blogs-card>
-        <x-blogs-card href="/blogs/blogs-detail" date="07 October 2025" image="/img/placeholder.jpg">The Big Bounce Festival is Back! This is Huge!</x-blogs-card>
-        <x-blogs-card href="/blogs/blogs-detail" date="19 October 2025" image="/img/placeholder.jpg">Pura Bias Tugel a Temple in Peninsula Island</x-blogs-card>
+        <x-blogs-card-grid href="/blogs/blogs-detail" title="Pura Bias Tugel a Temple in Peninsula Island" date="19 October 2025" image="/img/placeholder.jpg"></x-blogs-card-grid>
+        <x-blogs-card-grid href="/blogs/blogs-detail" title="Pura Bias Tugel a Temple in Peninsula Island" date="19 October 2025" image="/img/placeholder.jpg"></x-blogs-card-grid>
+        <x-blogs-card-grid href="/blogs/blogs-detail" title="Pura Bias Tugel a Temple in Peninsula Island" date="19 October 2025" image="/img/placeholder.jpg"></x-blogs-card-grid>
     </div>
     <div class="flex justify-center">
         <a href="/blogs" class="btn-primary p-3">

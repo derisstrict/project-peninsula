@@ -3,8 +3,8 @@
 @section('title', 'The Peninsula Island')
 
 @section('content')
-<div class="background-radial-blur left-0 transform -translate-y-25"></div>
-<div class="flex gap-8">
+<div class="background-radial-blur left-0 transform -translate-y-70"></div>
+<div class="flex gap-8 my-10">
     <div class="flex flex-col gap-6">
         <p class="text-5xl font-semibold"><span class="text-lime-600">Broken Facility </span>Report</p>
         <p class="text-xl">If you've seen a broken public facility it'll be appreciated if you can file us a report!</p>
