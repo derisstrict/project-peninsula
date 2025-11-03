@@ -2,7 +2,7 @@
     <img class="rounded-lg w-80 h-60 object-cover" src="{{ $image }}" alt="image">
     <div class="flex flex-col gap-2 w-full">
         <p class="text-2xl font-semibold">{{ $title }}</p>
-        <div class="bg-lime-500/25 outline-2 outline-lime-500/50 w-fit rounded-lg px-2 text-sm">Other</div>
+        <div class="bg-lime-600/25 outline-2 outline-lime-600/50 w-fit rounded-lg px-2 text-sm">Other</div>
         <p class="text-sm mr-auto">{{ $date }}</p>        
         <p>{{ Str::limit($slot, 300) }}</p>
         <div x-show="open" x-transition:enter="transition ease-out duration-150"
