@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html x-data="{ isLight: $persist(true) }" lang="en" :class=" isLight ? '' : 'dark' ">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,7 +11,7 @@
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     @vite('resources/css/app.css')
 </head>
-<body class="bg-bglight text-light-primary">
+<body class="bg-bglight text-dashboard-light-primary dark:bg-bgdashboard-dark dark:text-dark-primary">
     @include('common.dashboard-navbar')
         <div class="flex justify-center items-center w-full">
             <div class="max-w-7xl mb-15 mx-10">
