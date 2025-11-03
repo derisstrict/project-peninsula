@@ -15,6 +15,11 @@
     <x-search-bar accent="text-sky-500"></x-search-bar>
 </div>
 <div class="grid grid-cols-1 mt-5 gap-3 md:grid-cols-2 lg:grid-cols-3">
-    <x-dashboard-blogs-card href="/events/events-detail" date="19 October 2025" image="/img/placeholder.jpg" title="Pura Bias Tugel a Temple in Peninsula Island"></x-dashboard-blogs-card><x-dashboard-blogs-card href="/events/events-detail" date="19 October 2025" image="/img/placeholder.jpg" title="Pura Bias Tugel a Temple in Peninsula Island"></x-dashboard-blogs-card><x-dashboard-blogs-card href="/events/events-detail" date="19 October 2025" image="/img/placeholder.jpg" title="Pura Bias Tugel a Temple in Peninsula Island"></x-dashboard-blogs-card><x-dashboard-blogs-card href="/events/events-detail" date="19 October 2025" image="/img/placeholder.jpg" title="Pura Bias Tugel a Temple in Peninsula Island"></x-dashboard-blogs-card><x-dashboard-blogs-card href="/events/events-detail" date="19 October 2025" image="/img/placeholder.jpg" title="Pura Bias Tugel a Temple in Peninsula Island"></x-dashboard-blogs-card><x-dashboard-blogs-card href="/events/events-detail" date="19 October 2025" image="/img/placeholder.jpg" title="Pura Bias Tugel a Temple in Peninsula Island"></x-dashboard-blogs-card>
+    <x-dashboard-blogs-card href="/events/events-detail" date="19 October 2025" image="/img/placeholder.jpg" title="Pura Bias Tugel a Temple in Peninsula Island"></x-dashboard-blogs-card>
+    <x-dashboard-blogs-card href="/events/events-detail" date="19 October 2025" image="/img/placeholder.jpg" title="Pura Bias Tugel a Temple in Peninsula Island"></x-dashboard-blogs-card>
+    <x-dashboard-blogs-card href="/events/events-detail" date="19 October 2025" image="/img/placeholder.jpg" title="Pura Bias Tugel a Temple in Peninsula Island"></x-dashboard-blogs-card>
+    <x-dashboard-blogs-card href="/events/events-detail" date="19 October 2025" image="/img/placeholder.jpg" title="Pura Bias Tugel a Temple in Peninsula Island"></x-dashboard-blogs-card>
+    <x-dashboard-blogs-card href="/events/events-detail" date="19 October 2025" image="/img/placeholder.jpg" title="Pura Bias Tugel a Temple in Peninsula Island"></x-dashboard-blogs-card>
+    <x-dashboard-blogs-card href="/events/events-detail" date="19 October 2025" image="/img/placeholder.jpg" title="Pura Bias Tugel a Temple in Peninsula Island"></x-dashboard-blogs-card>
 </div>
 @endsection
