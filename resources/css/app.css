@@ -14,7 +14,9 @@
     --color-bglight: #EEEEEE;
     --color-light-primary: #162600;
     --color-dark-primary: #E5E5E5;
-    --color-bgdark: #081007
+    --color-bgdark: #081007;
+    --color-bgdashboard-dark: #070C10;
+    --color-dashboard-light-primary: #001E26;
 }
 
 .btn-primary {
@@ -27,4 +29,8 @@
 
 .background-radial-blur {
     @apply absolute z-[-1] w-300 h-300 right-0 top-0 rounded-full bg-[radial-gradient(circle,_rgba(94,165,0,0.10)_0%,_rgba(94,165,0,0)_60%)];
+}
+
+.background-radial-blur-dashboard {
+    @apply absolute z-[-1] w-300 h-300 right-0 top-0 rounded-full bg-[radial-gradient(circle,_rgba(0,166,244,0.10)_0%,_rgba(94,165,0,0)_60%)];
 }

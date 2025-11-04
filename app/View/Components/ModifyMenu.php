@@ -6,17 +6,14 @@ use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class EventsCard extends Component
+class ModifyMenu extends Component
 {
-    public $date;
-    public $image;
     /**
      * Create a new component instance.
      */
-    public function __construct($date = "", $image = "")
+    public function __construct()
     {
-        $this->date = $date;
-        $this->image = $image;
+        //
     }
 
     /**
@@ -24,6 +21,6 @@ class EventsCard extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.events-card');
+        return view('components.modify-menu');
     }
 }
