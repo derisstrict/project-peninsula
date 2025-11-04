@@ -32,7 +32,7 @@
                 <x-icon icon="arrow-head" class="rotate-90" width="16px" height="16px" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor"></x-icon>
             </button>
             <div @click.stop x-show="dropProfile" class="absolute top-10 right-0 z-10 mt-4 h-10 bg-bglight p-3 gap-2 w-50 h-fit rounded-xl outline-2 outline-light-primary/10 dark:bg-bgdark dark:outline-dark-primary/10">
-                <div  x-data="{ dropTheme: false, selectedOption: 'light' }" class="flex flex-col items-start gap-2">
+                <div  x-data="{ dropTheme: false, selectedOption: $persist('light') }" class="flex flex-col items-start gap-2">
                     <button @click="dropTheme = !dropTheme" class="relative flex gap-3 items-center w-full rounded-lg py-1 px-2 cursor-pointer hover:bg-light-primary/5 dark:hover:bg-dark-primary/5 transition-colors">
                         <x-icon icon="theme" width="20px" height="20px" fill="currentColor" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"></x-icon>
                         <p>Appearance</p>
