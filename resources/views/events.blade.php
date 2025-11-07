@@ -36,11 +36,8 @@
     </x-icon> 
 </a>
 <div class="grid grid-cols-1 mt-10 gap-4 lg:grid-cols-3 md:grid-cols-2">
-    <x-events-card href="/events/events-detail" date="19 October 2025" image="img/placeholder.jpg">Pura Bias Tugel a Temple in Peninsula Island</x-events-card>
-    <x-events-card href="/events/events-detail" date="07 October 2025 - 2 December 2025" image="img/placeholder.jpg">The Big Bounce Festival is Back! This is Huge!</x-events-card>
-    <x-events-card href="/events/events-detail" date="19 October 2025" image="img/placeholder.jpg">Pura Bias Tugel a Temple in Peninsula Island</x-events-card>
-    <x-events-card href="/events/events-detail" date="19 October 2025" image="img/placeholder.jpg">Pura Bias Tugel a Temple in Peninsula Island</x-events-card>
-    <x-events-card href="/events/events-detail" date="07 October 2025" image="img/placeholder.jpg">The Big Bounce Festival is Back! This is Huge!</x-events-card>
-    <x-events-card href="/events/events-detail" date="07 October 2025" image="img/placeholder.jpg">The Big Bounce Festival is Back! This is Huge!</x-events-card>
+    @foreach ($events as $event)
+        <x-events-card href="/events/events-detail" date="{{ $event['tanggal_mulai'] }}" image="{{ $event['gambar_event'] }}" price="{{ $event['harga_tiket'] }}">{{ $event['judul_event'] }}</x-events-card> 
+    @endforeach
 </div>
 @endsection
