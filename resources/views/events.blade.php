@@ -37,7 +37,7 @@
 </a>
 <div class="grid grid-cols-1 mt-10 gap-4 lg:grid-cols-3 md:grid-cols-2">
     @foreach ($events as $event)
-        <x-events-card href="/events/events-detail" date="{{ $event['tanggal_mulai'] }}" image="{{ $event['gambar_event'] }}" price="{{ $event['harga_tiket'] }}">{{ $event['judul_event'] }}</x-events-card> 
+        <x-events-card href="/events/{{ $event['slug'] }}" date="{{ $event['tanggal_mulai'] }}" image="{{ $event['gambar_event'] }}" price="{{ $event['harga_tiket'] }}">{{ $event['judul_event'] }}</x-events-card> 
     @endforeach
 </div>
 @endsection
