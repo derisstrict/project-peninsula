@@ -92,13 +92,48 @@ src="img/placeholder.jpg" alt="img-peninsula-island">
             <div class="absolute inset-0 bg-black/45 transition duration-700 group-hover/bg:bg-black/60"></div>
             <div class="absolute inset-0 flex flex-col items-center justify-center text-white text-center">
                 <h2 class="font-bold text-2xl mb-4">Explore our image collections</h2>
-                <a href="#"
+                <a onclick="openModal(1)"
                 class="bg-white/30 px-5 py-2 rounded-full font-medium hover:bg-lime-600 hover:text-white transition duration-500 flex items-center justify-center group/button">
                 Explore
                 <x-icon icon="arrow-head" fill="currentColor" viewBox="0 0 24 24" stroke="none" xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 transform transition-transform duration-300 group-hover/button:translate-x-1"></x-icon>
                 </a>
             </div>
         </div>
+    </div>
+      <!-- pop up -->
+    <div id="galleryModal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-[4px] hidden">
+
+        <button onclick="closeModal()" 
+            class="absolute top-15 w-10 h-10 flex items-center justify-center 
+                text-white text-3xl font-bold z-[60] 
+                bg-black/60 rounded-full 
+                hover:bg-black/80 hover:scale-110 
+                backdrop-blur-[2px] transition duration-300 ease-in-out group">
+            <svg class="w-7 h-7 text-white group-hover:text-lime-400 transition" 
+                fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                <line x1="6" y1="6" x2="18" y2="18" stroke-linecap="round"/>
+                <line x1="18" y1="6" x2="6" y2="18" stroke-linecap="round"/>
+            </svg>
+        </button>
+
+
+
+        <button onclick="prevImage()" 
+            class="absolute w-10 h-10 left-4 md:left-12 text-white text-3xl z-[60]
+            bg-gray/60 rounded-full 
+            hover:bg-gray/80 hover:scale-110 
+            backdrop-blur-[2px] transition duration-300 ease-in-out group">
+            &#8592;
+        </button>
+
+        <img id="modalImg" src="" alt="Gallery Popup" 
+            class="max-h-[80vh] max-w-[90vw] rounded-xl shadow-lg transition-all duration-300">
+
+        <button onclick="nextImage()" 
+            class="absolute right-4 md:right-12 text-white text-3xl z-60">
+            &#8594;
+        </button>
+
     </div>
 </div>
 <!-- /Gallery -->
@@ -288,6 +323,37 @@ window.addEventListener('mousemove', e => {
 window.addEventListener('mouseup', () => {
     dragging = false;
     img.style.cursor = 'grab';
+});
+
+//galery
+const images = [
+    "{{ asset('img/gallery1.jpg') }}",
+    "{{ asset('img/gallery2.jpg') }}",
+    "{{ asset('img/gallery3.jpg') }}"
+];
+let current = 0;
+
+function openModal(idx) {
+    current = idx - 1;
+    document.getElementById('galleryModal').classList.remove('hidden');
+    showImage();
+}
+function closeModal() {
+    document.getElementById('galleryModal').classList.add('hidden');
+}
+function showImage() {
+    document.getElementById('modalImg').src = images[current];
+}
+function prevImage() {
+    current = (current - 1 + images.length) % images.length;
+    showImage();
+}
+function nextImage() {
+    current = (current + 1) % images.length;
+    showImage();
+}
+document.addEventListener('keydown', function(e) {
+    if (e.key === "Escape") closeModal();
 });
 </script>
 
