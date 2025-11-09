@@ -3,128 +3,28 @@
 @section('title', 'The Peninsula Island')
 
 @section('content')
-    <div class="background-radial-blur transform -translate-y-25"></div>
-    <!-- Landing Page -->
-    <div class="relative flex flex-col max-w-4xl gap-8">
-        <p class="text-6xl font-semibold md:text-8xl">The
-            <br><span class="text-lime-600">Peninsula Island</span>
-        </p>
-        <p class="text-lg max-w-2xl md:text-2xl">A scenic coastal park known for its lush greenery, cultural statues, and
-            dramatic ocean views, open to the public and perfect for peaceful walks or events.</p>
-        <div class="flex flex-col gap-4 md:flex-row">
-            <div class="infobox-accent gap-3">
-                <x-icon icon="time" class="text-lime-600" width="24px" height="24px" viewBox="0 0 24 24"
-                    fill="currentColor" stroke="none" xmlns="http://www.w3.org/2000/svg"></x-icon>
-                <div class="flex flex-col gap-2">
-                    <p class="font-bold">Open Hours</p>
-                    <p>Every day | 06.00 AM - 10.00 PM</p>
-                </div>
-            </div>
-            <div class="infobox-accent gap-3">
-                <x-icon icon="money" class="text-lime-600" width="24px" height="24px" viewBox="-0.5 0 25 25"
-                    fill="currentColor" stroke="currentColor" xmlns="http://www.w3.org/2000/svg"></x-icon>
-                <div class="flex flex-col gap-2">
-                    <p class="font-bold">Entrance fee</p>
-                    <p>Rp. 5000</p>
-                </div>
+<div class="background-radial-blur transform -translate-y-25"></div>
+<!-- Landing Page -->
+<div class="relative flex flex-col max-w-4xl gap-8">
+    <p class="text-6xl font-semibold md:text-8xl">The
+        <br><span class="text-lime-600">Peninsula Island</span>
+    </p>
+    <p class="text-lg max-w-2xl md:text-2xl">A scenic coastal park known for its lush greenery, cultural statues, and
+        dramatic ocean views, open to the public and perfect for peaceful walks or events.</p>
+    <div class="flex flex-col gap-4 md:flex-row">
+        <div class="infobox-accent gap-3">
+            <x-icon icon="time" class="text-lime-600" width="24px" height="24px" viewBox="0 0 24 24" fill="currentColor" stroke="none" xmlns="http://www.w3.org/2000/svg"></x-icon>
+            <div class="flex flex-col gap-2">
+                <p class="font-bold">Open Hours</p>
+                <p>Every day | 06.00 AM - 10.00 PM</p>
             </div>
         </div>
-
-        <div class="flex flex-col gap-2">
-            <p class="text-sm">Quick links</p>
-            <div class="flex gap-2">
-                <a href="/" class="btn-primary p-2">
-                    <x-icon icon="calendar" width="16px" height="16px" viewBox="0 0 24 24" fill="none"
-                        stroke="currentColor" xmlns="http://www.w3.org/2000/svg"></x-icon>
-                    <span>Today's event</span></a>
-                <a href="/" class="btn-primary p-2">
-                    <x-icon icon="maps" width="16px" height="16px" viewBox="0 0 192 192"
-                        xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor"></x-icon>
-                    <span>Our maps</span></a>
-            </div>
-        </div>
-    </div>
-    <div class="flex flex-col items-center mt-25 gap-2">
-        scroll more
-        <x-icon icon="double-arrow" class="rotate-90" width="16px" height="16px" viewBox="0 0 24 24" fill="none"
-            stroke="currentColor" xmlns="http://www.w3.org/2000/svg"></x-icon>
-    </div>
-    <img class="absolute h-135 w-[calc((27vw-10rem)*2)] hidden top-40 right-0 object-cover rounded-xl outline-4 outline-lime-600/15 xl:block"
-        src="img/placeholder.jpg" alt="img-peninsula-island">
-    <!-- /Landing Page -->
-
-    <!-- Video -->
-    <div class="relative mt-32 rounded-xl overflow-hidden group cursor-pointer">
-        <img class="h-200 w-full object-cover" src="/img/placeholder.jpg" alt="video">
-        <div class="absolute inset-0 bg-black/45 group-hover:bg-black/65 transition-colors duration-700"></div>
-        <div class="absolute inset-0 flex flex-col gap-5 items-center justify-center">
-            <x-icon class="text-white transition-colors duration-700 group-hover:text-lime-600" icon="play"
-                width="48px" height="48px" fill="currentColor" viewBox="-0.5 0 7 7" version="1.1"
-                xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"></x-icon>
-            <p class="text-white">Play the video</p>
-        </div>
-    </div>
-    <!-- /Video -->
-
-    <!-- Gallery -->
-    <div class="mt-32 relative">
-        <div class="flex justify-center items-center mx-auto mb-5">
-            <h1 class="text-3xl font-semibold md:text-6xl">
-                Enjoy the <span class="text-lime-600">Fresh Air</span> of Nusa Dua
-            </h1>
-        </div>
-
-        <p class="text-center text-lg mb-5 mx-auto md:text-xl">
-            Explore The Peninsula Island whether you want to view the sunsets, picnics or morning jogging.
-        </p>
-
-        <div class="grid grid-cols-1 md:grid-cols-[2fr_1fr] gap-6 mx-auto">
-            <!-- Image 1 -->
-            <div class="relative group overflow-hidden rounded-xl">
-                <img src="./img/gallery1.jpg" alt="Beach View"
-                    class="w-full h-120 object-cover transition duration-300 group-hover:scale-110">
-            </div>
-
-            <!-- Image 2 -->
-            <div class="relative group overflow-hidden rounded-xl">
-                <img src="./img/gallery2.jpg" alt="Beach View"
-                    class="w-full h-120 object-cover transition duration-300 group-hover:scale-110">
-            </div>
-
-            <!-- Image 3 -->
-            <div class="relative group/bg overflow-hidden rounded-xl md:col-span-2">
-                <img src="./img/gallery3.jpg" alt="Beach View"
-                    class="w-full h-100 object-cover transition duration-300 group-hover/bg:blur-[2px] group-hover/bg:scale-110">
-                <div class="absolute inset-0 bg-black/45 transition duration-700 group-hover/bg:bg-black/60"></div>
-                <div class="absolute inset-0 flex flex-col items-center justify-center text-white text-center">
-                    <h2 class="font-bold text-2xl mb-4">Explore our image collections</h2>
-                    <a href="#"
-                        class="bg-white/30 px-5 py-2 rounded-full font-medium hover:bg-lime-600 hover:text-white transition duration-500 flex items-center justify-center group/button">
-                        Explore
-                        <x-icon icon="arrow-head" fill="currentColor" viewBox="0 0 24 24" stroke="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                            class="w-5 h-5 transform transition-transform duration-300 group-hover/button:translate-x-1"></x-icon>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- /Gallery -->
-
-    <!-- Spots Map -->
-    <div class="mt-32">
-        <p class="text-3xl font-semibold text-center mb-10 md:text-6xl">
-            <span class="text-lime-600">Explore </span>What's Inside
-        </p>
-
-        <div class="relative h-[40rem] mx-auto mb-32 overflow-hidden rounded-2xl shadow-lg bg-gray-200">
-            <div id="mapContainer" class="w-full h-full cursor-grab active:cursor-grabbing" onmousedown="return false">
-                <img src="./img/map.jpeg" alt="Map" class="w-full h-full object-cover">
-            </div>
-
-            <div class="absolute bottom-4 right-4 flex flex-col space-y-2">
-                <button id="zoomIn" class="bg-white border rounded-full p-2 shadow hover:bg-gray-100">+</button>
-                <button id="zoomOut" class="bg-white border rounded-full p-2 shadow hover:bg-gray-100">−</button>
+        <div class="infobox-accent gap-3">
+            <x-icon icon="money" class="text-lime-600" width="24px" height="24px" viewBox="-0.5 0 25 25" fill="currentColor"
+                stroke="currentColor" xmlns="http://www.w3.org/2000/svg"></x-icon>
+            <div class="flex flex-col gap-2">
+                <p class="font-bold">Entrance fee</p>
+                <p>Rp. 5000</p>
             </div>
         </div>
     </div>
@@ -347,3 +247,4 @@
 
 
 @endsection
+
