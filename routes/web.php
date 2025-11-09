@@ -6,8 +6,6 @@ use App\Models\Event;
 Route::get('/', function () {
     return view('home');
 });
-<<<<<<< Updated upstream
-=======
 
 Route::get('/blogs', function () {
     return view('blogs');
@@ -42,4 +40,3 @@ Route::get('/dashboard/blogs', function () {
     return view('dashboard.blogs');
 });
 
->>>>>>> Stashed changes
