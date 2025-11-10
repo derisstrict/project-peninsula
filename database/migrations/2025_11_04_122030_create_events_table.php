@@ -11,19 +11,18 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('event', function (Blueprint $table){
+        Schema::create('events', function (Blueprint $table){
             $table->id();
-            $table->bigInteger('id_user');
+            $table->bigInteger('user_id');
             $table->string('tanggal_mulai', 50)->nullable(false);
             $table->string('tanggal_selesai', 50)->nullable(false);
             $table->text('deskripsi_event')->nullable(false);
             $table->string('judul_event', 100)->nullable(false);
             $table->string('slug', 100)->nullable(false);
             $table->string('gambar_event', 100)->nullable(false);
-            $table->tinyInteger('status_event')->nullable(false);
             $table->string('nama_penyelenggara', 50)->nullable(true);
             $table->integer('harga_tiket')->nullable(true);
-            $table->foreign('id_user')->references('id')->on('admin')->onDelete('cascade');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         }); 
     }
 
@@ -32,6 +31,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('event');
+        Schema::dropIfExists('events');
     }
 };
