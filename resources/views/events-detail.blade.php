@@ -29,7 +29,7 @@
                 </x-local-icon>
                 <div class="flex flex-col gap">
                     <p class="font-bold">Starting Price</p>
-                    <p>IDR {{ $event->harga_tiket }}</p>
+                    <p>IDR {{ number_format($event->harga_tiket, 0, '.', '.') }}</p>
                 </div>
             </div>
         </div>
