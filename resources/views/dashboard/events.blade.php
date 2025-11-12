@@ -9,7 +9,7 @@
 <p class="text-4xl text-center font-bold">Active <span class="text-sky-500">Events</span></p>
 <div class="flex items-center mt-10 mx-5">
     <a href="" class="btn-primary p-3 w-fit mr-auto group">
-        <x-icon icon="create" class="group-hover:text-sky-500 transition-colors" width="20px" height="20px" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"></x-icon>
+        <x-local-icon icon="create" class="group-hover:text-sky-500 transition-colors" width="20px" height="20px" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"></x-local-icon>
         <p>Create new Event</p>   
     </a>
     <x-search-bar accent="text-sky-500"></x-search-bar>

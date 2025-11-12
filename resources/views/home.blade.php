@@ -13,15 +13,15 @@
         dramatic ocean views, open to the public and perfect for peaceful walks or events.</p>
     <div class="flex flex-col gap-4 md:flex-row">
         <div class="infobox-accent gap-3">
-            <x-icon icon="time" class="text-lime-600" width="24px" height="24px" viewBox="0 0 24 24" fill="currentColor" stroke="none" xmlns="http://www.w3.org/2000/svg"></x-icon>
+            <x-local-icon icon="time" class="text-lime-600" width="24px" height="24px" viewBox="0 0 24 24" fill="currentColor" stroke="none" xmlns="http://www.w3.org/2000/svg"></x-local-icon>
             <div class="flex flex-col gap-2">
                 <p class="font-bold">Open Hours</p>
                 <p>Every day | 06.00 AM - 10.00 PM</p>
             </div>
         </div>
         <div class="infobox-accent gap-3">
-            <x-icon icon="money" class="text-lime-600" width="24px" height="24px" viewBox="-0.5 0 25 25" fill="currentColor"
-                stroke="currentColor" xmlns="http://www.w3.org/2000/svg"></x-icon>
+            <x-local-icon icon="money" class="text-lime-600" width="24px" height="24px" viewBox="-0.5 0 25 25" fill="currentColor"
+                stroke="currentColor" xmlns="http://www.w3.org/2000/svg"></x-local-icon>
             <div class="flex flex-col gap-2">
                 <p class="font-bold">Entrance fee</p>
                 <p>Rp. 5000</p>
@@ -33,19 +33,19 @@
         <p class="text-sm">Quick links</p>
         <div class="flex gap-2">
             <a href="/" class="btn-primary p-2">
-                <x-icon icon="calendar" width="16px" height="16px" viewBox="0 0 24 24" fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg"></x-icon>
+                <x-local-icon icon="calendar" width="16px" height="16px" viewBox="0 0 24 24" fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg"></x-local-icon>
                 <span>Today's event</span></a>
             <a href="/" class="btn-primary p-2">
-                <x-icon icon="maps" width="16px" height="16px" viewBox="0 0 192 192" xmlns="http://www.w3.org/2000/svg"
-                    fill="none" stroke="currentColor"></x-icon>
+                <x-local-icon icon="maps" width="16px" height="16px" viewBox="0 0 192 192" xmlns="http://www.w3.org/2000/svg"
+                    fill="none" stroke="currentColor"></x-local-icon>
                 <span>Our maps</span></a>
         </div>
     </div>
 </div>
 <div class="flex flex-col items-center mt-25 gap-2">
     scroll more
-    <x-icon icon="double-arrow" class="rotate-90" width="16px" height="16px" viewBox="0 0 24 24" fill="none"
-        stroke="currentColor" xmlns="http://www.w3.org/2000/svg"></x-icon>
+    <x-local-icon icon="double-arrow" class="rotate-90" width="16px" height="16px" viewBox="0 0 24 24" fill="none"
+        stroke="currentColor" xmlns="http://www.w3.org/2000/svg"></x-local-icon>
 </div>
 <img class="absolute h-135 w-[calc((27vw-10rem)*2)] hidden top-40 right-0 object-cover rounded-xl outline-4 outline-lime-600/15 xl:block"
 src="img/placeholder.jpg" alt="img-peninsula-island">
@@ -56,7 +56,7 @@ src="img/placeholder.jpg" alt="img-peninsula-island">
     <img class="h-200 w-full object-cover" src="/img/placeholder.jpg" alt="video">
     <div class="absolute inset-0 bg-black/45 group-hover:bg-black/65 transition-colors duration-700"></div>
     <div class="absolute inset-0 flex flex-col gap-5 items-center justify-center">
-        <x-icon class="text-white transition-colors duration-700 group-hover:text-lime-600" icon="play" width="48px" height="48px" fill="currentColor" viewBox="-0.5 0 7 7" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"></x-icon>
+        <x-local-icon class="text-white transition-colors duration-700 group-hover:text-lime-600" icon="play" width="48px" height="48px" fill="currentColor" viewBox="-0.5 0 7 7" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"></x-local-icon>
         <p class="text-white">Play the video</p>
     </div>
  </div>
@@ -95,7 +95,7 @@ src="img/placeholder.jpg" alt="img-peninsula-island">
                 <a onclick="openModal(1)"
                 class="bg-white/30 px-5 py-2 rounded-full font-medium hover:bg-lime-600 hover:text-white transition duration-500 flex items-center justify-center group/button">
                 Explore
-                <x-icon icon="arrow-head" fill="currentColor" viewBox="0 0 24 24" stroke="none" xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 transform transition-transform duration-300 group-hover/button:translate-x-1"></x-icon>
+                <x-local-icon icon="arrow-head" fill="currentColor" viewBox="0 0 24 24" stroke="none" xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 transform transition-transform duration-300 group-hover/button:translate-x-1"></x-local-icon>
                 </a>
             </div>
         </div>
@@ -177,9 +177,9 @@ src="img/placeholder.jpg" alt="img-peninsula-island">
             a gated resort area known for its luxury hotels and pristine beaches.
         </p>
         <a href="/" class="btn-primary p-4 mt-5 self-center w-fit md:mt-5">
-            <x-icon icon="google-maps" xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" viewBox="0 0 48 48"></x-icon>
+            <x-local-icon icon="google-maps" xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" viewBox="0 0 48 48"></x-local-icon>
             <span class="text-sm">Take me to Google Maps</span>
-            <x-icon icon="external-link" width="16px" height="16px" viewBox="0 0 24 24" fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg"></x-icon>
+            <x-local-icon icon="external-link" width="16px" height="16px" viewBox="0 0 24 24" fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg"></x-local-icon>
         </a>
     </div>
     <div class="background-radial-blur transform -translate-y-25"></div>
@@ -214,7 +214,7 @@ src="img/placeholder.jpg" alt="img-peninsula-island">
 <div class="grid grid-cols-2 gap-6 mt-6">
     <div class="infobox-accent">
         <div class="m-4">
-            <x-icon class="text-lime-600" icon="jogging" width="45" height="45" viewBox="0 0 45 45" fill="currentColor" xmlns="http://www.w3.org/2000/svg"></x-icon> 
+            <x-local-icon class="text-lime-600" icon="jogging" width="45" height="45" viewBox="0 0 45 45" fill="currentColor" xmlns="http://www.w3.org/2000/svg"></x-local-icon> 
             <h3 class="font-bold mt-2">Jogging</h3>
             <p class="mt-2">Improve your heart health and endurance with morning jogging. 
                 Daily jogging routine not only helps burn calories and maintain a healthy weight, 
@@ -223,7 +223,7 @@ src="img/placeholder.jpg" alt="img-peninsula-island">
     </div>
     <div class="infobox-accent">
         <div class="m-4">
-            <x-icon class="text-lime-600" icon="sun-2" width="45" height="45" viewBox="0 0 45 45" fill="currentColor" xmlns="http://www.w3.org/2000/svg"></x-icon> 
+            <x-local-icon class="text-lime-600" icon="sun-2" width="45" height="45" viewBox="0 0 45 45" fill="currentColor" xmlns="http://www.w3.org/2000/svg"></x-local-icon> 
             <h3 class="font-bold mt-2">Sunbathing</h3>
             <p class="mt-2">Take advantage of morning sunlight to stimulate the production of Vitamin D, an essential nutrient that supports immune function and maintains bone density. 
                 A brief exposure to gentle sunlight has also been shown to improve your overall mood and reduce the risk of depression.</p>
@@ -231,7 +231,7 @@ src="img/placeholder.jpg" alt="img-peninsula-island">
     </div>
     <div class="infobox-accent">
         <div class="m-4">
-            <x-icon class="text-lime-600" icon="cycling" width="45" height="45" viewBox="0 0 45 45" fill="currentColor" xmlns="http://www.w3.org/2000/svg"></x-icon> 
+            <x-local-icon class="text-lime-600" icon="cycling" width="45" height="45" viewBox="0 0 45 45" fill="currentColor" xmlns="http://www.w3.org/2000/svg"></x-local-icon> 
             <h3 class="font-bold mt-2">Cycling</h3>
             <p class="mt-2">Experience the freedom of pedaling through green paths and surrounding neighborhoods. 
                 Cycling is an excellent low-impact exercise for building leg strength, increasing lung capacity, and is a fun way to explore new areas.</p>
@@ -239,7 +239,7 @@ src="img/placeholder.jpg" alt="img-peninsula-island">
     </div>
     <div class="infobox-accent">
         <div class="m-4">
-            <x-icon class="text-lime-600" icon="basket" width="45" height="45" viewBox="0 0 45 45" fill="currentColor" xmlns="http://www.w3.org/2000/svg"></x-icon> 
+            <x-local-icon class="text-lime-600" icon="basket" width="45" height="45" viewBox="0 0 45 45" fill="currentColor" xmlns="http://www.w3.org/2000/svg"></x-local-icon> 
             <h3 class="font-bold mt-2">Family Picnic</h3>
             <p class="mt-2">Put your gadgets aside and spend unforgettable time with your loved ones. Prepare your favorite food and enjoy a delicious meal in the park or by the lake, making it the perfect opportunity to bond with your family while breathing in the fresh air.</p>
         </div>
@@ -248,7 +248,7 @@ src="img/placeholder.jpg" alt="img-peninsula-island">
 <div class="flex justify-center mt-5 mb-6">
     <div class="infobox-accent max-w-1/2 flex-col">
         <div class="m-4">
-            <x-icon class="text-lime-600" icon="yoga" width="45" height="45" viewBox="0 0 45 45" fill="currentColor" xmlns="http://www.w3.org/2000/svg"></x-icon>
+            <x-local-icon class="text-lime-600" icon="yoga" width="45" height="45" viewBox="0 0 45 45" fill="currentColor" xmlns="http://www.w3.org/2000/svg"></x-local-icon>
             <h3 class="font-bold mt-2">Yoga</h3>
             <p class="mt-2">Focus your attention on harmonizing your breathing with gentle but purposeful body movements. Regular yoga practice is ideal for increasing joint and muscle flexibility, relieving physical tension caused by stress, and achieving a state of deep mental calm.</p>
         </div>
