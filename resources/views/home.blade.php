@@ -97,7 +97,12 @@ src="img/placeholder.jpg" alt="img-peninsula-island">
 
         <!-- Progress Bar -->
         <input type="range" id="progressBar" value="0" min="0" max="100"
-               class="w-full">
+                class="w-full h-2 rounded-lg appearance-none 
+                       [&::-webkit-slider-thumb]:w-2
+                       [&::-webkit-slider-thumb]:h-2
+                       [&::-webkit-slider-thumb]:rounded-full
+                       [&::-webkit-slider-thumb]:bg-lime-600
+                       style="background: linear-gradient(to right, #65a30d 0%, #65a30d 0%, #ffffffff 0%, #ffffffff 100%);">
 
         <!-- Volume -->
         <div class="flex items-center gap-2">
@@ -107,7 +112,12 @@ src="img/placeholder.jpg" alt="img-peninsula-island">
                 <path d="M3 10v4h4l5 5V5l-5 5H3zm13.5 2c0-1.77-1.02-3.29-2.5-4.03v8.06c1.48-.74 2.5-2.26 2.5-4.03z"/>
             </svg>
             <input type="range" id="volumeControl" min="0" max="1" step="0.05" value="1" 
-                class="w-28">
+                class="w-full h-2 rounded-lg appearance-none 
+                       [&::-webkit-slider-thumb]:w-2
+                       [&::-webkit-slider-thumb]:h-2
+                       [&::-webkit-slider-thumb]:rounded-full
+                       [&::-webkit-slider-thumb]:bg-lime-600
+                       style="background: linear-gradient(to right, #65a30d 0%, #65a30d 0%, #ffffffff 0%, #ffffffff 100%);">
         </div>
 
         <!-- Fullscreen -->
@@ -419,168 +429,266 @@ document.addEventListener('keydown', function(e) {
     if (e.key === "Escape") closeModal();
 });
 
-// Video control
+// ================================
+// VIDEO CONTROL — FINAL CLEAN CODE💀💀
+// ================================
+
 document.addEventListener("DOMContentLoaded", () => {
     const video = document.getElementById("myVideo");
+    const container = document.getElementById("videoContainer");
     const controls = document.getElementById("videoControls");
+    const playPauseBtn = document.getElementById("playPauseBtn");
     const playPausePath = document.getElementById("playPausePath");
     const progressBar = document.getElementById("progressBar");
     const volumeControl = document.getElementById("volumeControl");
     const fullscreenBtn = document.getElementById("fullscreenBtn");
-    const container = document.getElementById("videoContainer");
     const videoOverlay = document.getElementById("videoOverlay");
     const videoPlayIcon = document.getElementById("videoPlayIcon");
+    const videoPlayPath = videoPlayIcon.querySelector("path");
 
-    //fungsi toggle supaya dipakai di beberapa tempat
-function togglePlay() {
-    if (video.paused) {
-        video.play();
-    } else {
-        video.pause();
+    let hideTimeout = null;
+
+    // =========================
+    // Fungsi toggle play/pause video
+    // =========================
+    function togglePlay() {
+        if (video.paused) video.play();
+        else video.pause();
     }
-}
 
-//hubungkan toggle ke beberapa elemen
-videoOverlay.onclick = togglePlay;
-videoPlayIcon.onclick = togglePlay;
-playPauseBtn.onclick = togglePlay; // pastikan btn juga toggle (jika belum)
-
-//FUNCTION untuk show / hide UI
-let hideTimeout;
-
-function showUI() {
-    clearTimeout(hideTimeout);
-
-    videoOverlay.style.display = "block";
-    videoPlayIcon.style.display = "flex";
-
-    requestAnimationFrame(() => {
-        videoOverlay.style.opacity = "1";
-        videoPlayIcon.style.opacity = "1";
-    });
-}
-
-function hideUI() {
-    videoOverlay.style.opacity = "0";
-    videoPlayIcon.style.opacity = "0";
-
-    setTimeout(() => {
-        videoOverlay.style.display = "none";
-        videoPlayIcon.style.display = "none";
-    }, 2000);
-}
-
-//EVENT: VIDEO PLAY
-video.addEventListener("play", () => {
-    // Set icon menjadi pause
-    playPausePath.setAttribute("d", "M7 6h4v12H7zM13 6h4v12h-4z");
-
-    clearTimeout(hideTimeout);
-
-    // UI hilang setelah 3 detik
-    hideTimeout = setTimeout(() => {
-        hideUI();
-    }, 2000);
-});
-
-//EVENT: VIDEO PAUSE
-video.addEventListener("pause", () => {
-
-    //Tampilkan overlay + icon dulu
-    showUI();
-
-    //Icon play
-    playPausePath.setAttribute("d",
-        "M9 6.5 C8 5.8, 7 6.5, 7 7.7 V16.3 C7 17.5, 8 18.2, 9 17.5 L16.5 12.6 C17.4 12, 17.4 10.9, 16.5 10.3 Z"
-    );
-
-    //UI hilang otomatis
-    hideTimeout = setTimeout(() => {
-        hideUI();
-    }, 2000);
-});
-
-//Saat berhenti (PAUSE), hover harus bisa munculkan play icon
-container.addEventListener("mouseenter", () => {
-    if (video.paused) {
-        showUI(); 
-    }
-});
-
-//EVENT: MOUSEMOVE (hover video) ===
-container.addEventListener("mousemove", () => {
-    if (!video.paused) { 
-        showUI(); 
-    }
-});
-
-container.addEventListener("mousemove", () => {
-    showUI();
-});
-
-//EVENT: MOUSE LEAVE
-container.addEventListener("mouseleave", () => {
-    if (!video.paused) {
-        hideTimeout = setTimeout(() => {
-            hideUI();
-        }, 500);
-    }
-});
-
-
-    //Tampilkan controls saat hover
-    container.addEventListener("mousemove", () => {
-        controls.style.opacity = "1";
-        clearTimeout(controls._hideTimeout);
-        controls._hideTimeout = setTimeout(() => {
-            controls.style.opacity = "0";
-        }, 2000);
-    });
-    container.addEventListener("mouseleave", () => {
-        controls.style.opacity = "0";
-    });
-
-    //Play/Pause
-    playPauseBtn.onclick = () => {
+    // =========================
+    // Fungsi update ikon tombol dan ikon tengah
+    // =========================
+    function updateIcons() {
         if (video.paused) {
-            video.play();
+            const playPath = "M9 6.5 C8 5.8, 7 6.5, 7 7.7 V16.3 C7 17.5, 8 18.2, 9 17.5 L16.5 12.6 C17.4 12, 17.4 10.9, 16.5 10.3 Z";
+            playPausePath.setAttribute("d", playPath);
+            videoPlayPath.setAttribute("d", playPath);
+            videoPlayIcon.style.opacity = "1";
+            videoPlayIcon.style.pointerEvents = "auto";
         } else {
-            video.pause();
+            const pausePath = "M8 6 H10 V18 H8 Z M14 6 H16 V18 H14 Z";
+            playPausePath.setAttribute("d", pausePath);
+            videoPlayPath.setAttribute("d", pausePath);
+            videoPlayIcon.style.opacity = "0";
+            videoPlayIcon.style.pointerEvents = "none";
         }
-    };
-    video.addEventListener("play", () => {
-        //Pause icon 
-        playPausePath.setAttribute("d", "M7 6h4v12H7zM13 6h4v12h-4z");
-    });
-    video.addEventListener("pause", () => {
-        //Play icon 
-        playPausePath.setAttribute("d", "M9 6.5 C8 5.8, 7 6.5, 7 7.7 V16.3 C7 17.5, 8 18.2, 9 17.5 L16.5 12.6 C17.4 12, 17.4 10.9, 16.5 10.3 Z");
+    }
+
+    // =========================
+    // Event tombol play/pause
+    // =========================
+    playPauseBtn.addEventListener("click", () => {
+        togglePlay();
+        updateIcons();
     });
 
-    //Progress Bar
-    video.addEventListener("timeupdate", () => {
-        progressBar.value = (video.currentTime / video.duration) * 100 || 0;
+    // =========================
+    // Event klik icon tengah
+    // =========================
+    videoPlayIcon.addEventListener("click", () => {
+        togglePlay();
+        updateIcons();
     });
+
+    // =========================
+    // Event klik overlay video
+    // =========================
+    videoOverlay.addEventListener("click", () => {
+        togglePlay();
+        updateIcons();
+    });
+
+    // =========================
+    // Sinkronisasi ikon saat video play/pause manual
+    // =========================
+    video.addEventListener("play", updateIcons);
+    video.addEventListener("pause", updateIcons);
+
+    // =========================
+    // Show UI
+    // =========================
+    function showUI() {
+        clearTimeout(hideTimeout);
+        videoOverlay.style.display = "block";
+        videoPlayIcon.style.display = "flex";
+        controls.style.opacity = "1";
+        requestAnimationFrame(() => {
+            videoOverlay.style.opacity = "1";
+            videoPlayIcon.style.opacity = "1";
+        });
+        container.classList.remove("hide-cursor");
+    }
+
+    // =========================
+    // Hide UI
+    // =========================
+    function hideUI() {
+        videoOverlay.style.opacity = "0";
+        videoPlayIcon.style.opacity = "0";
+        controls.style.opacity = "0";
+        hideTimeout = setTimeout(() => {
+            videoOverlay.style.display = "none";
+            videoPlayIcon.style.display = "none";
+            container.classList.add("hide-cursor");
+        }, 3000);
+    }
+
+    // =========================
+    // Auto hide UI setelah play
+    // =========================
+    video.addEventListener("play", () => {
+        hideTimeout = setTimeout(() => hideUI(), 1500);
+    });
+
+    // =========================
+    // Show UI saat pause
+    // =========================
+    video.addEventListener("pause", showUI);
+
+    // =========================
+    // Update progress bar
+    // =========================
+    function updateProgress() {
+        const progress = (video.currentTime / video.duration) * 100 || 0;
+        progressBar.value = progress;
+        progressBar.style.background = `linear-gradient(to right, #65a30d 0%, #65a30d ${progress}%, #fff ${progress}%, #fff 100%)`;
+    }
+
+    video.addEventListener("timeupdate", updateProgress);
     progressBar.addEventListener("input", () => {
         video.currentTime = (progressBar.value / 100) * video.duration;
+        updateProgress();
     });
 
-    //Volume
+    // =========================
+    // Volume control
+    // =========================
     volumeControl.addEventListener("input", () => {
         video.volume = volumeControl.value;
+        let progress = volumeControl.value * 100;
+        volumeControl.style.background = `linear-gradient(to right, #65a30d 0%, #65a30d ${progress}%, #fff ${progress}%, #fff 100%)`;
     });
 
-    //Fullscreen
-    fullscreenBtn.onclick = () => {
-        if (document.fullscreenElement) {
-            document.exitFullscreen();
-        } else {
-            container.requestFullscreen();
+    // =========================
+    // Fullscreen
+    // =========================
+    fullscreenBtn.addEventListener("click", () => {
+        if (!document.fullscreenElement) container.requestFullscreen();
+        else document.exitFullscreen();
+    });
+
+    document.addEventListener("fullscreenchange", () => {
+        container.classList.remove("hide-cursor");
+        showUI();
+    });
+
+    // =========================
+    // Show UI on mouse move
+    // =========================
+    container.addEventListener("mousemove", () => {
+        showUI();
+        if (!video.paused) {
+            clearTimeout(hideTimeout);
+            hideTimeout = setTimeout(() => hideUI(), 3000);
         }
-    };
+    });
+
+    container.addEventListener("mouseleave", () => {
+        if (!video.paused) hideUI();
+    });
+
+    // Inisialisasi ikon awal
+    updateIcons();
+    updateProgress();
 });
 </script>
 
+<style>
+/* Agar video dan overlay memenuhi layar saat fullscreen */
+#videoContainer:fullscreen {
+    width: 100vw !important;
+    height: 100vh !important;
+    max-width: 100vw !important;
+    max-height: 100vh !important;
+    border-radius: 0 !important;
+}
+
+#videoContainer:fullscreen video {
+    width: 100vw !important;
+    height: 100vh !important;
+    object-fit: contain !important;
+    border-radius: 0 !important;
+}
+
+#videoContainer:fullscreen #videoOverlay,
+#videoContainer:fullscreen #videoPlayIcon,
+#videoContainer:fullscreen #videoControls {
+    border-radius: 0 !important;
+}
+
+.hide-cursor {
+    cursor: none !important;
+}
+
+/* TRACK SLIDER */
+#progressBar {
+    height: 6px;
+    border-radius: 9999px;
+    background: #ffffffff; /* gray-700 */
+    outline: none;
+}
+
+/* BULATAN (THUMB) CHROME / SAFARI / EDGE */
+#progressBar::-webkit-slider-thumb {
+    appearance: none;
+    width: 18px;   /* ukuran bulatan */
+    height: 18px;  /* ukuran bulatan */
+    background: #65a30d; /* lime-600 */
+    border-radius: 9999px;
+    cursor: pointer;
+    border: none;
+}
+
+/* BULATAN FIREFOX */
+#progressBar::-moz-range-thumb {
+    width: 18px;
+    height: 18px;
+    background: #65a30d;
+    border-radius: 9999px;
+    cursor: pointer;
+    border: none;
+}
+
+
+#volumeControl {
+    height: 6px;
+    border-radius: 9999px;
+    background:  #65a30d; /* gray-700 */
+    outline: none;
+}
+
+/* BULATAN (THUMB) CHROME / SAFARI / EDGE */
+#volumeControl::-webkit-slider-thumb {
+    appearance: none;
+    width: 18px;   /* ukuran bulatan */
+    height: 18px;  /* ukuran bulatan */
+    background: #65a30d; /* lime-600 */
+    border-radius: 9999px;
+    cursor: pointer;
+    border: none;
+}
+
+/* BULATAN FIREFOX */
+#volumeControl:-moz-range-thumb {
+    width: 18px;
+    height: 18px;
+    background: #65a30d;
+    border-radius: 9999px;
+    cursor: pointer;
+    border: none;
+}
+</style>
 
 {{-- <div class="mt-32">
     <p class="text-6xl font-semibold text-center text-lime-600 mb-10">
