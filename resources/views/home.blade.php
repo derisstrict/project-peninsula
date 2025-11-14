@@ -52,15 +52,71 @@ src="img/placeholder.jpg" alt="img-peninsula-island">
 <!-- /Landing Page -->
 
 <!-- Video -->
- <div class="relative mt-32 rounded-xl overflow-hidden group cursor-pointer">
-    <img class="h-200 w-full object-cover" src="/img/placeholder.jpg" alt="video">
-    <div class="absolute inset-0 bg-black/45 group-hover:bg-black/65 transition-colors duration-700"></div>
-    <div class="absolute inset-0 flex flex-col gap-5 items-center justify-center">
-        <x-local-icon class="text-white transition-colors duration-700 group-hover:text-lime-600" icon="play" width="48px" height="48px" fill="currentColor" viewBox="-0.5 0 7 7" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"></x-local-icon>
-        <p class="text-white">Play the video</p>
+<div id="videoContainer" class="relative mt-32 rounded-xl overflow-hidden group">
+    <!-- VIDEO -->
+    <video 
+        id="myVideo"
+        class="h-170 w-full object-cover"
+        poster="/img/thumbnail.png">
+        <source src="/img/peninsula.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <!-- OVERLAY -->
+    <div id="videoOverlay"
+        class="absolute inset-0 bg-black/45 transition-opacity duration-500 z-10">
     </div>
- </div>
- <!-- /Video -->
+
+    <!-- ICON + TEXT -->
+    <div id="videoPlayIcon"
+        class="absolute inset-0 flex flex-col gap-1 items-center justify-center transition-all duration-500 
+            opacity-100 scale-100 z-20 pointer-events-auto cursor-pointer">
+
+        <svg width="100" height="100" viewBox="0 0 24 24"
+            class="text-white group-hover:text-lime-500 transition-all duration-500">
+            <path fill="currentColor"
+                d="M9 6.5 C8 5.8, 7 6.5, 7 7.7 V16.3 C7 17.5, 8 18.2, 9 17.5 L16.5 12.6 C17.4 12, 17.4 10.9, 16.5 10.3 Z"/>
+        </svg>
+
+        <p class="text-white text-lg">Play/Pause</p>
+    </div>
+
+
+    <!-- CUSTOM CONTROLS -->
+    <div id="videoControls"
+         class="absolute bottom-0 left-0 right-0 p-4 flex items-center gap-4 
+                opacity-0 transition-opacity duration-500 z-20">
+
+        <!-- Play / Pause Button -->
+        <button id="playPauseBtn" class="text-white text-3xl flex items-center justify-center w-12 h-12">
+            <svg id="playPauseIcon" width="40" height="40" viewBox="0 0 24 24" fill="currentColor">
+                <path id="playPausePath"
+                    d="M9 6.5 C8 5.8, 7 6.5, 7 7.7 V16.3 C7 17.5, 8 18.2, 9 17.5 L16.5 12.6 C17.4 12, 17.4 10.9, 16.5 10.3 Z"/>
+            </svg>
+        </button>
+
+        <!-- Progress Bar -->
+        <input type="range" id="progressBar" value="0" min="0" max="100"
+               class="w-full">
+
+        <!-- Volume -->
+        <div class="flex items-center gap-2">
+            <!-- Volume Icon -->
+            <svg id="volumeIcon" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"
+                class="text-white">
+                <path d="M3 10v4h4l5 5V5l-5 5H3zm13.5 2c0-1.77-1.02-3.29-2.5-4.03v8.06c1.48-.74 2.5-2.26 2.5-4.03z"/>
+            </svg>
+            <input type="range" id="volumeControl" min="0" max="1" step="0.05" value="1" 
+                class="w-28">
+        </div>
+
+        <!-- Fullscreen -->
+        <button id="fullscreenBtn" class="text-white text-2xl">
+            ⛶
+        </button>
+    </div>
+</div>
+<!-- /Video -->
 
 <!-- Gallery -->
 <div class="mt-32 relative">
@@ -362,9 +418,170 @@ function nextImage() {
 document.addEventListener('keydown', function(e) {
     if (e.key === "Escape") closeModal();
 });
+
+// Video control
+document.addEventListener("DOMContentLoaded", () => {
+    const video = document.getElementById("myVideo");
+    const controls = document.getElementById("videoControls");
+    const playPausePath = document.getElementById("playPausePath");
+    const progressBar = document.getElementById("progressBar");
+    const volumeControl = document.getElementById("volumeControl");
+    const fullscreenBtn = document.getElementById("fullscreenBtn");
+    const container = document.getElementById("videoContainer");
+    const videoOverlay = document.getElementById("videoOverlay");
+    const videoPlayIcon = document.getElementById("videoPlayIcon");
+
+    //fungsi toggle supaya dipakai di beberapa tempat
+function togglePlay() {
+    if (video.paused) {
+        video.play();
+    } else {
+        video.pause();
+    }
+}
+
+//hubungkan toggle ke beberapa elemen
+videoOverlay.onclick = togglePlay;
+videoPlayIcon.onclick = togglePlay;
+playPauseBtn.onclick = togglePlay; // pastikan btn juga toggle (jika belum)
+
+//FUNCTION untuk show / hide UI
+let hideTimeout;
+
+function showUI() {
+    clearTimeout(hideTimeout);
+
+    videoOverlay.style.display = "block";
+    videoPlayIcon.style.display = "flex";
+
+    requestAnimationFrame(() => {
+        videoOverlay.style.opacity = "1";
+        videoPlayIcon.style.opacity = "1";
+    });
+}
+
+function hideUI() {
+    videoOverlay.style.opacity = "0";
+    videoPlayIcon.style.opacity = "0";
+
+    setTimeout(() => {
+        videoOverlay.style.display = "none";
+        videoPlayIcon.style.display = "none";
+    }, 2000);
+}
+
+//EVENT: VIDEO PLAY
+video.addEventListener("play", () => {
+    // Set icon menjadi pause
+    playPausePath.setAttribute("d", "M7 6h4v12H7zM13 6h4v12h-4z");
+
+    clearTimeout(hideTimeout);
+
+    // UI hilang setelah 3 detik
+    hideTimeout = setTimeout(() => {
+        hideUI();
+    }, 2000);
+});
+
+//EVENT: VIDEO PAUSE
+video.addEventListener("pause", () => {
+
+    //Tampilkan overlay + icon dulu
+    showUI();
+
+    //Icon play
+    playPausePath.setAttribute("d",
+        "M9 6.5 C8 5.8, 7 6.5, 7 7.7 V16.3 C7 17.5, 8 18.2, 9 17.5 L16.5 12.6 C17.4 12, 17.4 10.9, 16.5 10.3 Z"
+    );
+
+    //UI hilang otomatis
+    hideTimeout = setTimeout(() => {
+        hideUI();
+    }, 2000);
+});
+
+//Saat berhenti (PAUSE), hover harus bisa munculkan play icon
+container.addEventListener("mouseenter", () => {
+    if (video.paused) {
+        showUI(); 
+    }
+});
+
+//EVENT: MOUSEMOVE (hover video) ===
+container.addEventListener("mousemove", () => {
+    if (!video.paused) { 
+        showUI(); 
+    }
+});
+
+container.addEventListener("mousemove", () => {
+    showUI();
+});
+
+//EVENT: MOUSE LEAVE
+container.addEventListener("mouseleave", () => {
+    if (!video.paused) {
+        hideTimeout = setTimeout(() => {
+            hideUI();
+        }, 500);
+    }
+});
+
+
+    //Tampilkan controls saat hover
+    container.addEventListener("mousemove", () => {
+        controls.style.opacity = "1";
+        clearTimeout(controls._hideTimeout);
+        controls._hideTimeout = setTimeout(() => {
+            controls.style.opacity = "0";
+        }, 2000);
+    });
+    container.addEventListener("mouseleave", () => {
+        controls.style.opacity = "0";
+    });
+
+    //Play/Pause
+    playPauseBtn.onclick = () => {
+        if (video.paused) {
+            video.play();
+        } else {
+            video.pause();
+        }
+    };
+    video.addEventListener("play", () => {
+        //Pause icon 
+        playPausePath.setAttribute("d", "M7 6h4v12H7zM13 6h4v12h-4z");
+    });
+    video.addEventListener("pause", () => {
+        //Play icon 
+        playPausePath.setAttribute("d", "M9 6.5 C8 5.8, 7 6.5, 7 7.7 V16.3 C7 17.5, 8 18.2, 9 17.5 L16.5 12.6 C17.4 12, 17.4 10.9, 16.5 10.3 Z");
+    });
+
+    //Progress Bar
+    video.addEventListener("timeupdate", () => {
+        progressBar.value = (video.currentTime / video.duration) * 100 || 0;
+    });
+    progressBar.addEventListener("input", () => {
+        video.currentTime = (progressBar.value / 100) * video.duration;
+    });
+
+    //Volume
+    volumeControl.addEventListener("input", () => {
+        video.volume = volumeControl.value;
+    });
+
+    //Fullscreen
+    fullscreenBtn.onclick = () => {
+        if (document.fullscreenElement) {
+            document.exitFullscreen();
+        } else {
+            container.requestFullscreen();
+        }
+    };
+});
 </script>
 
-{{-- Maps --}}
+
 {{-- <div class="mt-32">
     <p class="text-6xl font-semibold text-center text-lime-600 mb-10">
         Explore <span class="text-light-primary">What'Inside</span>
