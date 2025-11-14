@@ -126,23 +126,25 @@ src="img/placeholder.jpg" alt="img-peninsula-island">
     var projHeight = pxHeight / zoomLvl;
     var projWidth = pxWidth / zoomLvl - widthOffset;
     var bounds = [[-projHeight, 0], [0, projWidth]];
+    
     var map = L.map('mapContainer', {
         //center: [60, 50],
         crs: L.CRS.Simple,
-        center: [0, 0],
-        zoom: 3,
-        maxBoundsViscosity: 1.0
+        center: [projHeight/2-100, projWidth/2],
+        zoom: 4,
+        maxBoundsViscosity: 1.0,
+        attributionControl: false
     });
 
     map.setMaxBounds(bounds);
 
-    L.tileLayer('{{ asset('storage/map/tiles/{z}/{x}/{y}.png') }}', {
+    var tilesPath = "{{ asset('storage/map/tiles/{z}/{x}/{y}.png') }}";
+
+    L.tileLayer(tilesPath, {
         minZoom: 3,
         maxZoom: 5,
         noWrap: true,
     }).addTo(map);
-
-    asset('storage/map/tiles/{z}/{x}/{y}.png')
 
 </script>
 
@@ -231,95 +233,5 @@ src="img/placeholder.jpg" alt="img-peninsula-island">
     </div>
 </div>
 <!--Isi Activity-->
-
-<!-- <script>
-const container = document.getElementById('mapContainer');
-const img = container.querySelector('img');
-
-let scale = 1,
-    posX = 0,
-    posY = 0,
-    startX = 0,
-    startY = 0,
-    dragging = false;
-
-function applyTransform() {
-    img.style.transform = `translate(${posX}px, ${posY}px) scale(${scale})`;
-}
-
-function limitPosition() {
-    const rect = container.getBoundingClientRect();
-    const imgWidth = img.naturalWidth * scale;
-    const imgHeight = img.naturalHeight * scale;
-
-    const maxX = Math.max((imgWidth - rect.width) / 2, 0);
-    const maxY = Math.max((imgHeight - rect.height) / 2, 0);
-
-    posX = Math.min(Math.max(posX, -maxX), maxX);
-    posY = Math.min(Math.max(posY, -maxY), maxY);
-}
-
-// Zoom pakai tombol
-document.getElementById('zoomIn').onclick = () => {
-    scale = Math.min(scale + 0.2, 4);
-    limitPosition();
-    applyTransform();
-};
-document.getElementById('zoomOut').onclick = () => {
-    scale = Math.max(scale - 0.2, 1);
-    limitPosition();
-    applyTransform();
-};
-
-// Scroll zoom
-img.addEventListener('wheel', e => {
-    e.preventDefault();
-    const delta = e.deltaY > 0 ? -0.1 : 0.1;
-    scale = Math.min(Math.max(1, scale + delta), 4);
-    limitPosition();
-    applyTransform();
-});
-
-// Drag (sekali klik, langsung jalan, lepas langsung diem)
-img.addEventListener('mousedown', e => {
-    dragging = true;
-    startX = e.clientX - posX;
-    startY = e.clientY - posY;
-    img.style.cursor = 'grabbing';
-});
-
-window.addEventListener('mousemove', e => {
-    if (!dragging) return;
-    posX = e.clientX - startX;
-    posY = e.clientY - startY;
-    limitPosition();
-    applyTransform();
-
-    // kalo gerakan udah kecil banget (berhentiin otomatis)
-    clearTimeout(img._stopTimeout);
-    img._stopTimeout = setTimeout(() => {
-        dragging = false;
-        img.style.cursor = 'grab';
-    }, 100); // 0.1 detik tanpa gerak = stop drag
-});
-
-window.addEventListener('mouseup', () => {
-    dragging = false;
-    img.style.cursor = 'grab';
-});
-</script> -->
-
-{{-- Maps --}}
-{{-- <div class="mt-32">
-    <p class="text-6xl font-semibold text-center text-lime-600 mb-10">
-        Explore <span class="text-light-primary">What'Inside</span>
-    </p>
-    <div class="max-w-5xl h-[30rem] bg-slate-300 mx-auto mb-32 bg-cover rounded-2xl"
-        style="background-image: url(./img/map.jpeg)">
-    </div>
-</div> --}}
-
-
-
 @endsection
 
