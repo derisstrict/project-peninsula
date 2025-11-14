@@ -6,7 +6,7 @@ use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class Icon extends Component
+class LocalIcon extends Component
 {
     public $icon;
     /**
@@ -25,6 +25,6 @@ class Icon extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.icon');
+        return view('components.local-icon');
     }
 }

@@ -5,9 +5,9 @@
     <p class="mt-2">Starting price</p>
     <div class="flex items-center">
         <p class="font-bold text-2xl mr-auto">IDR <span class="text-lime-600">{{ $price }}</span></p>
-        <x-icon x-show="open" x-transition:enter="transition ease-out duration-100"
+        <x-local-icon x-show="open" x-transition:enter="transition ease-out duration-100"
         x-transition:enter-start="opacity-0 translate-y-5"
         x-transition:enter-end="opacity-100 scale-100"
-        x-transition:leave="transition ease-in duration-100" x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 translate-y-5" icon="arrow" width="24px" height="24px" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" xmlns="http://www.w3.org/2000/svg"></x-icon>        
+        x-transition:leave="transition ease-in duration-100" x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 translate-y-5" icon="arrow" width="24px" height="24px" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" xmlns="http://www.w3.org/2000/svg"></x-local-icon>        
     </div>
 </a>
