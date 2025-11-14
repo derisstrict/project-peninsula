@@ -164,7 +164,7 @@ src="img/placeholder.jpg" alt="img-peninsula-island">
         <span class="text-lime-600">Things</span> You Can Do
     </p>
     <p class="mt-6 max-w-4xl text-xl text-center mx-auto">
-        Let's make your free time more meaningful! Here are five easy activity ideas you can do alone or with loved ones to recharge your batteries and improve your quality of life.
+        Let's make your free time more meaningful! Here are six easy activity ideas you can do alone or with loved ones to recharge your batteries and improve your quality of life.
     </p>
 </div>
 
@@ -202,13 +202,18 @@ src="img/placeholder.jpg" alt="img-peninsula-island">
             <p class="mt-2">Put your gadgets aside and spend unforgettable time with your loved ones. Prepare your favorite food and enjoy a delicious meal in the park or by the lake, making it the perfect opportunity to bond with your family while breathing in the fresh air.</p>
         </div>
     </div>
-</div>
-<div class="flex justify-center mt-5 mb-6">
-    <div class="infobox-accent max-w-1/2 flex-col">
+        <div class="infobox-accent">
         <div class="m-4">
             <x-local-icon class="text-lime-600" icon="yoga" width="45" height="45" viewBox="0 0 45 45" fill="currentColor" xmlns="http://www.w3.org/2000/svg"></x-local-icon>
             <h3 class="font-bold mt-2">Yoga</h3>
             <p class="mt-2">Focus your attention on harmonizing your breathing with gentle but purposeful body movements. Regular yoga practice is ideal for increasing joint and muscle flexibility, relieving physical tension caused by stress, and achieving a state of deep mental calm.</p>
+        </div>
+    </div>
+        <div class="infobox-accent">
+        <div class="m-4">
+            <x-local-icon class="text-lime-600" icon="children-games" width="45" height="45" viewBox="0 0 45 45" fill="currentColor" xmlns="http://www.w3.org/2000/svg"></x-local-icon> 
+            <h3 class="font-bold mt-2">Children Games</h3>
+            <p class="mt-2">Unleash your child's energy with a fun, running adventure on Peninsula Island's vast, safe green expanse. Here, surrounded by stunning ocean views, every game becomes a beautiful memory.</p>
         </div>
     </div>
 </div>
