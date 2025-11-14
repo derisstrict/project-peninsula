@@ -109,18 +109,44 @@ src="img/placeholder.jpg" alt="img-peninsula-island">
         <span class="text-lime-600">Explore </span>What's Inside
     </p>
 
-    <div class="relative h-[40rem] mx-auto mb-32 overflow-hidden rounded-2xl shadow-lg bg-gray-200">
+    <div class="h-[40rem] mx-auto mb-32 overflow-hidden rounded-2xl shadow-lg bg-gray-200">
         <div id="mapContainer" class="w-full h-full cursor-grab active:cursor-grabbing" onmousedown="return false">
-            <img src="./img/map.jpeg" alt="Map" class="w-full h-full object-cover">
-        </div>
-
-        <div class="absolute bottom-4 right-4 flex flex-col space-y-2">
-            <button id="zoomIn" class="bg-white border rounded-full p-2 shadow hover:bg-gray-100">+</button>
-            <button id="zoomOut" class="bg-white border rounded-full p-2 shadow hover:bg-gray-100">−</button>
         </div>
     </div>
 </div>
 <!-- /Spots Map -->
+
+<script>
+
+    var tileSize = 256;
+    var pxHeight = 3 * tileSize;
+    var pxWidth = 6 * tileSize;
+    var zoomLvl = 2**3;
+    var widthOffset = 10;
+    var projHeight = pxHeight / zoomLvl;
+    var projWidth = pxWidth / zoomLvl - widthOffset;
+    var bounds = [[-projHeight, 0], [0, projWidth]];
+    var map = L.map('mapContainer', {
+        //center: [60, 50],
+        crs: L.CRS.Simple,
+        center: [0, 0],
+        zoom: 3,
+        maxBoundsViscosity: 1.0
+    });
+
+    map.setMaxBounds(bounds);
+
+    L.tileLayer('{{ asset('storage/map/tiles/{z}/{x}/{y}.png') }}', {
+        minZoom: 3,
+        maxZoom: 5,
+        noWrap: true,
+    }).addTo(map);
+
+    asset('storage/map/tiles/{z}/{x}/{y}.png')
+
+</script>
+
+<x-map-marker xpos="-65" ypos="56" title="Helipad" desc="Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus amet iusto soluta enim ipsa dignissimos?" img="/img/placeholder.jpg"></x-map-marker>
 
 <!-- Where's the Location -->
 <div class="relative flex flex-col">
@@ -134,7 +160,7 @@ src="img/placeholder.jpg" alt="img-peninsula-island">
             It sits within the ITDC (Indonesia Tourism Development Corporation) complex,
             a gated resort area known for its luxury hotels and pristine beaches.
         </p>
-        <a href="/" class="btn-primary p-4 mt-5 self-center w-fit md:mt-5">
+        <a href="https://www.google.com/maps/place/Peninsula+Island/@-8.8025875,115.2374891,18.12z/data=!4m6!3m5!1s0x2dd242d7ab709d33:0x39de1606c19ad392!8m2!3d-8.8025715!4d115.2385947!16s%2Fg%2F1q6crdh9p!5m1!1e1?entry=ttu&g_ep=EgoyMDI1MTExMS4wIKXMDSoASAFQAw%3D%3D" class="btn-primary p-4 mt-5 self-center w-fit md:mt-5">
             <x-local-icon icon="google-maps" xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" viewBox="0 0 48 48"></x-local-icon>
             <span class="text-sm">Take me to Google Maps</span>
             <x-local-icon icon="external-link" width="16px" height="16px" viewBox="0 0 24 24" fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg"></x-local-icon>
@@ -146,15 +172,7 @@ src="img/placeholder.jpg" alt="img-peninsula-island">
 
 <!-- Google Maps -->
 <div class="relative w-full h-[40rem] mt-10 mx-auto mb-32 overflow-hidden rounded-2xl shadow-lg bg-gray-200">
-    <div id="mapContainer" class="w-full h-full cursor-grab active:cursor-grabbing" onmousedown="return false">
-        <img src="./img/maps.png" alt="Map" class="w-full h-full object-cover">
-    </div>
-
-    {{-- Tombol --}}
-    <div class="absolute bottom-4 right-4 flex flex-col space-y-2">
-        <button id="zoomIn" class="bg-white border rounded-full p-2 shadow hover:bg-gray-100">+</button>
-        <button id="zoomOut" class="bg-white border rounded-full p-2 shadow hover:bg-gray-100">−</button>
-    </div>
+    <iframe class="w-full h-full" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1807.793096453511!2d115.2374891438277!3d-8.802587533390318!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd242d7ab709d33%3A0x39de1606c19ad392!2sPeninsula%20Island!5e0!3m2!1sen!2sid!4v1763101198309!5m2!1sen!2sid" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 </div>
 <!-- /Google Maps -->
 
@@ -214,7 +232,7 @@ src="img/placeholder.jpg" alt="img-peninsula-island">
 </div>
 <!--Isi Activity-->
 
-<script>
+<!-- <script>
 const container = document.getElementById('mapContainer');
 const img = container.querySelector('img');
 
@@ -289,7 +307,7 @@ window.addEventListener('mouseup', () => {
     dragging = false;
     img.style.cursor = 'grab';
 });
-</script>
+</script> -->
 
 {{-- Maps --}}
 {{-- <div class="mt-32">
