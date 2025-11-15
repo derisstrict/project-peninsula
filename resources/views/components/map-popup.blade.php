@@ -1,4 +1,4 @@
-<div x-show="openMapPopup" x-transition:enter="transition ease-in-out duration-100" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="transition ease-in-out duration-100" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" id="overlay" class="fixed inset-0 bg-black/50 z-1000 dark:bg-black/75">
+<div x-show="openMapPopup" x-transition:enter="transition ease-in-out duration-100" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="transition ease-in-out duration-100" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" id="overlay" class="fixed inset-0 bg-black/50 z-1000 backdrop-blur-xs dark:bg-black/75">
     <div @click.outside="openMapPopup = false" class="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-bglight rounded-2xl shadow-lg w-[90%] max-w-[1000px] max-h-[100vh] scrollbar-hide border-2 border-dark-primary px-8 py-8 dark:bg-bgdark dark:border-light-primary">
         <div class="relative flex flex-row gap-2">
             <p class="text-xl font-semibold text-lime-600">About Place</p>
