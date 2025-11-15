@@ -148,7 +148,14 @@ src="img/placeholder.jpg" alt="img-peninsula-island">
 
 </script>
 
-<x-map-marker xpos="-65" ypos="56" title="Helipad" desc="Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus amet iusto soluta enim ipsa dignissimos?" img="/img/placeholder.jpg"></x-map-marker>
+<?php 
+    use App\Models\Spot;
+    $data = Spot::find(1);
+?>
+
+<x-map-marker xpos="-65" ypos="56" title="{{ $data->title }}" desc="{{ $data->keterangan }}" img="/img/placeholder.jpg"></x-map-marker>
+
+<x-map-popup title="{{ $data->title }}" desc="{{ $data->keterangan }}" note="{{ $data->catatan }}" images="{{ $data->url_media }}"></x-map-popup>
 
 <!-- Where's the Location -->
 <div class="relative flex flex-col">

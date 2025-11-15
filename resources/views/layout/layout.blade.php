@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html x-data="{ toggleTheme: $persist(false) }" :class="toggleTheme ? '' : 'dark'" lang="en">
+<html x-data="{ toggleTheme: $persist(false), openMapPopup: false }" :class="toggleTheme ? '' : 'dark'" lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
