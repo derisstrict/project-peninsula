@@ -18,6 +18,7 @@ return new class extends Migration
             $table->text('isi_blog')->nullable(false);
             $table->string('gambar_blog', 100)->nullable(false);
             $table->string('tanggal_blog', 50)->nullable(false);
+            $table->string('slug', 100)->nullable(false);
             $table->foreign('id_user')->references('id')->on('admin')->onDelete('cascade');
         });
     }

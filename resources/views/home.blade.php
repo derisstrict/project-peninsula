@@ -104,21 +104,53 @@ src="img/placeholder.jpg" alt="img-peninsula-island">
 <!-- /Gallery -->
     
 <!-- Spots Map -->
-<div class="mt-32">
+<div x-data="{ title: '', desc: '', note: '', images: '' }"  class="mt-32">
     <p class="text-3xl font-semibold text-center mb-10 md:text-6xl">
         <span class="text-lime-600">Explore </span>What's Inside
     </p>
 
-    <div class="relative h-[40rem] mx-auto mb-32 overflow-hidden rounded-2xl shadow-lg bg-gray-200">
-        <div id="mapContainer" class="w-full h-full cursor-grab active:cursor-grabbing" onmousedown="return false">
-            <img src="./img/map.jpeg" alt="Map" class="w-full h-full object-cover">
-        </div>
-
-        <div class="absolute bottom-4 right-4 flex flex-col space-y-2">
-            <button id="zoomIn" class="bg-white border rounded-full p-2 shadow hover:bg-gray-100">+</button>
-            <button id="zoomOut" class="bg-white border rounded-full p-2 shadow hover:bg-gray-100">−</button>
+    <div class="h-[40rem] mx-auto mb-32 overflow-hidden rounded-2xl shadow-lg bg-gray-200">
+        <div id="mapContainer" class="w-full h-full cursor-grab active:cursor-grabbing">
         </div>
     </div>
+
+    <script>
+    var tileSize = 256;
+    var pxHeight = 3 * tileSize;
+    var pxWidth = 6 * tileSize;
+    var zoomLvl = 2**3;
+    var widthOffset = 10;
+    var projHeight = pxHeight / zoomLvl;
+    var projWidth = pxWidth / zoomLvl - widthOffset;
+    var bounds = [[-projHeight, 0], [0, projWidth]];
+    
+    var map = L.map('mapContainer', {
+        //center: [60, 50],
+        crs: L.CRS.Simple,
+        center: [projHeight/2-100, projWidth/2],
+        zoom: 4,
+        maxBoundsViscosity: 1.0,
+        attributionControl: false
+    });
+
+    map.setMaxBounds(bounds);
+
+    var tilesPath = "{{ asset('storage/map/tiles/{z}/{x}/{y}.png') }}";
+
+    L.tileLayer(tilesPath, {
+        minZoom: 3,
+        maxZoom: 5,
+        noWrap: true,
+    }).addTo(map);
+    </script>
+
+    <div>
+        @foreach ($spots as $spot)
+            <x-map-marker xpos="{{ $spot->xpos }}" ypos="{{ $spot->ypos }}" title="{{ $spot->title }}" desc="{{ $spot->keterangan }}" note="{{ $spot->catatan }}" images="{{ $spot->url_media }}"></x-map-marker>
+        @endforeach
+        <x-map-popup></x-map-popup>
+    </div>
+
 </div>
 <!-- /Spots Map -->
 
@@ -134,7 +166,7 @@ src="img/placeholder.jpg" alt="img-peninsula-island">
             It sits within the ITDC (Indonesia Tourism Development Corporation) complex,
             a gated resort area known for its luxury hotels and pristine beaches.
         </p>
-        <a href="/" class="btn-primary p-4 mt-5 self-center w-fit md:mt-5">
+        <a href="https://www.google.com/maps/place/Peninsula+Island/@-8.8025875,115.2374891,18.12z/data=!4m6!3m5!1s0x2dd242d7ab709d33:0x39de1606c19ad392!8m2!3d-8.8025715!4d115.2385947!16s%2Fg%2F1q6crdh9p!5m1!1e1?entry=ttu&g_ep=EgoyMDI1MTExMS4wIKXMDSoASAFQAw%3D%3D" class="btn-primary p-4 mt-5 self-center w-fit md:mt-5">
             <x-local-icon icon="google-maps" xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" viewBox="0 0 48 48"></x-local-icon>
             <span class="text-sm">Take me to Google Maps</span>
             <x-local-icon icon="external-link" width="16px" height="16px" viewBox="0 0 24 24" fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg"></x-local-icon>
@@ -146,15 +178,7 @@ src="img/placeholder.jpg" alt="img-peninsula-island">
 
 <!-- Google Maps -->
 <div class="relative w-full h-[40rem] mt-10 mx-auto mb-32 overflow-hidden rounded-2xl shadow-lg bg-gray-200">
-    <div id="mapContainer" class="w-full h-full cursor-grab active:cursor-grabbing" onmousedown="return false">
-        <img src="./img/maps.png" alt="Map" class="w-full h-full object-cover">
-    </div>
-
-    {{-- Tombol --}}
-    <div class="absolute bottom-4 right-4 flex flex-col space-y-2">
-        <button id="zoomIn" class="bg-white border rounded-full p-2 shadow hover:bg-gray-100">+</button>
-        <button id="zoomOut" class="bg-white border rounded-full p-2 shadow hover:bg-gray-100">−</button>
-    </div>
+    <iframe class="w-full h-full" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1807.793096453511!2d115.2374891438277!3d-8.802587533390318!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd242d7ab709d33%3A0x39de1606c19ad392!2sPeninsula%20Island!5e0!3m2!1sen!2sid!4v1763101198309!5m2!1sen!2sid" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 </div>
 <!-- /Google Maps -->
 
@@ -218,95 +242,5 @@ src="img/placeholder.jpg" alt="img-peninsula-island">
     </div>
 </div>
 <!--Isi Activity-->
-
-<script>
-const container = document.getElementById('mapContainer');
-const img = container.querySelector('img');
-
-let scale = 1,
-    posX = 0,
-    posY = 0,
-    startX = 0,
-    startY = 0,
-    dragging = false;
-
-function applyTransform() {
-    img.style.transform = `translate(${posX}px, ${posY}px) scale(${scale})`;
-}
-
-function limitPosition() {
-    const rect = container.getBoundingClientRect();
-    const imgWidth = img.naturalWidth * scale;
-    const imgHeight = img.naturalHeight * scale;
-
-    const maxX = Math.max((imgWidth - rect.width) / 2, 0);
-    const maxY = Math.max((imgHeight - rect.height) / 2, 0);
-
-    posX = Math.min(Math.max(posX, -maxX), maxX);
-    posY = Math.min(Math.max(posY, -maxY), maxY);
-}
-
-// Zoom pakai tombol
-document.getElementById('zoomIn').onclick = () => {
-    scale = Math.min(scale + 0.2, 4);
-    limitPosition();
-    applyTransform();
-};
-document.getElementById('zoomOut').onclick = () => {
-    scale = Math.max(scale - 0.2, 1);
-    limitPosition();
-    applyTransform();
-};
-
-// Scroll zoom
-img.addEventListener('wheel', e => {
-    e.preventDefault();
-    const delta = e.deltaY > 0 ? -0.1 : 0.1;
-    scale = Math.min(Math.max(1, scale + delta), 4);
-    limitPosition();
-    applyTransform();
-});
-
-// Drag (sekali klik, langsung jalan, lepas langsung diem)
-img.addEventListener('mousedown', e => {
-    dragging = true;
-    startX = e.clientX - posX;
-    startY = e.clientY - posY;
-    img.style.cursor = 'grabbing';
-});
-
-window.addEventListener('mousemove', e => {
-    if (!dragging) return;
-    posX = e.clientX - startX;
-    posY = e.clientY - startY;
-    limitPosition();
-    applyTransform();
-
-    // kalo gerakan udah kecil banget (berhentiin otomatis)
-    clearTimeout(img._stopTimeout);
-    img._stopTimeout = setTimeout(() => {
-        dragging = false;
-        img.style.cursor = 'grab';
-    }, 100); // 0.1 detik tanpa gerak = stop drag
-});
-
-window.addEventListener('mouseup', () => {
-    dragging = false;
-    img.style.cursor = 'grab';
-});
-</script>
-
-{{-- Maps --}}
-{{-- <div class="mt-32">
-    <p class="text-6xl font-semibold text-center text-lime-600 mb-10">
-        Explore <span class="text-light-primary">What'Inside</span>
-    </p>
-    <div class="max-w-5xl h-[30rem] bg-slate-300 mx-auto mb-32 bg-cover rounded-2xl"
-        style="background-image: url(./img/map.jpeg)">
-    </div>
-</div> --}}
-
-
-
 @endsection
 
