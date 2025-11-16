@@ -12,7 +12,8 @@ class MapMarker extends Component
     public $ypos;
     public $title;
     public $desc;
-    public $img;
+    public $note;
+    public $images;
 
     /**
      * Create a new component instance.
@@ -22,14 +23,16 @@ class MapMarker extends Component
         $ypos = "", 
         $title = "", 
         $desc = "", 
-        $img = "",
+        $note = "", 
+        $images = "",
     )
     {
         $this->xpos = $xpos;
         $this->ypos = $ypos;
         $this->title = $title;
         $this->desc = $desc;
-        $this->img = $img;
+        $this->note = $note;
+        $this->images = $images;
     }
 
     /**

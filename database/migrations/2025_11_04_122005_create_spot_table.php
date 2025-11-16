@@ -13,6 +13,8 @@ return new class extends Migration
     {
         Schema::create('spot', function (Blueprint $table){
             $table->id();
+            $table->string('xpos', 15)->nullable(false);
+            $table->string('ypos', 15)->nullable(false);
             $table->string('title', 50)->nullable(false);
             $table->string('url_media', 255)->nullable(false);
             $table->string('catatan', 50)->nullable(true);

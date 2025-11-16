@@ -1,11 +1,12 @@
 <?php
 
 use App\Models\Blog;
+use App\Models\Spot;
 use Illuminate\Support\Facades\Route;
 use App\Models\Event;
 
 Route::get('/', function () {
-    return view('home');
+    return view('home', ['spots' => Spot::all()]);
 });
 
 Route::get('/blogs', function () {

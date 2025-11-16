@@ -12,6 +12,6 @@ class Spot extends Model
         'url_media' => 'array',
     ];
     protected $fillable = [
-        'title', 'url_media', 'catatan', 'keterangan'
+        'xpos', 'ypos', 'title', 'url_media', 'catatan', 'keterangan'
     ];
 }

@@ -104,20 +104,17 @@ src="img/placeholder.jpg" alt="img-peninsula-island">
 <!-- /Gallery -->
     
 <!-- Spots Map -->
-<div class="mt-32">
+<div x-data="{ title: '', desc: '', note: '', images: '' }"  class="mt-32">
     <p class="text-3xl font-semibold text-center mb-10 md:text-6xl">
         <span class="text-lime-600">Explore </span>What's Inside
     </p>
 
     <div class="h-[40rem] mx-auto mb-32 overflow-hidden rounded-2xl shadow-lg bg-gray-200">
-        <div id="mapContainer" class="w-full h-full cursor-grab active:cursor-grabbing" onmousedown="return false">
+        <div id="mapContainer" class="w-full h-full cursor-grab active:cursor-grabbing">
         </div>
     </div>
-</div>
-<!-- /Spots Map -->
 
-<script>
-
+    <script>
     var tileSize = 256;
     var pxHeight = 3 * tileSize;
     var pxWidth = 6 * tileSize;
@@ -145,17 +142,17 @@ src="img/placeholder.jpg" alt="img-peninsula-island">
         maxZoom: 5,
         noWrap: true,
     }).addTo(map);
+    </script>
 
-</script>
+    <div>
+        @foreach ($spots as $spot)
+            <x-map-marker xpos="{{ $spot->xpos }}" ypos="{{ $spot->ypos }}" title="{{ $spot->title }}" desc="{{ $spot->keterangan }}" note="{{ $spot->catatan }}" images="{{ $spot->url_media }}"></x-map-marker>
+        @endforeach
+        <x-map-popup></x-map-popup>
+    </div>
 
-<?php 
-    use App\Models\Spot;
-    $data = Spot::find(1);
-?>
-
-<x-map-marker xpos="-65" ypos="56" title="{{ $data->title }}" desc="{{ $data->keterangan }}" img="/img/placeholder.jpg"></x-map-marker>
-
-<x-map-popup title="{{ $data->title }}" desc="{{ $data->keterangan }}" note="{{ $data->catatan }}" images="{{ $data->url_media }}"></x-map-popup>
+</div>
+<!-- /Spots Map -->
 
 <!-- Where's the Location -->
 <div class="relative flex flex-col">

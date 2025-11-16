@@ -13,12 +13,18 @@ class SpotSeeder extends Seeder
      */
     public function run(): void
     {
-        Spot::getQuery()->delete();
+        Spot::truncate();
         Spot::create(
             [
-                'title' => 'Pura Bias Tugel', 'url_media' => '["/img/gallery1.jpg", "img/gallery2.jpg", "img/gallery3.jpg"]', 'catatan' => 'Visitors must wear appropriate clothing or balinese attire (sarong and sash). ', 'keterangan' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae itaque iste pariatur nobis sint voluptatibus eveniet inventore qui nesciunt adipisci, rem exercitationem necessitatibus dolorem quisquam! Corrupti laudantium dignissimos aliquid officiis, dolorum sapiente laborum laboriosam sed.',
+                'xpos' => '114', 'ypos' => '-30', 'title' => 'Pura Bias Tugel', 'url_media' => '["/img/gallery1.jpg", "img/gallery2.jpg", "img/gallery3.jpg"]', 'catatan' => 'Visitors must wear appropriate clothing or balinese attire (sarong and sash). ', 'keterangan' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae itaque iste pariatur nobis sint voluptatibus eveniet inventore qui nesciunt adipisci, rem exercitationem necessitatibus dolorem quisquam! Corrupti laudantium dignissimos aliquid officiis, dolorum sapiente laborum laboriosam sed.',
             ]
-            );
+        );
+
+        Spot::create(
+            [
+                'xpos' => '56', 'ypos' => '-65', 'title' => 'Helipad', 'url_media' => '["/img/gallery1.jpg", "img/gallery2.jpg", "img/gallery3.jpg"]', 'catatan' => 'Visitors must wear appropriate clothing or balinese attire (sarong and sash). ', 'keterangan' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae itaque iste pariatur nobis sint voluptatibus eveniet inventore qui nesciunt adipisci, rem exercitationem necessitatibus dolorem quisquam! Corrupti laudantium dignissimos aliquid officiis, dolorum sapiente laborum laboriosam sed.',
+            ]
+        );
     }
 }
 
