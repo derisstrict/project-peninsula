@@ -18,7 +18,7 @@ use Illuminate\Support\Facades\Storage;
     @foreach ($blogs as $blog)
         <x-blogs-card href="/blogs/{{ $blog['slug'] }}" 
         date="{{ date('d F Y', strtotime($blog->tanggal_blog))}}" 
-        image="{{ asset($blog['gambar_blog']) }}" 
+        image="{{ asset('storage/' . $blog->gambar_blog) }}" 
         title="{{ $blog->judul_blog }}">
         {{ Str::limit(strip_tags($blog->isi_blog), 150, '...') }}
         </x-blogs-card> 
