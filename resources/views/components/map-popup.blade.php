@@ -23,10 +23,9 @@
                     }
                 }" 
         x-init="$watch('images', value => {imgs = value}); $watch('openMapPopup', value => {reset(runInterval)})"
-        @click.outside="openMapPopup = false" class="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-bglight rounded-2xl shadow-lg w-[90%] max-w-[1000px] max-h-[100vh] scrollbar-hide border-2 border-dark-primary px-8 py-8 dark:bg-bgdark dark:border-light-primary">
+        @click.outside="openMapPopup = false" class="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-[radial-gradient(circle,_rgba(94,165,0,1)_-600%,_rgba(238,238,238,1)_100%)] rounded-2xl shadow-lg w-[90%] max-w-[1000px] max-h-[100vh] scrollbar-hide border-2 border-dark-primary px-8 py-8 dark:bg-[radial-gradient(circle,_rgba(94,165,0,1)_-600%,_rgba(8,16,7,1)_100%)] dark:border-light-primary">
         <div class="relative flex flex-row gap-2">
             <p class="text-xl font-semibold text-lime-600">About Place</p>
-            <div class="background-radial-blur -translate-y-100"></div>
         </div>
 
         <div class="flex">
