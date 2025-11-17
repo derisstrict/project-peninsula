@@ -42,6 +42,7 @@
                     <template x-for="(img, index) in imgs">
                         <img :src="img" :class="active == index ? 'opacity-100' : 'opacity-0'" class="absolute inset-0 h-full w-full object-cover transition duration-700">
                     </template>
+                    <div class="absolute w-full h-full bg-[linear-gradient(_rgba(0,0,0,0)_75%,_rgba(0,0,0,1)_110%)]"></div>
                 </div>
                 <div class="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1">
                     <template x-for="(img, index) in imgs">
