@@ -46,7 +46,7 @@
                 </div>
                 <div class="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1">
                     <template x-for="(img, index) in imgs">
-                        <div @click="active = index; reset()" :class="index === active ? 'bg-lime-600' : 'bg-lime-600/60'" class="w-7 h-1 rounded cursor-pointer transition"></div>
+                        <div @click="active = index; reset(runInterval)" :class="index === active ? 'bg-lime-600' : 'bg-lime-600/60'" class="w-7 h-1 rounded cursor-pointer transition"></div>
                     </template>
                 </div>
             </div>
