@@ -30,7 +30,7 @@
 
     map.setMaxBounds(bounds);
 
-    var tilesPath = "{{ asset('storage/map/tiles/{z}/{x}/{y}.png') }}";
+    var tilesPath = "{{ asset('/map/tiles/{z}/{x}/{y}.png') }}";
 
     L.tileLayer(tilesPath, {
         minZoom: 3,
