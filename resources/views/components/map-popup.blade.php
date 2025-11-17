@@ -1,5 +1,29 @@
 <div x-show="openMapPopup" x-transition:enter="transition ease-in-out duration-100" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="transition ease-in-out duration-100" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" id="overlay" class="fixed inset-0 bg-black/50 z-1000 backdrop-blur-xs dark:bg-black/75">
-    <div @click.outside="openMapPopup = false" class="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-bglight rounded-2xl shadow-lg w-[90%] max-w-[1000px] max-h-[100vh] scrollbar-hide border-2 border-dark-primary px-8 py-8 dark:bg-bgdark dark:border-light-primary">
+    <div x-data="{ 
+                    imgs: [],
+                    active: 0,
+                    interval: null,
+                    delay: 4000,
+                    
+                    get runInterval() {
+                        return openMapPopup;
+                    },
+                    
+                    start(runInterval) {
+                        if (runInterval) {
+                            this.interval = setInterval(() => {
+                            this.active = (this.active + 1) % this.imgs.length
+                            }, this.delay)
+                        }
+                    }, 
+
+                    reset(runInterval) {
+                        clearInterval(this.interval)
+                        this.start(runInterval)
+                    }
+                }" 
+        x-init="$watch('images', value => {imgs = value}); $watch('openMapPopup', value => {reset(runInterval)})"
+        @click.outside="openMapPopup = false" class="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-bglight rounded-2xl shadow-lg w-[90%] max-w-[1000px] max-h-[100vh] scrollbar-hide border-2 border-dark-primary px-8 py-8 dark:bg-bgdark dark:border-light-primary">
         <div class="relative flex flex-row gap-2">
             <p class="text-xl font-semibold text-lime-600">About Place</p>
             <div class="background-radial-blur -translate-y-100"></div>
@@ -12,25 +36,7 @@
             Close</button>
         </div>
 
-        <div class="mt-5 flex flex-row gap-3" 
-        x-data="{ 
-                    imgs: [],
-                    active: 0,
-                    interval: null,
-                    delay: 4000,
-                    
-                    start() {
-                        this.interval = setInterval(() => {
-                            this.active = (this.active + 1) % this.imgs.length
-                        }, this.delay)
-                    }, 
-
-                    reset() {
-                        clearInterval(this.interval)
-                        this.start()
-                    }
-                }" 
-        x-init="start(); $watch('images', value => {imgs = value})">
+        <div class="mt-5 flex flex-row gap-3" >
             <div class="relative h-fit">
                 <div class="relative w-80 h-90 rounded-2xl overflow-hidden">
                     <template x-for="(img, index) in imgs">
