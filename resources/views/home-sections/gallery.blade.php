@@ -1,4 +1,3 @@
-<!-- Gallery -->
 <div class="mt-32 relative">
     <div class="flex justify-center items-center mx-auto mb-5">
         <h1 class="text-3xl font-semibold md:text-6xl">
@@ -37,4 +36,3 @@
         </div>
     </div>
 </div>
-<!-- /Gallery -->

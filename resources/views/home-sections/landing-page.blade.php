@@ -1,4 +1,3 @@
-<!-- Landing Page -->
 <div class="background-radial-blur transform -translate-y-25"></div>
 <div class="relative flex flex-col max-w-4xl gap-8">
     <p class="text-6xl font-semibold md:text-8xl">The
@@ -44,4 +43,3 @@
 </div>
 <img class="absolute h-135 w-[calc((27vw-10rem)*2)] hidden top-40 right-0 object-cover rounded-xl outline-4 outline-lime-600/15 xl:block"
 src="img/placeholder.jpg" alt="img-peninsula-island">
-<!-- /Landing Page -->

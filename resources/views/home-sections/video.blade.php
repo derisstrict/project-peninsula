@@ -1,4 +1,3 @@
-<!-- Video -->
  <div class="relative mt-32 rounded-xl overflow-hidden group cursor-pointer">
     <img class="h-200 w-full object-cover" src="/img/placeholder.jpg" alt="video">
     <div class="absolute inset-0 bg-black/45 group-hover:bg-black/65 transition-colors duration-700"></div>
@@ -7,4 +6,3 @@
         <p class="text-white">Play the video</p>
     </div>
  </div>
- <!-- /Video -->
