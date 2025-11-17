@@ -6,18 +6,26 @@ use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class Icon extends Component
+class MapPopup extends Component
 {
-    public $icon;
+    public $title;
+    public $desc;
+    public $note;
+    public $images;
     /**
      * Create a new component instance.
      */
     public function __construct(
-
-        $icon = ""
+        $title = "",
+        $desc = "",
+        $note = "",
+        $images = "",
     )
     {
-       $this->icon = $icon; 
+        $this->title = $title;
+        $this->desc = $desc;
+        $this->note = $note;
+        $this->images = $images;
     }
 
     /**
@@ -25,6 +33,6 @@ class Icon extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.icon');
+        return view('components.map-popup');
     }
 }

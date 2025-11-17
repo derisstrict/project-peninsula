@@ -1,3 +1,9 @@
+<?php
+
+use Illuminate\Support\Facades\Storage;
+
+?>
+
 @extends('layout.layout')
 
 @section('title', 'The Peninsula Island')
@@ -9,10 +15,13 @@
 <x-search-bar accent="text-lime-600"></x-search-bar>
 </div>
 <div class="grid grid-cols-1 mt-10 gap-4">
-    <x-blogs-card href="/blogs/blogs-detail" date="19 October 2025" image="img/placeholder.jpg" title="Pura Bias Tugel a Temple in Peninsula Island">Lorem ipsum dolor sit amet consectetur adipisicing elit. Est voluptatum similique aliquid cupiditate distinctio minus iure sint maxime magnam? Reprehenderit atque provident sunt accusantium laboriosam dolorum nihil debitis quas consequatur quasi quisquam mollitia officiis dolorem, facilis explicabo porro maiores, culpa rerum quia laudantium ullam. Molestiae incidunt, provident fugiat temporibus, nulla eius in, vero blanditiis aspernatur aliquam tenetur impedit cupiditate maxime consequatur dolore dolorem? Dolore, neque atque suscipit nisi sapiente velit iste modi voluptatem incidunt sint laborum ut, fuga earum ad.</x-blogs-card>
-    <x-blogs-card href="/blogs/blogs-detail" date="19 October 2025" image="img/placeholder.jpg" title="Pura Bias Tugel a Temple in Peninsula Island">Lorem ipsum dolor sit amet consectetur adipisicing elit. Est voluptatum similique aliquid cupiditate distinctio minus iure sint maxime magnam? Reprehenderit atque provident sunt accusantium laboriosam dolorum nihil debitis quas consequatur quasi quisquam mollitia officiis dolorem, facilis explicabo porro maiores, culpa rerum quia laudantium ullam. Molestiae incidunt, provident fugiat temporibus, nulla eius in, vero blanditiis aspernatur aliquam tenetur impedit cupiditate maxime consequatur dolore dolorem? Dolore, neque atque suscipit nisi sapiente velit iste modi voluptatem incidunt sint laborum ut, fuga earum ad.</x-blogs-card>
-    <x-blogs-card href="/blogs/blogs-detail" date="19 October 2025" image="img/placeholder.jpg" title="Pura Bias Tugel a Temple in Peninsula Island">Lorem ipsum dolor sit amet consectetur adipisicing elit. Est voluptatum similique aliquid cupiditate distinctio minus iure sint maxime magnam? Reprehenderit atque provident sunt accusantium laboriosam dolorum nihil debitis quas consequatur quasi quisquam mollitia officiis dolorem, facilis explicabo porro maiores, culpa rerum quia laudantium ullam. Molestiae incidunt, provident fugiat temporibus, nulla eius in, vero blanditiis aspernatur aliquam tenetur impedit cupiditate maxime consequatur dolore dolorem? Dolore, neque atque suscipit nisi sapiente velit iste modi voluptatem incidunt sint laborum ut, fuga earum ad.</x-blogs-card>
-    <x-blogs-card href="/blogs/blogs-detail" date="19 October 2025" image="img/placeholder.jpg" title="Pura Bias Tugel a Temple in Peninsula Island">Lorem ipsum dolor sit amet consectetur adipisicing elit. Est voluptatum similique aliquid cupiditate distinctio minus iure sint maxime magnam? Reprehenderit atque provident sunt accusantium laboriosam dolorum nihil debitis quas consequatur quasi quisquam mollitia officiis dolorem, facilis explicabo porro maiores, culpa rerum quia laudantium ullam. Molestiae incidunt, provident fugiat temporibus, nulla eius in, vero blanditiis aspernatur aliquam tenetur impedit cupiditate maxime consequatur dolore dolorem? Dolore, neque atque suscipit nisi sapiente velit iste modi voluptatem incidunt sint laborum ut, fuga earum ad.</x-blogs-card>
-    <x-blogs-card href="/blogs/blogs-detail" date="19 October 2025" image="img/placeholder.jpg" title="Pura Bias Tugel a Temple in Peninsula Island">Lorem ipsum dolor sit amet consectetur adipisicing elit. Est voluptatum similique aliquid cupiditate distinctio minus iure sint maxime magnam? Reprehenderit atque provident sunt accusantium laboriosam dolorum nihil debitis quas consequatur quasi quisquam mollitia officiis dolorem, facilis explicabo porro maiores, culpa rerum quia laudantium ullam. Molestiae incidunt, provident fugiat temporibus, nulla eius in, vero blanditiis aspernatur aliquam tenetur impedit cupiditate maxime consequatur dolore dolorem? Dolore, neque atque suscipit nisi sapiente velit iste modi voluptatem incidunt sint laborum ut, fuga earum ad.</x-blogs-card>
+    @foreach ($blogs as $blog)
+        <x-blogs-card href="/blogs/{{ $blog['slug'] }}" 
+        date="{{ date('d F Y', strtotime($blog->tanggal_blog))}}" 
+        image="{{ asset('storage/' . $blog->gambar_blog) }}" 
+        title="{{ $blog->judul_blog }}">
+        {{ Str::limit(strip_tags($blog->isi_blog), 150, '...') }}
+        </x-blogs-card> 
+    @endforeach
 </div>
 @endsection

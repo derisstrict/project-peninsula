@@ -29,14 +29,14 @@
                     <p class="text-sm font-semibold">Razkaa Wolf</p>
                     <p class="text-sky-500 text-xs text-left">Admin</p>
                 </div>
-                <x-icon icon="arrow-head" class="rotate-90" width="16px" height="16px" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor"></x-icon>
+                <x-local-icon icon="arrow-head" class="rotate-90" width="16px" height="16px" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor"></x-local-icon>
             </button>
             <div @click.stop x-show="dropProfile" class="absolute top-10 right-0 z-10 mt-4 h-10 bg-bglight p-3 gap-2 w-50 h-fit rounded-xl outline-2 outline-light-primary/10 dark:bg-bgdark dark:outline-dark-primary/10">
                 <div  x-data="{ dropTheme: false, selectedOption: $persist('light') }" class="flex flex-col items-start gap-2">
                     <button @click="dropTheme = !dropTheme" class="relative flex gap-3 items-center w-full rounded-lg py-1 px-2 cursor-pointer hover:bg-light-primary/5 dark:hover:bg-dark-primary/5 transition-colors">
-                        <x-icon icon="theme" width="20px" height="20px" fill="currentColor" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"></x-icon>
+                        <x-local-icon icon="theme" width="20px" height="20px" fill="currentColor" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"></x-local-icon>
                         <p>Appearance</p>
-                        <x-icon class="ml-auto rotate-90" icon="arrow-head" width="16px" height="16px" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"></x-icon>
+                        <x-local-icon class="ml-auto rotate-90" icon="arrow-head" width="16px" height="16px" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"></x-local-icon>
                     </button>
                     <div x-show="dropTheme" class="ml-5 flex flex-col gap-3 overflow-hidden">
                         <label>
@@ -49,7 +49,7 @@
                         </label>
                     </div>
                     <button class="flex gap-3 items-center w-full rounded-lg py-1 px-2 hover:bg-red-500/5 hover:text-red-400 transition-colors">
-                        <x-icon icon="log-out" width="20px" height="20px" viewBox="0 0 24 24" fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg"></x-icon>
+                        <x-local-icon icon="log-out" width="20px" height="20px" viewBox="0 0 24 24" fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg"></x-local-icon>
                         <p>Log out</p>
                     </button>
                 </div>
