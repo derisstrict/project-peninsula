@@ -28,7 +28,7 @@
                 }
             }" 
             x-init="start()">
-                <div class="relative w-40 h-50 rounded-2xl overflow-hidden">
+                <div class="relative w-40 h-40 rounded-2xl overflow-hidden">
                     <template x-for="(img, index) in imgs">
                     <img :src="img" :class="active == index ? 'opacity-100' : 'opacity-0'" class="absolute inset-0 h-full w-full object-cover transition duration-700">
                     </template>
