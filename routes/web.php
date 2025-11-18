@@ -4,9 +4,10 @@ use App\Models\Blog;
 use App\Models\Spot;
 use Illuminate\Support\Facades\Route;
 use App\Models\Event;
+use App\Models\LandingPage;
 
 Route::get('/', function () {
-    return view('home', ['spots' => Spot::all()]);
+    return view('home', ['spots' => Spot::all(), 'landing_page' => LandingPage::find(1)]);
 });
 
 Route::get('/blogs', function () {

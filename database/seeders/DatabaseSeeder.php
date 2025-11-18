@@ -20,6 +20,7 @@ class DatabaseSeeder extends Seeder
             BlogSeeder::class,
             EventSeeder::class,
             SpotSeeder::class,
+            LandingPageSeeder::class,
         ]);
     }
 }

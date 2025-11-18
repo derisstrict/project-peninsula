@@ -10,7 +10,7 @@
             <x-local-icon icon="time" class="text-lime-600" width="24px" height="24px" viewBox="0 0 24 24" fill="currentColor" stroke="none" xmlns="http://www.w3.org/2000/svg"></x-local-icon>
             <div class="flex flex-col gap-2">
                 <p class="font-bold">Open Hours</p>
-                <p>Every day | 06.00 AM - 10.00 PM</p>
+                <p>{{ $landing_page->jam_operasional }}</p>
             </div>
         </div>
         <div class="infobox-accent gap-3">
@@ -18,7 +18,7 @@
                 stroke="currentColor" xmlns="http://www.w3.org/2000/svg"></x-local-icon>
             <div class="flex flex-col gap-2">
                 <p class="font-bold">Entrance fee</p>
-                <p>Rp. 5000</p>
+                <p>Rp. {{ number_format($landing_page->biaya_masuk, 0, '.', '.') }}</p>
             </div>
         </div>
     </div>
@@ -42,4 +42,4 @@
         stroke="currentColor" xmlns="http://www.w3.org/2000/svg"></x-local-icon>
 </div>
 <img class="absolute h-135 w-[calc((27vw-10rem)*2)] hidden top-40 right-0 object-cover rounded-xl outline-4 outline-lime-600/15 xl:block"
-src="img/placeholder.jpg" alt="img-peninsula-island">
+src="{{ asset('/img/' . $landing_page->gambar) }}" alt="{{ $landing_page->alt }}">
