@@ -45,8 +45,7 @@
     <div>
         @foreach ($spots as $spot)
             <x-map-marker xpos="{{ $spot->xpos }}" ypos="{{ $spot->ypos }}" title="{{ $spot->title }}"
-                desc="{{ $spot->keterangan }}" note="{{ $spot->catatan }}"
-                images="{{ $spot->url_media }}"></x-map-marker>
+                desc="{{ $spot->keterangan }}" note="{{ $spot->catatan }}" :images="$spot->url_media"></x-map-marker>
         @endforeach
         <x-map-popup></x-map-popup>
     </div>
