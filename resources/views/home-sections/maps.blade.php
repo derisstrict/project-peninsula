@@ -1,5 +1,5 @@
 <!-- Spots Map -->
-<div x-data="{ title: '', desc: '', note: '', images: [] }" class="mt-32">
+<div x-data='{ title: "", desc: "", note: "", images: [] }' class="mt-32">
     <p class="text-3xl font-semibold text-center mb-10 md:text-6xl">
         <span class="text-lime-600">Explore </span>What's Inside
     </p>

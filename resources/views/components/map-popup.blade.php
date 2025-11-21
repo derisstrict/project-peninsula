@@ -2,7 +2,7 @@
     x-transition:enter-end="opacity-100" x-transition:leave="transition ease-in-out duration-100"
     x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" id="overlay"
     class="fixed inset-0 bg-black/50 z-1000 backdrop-blur-xs dark:bg-black/75">
-    <div x-data="{
+    <div x-data='{
         imgs: [],
         active: 0,
         interval: null,
@@ -14,7 +14,7 @@
     
         start(runInterval) {
             if (runInterval) {
-                this.interval = setInterval(() => {
+                this.interval = setInterval(() =&gt; {
                     this.active = (this.active + 1) % this.imgs.length
                 }, this.delay)
             }
@@ -24,8 +24,8 @@
             clearInterval(this.interval)
             this.start(runInterval)
         }
-    }" x-init="$watch('images', value => { imgs = value });
-    $watch('openMapPopup', value => { reset(runInterval) })" @click.outside="openMapPopup = false"
+    }' x-init='$watch("images", value => { imgs = value });
+    $watch("openMapPopup", value => { reset(runInterval) })' @click.outside="openMapPopup = false"
         class="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-[radial-gradient(circle,_rgba(94,165,0,1)_-600%,_rgba(238,238,238,1)_100%)] rounded-2xl shadow-lg w-[90%] max-w-[1000px] max-h-[100vh] scrollbar-hide border-2 border-dark-primary px-8 py-8 dark:bg-[radial-gradient(circle,_rgba(94,165,0,1)_-600%,_rgba(8,16,7,1)_100%)] dark:border-light-primary">
         <div class="relative flex flex-row gap-2">
             <p class="text-xl font-semibold text-lime-600">About Place</p>
@@ -43,7 +43,7 @@
             <div class="relative h-fit">
                 <div class="relative w-80 h-90 rounded-2xl overflow-hidden">
                     <template x-for="(img, index) in imgs">
-                        <img :src="img" :class="active == index ? 'opacity-100' : 'opacity-0'"
+                        <img :src="'/img/' + img" :class="active == index ? 'opacity-100' : 'opacity-0'"
                             class="absolute inset-0 h-full w-full object-cover transition duration-700">
                     </template>
                     <div class="absolute w-full h-full bg-[linear-gradient(_rgba(0,0,0,0)_75%,_rgba(0,0,0,1)_110%)]">
@@ -52,7 +52,7 @@
                 <div class="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1">
                     <template x-for="(img, index) in imgs">
                         <div @click="active = index; reset(runInterval)"
-                            :class="index === active ? 'bg-lime-600' : 'bg-lime-600/60'"
+                            :class="index === active ? 'bg-white' : 'bg-white/30'"
                             class="w-7 h-1 rounded cursor-pointer transition"></div>
                     </template>
                 </div>
