@@ -36,6 +36,14 @@ Route::get('/report', function () {
     return view('report');
 });
 
+Route::get('/dashboard-login', function () {
+    return view('dashboard-login');
+    
+});
+Route::get('/dashboard-register', function () {
+    return view('dashboard-register');
+    
+});
 Route::get('/dashboard', function () {
     return view('dashboard');
 });
