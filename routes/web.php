@@ -1,14 +1,22 @@
 <?php
 
+use App\Models\Blog;
+use App\Models\Spot;
 use Illuminate\Support\Facades\Route;
 use App\Models\Event;
+use App\Models\LandingPage;
 
 Route::get('/', function () {
-    return view('home');
+    return view('home', ['spots' => Spot::all(), 'landing_page' => LandingPage::find(1)]);
 });
 
 Route::get('/blogs', function () {
-    return view('blogs');
+    return view('blogs', ['blogs' => Blog::all()]);
+});
+
+Route::get('/blogs/{slug}', function ($slug) {
+    $blogs = Blog::where('slug', $slug)->first();
+    return view('blogs-detail', ['blogs' => $blogs]);
 });
 
 Route::get('/events', function () {

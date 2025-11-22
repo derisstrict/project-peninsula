@@ -14,7 +14,11 @@ class BlogsCard extends Component
     /**
      * Create a new component instance.
      */
-    public function __construct($date = "", $image = "", $title = "")
+    public function __construct(
+        $date = "", 
+        $image = "",
+        $title = ""
+    )
     {
         $this->date = $date;
         $this->image = $image;

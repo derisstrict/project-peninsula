@@ -35,3 +35,10 @@
 .background-radial-blur-dashboard {
     @apply absolute z-[-1] w-300 h-300 right-0 top-0 rounded-full bg-[radial-gradient(circle,_rgba(0,166,244,0.10)_0%,_rgba(94,165,0,0)_60%)];
 }
+
+.leaflet-popup-content {
+    margin: 0px 0px 0px 0px;
+    width: 400px !important;
+    font-family: 'Poppins', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+        'Segoe UI Symbol', 'Noto Color Emoji';
+}
