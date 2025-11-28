@@ -29,7 +29,7 @@ class EventFactory extends Factory
             'slug' => $slug,
             'gambar_event' => '/img/placeholder.jpg',
             'nama_penyelenggara' => fake()->company(),
-            'harga_tiket' => fake()->randomFloat(3, 20, 150)
+            'harga_tiket' => fake()->numberBetween(10000, 300000)
         ];
     }
 }
