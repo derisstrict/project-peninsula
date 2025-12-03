@@ -54,7 +54,7 @@ class ManageLandingPage extends Page
                         ->directory('/')
                         ->preserveFilenames(),
                         TextInput::make('alt')
-                        ->belowContent('Deskripsi singkat tentang gambar (biasanya dibawah 10 kata)')
+                        ->belowContent('Deskripsi singkat tentang gambar')
                         ->label('Alt gambar')
                         ->required()
                     ])
