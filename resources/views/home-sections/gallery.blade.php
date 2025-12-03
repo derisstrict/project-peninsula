@@ -7,7 +7,7 @@
     </div>
 
     <p class="text-center text-lg mb-5 mx-auto md:text-xl">
-        Explore The Peninsula Island whether you want to view the sunsets, picnics or morning jogging.
+        {{ __('Explore The Peninsula Island whether you want to view the sunsets, picnics or morning jogging.') }}
     </p>
 
     <div class="grid grid-cols-1 md:grid-cols-[2fr_1fr] gap-6 mx-auto">
