@@ -11,4 +11,3 @@
 @include('home-sections.things-to-do')
 
 @endsection
-
