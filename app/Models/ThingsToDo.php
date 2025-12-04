@@ -8,7 +8,7 @@ class ThingsToDo extends Model
 {
     protected $table = 'things_to_dos';
 
-    protected $guarded = [
+    protected $fillable = [
         'user_id',
         'slug',
         'title',

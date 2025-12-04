@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('things_to_dos', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('user_id');
+            $table->timestamps();
             $table->string('title', 100)->nullable(false);
             $table->string('deskripsi', 100)->nullable(false);
             $table->string('icon', 100)->nullable(false);

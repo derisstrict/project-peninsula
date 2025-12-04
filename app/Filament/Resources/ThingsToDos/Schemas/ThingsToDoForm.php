@@ -19,15 +19,7 @@ class ThingsToDoForm
         return $schema
             ->components([
                 Hidden::make('user_id')->default(fn () => auth()->id()),
-                Hidden::make('slug')->required(),
                 TextInput::make('title')
-                    ->live(onBlur: true)
-                    ->afterStateUpdated(function (Get $get, Set $set, ?string $old, ?string $state) {
-                        if (($get('slug') ?? '') !== Str::slug($old)) {
-                            return;
-                        }
-                        $set('slug', Str::slug($state));
-                    })
                     ->label('Judul Things To Do')
                     ->required(),
                 Textarea::make('deskripsi')->label('Deskripsi')->required(),
