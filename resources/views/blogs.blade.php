@@ -17,10 +17,10 @@ use Illuminate\Support\Facades\Storage;
 <div class="grid grid-cols-1 mt-10 gap-4">
     @foreach ($blogs as $blog)
         <x-blogs-card href="/blogs/{{ $blog['slug'] }}" 
-        date="{{ date('d F Y', strtotime($blog->tanggal_blog))}}" 
+        date="{{ $blog->created_at->diffForHumans() }}" 
         image="{{ asset('storage/' . $blog->gambar_blog) }}" 
         title="{{ $blog->judul_blog }}">
-        {{ Str::limit(strip_tags($blog->isi_blog), 150, '...') }}
+        {{Str::limit(strip_tags($blog->isi_blog), 150, '...')}}
         </x-blogs-card> 
     @endforeach
 </div>

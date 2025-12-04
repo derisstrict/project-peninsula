@@ -22,7 +22,6 @@ class BlogFactory extends Factory
         return [
             //
             'id_user' => '1',
-            'tanggal_blog' => fake()->date(),
             'isi_blog' => fake()->paragraph(),
             'judul_blog' => $title,
             'slug' => $slug,
