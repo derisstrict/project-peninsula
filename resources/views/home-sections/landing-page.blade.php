@@ -3,13 +3,12 @@
     <p class="text-6xl font-semibold md:text-8xl">The
         <br><span class="text-lime-600">Peninsula Island</span>
     </p>
-    <p class="text-lg max-w-2xl md:text-2xl">A scenic coastal park known for its lush greenery, cultural statues, and
-        dramatic ocean views, open to the public and perfect for peaceful walks or events.</p>
+    <p class="text-lg max-w-2xl md:text-2xl">{{ __('landing_page.description')}}</p>
     <div class="flex flex-col gap-4 md:flex-row">
         <div class="infobox-accent gap-3">
             <x-local-icon icon="time" class="text-lime-600" width="24px" height="24px" viewBox="0 0 24 24" fill="currentColor" stroke="none" xmlns="http://www.w3.org/2000/svg"></x-local-icon>
             <div class="flex flex-col gap-2">
-                <p class="font-bold">Open Hours</p>
+                <p class="font-bold">{{ __('landing_page.open') }}</p>
                 <p>{{ $landing_page->jam_operasional }}</p>
             </div>
         </div>
@@ -17,27 +16,27 @@
             <x-local-icon icon="money" class="text-lime-600" width="24px" height="24px" viewBox="-0.5 0 25 25" fill="currentColor"
                 stroke="currentColor" xmlns="http://www.w3.org/2000/svg"></x-local-icon>
             <div class="flex flex-col gap-2">
-                <p class="font-bold">Entrance fee</p>
-                <p>Rp. {{ number_format($landing_page->biaya_masuk, 0, '.', '.') }}</p>
+                <p class="font-bold">{{ __('landing_page.fee') }}</p>
+                <p>IDR {{ number_format($landing_page->biaya_masuk, 0, '.', '.') }}</p>
             </div>
         </div>
     </div>
 
     <div class="flex flex-col gap-2">
-        <p class="text-sm">Quick links</p>
+        <p class="text-sm">{{ __('landing_page.links')}}</p>
         <div class="flex gap-2">
             <a href="/" class="btn-primary p-2">
                 <x-local-icon icon="calendar" width="16px" height="16px" viewBox="0 0 24 24" fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg"></x-local-icon>
-                <span>Today's event</span></a>
+                <span>{{ __("landing_page.event") }}</span></a>
             <a href="/" class="btn-primary p-2">
                 <x-local-icon icon="maps" width="16px" height="16px" viewBox="0 0 192 192" xmlns="http://www.w3.org/2000/svg"
                     fill="none" stroke="currentColor"></x-local-icon>
-                <span>Our maps</span></a>
+                <span>{{ __('landing_page.maps') }}</span></a>
         </div>
     </div>
 </div>
 <div class="flex flex-col items-center mt-25 gap-2">
-    scroll more
+    {{ __('landing_page.scroll') }}
     <x-local-icon icon="double-arrow" class="rotate-90" width="16px" height="16px" viewBox="0 0 24 24" fill="none"
         stroke="currentColor" xmlns="http://www.w3.org/2000/svg"></x-local-icon>
 </div>

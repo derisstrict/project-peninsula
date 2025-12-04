@@ -1,23 +1,22 @@
 <header>
     <div class="flex items-center justify-center p-4">
         <div class="flex gap-12 items-center">
-            <x-nav-link href="/" :isActive="Request()->is('/')">Home</x-nav-link>
-            <x-nav-link href="/events" :isActive="Request()->is('events')">Events</x-nav-link>
-            <x-nav-link href="/blogs" :isActive="Request()->is('blogs')">Blogs</x-nav-link>
+            <x-nav-link href="/" :isActive="Request()->is('/')">{{ __('navbar.navlink_1') }}</x-nav-link>
+            <x-nav-link href="/events" :isActive="Request()->is('events')">{{ __('navbar.navlink_2') }}</x-nav-link>
+            <x-nav-link href="/blogs" :isActive="Request()->is('blogs')">{{ __('navbar.navlink_3') }}</x-nav-link>
             <div class="relative" x-data="{ dropLang: false }">
                 <button @click="dropLang = !dropLang" @click.outside="dropLang = false" id="dropdownLanguage" aria-expanded="false" class="relative flex gap-2 bg-light-primary/10 p-2 px-3 rounded-xl items-center cursor-pointer hover:bg-light-primary/15 dark:bg-dark-primary/10 dark:hover:bg-dark-primary/15 transition" type="button">
                     <x-local-icon icon="language" width="24px" height="24px" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" xmlns="http://www.w3.org/2000/svg"></x-local-icon>
-                    EN
+                    {{ strtoupper(app()->currentLocale()) }}
                     <x-local-icon icon="arrow-head" class="transition-transform rotate-90" x-bind:class="dropLang ? 'rotate-270' : ''" width="16px" height="16px" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"></x-local-icon>
                 </button>
                 <div x-show="dropLang" id="lang-menu" class="absolute z-10 right-50 left-0 mt-4 h-10 bg-bglight p-3 gap-2 w-50 h-fit rounded-xl outline-2 outline-light-primary/10 dark:bg-bgdark dark:outline-dark-primary/10">
                     <ul class="flex flex-col">
-                        <li>
-                            <a href="" class="block p-2 rounded-md hover:bg-light-primary/5 dark:hover:bg-dark-primary/5">English</a>
-                        </li>
-                        <li>
-                            <a href="" class="block p-2 rounded-md hover:bg-light-primary/5 dark:hover:bg-dark-primary/5">Bahasa Indonesia</a>
-                        </li>
+                        @foreach (config('app.available_locales') as $locale_name => $available_locale)
+                            <li>
+                                <a href="/lang/{{ $available_locale }}" class="block p-2 rounded-md hover:bg-light-primary/5 dark:hover:bg-dark-primary/5">{{ $locale_name }}</a>
+                            </li>
+                        @endforeach
                     </ul>
                 </div>
             </div>

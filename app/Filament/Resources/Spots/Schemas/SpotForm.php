@@ -38,7 +38,7 @@ class SpotForm
                         ->reorderable()
                         ->appendFiles(),
                         TextInput::make('alt')
-                        ->belowContent('Deskripsi singkat tentang gambar (biasanya dibawah 10 kata)')
+                        ->belowContent('Deskripsi singkat tentang gambar')
                         ->label('Alt gambar')
                ]),
                 Textarea::make('catatan')->label('Catatan')->required(),
