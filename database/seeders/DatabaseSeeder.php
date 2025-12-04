@@ -21,6 +21,7 @@ class DatabaseSeeder extends Seeder
             EventSeeder::class,
             SpotSeeder::class,
             LandingPageSeeder::class,
+            LanguageLineSeeder::class,
         ]);
     }
 }

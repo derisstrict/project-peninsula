@@ -6,12 +6,12 @@
                     <span class="text-lime-600">Peninsula Island</span>
                 </p>
                 <p class="text-sm mt-2">
-                    Lorem ipsum dolor sit amet.
+                    {{ __('footer.description') }}
                 </p>
             </div>
 
             <div class="flex flex-col items-center md:items-start">
-                <h4 class="font-semibold text-lime-600 mb-1">Social Media</h4>
+                <h4 class="font-semibold text-lime-600 mb-1">{{ __('footer.social') }}</h4>
                 <ul class="flex flex-col gap-2 text-sm">
                     <li class="flex justify-center gap-2 md:justify-start">
                         <x-local-icon icon="instagram" class="block" width="24px" height="24px" viewBox="2 0 20 20" fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg"></x-local-icon>
@@ -32,44 +32,43 @@
             </div>
 
             <div class="flex flex-col items-center md:items-start">
-                <h4 class="font-semibold text-lime-600 mb-1">Menu</h4>
+                <h4 class="font-semibold text-lime-600 mb-1">{{ __('footer.menu') }}</h4>
                 <ul class="flex flex-col gap-4 text-sm">
                     <li class="flex items-center gap-2">
-                        <a href="#" class="hover:text-lime-600 transition-colors">Home</a>
+                        <a href="#" class="hover:text-lime-600 transition-colors">{{ __('footer.menu_list_1') }}</a>
                     </li>
                     <li class="flex items-center gap-2">
-                        <a href="#" class="hover:text-lime-600 transition-colors">Event</a>
+                        <a href="#" class="hover:text-lime-600 transition-colors">{{ __('footer.menu_list_2') }}</a>
                     </li>
                     <li class="flex items-center gap-2">
-                        <a href="#" class="hover:text-lime-600 transition-colors">Blogs</a>
+                        <a href="#" class="hover:text-lime-600 transition-colors">{{ __('footer.menu_list_3') }}</a>
                     </li>
                 </ul>
             </div>
 
             <div>
                 <div class="flex items-center justify-center gap-3 mb-2 lg:flex-row lg:items-center md:justify-start md:flex-col md:items-start">
-                    <h4 class="font-semibold">Language:</h4>
+                    <h4 class="font-semibold">{{ __('footer.language') }}:</h4>
                     <div class="relative" x-data="{ dropLang: false }">
                         <button @click="dropLang = !dropLang" @click.outside="dropLang = false" id="dropdownLanguage" aria-expanded="false" class="relative flex gap-2 bg-light-primary/10 p-2 px-3 rounded-xl items-center cursor-pointer hover:bg-light-primary/15 dark:bg-dark-primary/10 dark:hover:bg-dark-primary/15 transition" type="button">
                             <x-local-icon icon="language" width="24px" height="24px" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" xmlns="http://www.w3.org/2000/svg"></x-local-icon>
-                            EN
+                            {{ strtoupper(app()->currentLocale()) }}
                             <x-local-icon icon="arrow-head" class="transition-transform" x-bind:class="dropLang ? 'rotate-90' : 'rotate-270'" width="16px" height="16px" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"></x-local-icon>
                         </button>
                         <div x-show="dropLang" id="lang-menu" class="absolute z-10 right-50 left-0 mt-4 h-10 bg-bglight p-3 gap-2 w-50 h-fit rounded-xl transform -translate-y-45 outline-2 outline-light-primary/10 dark:bg-bgdark dark:outline-dark-primary/10">
                             <ul class="flex flex-col">
-                                <li>
-                                    <a href="" class="block p-2 rounded-md hover:bg-light-primary/5 dark:hover:bg-dark-primary/5">English</a>
-                                </li>
-                                <li>
-                                    <a href="" class="block p-2 rounded-md hover:bg-light-primary/5 dark:hover:bg-dark-primary/5">Bahasa Indonesia</a>
-                                </li>
+                                @foreach (config('app.available_locales') as $locale_name => $available_locale)
+                                    <li>
+                                        <a href="/lang/{{ $available_locale }}" class="block p-2 rounded-md hover:bg-light-primary/5 dark:hover:bg-dark-primary/5">{{ $locale_name }}</a>
+                                    </li>
+                                @endforeach
                             </ul>
                         </div>
                     </div>
                 </div>
                 <p class="text-sm text-center md:text-left">
-                    If you've encountered a broken public facility let us know!<br>
-                    <a href="/report" class="font-semibold mt-5 text-lime-600 hover:underline">Make a report</a>
+                    {{ __('footer.report_description') }}<br>
+                    <a href="/report" class="font-semibold mt-5 text-lime-600 hover:underline">{{ __('footer.report_link') }}</a>
                 </p>
             </div>
         </div>

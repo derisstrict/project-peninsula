@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Storage;
 
 @section('content')
 <div class="background-radial-blur -translate-x-100 -translate-y-25"></div>
-<p class="text-5xl text-center font-semibold"><span class="text-lime-600">Discover More </span>About This Place</p>
+<p class="text-5xl text-center font-semibold">{!! __('blogs.title', ['accent' => '<span class="text-lime-600"> '. __('blogs.title_accent') .' </span>']) !!}</p>
 <div class="mt-20 ml-5">
 <x-search-bar accent="text-lime-600"></x-search-bar>
 </div>

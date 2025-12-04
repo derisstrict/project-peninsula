@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Storage;
 
 @section('content')
 <div class="background-radial-blur -translate-x-100 -translate-y-25"></div>
-<p class="text-5xl text-center font-semibold"><span class="text-lime-600">Our </span>Events
+<p class="text-5xl text-center font-semibold">{!! __('events.title', ['accent' => '<span class="text-lime-600"> '. __('events.title_accent') .' </span>']) !!}
 </p>
 <div class="mt-20 ml-5">
 <x-search-bar accent="text-lime-600"></x-search-bar>
@@ -18,10 +18,10 @@ use Illuminate\Support\Facades\Storage;
 <a x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false" href="/events/events-detail" class="flex bg-lime-600/5 p-8 rounded-lg mt-10 gap-5 w-full items-center hover:bg-lime-600/10 transition-colors">
     <img src="img/placeholder.jpg" alt="event-image" class="w-80 h-60 object-cover rounded-xl">
     <div class="flex flex-col gap-3">
-        <p class="">Ongoing Event</p>
+        <p class="">{{ __('events.ongoing') }}</p>
         <div class="flex gap-4">
             <p class="text-5xl font-semibold">The Big Bounce</p>
-            <p class="self-end font-light">by idkthename</p>
+            <p class="self-end font-light">{{ __('events.by') }} idkthename</p>
         </div>
         <div class="flex items-center gap-2">
             <div class="bg-lime-600/10 w-fit mt-auto px-5 py-1 rounded-xl text-sm">
@@ -32,7 +32,7 @@ use Illuminate\Support\Facades\Storage;
                 <p>02 December 2025</p>
             </div>
         </div>
-        <p class="mt-5">Starting price</p>
+        <p class="mt-5">{{ __('common.price') }}</p>
         <p class="text-3xl font-semibold">IDR <span class="text-lime-600">75.000</span></p>
     </div>
     <x-local-icon x-show="open" x-transition:enter="transition ease-out duration-300"
