@@ -4,6 +4,14 @@ use App\Models\Blog;
 use App\Models\Spot;
 use Illuminate\Support\Facades\Route;
 use App\Models\Event;
+use App\Models\ThingsToDo;
+
+Route::get('/things-to-dos', function () {
+    return view('home-sections.things-to-do', [
+        'thingstodos' => ThingsToDo::all()
+    ]);
+});
+
 
 Route::get('/', function () {
     return view('home', ['spots' => Spot::all()]);

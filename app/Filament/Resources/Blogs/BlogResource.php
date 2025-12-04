@@ -7,6 +7,7 @@ use App\Filament\Resources\Blogs\Pages\EditBlog;
 use App\Filament\Resources\Blogs\Pages\ListBlogs;
 use App\Filament\Resources\Blogs\Schemas\BlogForm;
 use App\Filament\Resources\Blogs\Tables\BlogsTable;
+use App\Filament\Resources\Events\Pages\ViewBlog;
 use App\Models\Blog;
 use BackedEnum;
 use Filament\Resources\Resource;
@@ -42,6 +43,7 @@ class BlogResource extends Resource
         return [
             'index' => ListBlogs::route('/'),
             'create' => CreateBlog::route('/create'),
+            'view' => ViewBlog::route('/{record}'),
             'edit' => EditBlog::route('/{record}/edit'),
         ];
     }
