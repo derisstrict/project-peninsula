@@ -16,7 +16,7 @@
             <div class="infobox-accent">
                 <div class="m-2">
                     <img 
-                        src="{{ asset('storage/' . $thingstodo->icon) }}" 
+                        src="{{ asset('img/' . $thingstodo->icon) }}" 
                         alt="{{ $thingstodo->title }}" 
                         class="w-[45px] h-[45px] object-contain mb-2"
                     >

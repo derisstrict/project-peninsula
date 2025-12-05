@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Session;
 use App\Models\ThingsToDo;
 
 Route::get('/', function () {
-    return view('home', ['spots' => Spot::all(),'thingstodos' => ThingsToDo::all()]);
+    return view('home', ['spots' => Spot::all(), 'landing_page' => LandingPage::find(1),'thingstodos' => ThingsToDo::all()]);
 });
 
 Route::get('/blogs', function () {
