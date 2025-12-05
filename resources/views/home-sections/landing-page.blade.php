@@ -25,10 +25,10 @@
     <div class="flex flex-col gap-2">
         <p class="text-sm">{{ __('landing_page.links')}}</p>
         <div class="flex gap-2">
-            <a href="/" class="btn-primary p-2">
+            <a href="/events" class="btn-primary p-2">
                 <x-local-icon icon="calendar" width="16px" height="16px" viewBox="0 0 24 24" fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg"></x-local-icon>
                 <span>{{ __("landing_page.event") }}</span></a>
-            <a href="/" class="btn-primary p-2">
+            <a href="#maps" class="btn-primary p-2">
                 <x-local-icon icon="maps" width="16px" height="16px" viewBox="0 0 192 192" xmlns="http://www.w3.org/2000/svg"
                     fill="none" stroke="currentColor"></x-local-icon>
                 <span>{{ __('landing_page.maps') }}</span></a>
