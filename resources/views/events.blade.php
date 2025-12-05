@@ -3,7 +3,6 @@
 use Carbon\Carbon;
 
 Carbon::setLocale(app()->getLocale());
-
 ?>
 
 @extends('layout.layout')
@@ -45,7 +44,7 @@ Carbon::setLocale(app()->getLocale());
 </a>
 <div class="grid grid-cols-1 mt-10 gap-4 lg:grid-cols-3 md:grid-cols-2">
     @foreach ($events as $event)
-        <x-events-card href="/events/{{ $event['slug'] }}" date="{{ date('d F Y', strtotime($event->tanggal_mulai)) }} - {{ date('d F Y', strtotime($event->tanggal_selesai)) }}" image="{{ asset('storage/' . $event->gambar_event) }}" price="{{ number_format($event->harga_tiket, 0, '.', '.') }}">{{ $event->judul_event }}</x-events-card> 
+        <x-events-card href="/events/{{ $event->slug }}" date="{{ Carbon::parse($event->tanggal_mulai)->translatedFormat('d F Y') }} - {{ Carbon::parse($event->tanggal_selesai)->translatedFormat('d F Y') }}" image="{{ asset('storage/' . $event->gambar_event) }}" price="{{ number_format($event->harga_tiket, 0, '.', '.') }}">{{ $event->judul_event }}</x-events-card> 
     @endforeach
 </div>
 @endsection

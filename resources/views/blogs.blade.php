@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Storage;
+use Carbon\Carbon;
+
+Carbon::setLocale(app()->getLocale());
 
 ?>
 
@@ -17,7 +20,7 @@ use Illuminate\Support\Facades\Storage;
 <div class="grid grid-cols-1 mt-10 gap-4">
     @foreach ($blogs as $blog)
         <x-blogs-card href="/blogs/{{ $blog['slug'] }}" 
-        date="{{ date('d F Y', strtotime($blog->tanggal_blog))}}" 
+        date="{{ Carbon::parse($blog->tanggal_blog)->translatedFormat('d F Y') }}" 
         image="{{ asset('storage/' . $blog->gambar_blog) }}" 
         title="{{ $blog->judul_blog }}">
         {{ Str::limit(strip_tags($blog->isi_blog), 150, '...') }}
