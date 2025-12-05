@@ -17,8 +17,9 @@ Route::get('/blogs', function () {
 });
 
 Route::get('/blogs/{slug}', function ($slug) {
-    $blogs = Blog::where('slug', $slug)->first();
-    return view('blogs-detail', ['blogs' => $blogs]);
+    $blogs = Blog::where('slug', $slug)->firstOrFail();
+    $more_articles = Blog::where('slug', '!=', $slug)->latest()->take(3)->get();
+    return view('blogs-detail', ['blogs' => $blogs, 'more_articles' => $more_articles]);
 });
 
 Route::get('/events', function () {

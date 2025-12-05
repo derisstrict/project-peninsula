@@ -18,20 +18,23 @@ Carbon::setLocale(app()->getLocale());
     <p class="text-sm">Back</p> 
 </a>
 <div class="flex flex-col gap-2 mt-5"> 
-    <img class="rounded-xl self-center w-500 h-150 object-cover" src={{ $blogs->gambar_blog }} alt="blog-image">
+    <img class="rounded-xl self-center w-500 h-150 object-cover" src={{ asset('storage/' . $blogs->gambar_blog) }} alt="blog-image">
     <p class="text-4xl font-semibold mt-5">{{ $blogs->judul_blog }}</p>
-    <p> {{ Carbon::parse($blogs->tanggal_blog)->translatedFormat('d F Y') }} </p>
+    <p> {{ $blogs->created_at->diffForHumans() }} </p>
     <div class="bg-lime-500/25 outline-2 outline-lime-500/50 w-fit rounded-lg px-2 text-sm">Other</div>
     <div class="text-xl mt-6">
-        <p>{{ $blogs->isi_blog }}</p>
+        {!! $blogs->isi_blog !!}
     </div>
 </div>
 <div class="flex flex-col mt-15 gap-5">
     <p class="text-4xl font-semibold">More <span class="text-lime-600">Articles</span></p>
     <div class="grid grid-cols-3">
-        <x-blogs-card-grid href="/blogs/blogs-detail" title="Pura Bias Tugel a Temple in Peninsula Island" date="19 October 2025" image="/img/placeholder.jpg"></x-blogs-card-grid>
-        <x-blogs-card-grid href="/blogs/blogs-detail" title="Pura Bias Tugel a Temple in Peninsula Island" date="19 October 2025" image="/img/placeholder.jpg"></x-blogs-card-grid>
-        <x-blogs-card-grid href="/blogs/blogs-detail" title="Pura Bias Tugel a Temple in Peninsula Island" date="19 October 2025" image="/img/placeholder.jpg"></x-blogs-card-grid>
+        @foreach ($more_articles as $more_article)
+            <x-blogs-card-grid href="/blogs/{{ $more_article->slug}}" 
+            title="{{ $more_article->judul_blog }}" 
+            date="{{ $more_article->created_at->diffForHumans() }}" 
+            image="{{ asset('storage/' . $more_article->gambar_blog) }}"></x-blogs-card-grid>
+        @endforeach
     </div>
     <div class="flex justify-center">
         <a href="/blogs" class="btn-primary p-3">
