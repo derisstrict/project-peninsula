@@ -14,7 +14,7 @@
     <div class="grid grid-cols-2 gap-6 mt-6">
         @foreach ($thingstodos as $thingstodo)
             <div class="infobox-accent">
-                <div class="m-2">
+                <div class="m-2 flex flex-col items-center text-center">
                     <img 
                         src="{{ asset('img/' . $thingstodo->icon) }}" 
                         alt="{{ $thingstodo->title }}" 
