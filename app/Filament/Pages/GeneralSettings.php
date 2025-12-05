@@ -2,11 +2,12 @@
 
 namespace App\Filament\Pages;
 
-use App\Models\LandingPage;
+use App\Models\GeneralSetting;
 use BackedEnum;
 use Filament\Actions\Action;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Hidden;
+use Filament\Forms\Components\KeyValue;
 use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\TextInput;
 use Filament\Notifications\Notification;
@@ -18,9 +19,9 @@ use Filament\Schemas\Components\Grid;
 use Filament\Schemas\Schema;
 use Filament\Support\Icons\Heroicon;
 
-class ManageLandingPage extends Page
+class GeneralSettings extends Page
 {
-    protected string $view = 'filament.pages.manage-landing-page';
+    protected string $view = 'filament.pages.general-settings';
     
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedCog6Tooth;
 
@@ -39,26 +40,10 @@ class ManageLandingPage extends Page
         return $schema
             ->components([
                 Form::make([
-                    Hidden::make('user_id')->default(fn () => auth()->id()),
-                    Grid::make(4)->schema([
-                        TextInput::make('jam_operasional')->required(),
-                        TextInput::make('biaya_masuk')
-                        ->prefix('Rp.')->belowContent('Tanpa tanda titik')
-                        ->required()
-                    ]),
-                    Fieldset::make('Gambar')->schema([
-                        FileUpload::make('gambar')
-                        ->label('Upload gambar')
-                        ->required()
-                        ->disk('public_img')
-                        ->directory('/')
-                        ->preserveFilenames(),
-                        TextInput::make('alt')
-                        ->belowContent('Deskripsi singkat tentang gambar')
-                        ->label('Alt gambar')
-                        ->required()
-                    ])
-                    ->columns(1),
+                    KeyValue::make('available_languages')
+                    ->label('Bahasa yang tersedia:')
+                    ->keyLabel('Nama bahasa')
+                    ->valueLabel('Kode bahasa')
                 ])->columns(1)
                     ->livewireSubmitHandler('save')
                     ->footer([
@@ -80,8 +65,8 @@ class ManageLandingPage extends Page
         $record = $this->getRecord();
         
         if (! $record) {
-            $record = new LandingPage();
-            $record->is_landingpage = true;
+            $record = new GeneralSetting();
+            $record->is_gs = true;
         }
         
         $record->fill($data);
@@ -97,10 +82,10 @@ class ManageLandingPage extends Page
             ->send();
     }
     
-    public function getRecord(): ?LandingPage
+    public function getRecord(): ?GeneralSetting
     {
-        return LandingPage::query()
-            ->where('is_landingpage', true)
+        return GeneralSetting::query()
+            ->where('is_gs', true)
             ->first();
     }
 }

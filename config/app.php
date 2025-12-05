@@ -2,7 +2,6 @@
 
 use Illuminate\Support\ServiceProvider;
 
-
 return [
 
     /*
@@ -96,10 +95,7 @@ return [
     |
     */
 
-    'available_locales' => [
-        'English' => 'en',
-        'Bahasa Indonesia' => 'id',
-        ],
+    'available_locales' => [],
 
     /*
     |--------------------------------------------------------------------------
