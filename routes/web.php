@@ -6,15 +6,8 @@ use Illuminate\Support\Facades\Route;
 use App\Models\Event;
 use App\Models\ThingsToDo;
 
-Route::get('/things-to-dos', function () {
-    return view('home-sections.things-to-do', [
-        'thingstodos' => ThingsToDo::all()
-    ]);
-});
-
-
 Route::get('/', function () {
-    return view('home', ['spots' => Spot::all()]);
+    return view('home', ['spots' => Spot::all(),'thingstodos' => ThingsToDo::all()]);
 });
 
 Route::get('/blogs', function () {

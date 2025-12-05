@@ -10,11 +10,11 @@
 </div>
 
 <!--Isi activity-->
-<div class="grid grid-cols-2 gap-6 mt-6">
     @if(isset($thingstodos) && count($thingstodos))
+    <div class="grid grid-cols-2 gap-6 mt-6">
         @foreach ($thingstodos as $thingstodo)
             <div class="infobox-accent">
-                <div class="m-4">
+                <div class="m-2">
                     <img 
                         src="{{ asset('storage/' . $thingstodo->icon) }}" 
                         alt="{{ $thingstodo->title }}" 
@@ -25,10 +25,10 @@
                 </div>
             </div>
         @endforeach
+    </div>
     @else
-        <div class="col-span-2 text-center text-gray-400">
+        <div class="flex justify-center w-full mt-6 text-lime-600">
             Belum ada data Things To Do.
         </div>
     @endif
-</div>
 <!--Isi Activity-->
