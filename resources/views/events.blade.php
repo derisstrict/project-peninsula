@@ -1,6 +1,8 @@
 <?php
 
-use Illuminate\Support\Facades\Storage;
+use Carbon\Carbon;
+
+Carbon::setLocale(app()->getLocale());
 
 ?>
 
@@ -21,7 +23,7 @@ use Illuminate\Support\Facades\Storage;
         <p class="">{{ __('events.ongoing') }}</p>
         <div class="flex gap-4">
             <p class="text-5xl font-semibold">The Big Bounce</p>
-            <p class="self-end font-light">{{ __('events.by') }} idkthename</p>
+            <p class="self-end font-light">{{ __('common.by') }} idkthename</p>
         </div>
         <div class="flex items-center gap-2">
             <div class="bg-lime-600/10 w-fit mt-auto px-5 py-1 rounded-xl text-sm">
