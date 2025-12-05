@@ -2,7 +2,7 @@
     <img class="rounded-lg object-cover" src="{{ $image }}" alt="image">
     <p class="text-lg font-semibold">{{ $slot }}</p>
     <p class="text-sm mr-auto">{{ $date }}</p>
-    <p class="mt-2">Starting price</p>
+    <p class="mt-2">{{ __('common.price') }}</p>
     <div class="flex items-center">
         <p class="font-bold text-2xl mr-auto">IDR <span class="text-lime-600">{{ $price }}</span></p>
         <x-local-icon x-show="open" x-transition:enter="transition ease-out duration-100"

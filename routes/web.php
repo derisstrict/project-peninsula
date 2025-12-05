@@ -1,9 +1,12 @@
 <?php
 
 use App\Models\Blog;
-use App\Models\Spot;
-use Illuminate\Support\Facades\Route;
 use App\Models\Event;
+use App\Models\LandingPage;
+use App\Models\Spot;
+use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Session;
 use App\Models\ThingsToDo;
 
 Route::get('/', function () {
@@ -48,3 +51,9 @@ Route::get('/dashboard/blogs', function () {
     return view('dashboard.blogs');
 });
 
+Route::get('lang/{locale}', function ($locale) {
+    App::setLocale($locale);
+    Session::put('locale', $locale);
+
+    return redirect()->back();
+});

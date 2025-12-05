@@ -2,15 +2,15 @@
 
 <div>
     <p class="text-6xl font-semibold mb-9 text-center">
-        <span class="text-lime-600">Things</span> You Can Do
+        {!! __('things_to_do.title', ['accent' => '<span class="text-lime-600"> ' . __('things_to_do.title_accent') . ' </span>']) !!}
     </p>
     <p class="mt-6 max-w-4xl text-xl text-center mx-auto">
-        Let's make your free time more meaningful! Here are six easy activity ideas you can do alone or with loved ones to recharge your batteries and improve your quality of life.
+        {{ __('things_to_do.description') }}
     </p>
 </div>
 
 <!--Isi activity-->
-    @if(isset($thingstodos) && count($thingstodos))
+@if(isset($thingstodos) && count($thingstodos))
     <div class="grid grid-cols-2 gap-6 mt-6">
         @foreach ($thingstodos as $thingstodo)
             <div class="infobox-accent">
