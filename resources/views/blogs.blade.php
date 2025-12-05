@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Storage;
+use Carbon\Carbon;
+
+Carbon::setLocale(app()->getLocale());
 
 ?>
 

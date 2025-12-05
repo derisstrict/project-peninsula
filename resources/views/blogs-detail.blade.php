@@ -1,3 +1,11 @@
+<?php 
+
+use Carbon\Carbon;
+
+Carbon::setLocale(app()->getLocale());
+
+?>
+
 @extends('layout.layout')
 
 @section('title', 'The Peninsula Island')

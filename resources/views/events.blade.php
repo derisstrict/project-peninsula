@@ -1,7 +1,8 @@
 <?php
 
-use Illuminate\Support\Facades\Storage;
+use Carbon\Carbon;
 
+Carbon::setLocale(app()->getLocale());
 ?>
 
 @extends('layout.layout')
@@ -21,7 +22,7 @@ use Illuminate\Support\Facades\Storage;
         <p class="">{{ __('events.ongoing') }}</p>
         <div class="flex gap-4">
             <p class="text-5xl font-semibold">The Big Bounce</p>
-            <p class="self-end font-light">{{ __('events.by') }} idkthename</p>
+            <p class="self-end font-light">{{ __('common.by') }} idkthename</p>
         </div>
         <div class="flex items-center gap-2">
             <div class="bg-lime-600/10 w-fit mt-auto px-5 py-1 rounded-xl text-sm">
@@ -43,7 +44,7 @@ use Illuminate\Support\Facades\Storage;
 </a>
 <div class="grid grid-cols-1 mt-10 gap-4 lg:grid-cols-3 md:grid-cols-2">
     @foreach ($events as $event)
-        <x-events-card href="/events/{{ $event['slug'] }}" date="{{ date('d F Y', strtotime($event->tanggal_mulai)) }} - {{ date('d F Y', strtotime($event->tanggal_selesai)) }}" image="{{ asset('storage/' . $event->gambar_event) }}" price="{{ number_format($event->harga_tiket, 0, '.', '.') }}">{{ $event->judul_event }}</x-events-card> 
+        <x-events-card href="/events/{{ $event->slug }}" date="{{ Carbon::parse($event->tanggal_mulai)->translatedFormat('d F Y') }} - {{ Carbon::parse($event->tanggal_selesai)->translatedFormat('d F Y') }}" image="{{ asset('storage/' . $event->gambar_event) }}" price="{{ number_format($event->harga_tiket, 0, '.', '.') }}">{{ $event->judul_event }}</x-events-card> 
     @endforeach
 </div>
 @endsection
