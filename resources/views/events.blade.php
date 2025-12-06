@@ -14,7 +14,7 @@ Carbon::setLocale(app()->getLocale());
 <p class="text-5xl text-center font-semibold">{!! __('events.title', ['accent' => '<span class="text-lime-600"> '. __('events.title_accent') .' </span>']) !!}
 </p>
 <div class="mt-20 ml-5">
-<x-search-bar accent="text-lime-600"></x-search-bar>
+<x-search-bar accent="text-lime-600" search="{{ $search }}"></x-search-bar>
 </div>
 <a x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false" href="/events/events-detail" class="flex bg-lime-600/5 p-8 rounded-lg mt-10 gap-5 w-full items-center hover:bg-lime-600/10 transition-colors">
     <img src="img/placeholder.jpg" alt="event-image" class="w-80 h-60 object-cover rounded-xl">

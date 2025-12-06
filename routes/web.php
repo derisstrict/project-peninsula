@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\BlogController;
+use App\Http\Controllers\EventController;
 use App\Models\Blog;
 use App\Models\Event;
 use App\Models\LandingPage;
@@ -12,24 +14,13 @@ Route::get('/', function () {
     return view('home', ['spots' => Spot::all(), 'landing_page' => LandingPage::find(1)]);
 });
 
-Route::get('/blogs', function () {
-    return view('blogs', ['blogs' => Blog::all()]);
-});
+Route::get('/blogs', [BlogController::class, 'searchRequest']);
 
-Route::get('/blogs/{id}/{slug}', function ($id, $slug) {
-    $blogs = Blog::where('slug', $slug)->where('id', $id)->firstOrFail();
-    $more_articles = Blog::where('slug', '!=', $slug)->latest()->take(3)->get();
-    return view('blogs-detail', ['blogs' => $blogs, 'more_articles' => $more_articles]);
-});
+Route::get('/blogs/{id}/{slug}', [BlogController::class, 'findIDSlug']);
 
-Route::get('/events', function () {
-    return view('events', ['events' => Event::all()]);
-});
+Route::get('/events', [EventController::class, 'searchRequest']);
 
-Route::get('/events/{id}/{slug}', function ($id, $slug) {
-    $events = Event::where('slug', $slug)->where('id', $id)->firstOrFail();
-    return view('events-detail', ['event' => $events]);
-});
+Route::get('/events/{id}/{slug}', [EventController::class, 'findIDSlug']);
 
 Route::get('/blogs/blogs-detail', function () {
     return view('blogs-detail');
