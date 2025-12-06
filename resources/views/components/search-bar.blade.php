@@ -1,4 +1,4 @@
-<div x-data="{ focused:false }" id="search_box" :class="focused ? 'outline-3 outline-lime-600/50' : ''" class="relative flex bg-light-primary/5 w-fit items-center pl-3 rounded-xl p-2 gap-2 dark:bg-dark-primary/5">
+<div x-data="{ focused:false }" id="search_box" :class="focused ? 'outline-3 outline-lime-600/50' : ''" class="relative flex bg-light-primary/5 w-fit items-center pl-3 rounded-xl p-2 gap-2 dark:bg-dark-primary/7">
     <form method="GET" class="flex gap-2">
         <button type="submit">
             <x-local-icon icon="search" class="{{ $accent }} hover:brightness-120 cursor-pointer" width="24px" height="24px" stroke="currentColor" viewBox="0 0 24 24" id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg"></x-local-icon>
@@ -10,7 +10,6 @@
     </button>
     <div id="shortcut" class="text-light-primary/50 bg-light-primary/5 px-2 rounded-lg dark:text-dark-primary/50 dark:bg-dark-primary/5">t</div>
 </div>
-<p id="debug"></p>
 <script>
     const clearBtn = document.getElementById('clear_content');
     const searchTb = document.getElementById('search');
