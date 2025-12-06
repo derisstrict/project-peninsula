@@ -19,7 +19,7 @@ Carbon::setLocale(app()->getLocale());
 </div>
 <div class="grid grid-cols-1 mt-10 gap-4">
     @foreach ($blogs as $blog)
-        <x-blogs-card href="/blogs/{{ $blog['slug'] }}" 
+        <x-blogs-card href="/blogs/{{ $blog->id }}/{{ $blog->slug }}" 
         date="{{ $blog->created_at->diffForHumans() }}" 
         image="{{ asset('storage/' . $blog->gambar_blog) }}" 
         title="{{ $blog->judul_blog }}">
