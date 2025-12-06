@@ -11,8 +11,12 @@ use Illuminate\Support\Facades\Storage;
 @section('content')
 <div class="background-radial-blur -translate-x-100 -translate-y-25"></div>
 <p class="text-5xl text-center font-semibold">{!! __('blogs.title', ['accent' => '<span class="text-lime-600"> '. __('blogs.title_accent') .' </span>']) !!}</p>
-<div class="mt-20 ml-5">
-<x-search-bar accent="text-lime-600" search="{{ $search }}"></x-search-bar>
+<div class="flex mt-20 ml-5 gap-2">
+    <x-search-bar accent="text-lime-600" search="{{ $search }}"></x-search-bar>
+    <x-pagination-dropdown page="{{ $page }}"></x-pagination-dropdown>
+    <div class="ml-auto">
+        {{ $blogs->onEachSide(0)->links() }}
+    </div>
 </div>
 <div class="grid grid-cols-1 mt-10 gap-4">
     @foreach ($blogs as $blog)

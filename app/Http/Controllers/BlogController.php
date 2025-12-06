@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Blog;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class BlogController extends Controller
 {
@@ -14,8 +15,20 @@ class BlogController extends Controller
             $query->where('judul_blog', 'like', "%$search%");
         }
 
-        $blogs = $query->paginate(10);
-        return view('blogs', compact('blogs', 'search'));
+        $page = $request->max_result;
+        
+        if (empty($request->max_result)) {
+            $page = Session::get('max_result');
+        } else {
+            Session::put('max_result', $page);
+        }
+
+        if (!Session::has('max_result')) {
+            $page = 6;
+        }
+
+        $blogs = $query->paginate($page);
+        return view('blogs', compact('blogs', 'search', 'page'));
     }
 
     public function findIDSlug ($id, $slug) {
