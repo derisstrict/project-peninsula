@@ -3,7 +3,7 @@
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
-
+use Illuminate\Support\Str;
 
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Blog>
@@ -18,14 +18,14 @@ class BlogFactory extends Factory
     public function definition(): array
     {
         $title = fake()->sentence(3);
-        $slug = strtolower(trim(preg_replace('/[^A-Za-z0-9-]+/', '-', $title), '-'));
+        $slug = Str::slug($title);
         return [
             //
             'id_user' => '1',
             'isi_blog' => fake()->paragraph(),
             'judul_blog' => $title,
             'slug' => $slug,
-            'gambar_blog' => '/img/placeholder.jpg'
+            'gambar_blog' => 'placeholder.jpg'
         ];
     }
 }
