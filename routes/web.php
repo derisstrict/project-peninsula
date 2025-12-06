@@ -48,3 +48,10 @@ Route::get('lang/{locale}', function ($locale) {
 
     return redirect()->back();
 });
+
+Route::get('/remses', function () {
+    // For debug purposes only :P
+    Session::invalidate();
+
+    return redirect()->back();
+});
