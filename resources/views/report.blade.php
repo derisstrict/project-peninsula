@@ -5,7 +5,7 @@
 @section('content')
 <div class="background-radial-blur left-0 transform -translate-y-70"></div>
 <div class="flex gap-8 my-10">
-    <div class="flex flex-col gap-6">
+    <div class="flex flex-col gap-6 max-w-2xl">
         <p class="text-5xl font-semibold">{!! __('report.title', ['accent' => '<span class="text-lime-600"> '. __('report.title_accent') .' </span>']) !!}
         <p class="text-xl">{{ __('report.description') }}</p>
         <div class="infobox-accent gap-3">
@@ -16,9 +16,9 @@
             </div>
         </div>
     </div>
-    <div class="flex flex-col gap-3">
+    <div class="flex flex-col gap-3 w-full">
         <p class="font-bold">{{ __('report.form_title') }}</p>
-        <div class="flex gap-3">
+        {{-- <div class="flex gap-3">
             <div class="flex bg-light-primary/5 w-fit items-center pl-3 rounded-xl p-2 gap-2 dark:bg-dark-primary/5">
                 <x-local-icon icon="user" width="24px" height="24px" viewBox="0 0 24 24" fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg"></x-local-icon>
                 <input type="text" id="name" class="w-80 outline-none" placeholder="{{ __('report.name') }}">
@@ -46,7 +46,8 @@
                 <x-local-icon icon="tick" width="20px" height="20px" viewBox="0 0 24 24" fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg">
                 </x-local-icon>
                 {{ __('report.submit') }}</button>
-        </div>
+        </div> --}}
+        @livewire('report-form')
     </div>
 </div>
 @endsection

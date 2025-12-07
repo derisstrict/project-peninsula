@@ -24,6 +24,7 @@ class DatabaseSeeder extends Seeder
             LandingPageSeeder::class,
             LanguageLineSeeder::class,
             GeneralSettingsSeeder::class,
+            LaporanFasilitasSeeder::class,
         ]);
     }
 }
