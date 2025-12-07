@@ -23,7 +23,9 @@ Route::get('/blogs/{slug}', function ($slug) {
 });
 
 Route::get('/events', function () {
-    return view('events', ['events' => Event::all()]);
+    $today = now();
+    $onGoingEvents = Event::where('tanggal_mulai', '<=', $today)->where('tanggal_selesai', '>=', $today)->get();
+    return view('events', ['events' => Event::all(), 'onGoingEvents' => $onGoingEvents]);
 });
 
 Route::get('/events/{slug}', function ($slug) {
