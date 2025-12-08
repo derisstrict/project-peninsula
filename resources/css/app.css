@@ -68,7 +68,3 @@
     font-family: 'Poppins', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
         'Segoe UI Symbol', 'Noto Color Emoji';
 }
-
-.filepond--label-action {
-    color: oklch(64.8% 0.2 131.684);
-}
