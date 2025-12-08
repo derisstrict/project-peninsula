@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\GeneralSetting;
 use App\Models\User;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -23,6 +24,8 @@ class DatabaseSeeder extends Seeder
             LandingPageSeeder::class,
             LanguageLineSeeder::class,
             ThingsToDoSeeder::class,
+            GeneralSettingsSeeder::class,
+            LaporanFasilitasSeeder::class,
         ]);
     }
 }

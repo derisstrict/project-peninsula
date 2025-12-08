@@ -30,7 +30,7 @@
             <div class="absolute inset-0 flex flex-col items-center justify-center text-white text-center">
                 <h2 class="font-bold text-2xl mb-4">{{ __('gallery.collections') }}</h2>
                 <a onclick="openModal(1)"
-                class="bg-white/30 px-5 py-2 rounded-full font-medium hover:bg-lime-600 hover:text-white transition duration-500 flex items-center justify-center group/button">
+                class="bg-white/30 px-5 py-2 rounded-full font-medium cursor-pointer hover:bg-lime-600 hover:text-white transition duration-500 flex items-center justify-center group/button">
                 {{ __('gallery.explore') }}
                 <x-local-icon icon="arrow-head" fill="currentColor" viewBox="0 0 24 24" stroke="none" xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 transform transition-transform duration-300 group-hover/button:translate-x-1"></x-local-icon>
                 </a>
@@ -41,7 +41,7 @@
     <div id="galleryModal" class="fixed inset-0 z-[9999] flex items-center justify-center bg-black/50 backdrop-blur-[2px] hidden">
 
         <button onclick="closeModal()" 
-            class="absolute top-15 w-10 h-10 flex items-center justify-center 
+            class="absolute top-15 w-10 h-10 cursor-pointer flex items-center justify-center 
                 text-black text-3xl font-bold z-[60] 
                 bg-white/80 rounded-full border-2 border-transparent
                 hover:bg-black/80 hover:scale-110 hover:border-white
@@ -56,7 +56,7 @@
 
 
         <button onclick="prevImage()" 
-            class="absolute w-10 h-10 left-4 md:left-12 flex items-center justify-center
+            class="absolute w-10 h-10 left-4 md:left-12 cursor-pointer flex items-center justify-center
                 text-black z-[60] bg-white/80 rounded-full border-2 border-transparent
                 hover:bg-black/20 hover:scale-110 hover:border-white
                 backdrop-blur-[2px] transition duration-300 ease-in-out group">
@@ -69,7 +69,7 @@
             class="max-h-[80vh] max-w-[90vw] rounded-xl shadow-lg transition-all duration-300">
 
         <button onclick="nextImage()" 
-            class="absolute w-10 h-10 right-4 md:right-12 flex items-center justify-center
+            class="absolute w-10 h-10 right-4 md:right-12 cursor-pointer flex items-center justify-center
                 text-black z-[60] bg-white/80 rounded-full border-2 border-transparent
                 hover:bg-black/20 hover:scale-110 hover:border-white
                 backdrop-blur-[2px] transition duration-300 ease-in-out group">

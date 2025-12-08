@@ -1,4 +1,4 @@
-<a x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false" {{ $attributes }} class="flex gap-5 p-5 rounded-xl hover:bg-light-primary/5 dark:hover:bg-dark-primary/5 transition-colors">
+<a x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false" {{ $attributes }} class="flex gap-5 p-5 rounded-xl hover:bg-light-primary/5 dark:hover:bg-dark-primary/7 transition-colors">
     <img class="rounded-lg w-80 h-60 object-cover" src="{{ $image }}" alt="image">
     <div class="flex flex-col gap-2 w-full">
         <p class="text-2xl font-semibold">{{ $title }}</p>
@@ -9,7 +9,7 @@
         x-transition:enter-start="opacity-0"
         x-transition:enter-end="opacity-100 scale-100"
         x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0" class="flex items-center mt-auto gap-3">
-            <p class="text-sm ml-auto">{{ ('blogs_card.more') }}</p>
+            <p class="text-sm ml-auto">{{ __('blogs_card.more') }}</p>
             <x-local-icon icon="arrow"  width="24px" height="24px" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" xmlns="http://www.w3.org/2000/svg"></x-local-icon>
         </div>
     </div>

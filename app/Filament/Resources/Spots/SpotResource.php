@@ -18,7 +18,7 @@ class SpotResource extends Resource
 {
     protected static ?string $model = Spot::class;
 
-    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
+    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedMapPin;
 
     protected static ?string $recordTitleAttribute = 'title';
 

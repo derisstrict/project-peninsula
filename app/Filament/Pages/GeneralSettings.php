@@ -2,11 +2,17 @@
 
 namespace App\Filament\Pages;
 
-use App\Models\LandingPage;
+use App\Models\GeneralSetting;
 use BackedEnum;
+use Dom\Text;
 use Filament\Actions\Action;
+use Filament\Forms\Components\CodeEditor;
+use Filament\Forms\Components\CodeEditor\Enums\Language;
+use Filament\Forms\Components\ColorPicker;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Hidden;
+use Filament\Forms\Components\KeyValue;
+use Filament\Forms\Components\Repeater;
 use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\TextInput;
 use Filament\Notifications\Notification;
@@ -15,12 +21,17 @@ use Filament\Schemas\Components\Actions;
 use Filament\Schemas\Components\Fieldset;
 use Filament\Schemas\Components\Form;
 use Filament\Schemas\Components\Grid;
+use Filament\Schemas\Components\Icon;
+use Filament\Schemas\Components\Section;
+use Filament\Schemas\Components\Tabs;
+use Filament\Schemas\Components\Tabs\Tab;
 use Filament\Schemas\Schema;
 use Filament\Support\Icons\Heroicon;
+use UnitEnum;
 
-class ManageLandingPage extends Page
+class GeneralSettings extends Page
 {
-    protected string $view = 'filament.pages.manage-landing-page';
+    protected string $view = 'filament.pages.general-settings';
     
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedCog6Tooth;
 
@@ -34,31 +45,33 @@ class ManageLandingPage extends Page
         $this->form->fill($this->getRecord()?->attributesToArray());
     }
 
+    protected static string | UnitEnum | null $navigationGroup = 'Settings';
+
     public function form(Schema $schema): Schema
     {
         return $schema
             ->components([
                 Form::make([
-                    Hidden::make('user_id')->default(fn () => auth()->id()),
-                    Grid::make(4)->schema([
-                        TextInput::make('jam_operasional')->required(),
-                        TextInput::make('biaya_masuk')
-                        ->prefix('Rp.')->belowContent('Tanpa tanda titik')
-                        ->required()
+                    Tabs::make()->tabs([
+                        Tab::make('Judul Halaman')
+                        ->icon(Icon::make(Heroicon::OutlinedPencilSquare))
+                        ->schema([
+                            Repeater::make('judul_utama')->simple(
+                                TextInput::make('Judul'),
+                                TextInput::make('Judul Aksen'),
+                            )
+                            ->reorderable(false)
+                            ->maxItems(3),
+                        ]),
+                        Tab::make('Bahasa Tersedia')
+                        ->icon(Icon::make(Heroicon::OutlinedLanguage))
+                        ->schema([
+                            KeyValue::make('bahasa_tersedia')
+                                ->label('Bahasa yang tersedia:')
+                                ->keyLabel('Nama bahasa')
+                                ->valueLabel('Kode bahasa')
+                        ])
                     ]),
-                    Fieldset::make('Gambar')->schema([
-                        FileUpload::make('gambar')
-                        ->label('Upload gambar')
-                        ->required()
-                        ->disk('public_img')
-                        ->directory('/')
-                        ->preserveFilenames(),
-                        TextInput::make('alt')
-                        ->belowContent('Deskripsi singkat tentang gambar')
-                        ->label('Alt gambar')
-                        ->required()
-                    ])
-                    ->columns(1),
                 ])->columns(1)
                     ->livewireSubmitHandler('save')
                     ->footer([
@@ -80,8 +93,8 @@ class ManageLandingPage extends Page
         $record = $this->getRecord();
         
         if (! $record) {
-            $record = new LandingPage();
-            $record->is_landingpage = true;
+            $record = new GeneralSetting();
+            $record->is_gs = true;
         }
         
         $record->fill($data);
@@ -97,10 +110,10 @@ class ManageLandingPage extends Page
             ->send();
     }
     
-    public function getRecord(): ?LandingPage
+    public function getRecord(): ?GeneralSetting
     {
-        return LandingPage::query()
-            ->where('is_landingpage', true)
+        return GeneralSetting::query()
+            ->where('is_gs', true)
             ->first();
     }
 }
