@@ -4,10 +4,15 @@ namespace App\Filament\Pages;
 
 use App\Models\GeneralSetting;
 use BackedEnum;
+use Dom\Text;
 use Filament\Actions\Action;
+use Filament\Forms\Components\CodeEditor;
+use Filament\Forms\Components\CodeEditor\Enums\Language;
+use Filament\Forms\Components\ColorPicker;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Hidden;
 use Filament\Forms\Components\KeyValue;
+use Filament\Forms\Components\Repeater;
 use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\TextInput;
 use Filament\Notifications\Notification;
@@ -16,8 +21,13 @@ use Filament\Schemas\Components\Actions;
 use Filament\Schemas\Components\Fieldset;
 use Filament\Schemas\Components\Form;
 use Filament\Schemas\Components\Grid;
+use Filament\Schemas\Components\Icon;
+use Filament\Schemas\Components\Section;
+use Filament\Schemas\Components\Tabs;
+use Filament\Schemas\Components\Tabs\Tab;
 use Filament\Schemas\Schema;
 use Filament\Support\Icons\Heroicon;
+use UnitEnum;
 
 class GeneralSettings extends Page
 {
@@ -35,15 +45,33 @@ class GeneralSettings extends Page
         $this->form->fill($this->getRecord()?->attributesToArray());
     }
 
+    protected static string | UnitEnum | null $navigationGroup = 'Settings';
+
     public function form(Schema $schema): Schema
     {
         return $schema
             ->components([
                 Form::make([
-                    KeyValue::make('available_languages')
-                    ->label('Bahasa yang tersedia:')
-                    ->keyLabel('Nama bahasa')
-                    ->valueLabel('Kode bahasa')
+                    Tabs::make()->tabs([
+                        Tab::make('Judul Halaman')
+                        ->icon(Icon::make(Heroicon::OutlinedPencilSquare))
+                        ->schema([
+                            Repeater::make('judul_utama')->simple(
+                                TextInput::make('Judul'),
+                                TextInput::make('Judul Aksen'),
+                            )
+                            ->reorderable(false)
+                            ->maxItems(3),
+                        ]),
+                        Tab::make('Bahasa Tersedia')
+                        ->icon(Icon::make(Heroicon::OutlinedLanguage))
+                        ->schema([
+                            KeyValue::make('bahasa_tersedia')
+                                ->label('Bahasa yang tersedia:')
+                                ->keyLabel('Nama bahasa')
+                                ->valueLabel('Kode bahasa')
+                        ])
+                    ]),
                 ])->columns(1)
                     ->livewireSubmitHandler('save')
                     ->footer([

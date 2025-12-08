@@ -2,9 +2,19 @@
     <div class="py-8 bg-[radial-gradient(circle,_rgba(94,165,0,1)_-900%,_rgba(238,238,238,1)_80%)] dark:bg-[radial-gradient(circle,_rgba(94,165,0,1)_-700%,_rgba(8,16,7,1)_80%)]">
         <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-6 px-6 lg:gap- items-center">
             <div class="flex flex-col items-center md:items-start">
-                <p class="flex flex-col text-2xl font-semibold leading-tight items-center md:items-start">The<br>
-                    <span class="text-lime-600">Peninsula Island</span>
-                </p>
+                <div class="flex flex-col text-2xl font-semibold leading-tight items-center md:items-start">
+                    @foreach ($gs->judul_utama as $judul)
+                        @if ($loop->last)
+                            <p class="text-lime-600">
+                                {{ $judul }}
+                            </p>
+                        @else
+                            <p>
+                                {{ $judul }}
+                            </p>
+                        @endif
+                    @endforeach
+                </div>
                 <p class="text-sm mt-2">
                     {{ __('footer.description') }}
                 </p>

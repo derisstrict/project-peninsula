@@ -19,7 +19,7 @@ class BlogResource extends Resource
     protected static ?string $model = Blog::class;
     protected static ?string $recordTitleAttribute = 'judul_blog';
 
-    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
+    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedNewspaper;
 
     public static function form(Schema $schema): Schema
     {

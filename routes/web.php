@@ -4,6 +4,7 @@ use App\Http\Controllers\BlogController;
 use App\Http\Controllers\EventController;
 use App\Models\Blog;
 use App\Models\Event;
+use App\Models\GeneralSetting;
 use App\Models\LandingPage;
 use App\Models\Spot;
 use Illuminate\Support\Facades\App;
@@ -11,7 +12,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Session;
 
 Route::get('/', function () {
-    return view('home', ['spots' => Spot::all(), 'landing_page' => LandingPage::find(1)]);
+    return view('home', ['spots' => Spot::all()]);
 });
 
 Route::get('/blogs', [BlogController::class, 'searchRequest']);

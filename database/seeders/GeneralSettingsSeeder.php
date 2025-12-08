@@ -15,7 +15,10 @@ class GeneralSettingsSeeder extends Seeder
     {
         GeneralSetting::create(
             [
-                'available_languages' => ['English' => 'en', 'Bahasa Indonesia' => 'id', 'French' => 'fn'], 'is_gs' => true
+                'bahasa_tersedia' => ['English' => 'en', 'Bahasa Indonesia' => 'id', 'French' => 'fn'], 
+                'is_gs' => true,
+                'judul_utama' => '',
+                'warna_aksen_judul_utama' => '',
             ]
         );
     }
