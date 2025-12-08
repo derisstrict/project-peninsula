@@ -9,13 +9,16 @@ use Illuminate\View\Component;
 class SearchBar extends Component
 {
     public $accent;
+    public $search;
     /**
      * Create a new component instance.
      */
     public function __construct(
-        $accent = ""
+        $accent = "",
+        $search = ""
     )
     {
+        $this->search = $search;
         $this->accent = $accent;
     }
 

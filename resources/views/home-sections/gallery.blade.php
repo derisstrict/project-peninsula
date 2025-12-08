@@ -38,7 +38,7 @@
         </div>
     </div>
       <!-- pop up -->
-    <div id="galleryModal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-[4px] hidden">
+    <div id="galleryModal" class="fixed inset-0 z-[9999] flex items-center justify-center bg-black/50 backdrop-blur-[2px] hidden">
 
         <button onclick="closeModal()" 
             class="absolute top-15 w-10 h-10 cursor-pointer flex items-center justify-center 
@@ -94,22 +94,34 @@
     function openModal(idx) {
         current = idx - 1;
         document.getElementById('galleryModal').classList.remove('hidden');
+
+        // scroll lock (open modal)
+        document.body.classList.add('overflow-hidden');
+
         showImage();
     }
+
     function closeModal() {
         document.getElementById('galleryModal').classList.add('hidden');
+
+        // scroll open (exit modal)
+        document.body.classList.remove('overflow-hidden');
     }
+
     function showImage() {
         document.getElementById('modalImg').src = images[current];
     }
+
     function prevImage() {
         current = (current - 1 + images.length) % images.length;
         showImage();
     }
+
     function nextImage() {
         current = (current + 1) % images.length;
         showImage();
     }
+
     document.addEventListener('keydown', function(e) {
         if (e.key === "Escape") closeModal();
     });

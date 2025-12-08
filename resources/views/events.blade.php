@@ -13,8 +13,12 @@ Carbon::setLocale(app()->getLocale());
 <div class="background-radial-blur -translate-x-100 -translate-y-25"></div>
 <p class="text-5xl text-center font-semibold">{!! __('events.title', ['accent' => '<span class="text-lime-600"> '. __('events.title_accent') .' </span>']) !!}
 </p>
-<div class="mt-20 ml-5">
-<x-search-bar accent="text-lime-600"></x-search-bar>
+<div class="flex mt-20 ml-5 gap-2">
+    <x-search-bar accent="text-lime-600" search="{{ $search }}"></x-search-bar>
+    <x-pagination-dropdown page="{{ $page }}"></x-pagination-dropdown>
+    <div class="ml-auto">
+        {{ $events->onEachSide(0)->links() }}
+    </div>
 </div>
 @foreach ($onGoingEvents as $onGoingEvent)
 <a x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false" href="/events/{{ $onGoingEvent['slug']}}" class="flex bg-lime-600/5 p-8 rounded-lg mt-10 gap-5 w-full items-center hover:bg-lime-600/10 transition-colors">
@@ -67,7 +71,7 @@ Carbon::setLocale(app()->getLocale());
 @endforeach
 <div class="grid grid-cols-1 mt-10 gap-4 lg:grid-cols-3 md:grid-cols-2">
     @foreach ($events as $event)
-        <x-events-card href="/events/{{ $event->slug }}" date="{{ Carbon::parse($event->tanggal_mulai)->translatedFormat('d F Y') }} - {{ Carbon::parse($event->tanggal_selesai)->translatedFormat('d F Y') }}" image="{{ asset('storage/' . $event->gambar_event) }}" price="{{ number_format($event->harga_tiket, 0, '.', '.') }}">{{ $event->judul_event }}</x-events-card> 
+        <x-events-card href="/events/{{ $event->id }}/{{ $event->slug }}" date="{{ Carbon::parse($event->tanggal_mulai)->translatedFormat('d F Y') }} - {{ Carbon::parse($event->tanggal_selesai)->translatedFormat('d F Y') }}" image="{{ asset('storage/' . $event->gambar_event) }}" price="{{ number_format($event->harga_tiket, 0, '.', '.') }}">{{ $event->judul_event }}</x-events-card> 
     @endforeach
 </div>
 @endsection

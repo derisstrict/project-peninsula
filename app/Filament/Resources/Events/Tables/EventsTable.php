@@ -2,12 +2,14 @@
 
 namespace App\Filament\Resources\Events\Tables;
 
+use Filament\Tables\Table;
+use Filament\Actions\EditAction;
+use Filament\Actions\ViewAction;
+use Filament\Actions\DeleteAction;
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteBulkAction;
-use Filament\Actions\EditAction;
-use Filament\Forms\Components\TextInput;
 use Filament\Tables\Columns\TextColumn;
-use Filament\Tables\Table;
+use Filament\Forms\Components\TextInput;
 
 class EventsTable
 {
@@ -15,16 +17,28 @@ class EventsTable
     {
         return $table
             ->columns([
-                TextColumn::make('judul_event'),
-                TextColumn::make('nama_penyelenggara'),
-                TextColumn::make('tanggal_mulai'),
-                TextColumn::make('tanggal_selesai'),
+                TextColumn::make('judul_event')
+                ->searchable()
+                ->sortable(),
+                TextColumn::make('nama_penyelenggara')
+                ->searchable()
+                ->sortable(),
+                TextColumn::make('tanggal_mulai')
+                ->date('d M Y')
+                ->sortable()
+                ->searchable(),
+                TextColumn::make('tanggal_selesai')
+                ->date('d M Y')
+                ->sortable()
+                ->searchable(),
             ])
             ->filters([
                 //
             ])
             ->recordActions([
+                ViewAction::make(),
                 EditAction::make(),
+                DeleteAction::make(),
             ])
             ->toolbarActions([
                 BulkActionGroup::make([

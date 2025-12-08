@@ -16,11 +16,22 @@ class SpotsTable
     {
         return $table
             ->columns([
-                TextColumn::make('title')->label("Nama Spot"),
-                TextColumn::make('xpos')->label("Koordinat X"),
-                TextColumn::make('ypos')->label("Koordinat Y"),
-                TextColumn::make('catatan')->label("Catatan"),
-                TextColumn::make('keterangan')->label("Keterangan")->limit(100),
+                TextColumn::make('title')->label("Nama Spot")
+                ->searchable()
+                ->sortable(),
+                TextColumn::make('xpos')->label("Koordinat X")
+                ->searchable()
+                ->sortable(),
+                TextColumn::make('ypos')->label("Koordinat Y")
+                ->searchable()
+                ->sortable(),
+                TextColumn::make('catatan')->label("Catatan")
+                ->searchable()
+                ->sortable(),
+                TextColumn::make('keterangan')->label("Keterangan")
+                ->searchable()
+                ->sortable()
+                ->limit(100),
             ])
             ->filters([
                 //
