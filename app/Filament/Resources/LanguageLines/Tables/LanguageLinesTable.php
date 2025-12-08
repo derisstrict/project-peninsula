@@ -14,9 +14,9 @@ class LanguageLinesTable
     {
         return $table
             ->columns([
-                TextColumn::make('group'),
-                TextColumn::make('key'),
-                TextColumn::make('text')
+                TextColumn::make('group')->searchable(),
+                TextColumn::make('key')->searchable(),
+                TextColumn::make('text')->searchable()
             ])
             ->filters([
                 //
@@ -28,6 +28,7 @@ class LanguageLinesTable
                 BulkActionGroup::make([
                     DeleteBulkAction::make(),
                 ]),
-            ]);
+            ])
+            ->defaultGroup('group');
     }
 }
