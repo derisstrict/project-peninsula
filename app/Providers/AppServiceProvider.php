@@ -39,7 +39,8 @@ class AppServiceProvider extends ServiceProvider
             'success' => Color::Green,
             'warning' => Color::Amber,
         ]);
-
-        View::share('gs', GeneralSetting::first());
+        if (Schema::hasTable('general_settings')) {
+            View::share('gs', GeneralSetting::first());
+        }
     }
 }
