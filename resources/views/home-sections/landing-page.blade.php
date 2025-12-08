@@ -1,16 +1,21 @@
 <div class="background-radial-blur transform -translate-y-25"></div>
 <div class="relative pb-20">
     <div class="relative flex flex-col max-w-4xl gap-8">
-        <p class="text-6xl font-semibold md:text-8xl">The
-            <br><span class="text-lime-600">Peninsula Island</span>
-        </p>
+        <div class="text-6xl font-semibold md:text-8xl">
+            <p>
+                The
+            </p>
+            <p>
+                Peninsula Island
+            </p>
+        </div>
         <p class="text-lg max-w-2xl md:text-2xl">{{ __('landing_page.description')}}</p>
         <div class="flex flex-col gap-4 md:flex-row">
             <div class="infobox-accent gap-3">
                 <x-local-icon icon="time" class="text-lime-600" width="24px" height="24px" viewBox="0 0 24 24" fill="currentColor" stroke="none" xmlns="http://www.w3.org/2000/svg"></x-local-icon>
                 <div class="flex flex-col gap-2">
                     <p class="font-bold">{{ __('landing_page.open') }}</p>
-                    <p>{{ $landing_page->jam_operasional }}</p>
+                    <p>{{ __('landing_page.open_description') }}</p>
                 </div>
             </div>
             <div class="infobox-accent gap-3">
@@ -18,7 +23,7 @@
                     stroke="currentColor" xmlns="http://www.w3.org/2000/svg"></x-local-icon>
                 <div class="flex flex-col gap-2">
                     <p class="font-bold">{{ __('landing_page.fee') }}</p>
-                    <p>IDR {{ number_format($landing_page->biaya_masuk, 0, '.', '.') }}</p>
+                    <p>{{ __('landing_page.fee_description') }}</p>
                 </div>
             </div>
         </div>
@@ -43,5 +48,5 @@
     </div>
 </div>
 <img class="absolute h-135 w-[calc((27vw-10rem)*2)] hidden top-40 right-0 object-cover rounded-xl outline-4 outline-lime-600/15 xl:block"
-src="{{ asset('/img/' . $landing_page->gambar) }}" alt="{{ $landing_page->alt }}">
+src="{{ asset('/img/' . 'placeholder.jpg') }}" alt="{{ 'test' }}">
 

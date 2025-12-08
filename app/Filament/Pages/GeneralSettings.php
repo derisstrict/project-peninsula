@@ -5,6 +5,9 @@ namespace App\Filament\Pages;
 use App\Models\GeneralSetting;
 use BackedEnum;
 use Filament\Actions\Action;
+use Filament\Forms\Components\CodeEditor;
+use Filament\Forms\Components\CodeEditor\Enums\Language;
+use Filament\Forms\Components\ColorPicker;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Hidden;
 use Filament\Forms\Components\KeyValue;
@@ -16,6 +19,9 @@ use Filament\Schemas\Components\Actions;
 use Filament\Schemas\Components\Fieldset;
 use Filament\Schemas\Components\Form;
 use Filament\Schemas\Components\Grid;
+use Filament\Schemas\Components\Section;
+use Filament\Schemas\Components\Tabs;
+use Filament\Schemas\Components\Tabs\Tab;
 use Filament\Schemas\Schema;
 use Filament\Support\Icons\Heroicon;
 
@@ -40,10 +46,23 @@ class GeneralSettings extends Page
         return $schema
             ->components([
                 Form::make([
-                    KeyValue::make('available_languages')
-                    ->label('Bahasa yang tersedia:')
-                    ->keyLabel('Nama bahasa')
-                    ->valueLabel('Kode bahasa')
+                    Tabs::make()->tabs([
+                        Tab::make('Judul Halaman')
+                        ->schema([
+                            RichEditor::make('judul_utama')
+                            ->toolbarButtons([])
+                            ->label('Judul'),
+                            ColorPicker::make('warna_aksen_judul_utama')
+                            ->label('Warna Aksen'),
+                        ]),
+                        Tab::make('Bahasa Tersedia')
+                        ->schema([
+                            KeyValue::make('bahasa_tersedia')
+                                ->label('Bahasa yang tersedia:')
+                                ->keyLabel('Nama bahasa')
+                                ->valueLabel('Kode bahasa')
+                        ])
+                    ]),
                 ])->columns(1)
                     ->livewireSubmitHandler('save')
                     ->footer([

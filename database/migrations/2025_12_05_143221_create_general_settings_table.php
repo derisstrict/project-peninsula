@@ -15,7 +15,9 @@ return new class extends Migration
             $table->id();
             $table->timestamps();
             $table->boolean('is_gs')->nullable(true);
-            $table->string('available_languages')->nullable(false);
+            $table->string('bahasa_tersedia')->nullable(false);
+            $table->string('judul_utama')->nullable(false);
+            $table->string('warna_aksen_judul_utama')->nullable(false);
         });
     }
 
