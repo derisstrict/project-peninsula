@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Session;
 
 Route::get('/', function () {
-    return view('home', ['spots' => Spot::all(), 'gs' => GeneralSetting::find(1)]);
+    return view('home', ['spots' => Spot::all()]);
 });
 
 Route::get('/blogs', [BlogController::class, 'searchRequest']);
