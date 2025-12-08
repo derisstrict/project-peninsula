@@ -3,9 +3,15 @@
     <div class="relative flex flex-col max-w-4xl gap-8">
         <div class="text-6xl font-semibold md:text-8xl">
             @foreach ($gs->judul_utama as $judul)
-                <p>
-                    {{ $judul }}
-                </p>
+                @if ($loop->last)
+                    <p class="text-lime-600">
+                        {{ $judul }}
+                    </p>
+                @else
+                    <p>
+                        {{ $judul }}
+                    </p>
+                @endif
             @endforeach
         </div>
         <p class="text-lg max-w-2xl md:text-2xl">{{ __('landing_page.description')}}</p>
