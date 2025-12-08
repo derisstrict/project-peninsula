@@ -596,8 +596,8 @@ class LanguageLineSeeder extends Seeder
             'group' => 'common', 
             'key' => 'price', 
             'text' => [
-                'id' => 'Harga Mulai Dari', 
-                'en' => 'Starting Price']
+                'id' => 'Harga mulai dari', 
+                'en' => 'Starting price']
         ]);
         //// Common
     }

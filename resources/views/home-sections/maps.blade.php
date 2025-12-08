@@ -1,5 +1,5 @@
 <!-- Spots Map -->
-<div x-data='{ title: "", desc: "", note: "", images: [] }' class="mt-32">
+<div id="maps" x-data='{ title: "", desc: "", note: "", images: [] }' class="mt-32">
     <p class="text-3xl font-semibold text-center mb-10 md:text-6xl">
         {!! __('maps.title_1', ['accent' => '<span class="text-lime-600"> ' . __('maps.title_accent_1') . ' </span>']) !!}
     </p>
