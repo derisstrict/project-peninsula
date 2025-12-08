@@ -19,7 +19,7 @@ class LaporanFasilitasResource extends Resource
 {
     protected static ?string $model = LaporanFasilitas::class;
 
-    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
+    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedChatBubbleBottomCenterText;
 
     protected static ?string $recordTitleAttribute = 'judul_laporan';
 
