@@ -7,6 +7,7 @@ use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Hidden;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
+use Filament\Notifications\Notification;
 use Filament\Schemas\Components\Grid;
 use Filament\Schemas\Components\Icon;
 use Filament\Schemas\Concerns\InteractsWithSchemas;
@@ -50,7 +51,8 @@ class ReportForm extends Component implements HasSchemas
                 ->minLength(2)
                 ->maxLength(150),
                 Textarea::make('deskripsi_laporan')
-                ->rows(5),
+                ->rows(5)
+                ->required(),
                 FileUpload::make('foto_fasilitas')
                 ->required(),
             ])
@@ -60,6 +62,10 @@ class ReportForm extends Component implements HasSchemas
     public function create(): void
     {
         LaporanFasilitas::create($this->form->getState());
+        Notification::make()
+        ->title('Submitted')
+        ->success()
+        ->send();
         // dd($this->form->getState());
     }
     
