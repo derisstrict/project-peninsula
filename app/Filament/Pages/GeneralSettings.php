@@ -56,11 +56,12 @@ class GeneralSettings extends Page
                         Tab::make('Judul Halaman')
                         ->icon(Icon::make(Heroicon::OutlinedPencilSquare))
                         ->schema([
-                            RichEditor::make('judul_utama')
-                            ->toolbarButtons([])
-                            ->label('Judul'),
-                            ColorPicker::make('warna_aksen_judul_utama')
-                            ->label('Warna Aksen'),
+                            Repeater::make('judul_utama')->simple(
+                                TextInput::make('Judul'),
+                                TextInput::make('Judul Aksen'),
+                            )
+                            ->reorderable(false)
+                            ->maxItems(3),
                         ]),
                         Tab::make('Bahasa Tersedia')
                         ->icon(Icon::make(Heroicon::OutlinedLanguage))

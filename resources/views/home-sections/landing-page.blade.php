@@ -2,12 +2,11 @@
 <div class="relative pb-20">
     <div class="relative flex flex-col max-w-4xl gap-8">
         <div class="text-6xl font-semibold md:text-8xl">
-            <p>
-                The
-            </p>
-            <p>
-                Peninsula Island
-            </p>
+            @foreach ($gs->judul_utama as $judul)
+                <p>
+                    {{ $judul }}
+                </p>
+            @endforeach
         </div>
         <p class="text-lg max-w-2xl md:text-2xl">{{ __('landing_page.description')}}</p>
         <div class="flex flex-col gap-4 md:flex-row">
