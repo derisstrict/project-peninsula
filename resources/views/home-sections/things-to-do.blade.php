@@ -21,7 +21,7 @@
                         class="w-[45px] h-[45px] object-contain mb-2"
                     >
                     <h3 class="font-bold mt-2">{{ $thingstodo->title }}</h3>
-                    <p class="mt-2">{{ $thingstodo->deskripsi }}</p>
+                    <p class="mt-2">{{ __('things_to_do.box_description_' . $loop->iteration .'') }}</p>
                 </div>
             </div>
         @endforeach

@@ -12,7 +12,6 @@ class ThingsToDo extends Model
         'user_id',
         'slug',
         'title',
-        'deskripsi',
         'icon'
     ];
 

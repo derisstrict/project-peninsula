@@ -20,10 +20,12 @@ class ThingsToDoForm
             ->components([
                 Hidden::make('user_id')->default(fn () => auth()->id()),
                 TextInput::make('title')
-                    ->label('Judul Things To Do')
+                    ->label('Judul')
                     ->required(),
-                Textarea::make('deskripsi')->label('Deskripsi')->required(),
-                FileUpload::make('icon')->label('Upload Icon/Gambar')->image()->required()
-            ]);
+                FileUpload::make('icon')->label('Upload Icon/Gambar')
+                ->image()
+                ->required()
+                ->preserveFilenames(),
+            ])->columns(1);
     }
 }
