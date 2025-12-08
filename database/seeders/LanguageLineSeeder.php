@@ -89,7 +89,7 @@ class LanguageLineSeeder extends Seeder
 
         // Video
         LanguageLine::create([
-            'group' => 'landing_page', 
+            'group' => 'video', 
             'key' => 'play', 
             'text' => [
                 'id' => 'Putar/Stop', 
