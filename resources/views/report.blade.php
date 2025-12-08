@@ -18,7 +18,7 @@
     </div>
     <div class="flex flex-col gap-3 w-full">
         <p class="font-bold">{{ __('report.form_title') }}</p>
-        <div class="bg-gray-50 px-8 py-8 rounded-xl dark:bg-gray-50/5">
+        <div class="bg-gray-50/75 px-8 py-8 rounded-xl dark:bg-gray-50/5">
             @livewire('report-form')
         </div>
     </div>
