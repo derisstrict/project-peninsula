@@ -16,11 +16,19 @@ class LaporanFasilitasTable
     {
         return $table
             ->columns([
-                TextColumn::make('judul_laporan'),
-                TextColumn::make('nama_pelapor'),
-                TextColumn::make('email_pelapor'),
+                TextColumn::make('judul_laporan')
+                ->searchable()
+                ->sortable(),
+                TextColumn::make('nama_pelapor')
+                ->searchable()
+                ->sortable(),
+                TextColumn::make('email_pelapor')
+                ->searchable()
+                ->sortable(),
                 TextColumn::make('status_laporan')
                 ->badge()
+                ->searchable()
+                ->sortable()
                 ->color(fn (string $state): string => match ($state) {
                     '0' => 'gray',
                     '1' => 'warning',

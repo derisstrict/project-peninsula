@@ -17,10 +17,20 @@ class EventsTable
     {
         return $table
             ->columns([
-                TextColumn::make('judul_event'),
-                TextColumn::make('nama_penyelenggara'),
-                TextColumn::make('tanggal_mulai'),
-                TextColumn::make('tanggal_selesai'),
+                TextColumn::make('judul_event')
+                ->searchable()
+                ->sortable(),
+                TextColumn::make('nama_penyelenggara')
+                ->searchable()
+                ->sortable(),
+                TextColumn::make('tanggal_mulai')
+                ->date('d M Y')
+                ->sortable()
+                ->searchable(),
+                TextColumn::make('tanggal_selesai')
+                ->date('d M Y')
+                ->sortable()
+                ->searchable(),
             ])
             ->filters([
                 //

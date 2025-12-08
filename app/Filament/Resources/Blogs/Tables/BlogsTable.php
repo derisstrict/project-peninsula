@@ -16,8 +16,14 @@ class BlogsTable
     {
         return $table
             ->columns([
-                TextColumn::make('judul_blog'),
-                TextColumn::make('created_at')->dateTime('d M Y')->label('Tanggal Upload'),
+                TextColumn::make('judul_blog')
+                ->searchable()
+                ->sortable(),
+                TextColumn::make('created_at')
+                ->dateTime('d M Y')
+                ->label('Tanggal upload')
+                ->searchable()
+                ->sortable(),
                 TextColumn::make('isi_blog')->limit(50),
             ])
             ->filters([

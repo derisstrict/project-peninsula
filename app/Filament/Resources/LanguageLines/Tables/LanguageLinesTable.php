@@ -14,9 +14,12 @@ class LanguageLinesTable
     {
         return $table
             ->columns([
-                TextColumn::make('group')->searchable(),
-                TextColumn::make('key')->searchable(),
-                TextColumn::make('text')->searchable()
+                TextColumn::make('group')
+                ->searchable(),
+                TextColumn::make('key')
+                ->searchable(),
+                TextColumn::make('text')
+                ->searchable()
             ])
             ->filters([
                 //
