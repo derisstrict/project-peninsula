@@ -52,7 +52,13 @@ class SpotSeeder extends Seeder
         );
         Spot::create(
             [
-                'user_id' => 1,'xpos' => '74', 'ypos' => '-44', 'title' => 'Brothership Monument', 'url_media' => ["gallery1.jpg", "gallery2.jpg", "gallery3.jpg"], 'catatan' => 'Visitors must wear appropriate clothing or balinese attire (sarong and sash). ', 'keterangan' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae itaque iste pariatur nobis sint voluptatibus eveniet inventore qui nesciunt adipisci, rem exercitationem necessitatibus dolorem quisquam! Corrupti laudantium dignissimos aliquid officiis, dolorum sapiente laborum laboriosam sed.',
+                'user_id' => 1,
+                'xpos' => '74', 
+                'ypos' => '-44', 
+                'title' => 'Brothership Monument', 
+                'url_media' => ["gallery1.jpg", "gallery2.jpg", "gallery3.jpg"], 
+                'catatan' => 'Visitors must wear appropriate clothing or balinese attire (sarong and sash). ', 
+                'keterangan' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae itaque iste pariatur nobis sint voluptatibus eveniet inventore qui nesciunt adipisci, rem exercitationem necessitatibus dolorem quisquam! Corrupti laudantium dignissimos aliquid officiis, dolorum sapiente laborum laboriosam sed.',
             ]
         );
         Spot::create(

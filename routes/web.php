@@ -10,9 +10,10 @@ use App\Models\Spot;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Session;
+use App\Models\ThingsToDo;
 
 Route::get('/', function () {
-    return view('home', ['spots' => Spot::all()]);
+    return view('home', ['spots' => Spot::all(), 'thingstodos' => ThingsToDo::all()]);
 });
 
 Route::get('/blogs', [BlogController::class, 'searchRequest']);

@@ -1,24 +1,23 @@
 <?php
 
-namespace App\Filament\Resources\Blogs\Tables;
+namespace App\Filament\Resources\ThingsToDos\Tables;
 
-use Filament\Tables\Table;
+use Filament\Actions\BulkActionGroup;
+use Filament\Actions\DeleteAction;
+use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
 use Filament\Actions\ViewAction;
-use Filament\Actions\DeleteAction;
-use Filament\Actions\BulkActionGroup;
-use Filament\Actions\DeleteBulkAction;
 use Filament\Tables\Columns\TextColumn;
+use Filament\Tables\Table;
 
-class BlogsTable
+class ThingsToDosTable
 {
     public static function configure(Table $table): Table
     {
         return $table
             ->columns([
-                TextColumn::make('judul_blog'),
-                TextColumn::make('created_at')->dateTime('d M Y')->label('Tanggal Upload'),
-                TextColumn::make('isi_blog')->limit(50),
+                TextColumn::make('title'),
+                TextColumn::make('deskripsi')->limit(100)
             ])
             ->filters([
                 //

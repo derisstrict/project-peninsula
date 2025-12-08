@@ -23,6 +23,7 @@ class DatabaseSeeder extends Seeder
             SpotSeeder::class,
             LandingPageSeeder::class,
             LanguageLineSeeder::class,
+            ThingsToDoSeeder::class,
             GeneralSettingsSeeder::class,
             LaporanFasilitasSeeder::class,
         ]);
