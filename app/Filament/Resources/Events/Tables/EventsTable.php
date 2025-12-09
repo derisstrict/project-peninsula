@@ -8,6 +8,7 @@ use Filament\Actions\ViewAction;
 use Filament\Actions\DeleteAction;
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteBulkAction;
+use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Columns\TextColumn;
 
 class EventsTable
@@ -20,6 +21,13 @@ class EventsTable
                 ->searchable()
                 ->sortable()
                 ->label('Judul Event'),
+                ImageColumn::make('gambar_event')
+                ->label('Gambar')
+                ->disk('public_img')
+                ->square()
+                ->stacked()
+                ->limit(3)
+                ->limitedRemainingText(),
                 TextColumn::make('nama_penyelenggara')
                 ->searchable()
                 ->sortable()

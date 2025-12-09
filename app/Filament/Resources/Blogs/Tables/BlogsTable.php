@@ -8,6 +8,7 @@ use Filament\Actions\ViewAction;
 use Filament\Actions\DeleteAction;
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteBulkAction;
+use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Columns\TextColumn;
 
 class BlogsTable
@@ -20,6 +21,13 @@ class BlogsTable
                 ->searchable()
                 ->sortable()
                 ->label('Judul Blog'),
+                ImageColumn::make('gambar_blog')
+                ->label('Gambar')
+                ->disk('public_img')
+                ->square()
+                ->stacked()
+                ->limit(3)
+                ->limitedRemainingText(),
                 TextColumn::make('created_at')
                 ->dateTime('d M Y')
                 ->label('Tanggal Upload')
