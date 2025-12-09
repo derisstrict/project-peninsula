@@ -53,5 +53,5 @@
     </div>
 </div>
 <img class="absolute h-135 w-[calc((27vw-10rem)*2)] hidden top-40 right-0 object-cover rounded-xl outline-4 outline-lime-600/15 xl:block"
-src="{{ asset('/img/' . 'placeholder.jpg') }}" alt="{{ 'test' }}">
+src="{{ asset('/img/' . $gs->hero_image) }}" alt="{{ $gs->hero_image_alt }}">
 

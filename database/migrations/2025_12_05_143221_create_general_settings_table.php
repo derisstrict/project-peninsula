@@ -18,6 +18,8 @@ return new class extends Migration
             $table->string('bahasa_tersedia')->nullable(false);
             $table->string('judul_utama')->nullable(false);
             $table->string('warna_aksen_judul_utama')->nullable(false);
+            $table->string('hero_image')->nullable(false);
+            $table->string('hero_image_alt')->nullable(false);
         });
     }
 

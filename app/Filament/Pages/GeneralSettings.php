@@ -5,6 +5,7 @@ namespace App\Filament\Pages;
 use App\Models\GeneralSetting;
 use BackedEnum;
 use Filament\Actions\Action;
+use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\KeyValue;
 use Filament\Forms\Components\Repeater;
 use Filament\Forms\Components\TextInput;
@@ -61,6 +62,15 @@ class GeneralSettings extends Page
                                 ->label('Bahasa yang tersedia:')
                                 ->keyLabel('Nama bahasa')
                                 ->valueLabel('Kode bahasa')
+                        ]),
+                        Tab::make('Gambar Hero')
+                        ->icon(Icon::make(Heroicon::OutlinedPhoto))
+                        ->schema([
+                            FileUpload::make('hero_image')
+                            ->label('Gambar')
+                            ->required()
+                            ->disk('public_img')
+                            ->visibility('public')
                         ])
                     ]),
                 ])->columns(1)
