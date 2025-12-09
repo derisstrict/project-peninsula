@@ -19,6 +19,10 @@ class ThingsToDosTable
             ->columns([
                 TextColumn::make('title')
                 ->label('Judul'),
+                ImageColumn::make('icon')
+                ->label('Ikon')
+                ->disk('public_img')
+                ->square()
             ])
             ->filters([
                 //
