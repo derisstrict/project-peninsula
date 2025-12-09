@@ -60,6 +60,7 @@ class ReportForm extends Component implements HasSchemas
                 ->image()
                 ->directory('img')
                 ->visibility('public')
+                ->belowContent(__('report.fu_note')),
             ])
             ->statePath('data');
     }
