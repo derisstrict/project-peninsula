@@ -1,34 +1,28 @@
 <?php
 
+use App\Http\Controllers\BlogController;
+use App\Http\Controllers\EventController;
 use App\Models\Blog;
 use App\Models\Event;
+use App\Models\GeneralSetting;
 use App\Models\LandingPage;
 use App\Models\Spot;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Session;
+use App\Models\ThingsToDo;
 
 Route::get('/', function () {
-    return view('home', ['spots' => Spot::all(), 'landing_page' => LandingPage::find(1)]);
+    return view('home', ['spots' => Spot::all(), 'thingstodos' => ThingsToDo::all()]);
 });
 
-Route::get('/blogs', function () {
-    return view('blogs', ['blogs' => Blog::all()]);
-});
+Route::get('/blogs', [BlogController::class, 'searchRequest']);
 
-Route::get('/blogs/{slug}', function ($slug) {
-    $blogs = Blog::where('slug', $slug)->first();
-    return view('blogs-detail', ['blogs' => $blogs]);
-});
+Route::get('/blogs/{id}/{slug}', [BlogController::class, 'findIDSlug']);
 
-Route::get('/events', function () {
-    return view('events', ['events' => Event::all()]);
-});
+Route::get('/events', [EventController::class, 'searchRequest']);
 
-Route::get('/events/{slug}', function ($slug) {
-    $events = Event::where('slug', $slug)->first();
-    return view('events-detail', ['event' => $events]);
-});
+Route::get('/events/{id}/{slug}', [EventController::class, 'findIDSlug']);
 
 Route::get('/blogs/blogs-detail', function () {
     return view('blogs-detail');
@@ -53,6 +47,13 @@ Route::get('/dashboard/blogs', function () {
 Route::get('lang/{locale}', function ($locale) {
     App::setLocale($locale);
     Session::put('locale', $locale);
+
+    return redirect()->back();
+});
+
+Route::get('/remses', function () {
+    // For debug purposes only :P
+    Session::invalidate();
 
     return redirect()->back();
 });

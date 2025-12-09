@@ -10,6 +10,6 @@ class Blog extends Model
 {
     use HasFactory;
     protected $table = 'blog';
-    public $timestamps = false;
-    protected $fillable = ['id_user', 'judul_blog', 'slug', 'tanggal_blog', 'isi_blog', 'gambar_blog'];
+    public $timestamps = true;
+    protected $fillable = ['id_user', 'judul_blog', 'slug', 'isi_blog', 'gambar_blog'];
 }
