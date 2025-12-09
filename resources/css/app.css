@@ -46,6 +46,8 @@
     --color-dashboard-light-primary: #001E26;
 }
 
+[x-cloak] { display: none !important; }
+
 .btn-primary {
     @apply flex bg-light-primary/10 text-xs rounded-lg gap-2 items-center hover:bg-light-primary/15 dark:bg-dark-primary/10 dark:hover:bg-dark-primary/15 transition;
 }

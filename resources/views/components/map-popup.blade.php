@@ -1,4 +1,4 @@
-<div x-show="openMapPopup" x-transition:enter="transition ease-in-out duration-100" x-transition:enter-start="opacity-0"
+<div x-cloak x-show="openMapPopup" x-transition:enter="transition ease-in-out duration-100" x-transition:enter-start="opacity-0"
     x-transition:enter-end="opacity-100" x-transition:leave="transition ease-in-out duration-100"
     x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" id="overlay"
     class="fixed inset-0 bg-black/50 z-1000 backdrop-blur-xs dark:bg-black/75">

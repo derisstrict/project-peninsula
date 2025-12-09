@@ -3,7 +3,7 @@
         <span class="font-semibold text-lime-600">View: </span> {{ $page }}
         <x-local-icon icon="arrow-head" class="transition-transform rotate-90" x-bind:class="isDrop ? 'rotate-270' : ''" width="16px" height="16px" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"></x-local-icon>
     </button>
-    <div x-show="isDrop" id="lang-menu" class="absolute z-10 right-50 left-0 mt-4 h-10 bg-bglight p-3 gap-2 w-30 h-fit rounded-xl outline-2 outline-light-primary/10 dark:bg-bgdark dark:outline-dark-primary/10">
+    <div x-cloak x-show="isDrop" id="lang-menu" class="absolute z-10 right-50 left-0 mt-4 h-10 bg-bglight p-3 gap-2 w-30 h-fit rounded-xl outline-2 outline-light-primary/10 dark:bg-bgdark dark:outline-dark-primary/10">
         <form id="maxResultForm" method="GET">
             <ul class="flex flex-col gap-2">
                 <li id="li-1" class="radio-li text-left p-2 rounded-md cursor-pointer hover:bg-light-primary/5 dark:hover:bg-dark-primary/10">
