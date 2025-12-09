@@ -34,6 +34,9 @@ class EventsTable
                 ->sortable()
                 ->searchable()
                 ->label('Tanggal Selesai'),
+                TextColumn::make('harga_tiket')
+                ->label('Harga Tiket')
+                ->money('IDR', decimalPlaces: 0, locale: 'id')
             ])
             ->filters([
                 //
