@@ -35,10 +35,6 @@ class BlogForm
                 ->image()
                 ->directory('blogs')
                 ->visibility('public')
-                ->nullable()
-                ->dehydrateStateUsing(fn ($state, $record) =>
-                    $state ?: $record->gambar_blog  
-                )
                 ->required()
             ])->columns(1);
     }

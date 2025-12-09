@@ -17,7 +17,9 @@ class LaporanFasilitasForm
             ->components([
                 Hidden::make('id_user')->default(auth()->id()),
                 FileUpload::make('foto_fasilitas')
-                ->multiple(),
+                ->multiple()
+                ->directory('img')
+                ->visibility('public'),
                 TextInput::make('judul_laporan'),
                 Textarea::make('deskripsi_laporan'),
                 TextInput::make('email_pelapor'),

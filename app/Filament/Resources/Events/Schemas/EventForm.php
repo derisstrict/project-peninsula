@@ -35,15 +35,21 @@ class EventForm
                 ->required(),
                 Hidden::make('slug')->required(),
                 Fieldset::make('Tanggal')->schema([
-                    DatePicker::make('tanggal_mulai')->required(),
-                    DatePicker::make('tanggal_selesai')->required(),
+                    DatePicker::make('tanggal_mulai')
+                    ->required(),
+                    DatePicker::make('tanggal_selesai')
+                    ->required(),
                 ]),
-                RichEditor::make('deskripsi_event')->required(),
+                RichEditor::make('deskripsi_event')
+                ->required(),
                 Grid::make(4)->schema([
                     TextInput::make('nama_penyelenggara'),
                     TextInput::make('harga_tiket')->prefix('Rp.')->belowContent('Tanpa tanda titik')
                 ]),
                 FileUpload::make('gambar_event')->label('Upload gambar')->required()
+                ->directory('events')
+                ->visibility('public')
+                ->image()
             ])->columns(1);
     }
 }
