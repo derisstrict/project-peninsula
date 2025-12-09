@@ -25,7 +25,7 @@ class EventFactory extends Factory
             'user_id' => '1',
             'tanggal_mulai' => fake()->date(),
             'tanggal_selesai' => fake()->date(),
-            'deskripsi_event' => fake()->paragraph(),
+            'deskripsi_event' => fake()->paragraph(50),
             'judul_event' => $title,
             'slug' => $slug,
             'gambar_event' => 'placeholder.jpg',

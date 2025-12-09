@@ -22,7 +22,7 @@ class BlogFactory extends Factory
         return [
             //
             'id_user' => '1',
-            'isi_blog' => fake()->paragraph(),
+            'isi_blog' => fake()->paragraph(100),
             'judul_blog' => $title,
             'slug' => $slug,
             'gambar_blog' => 'placeholder.jpg'
