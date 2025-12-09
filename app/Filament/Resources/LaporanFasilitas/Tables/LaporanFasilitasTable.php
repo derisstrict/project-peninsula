@@ -7,6 +7,7 @@ use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
 use Filament\Actions\ViewAction;
 use Filament\Support\Colors\Color;
+use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 
@@ -27,7 +28,11 @@ class LaporanFasilitasTable
                 TextColumn::make('email_pelapor')
                 ->searchable()
                 ->sortable()
-                ->label('Email Pelapor'),
+                ->label('Email Pelapor')
+                ->icon(Heroicon::OutlinedClipboard)
+                ->copyable()
+                ->copyMessage("Email sudah dicopy!")
+                ->copyMessageDuration(1000),
                 TextColumn::make('status_laporan')
                 ->badge()
                 ->searchable()
