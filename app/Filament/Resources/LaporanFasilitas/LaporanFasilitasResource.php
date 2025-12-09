@@ -50,11 +50,16 @@ class LaporanFasilitasResource extends Resource
         ];
     }
 
+    public static function canCreate(): bool
+    {
+        return false;
+    }
+
     public static function getPages(): array
     {
         return [
             'index' => ListLaporanFasilitas::route('/'),
-            'create' => CreateLaporanFasilitas::route('/create'),
+            // 'create' => CreateLaporanFasilitas::route('/create'),
             'view' => ViewLaporanFasilitas::route('/{record}'),
             'edit' => EditLaporanFasilitas::route('/{record}/edit'),
         ];
