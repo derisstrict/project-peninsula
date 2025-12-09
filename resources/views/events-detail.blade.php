@@ -42,7 +42,7 @@ Carbon::setLocale(app()->getLocale());
             </div>
         </div>
     </div>
-    <div class="prose !max-w-none text-xl mt-6 dark:prose-invert">
+    <div class="prose prose-zinc prose-xl prose-strong:font-medium dark:prose-invert mt-6 !max-w-none">
         {!! $event->deskripsi_event !!}
     </div>
 </div>

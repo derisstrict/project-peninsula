@@ -14,7 +14,7 @@
     <p class="text-4xl font-semibold mt-5">{{ $blogs->judul_blog }}</p>
     <p> {{ $blogs->created_at->diffForHumans() }} </p>
     <div class="bg-lime-500/25 outline-2 outline-lime-500/50 w-fit rounded-lg px-2 text-sm">Other</div>
-    <div class="text-xl mt-6">
+    <div class="prose prose-zinc prose-xl prose-strong:font-medium dark:prose-invert mt-6 !max-w-none">
         {!! $blogs->isi_blog !!}
     </div>
 </div>
