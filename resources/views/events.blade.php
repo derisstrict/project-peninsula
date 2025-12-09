@@ -1,7 +1,8 @@
 <?php
 
-use Illuminate\Support\Facades\Storage;
+use Carbon\Carbon;
 
+Carbon::setLocale(app()->getLocale());
 ?>
 
 @extends('layout.layout')
@@ -12,8 +13,12 @@ use Illuminate\Support\Facades\Storage;
 <div class="background-radial-blur -translate-x-100 -translate-y-25"></div>
 <p class="text-5xl text-center font-semibold">{!! __('events.title', ['accent' => '<span class="text-lime-600"> '. __('events.title_accent') .' </span>']) !!}
 </p>
-<div class="mt-20 ml-5">
-<x-search-bar accent="text-lime-600"></x-search-bar>
+<div class="flex mt-20 ml-5 gap-2">
+    <x-search-bar accent="text-lime-600" search="{{ $search }}"></x-search-bar>
+    <x-pagination-dropdown page="{{ $page }}"></x-pagination-dropdown>
+    <div class="ml-auto">
+        {{ $events->onEachSide(0)->links() }}
+    </div>
 </div>
 <a x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false" href="/events/events-detail" class="flex bg-lime-600/5 p-8 rounded-lg mt-10 gap-5 w-full items-center hover:bg-lime-600/10 transition-colors">
     <img src="img/placeholder.jpg" alt="event-image" class="w-80 h-60 object-cover rounded-xl">
@@ -21,7 +26,7 @@ use Illuminate\Support\Facades\Storage;
         <p class="">{{ __('events.ongoing') }}</p>
         <div class="flex gap-4">
             <p class="text-5xl font-semibold">The Big Bounce</p>
-            <p class="self-end font-light">{{ __('events.by') }} idkthename</p>
+            <p class="self-end font-light">{{ __('common.by') }} idkthename</p>
         </div>
         <div class="flex items-center gap-2">
             <div class="bg-lime-600/10 w-fit mt-auto px-5 py-1 rounded-xl text-sm">
@@ -43,7 +48,7 @@ use Illuminate\Support\Facades\Storage;
 </a>
 <div class="grid grid-cols-1 mt-10 gap-4 lg:grid-cols-3 md:grid-cols-2">
     @foreach ($events as $event)
-        <x-events-card href="/events/{{ $event['slug'] }}" date="{{ date('d F Y', strtotime($event->tanggal_mulai)) }} - {{ date('d F Y', strtotime($event->tanggal_selesai)) }}" image="{{ asset('storage/' . $event->gambar_event) }}" price="{{ number_format($event->harga_tiket, 0, '.', '.') }}">{{ $event->judul_event }}</x-events-card> 
+        <x-events-card href="/events/{{ $event->id }}/{{ $event->slug }}" date="{{ Carbon::parse($event->tanggal_mulai)->translatedFormat('d F Y') }} - {{ Carbon::parse($event->tanggal_selesai)->translatedFormat('d F Y') }}" image="{{ asset('storage/' . $event->gambar_event) }}" price="{{ number_format($event->harga_tiket, 0, '.', '.') }}">{{ $event->judul_event }}</x-events-card> 
     @endforeach
 </div>
 @endsection

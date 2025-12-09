@@ -4,6 +4,7 @@ namespace Database\Factories;
 
 use App\Models\Event;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Str;
 
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Event>
@@ -19,7 +20,7 @@ class EventFactory extends Factory
     public function definition(): array
     {
         $title = fake()->sentence(3);
-        $slug = strtolower(trim(preg_replace('/[^A-Za-z0-9-]+/', '-', $title), '-'));
+        $slug = Str::slug($title);
         return [
             'user_id' => '1',
             'tanggal_mulai' => fake()->date(),
@@ -27,7 +28,7 @@ class EventFactory extends Factory
             'deskripsi_event' => fake()->paragraph(),
             'judul_event' => $title,
             'slug' => $slug,
-            'gambar_event' => '/img/placeholder.jpg',
+            'gambar_event' => 'placeholder.jpg',
             'nama_penyelenggara' => fake()->company(),
             'harga_tiket' => fake()->numberBetween(10000, 300000)
         ];

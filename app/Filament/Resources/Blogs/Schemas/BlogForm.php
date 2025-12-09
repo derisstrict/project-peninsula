@@ -29,9 +29,17 @@ class BlogForm
                 
                     $set('slug', Str::slug($state));
                 })->label('Judul Blog')->required(),
-                DatePicker::make('tanggal_blog')->label('Tanggal Upload')->required(),
                 RichEditor::make('isi_blog')->label('Ketik Isi Blog')->required(),
-                FileUpload::make('gambar_blog')->label('Upload Gambar')->required()
+                FileUpload::make('gambar_blog')
+                ->label('Gambar Blog')
+                ->image()
+                ->directory('blogs')
+                ->visibility('public')
+                ->nullable()
+                ->dehydrateStateUsing(fn ($state, $record) =>
+                    $state ?: $record->gambar_blog  
+                )
+                ->preserveFilenames()
             ])->columns(1);
     }
 }

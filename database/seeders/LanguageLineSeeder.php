@@ -32,10 +32,26 @@ class LanguageLineSeeder extends Seeder
 
         LanguageLine::create([
             'group' => 'landing_page', 
+            'key' => 'open_description', 
+            'text' => [
+                'id' => 'Setiap hari | 06.00 AM - 10.00 PM', 
+                'en' => 'Every day | 06.00 AM - 10.00 PM']
+        ]);
+
+        LanguageLine::create([
+            'group' => 'landing_page', 
             'key' => 'fee', 
             'text' => [
                 'id' => 'Harga Masuk', 
                 'en' => 'Entrance Fee']
+        ]);
+
+        LanguageLine::create([
+            'group' => 'landing_page', 
+            'key' => 'fee_description', 
+            'text' => [
+                'id' => 'IDR 5000', 
+                'en' => 'IDR 5000']
         ]);
 
         LanguageLine::create([
@@ -73,7 +89,7 @@ class LanguageLineSeeder extends Seeder
 
         // Video
         LanguageLine::create([
-            'group' => 'landing_page', 
+            'group' => 'video', 
             'key' => 'play', 
             'text' => [
                 'id' => 'Putar/Stop', 
@@ -451,11 +467,27 @@ class LanguageLineSeeder extends Seeder
 
         // Blog's Detail
         LanguageLine::create([
-            'group' => 'blogs', 
+            'group' => 'blogs_detail', 
+            'key' => 'title', 
+            'text' => [
+                'id' => 'Artikel :accent', 
+                'en' => 'More :accent']
+        ]);
+
+        LanguageLine::create([
+            'group' => 'blogs_detail', 
             'key' => 'title_accent', 
             'text' => [
-                'id' => 'Jelajahi', 
-                'en' => 'Discover More']
+                'id' => 'Lain', 
+                'en' => 'Articles']
+        ]);
+
+        LanguageLine::create([
+            'group' => 'blogs_detail', 
+            'key' => 'more', 
+            'text' => [
+                'id' => 'Lihat artikel lainnya', 
+                'en' => 'Check out more articles']
         ]);
         //// Blog's Detail
 
@@ -596,9 +628,43 @@ class LanguageLineSeeder extends Seeder
             'group' => 'common', 
             'key' => 'price', 
             'text' => [
-                'id' => 'Harga Mulai Dari', 
-                'en' => 'Starting Price']
+                'id' => 'Harga mulai dari', 
+                'en' => 'Starting price']
         ]);
         //// Common
+
+        // Pagination
+        LanguageLine::create([
+            'group' => 'pagination', 
+            'key' => 'showing', 
+            'text' => [
+                'id' => 'Menampilkan', 
+                'en' => 'Showing']
+        ]);
+
+        LanguageLine::create([
+            'group' => 'pagination', 
+            'key' => 'to', 
+            'text' => [
+                'id' => 'sampai', 
+                'en' => 'to']
+        ]);
+
+        LanguageLine::create([
+            'group' => 'pagination', 
+            'key' => 'of', 
+            'text' => [
+                'id' => 'dari', 
+                'en' => 'of']
+        ]);
+
+        LanguageLine::create([
+            'group' => 'pagination', 
+            'key' => 'results', 
+            'text' => [
+                'id' => 'hasil', 
+                'en' => 'results']
+        ]);
+        //// Pagination
     }
 }

@@ -1,3 +1,11 @@
+<?php 
+
+use Carbon\Carbon;
+
+Carbon::setLocale(app()->getLocale());
+
+?>
+
 @extends('layout.layout')
 
 @section('title', 'The Peninsula Island')
@@ -8,7 +16,7 @@
     <p class="text-sm">{{ __('common.back') }}</p>
 </a>
 <div class="flex flex-col gap-2 mt-5">
-    <img class="rounded-xl self-center w-500 h-150 object-cover" src="{{ asset('storage/' . $event['gambar_event']) }}" alt="event-image">
+    <img class="rounded-xl self-center w-500 h-150 object-cover" src="{{ asset('storage/' . $event->gambar_event) }}" alt="event-image">
     <p class="text-4xl font-semibold mt-5">{{ $event->judul_event }}<span class="ml-2 text-sm font-normal">{{ __('common.by') }} {{ $event->nama_penyelenggara }}</span></p>
     <div class="flex gap-5 mt-5">
         <div class="infobox-accent">
@@ -18,7 +26,7 @@
                 </x-local-icon>
                 <div class="flex flex-col gap">
                     <p class="font-bold">{{ __('events_detail.timeline') }}</p>
-                    <p>{{ date('d F Y', strtotime($event->tanggal_mulai)) }} - {{ date('d F Y', strtotime($event->tanggal_selesai)) }}</p>
+                    <p>{{ Carbon::parse($event->tanggal_mulai)->translatedFormat('d F Y') }} - {{ Carbon::parse($event->tanggal_selesai)->translatedFormat('d F Y') }}</p>
                 </div>
             </div>
         </div>

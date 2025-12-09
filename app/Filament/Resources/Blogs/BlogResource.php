@@ -7,6 +7,7 @@ use App\Filament\Resources\Blogs\Pages\EditBlog;
 use App\Filament\Resources\Blogs\Pages\ListBlogs;
 use App\Filament\Resources\Blogs\Schemas\BlogForm;
 use App\Filament\Resources\Blogs\Tables\BlogsTable;
+use App\Filament\Resources\Events\Pages\ViewBlog;
 use App\Models\Blog;
 use BackedEnum;
 use Filament\Resources\Resource;
@@ -17,8 +18,9 @@ use Filament\Tables\Table;
 class BlogResource extends Resource
 {
     protected static ?string $model = Blog::class;
+    protected static ?string $recordTitleAttribute = 'judul_blog';
 
-    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
+    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedNewspaper;
 
     public static function form(Schema $schema): Schema
     {
@@ -42,6 +44,7 @@ class BlogResource extends Resource
         return [
             'index' => ListBlogs::route('/'),
             'create' => CreateBlog::route('/create'),
+            'view' => ViewBlog::route('/{record}'),
             'edit' => EditBlog::route('/{record}/edit'),
         ];
     }
