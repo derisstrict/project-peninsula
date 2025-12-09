@@ -18,13 +18,16 @@ class BlogsTable
             ->columns([
                 TextColumn::make('judul_blog')
                 ->searchable()
-                ->sortable(),
+                ->sortable()
+                ->label('Judul Blog'),
                 TextColumn::make('created_at')
                 ->dateTime('d M Y')
-                ->label('Tanggal upload')
+                ->label('Tanggal Upload')
                 ->searchable()
                 ->sortable(),
-                TextColumn::make('isi_blog')->limit(50),
+                TextColumn::make('isi_blog')
+                ->limit(50)
+                ->label('Isi Blog'),
             ])
             ->filters([
                 //

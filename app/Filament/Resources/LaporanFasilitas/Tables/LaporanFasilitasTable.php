@@ -18,17 +18,21 @@ class LaporanFasilitasTable
             ->columns([
                 TextColumn::make('judul_laporan')
                 ->searchable()
-                ->sortable(),
+                ->sortable()
+                ->label('Judul Laporan'),
                 TextColumn::make('nama_pelapor')
                 ->searchable()
-                ->sortable(),
+                ->sortable()
+                ->label('Nama Pelapor'),
                 TextColumn::make('email_pelapor')
                 ->searchable()
-                ->sortable(),
+                ->sortable()
+                ->label('Email Pelapor'),
                 TextColumn::make('status_laporan')
                 ->badge()
                 ->searchable()
                 ->sortable()
+                ->label('Status Laporan')
                 ->color(fn (string $state): string => match ($state) {
                     '0' => 'gray',
                     '1' => 'warning',
@@ -44,13 +48,13 @@ class LaporanFasilitasTable
                     '1' => 'heroicon-o-clock',
                     '2' => 'heroicon-o-check',
                 }),
-                TextColumn::make('created_at')->dateTime('d M Y')->label('Laporan dibuat'),
+                TextColumn::make('created_at')->dateTime('d M Y')->label('Tanggal Dibuat'),
             ])
             ->filters([
                 //
             ])
             ->recordActions([
-                ViewAction::make()->color(Color::Orange),
+                ViewAction::make(),
                 EditAction::make(),
             ])
             ->toolbarActions([

@@ -51,6 +51,7 @@ class GeneralSettings extends Page
                                 TextInput::make('Judul Aksen'),
                             )
                             ->reorderable(false)
+                            ->label('Judul utama:')
                             ->maxItems(3),
                         ]),
                         Tab::make('Bahasa Tersedia')

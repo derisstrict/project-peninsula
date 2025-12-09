@@ -28,10 +28,10 @@ class BlogForm
                     }
                 
                     $set('slug', Str::slug($state));
-                })->label('Judul Blog')->required(),
-                RichEditor::make('isi_blog')->label('Ketik Isi Blog')->required(),
+                })->label('Judul blog')->required(),
+                RichEditor::make('isi_blog')->label('Ketik isi blog')->required(),
                 FileUpload::make('gambar_blog')
-                ->label('Gambar Blog')
+                ->label('Gambar blog')
                 ->image()
                 ->directory('blogs')
                 ->visibility('public')
@@ -39,7 +39,7 @@ class BlogForm
                 ->dehydrateStateUsing(fn ($state, $record) =>
                     $state ?: $record->gambar_blog  
                 )
-                ->preserveFilenames()
+                ->required()
             ])->columns(1);
     }
 }

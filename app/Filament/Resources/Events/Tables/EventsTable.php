@@ -9,7 +9,6 @@ use Filament\Actions\DeleteAction;
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Tables\Columns\TextColumn;
-use Filament\Forms\Components\TextInput;
 
 class EventsTable
 {
@@ -19,18 +18,22 @@ class EventsTable
             ->columns([
                 TextColumn::make('judul_event')
                 ->searchable()
-                ->sortable(),
+                ->sortable()
+                ->label('Judul Event'),
                 TextColumn::make('nama_penyelenggara')
                 ->searchable()
-                ->sortable(),
+                ->sortable()
+                ->label('Nama Penyelenggara'),
                 TextColumn::make('tanggal_mulai')
                 ->date('d M Y')
                 ->sortable()
-                ->searchable(),
+                ->searchable()
+                ->label('Tanggal Mulai'),
                 TextColumn::make('tanggal_selesai')
                 ->date('d M Y')
                 ->sortable()
-                ->searchable(),
+                ->searchable()
+                ->label('Tanggal Selesai'),
             ])
             ->filters([
                 //

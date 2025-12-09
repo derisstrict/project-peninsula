@@ -17,7 +17,8 @@ class ThingsToDosTable
     {
         return $table
             ->columns([
-                TextColumn::make('title'),
+                TextColumn::make('title')
+                ->label('Judul'),
             ])
             ->filters([
                 //
