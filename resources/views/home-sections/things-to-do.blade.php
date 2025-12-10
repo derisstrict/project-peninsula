@@ -1,12 +1,13 @@
 <!--Things You Can Do-->
 
-<div>
+<div class="relative">
     <p class="text-6xl font-semibold mb-9 text-center">
         {!! __('things_to_do.title', ['accent' => '<span class="text-color-accent"> ' . __('things_to_do.title_accent') . ' </span>']) !!}
     </p>
     <p class="mt-6 max-w-4xl text-xl text-center mx-auto">
         {{ __('things_to_do.description') }}
     </p>
+    <div class="background-radial-blur -translate-y-60"></div>
 </div>
 
 <!--Isi activity-->

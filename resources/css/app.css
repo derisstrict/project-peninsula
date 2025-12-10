@@ -64,7 +64,7 @@
 }
 
 .background-radial-blur {
-    @apply absolute z-[-1] w-300 h-300 right-0 top-0 rounded-full bg-[radial-gradient(circle,_rgba(94,165,0,0.10)_0%,_rgba(94,165,0,0)_60%)];
+    @apply absolute z-[-1] w-300 h-300 right-0 top-0 rounded-full bg-[radial-gradient(circle,_rgba(94,165,0,0.14)_0%,_rgba(94,165,0,0)_60%)];
 }
 
 .background-radial-blur-dashboard {

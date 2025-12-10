@@ -71,7 +71,7 @@
                 stroke="currentColor" xmlns="http://www.w3.org/2000/svg"></x-local-icon>
         </a>
     </div>
-    <div class="background-radial-blur transform -translate-y-25"></div>
+    <div class="background-radial-blur transform -translate-y-105 -translate-x-80"></div>
 </div>
 <!-- /Where's the Location -->
 

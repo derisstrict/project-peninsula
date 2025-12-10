@@ -1,4 +1,4 @@
-<div class="background-radial-blur transform -translate-y-25"></div>
+<div class="background-radial-blur -translate-y-25"></div>
 <div class="relative pb-20">
     <div class="relative flex flex-col max-w-4xl gap-8">
         <div class="text-6xl font-semibold md:text-8xl">

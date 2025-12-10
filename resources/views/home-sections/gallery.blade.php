@@ -5,6 +5,7 @@
             {{-- Enjoy the <span class="text-color-accent">Fresh Air</span> of Nusa Dua --}}
             {!! __('gallery.title', ['accent' => '<span class="text-color-accent">'. __('gallery.title_accent'). '</span>']) !!}
         </h1>
+        <div class="background-radial-blur -translate-y-80"></div>
     </div>
 
     <p class="text-center text-lg mb-5 mx-auto md:text-xl">
