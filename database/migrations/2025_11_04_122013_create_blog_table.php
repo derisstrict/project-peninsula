@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('judul_blog', 100)->nullable(false);
             $table->text('isi_blog')->nullable(false);
             $table->string('gambar_blog', 100)->nullable(false);
+            $table->string('alt_gambar', 100)->nullable(true);
             $table->timestamps();
             $table->string('slug', 100)->nullable(false);
             $table->foreign('id_user')->references('id')->on('users')->onDelete('cascade');

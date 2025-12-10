@@ -25,7 +25,8 @@ class BlogFactory extends Factory
             'isi_blog' => fake()->paragraph(100),
             'judul_blog' => $title,
             'slug' => $slug,
-            'gambar_blog' => 'placeholder.jpg'
+            'gambar_blog' => 'placeholder.jpg',
+            'alt_gambar' => 'The Image of Peninsula Island'
         ];
     }
 }

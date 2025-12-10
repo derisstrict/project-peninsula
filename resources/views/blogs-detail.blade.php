@@ -10,7 +10,7 @@
     <p class="text-sm">{{ __('common.back') }}</p> 
 </button>
 <div class="flex flex-col gap-2 mt-5"> 
-    <img class="rounded-xl self-center w-500 h-150 object-cover" src={{ asset('storage/' . $blogs->gambar_blog) }} alt="blog-image">
+    <img class="rounded-xl self-center w-500 h-150 object-cover" src={{ asset('storage/' . $blogs->gambar_blog) }} alt="{{ $blogs->alt_gambar }}">
     <p class="text-4xl font-semibold mt-5">{{ $blogs->judul_blog }}</p>
     <p> {{ $blogs->created_at->diffForHumans() }} </p>
     <div class="bg-lime-500/25 outline-2 outline-lime-500/50 w-fit rounded-lg px-2 text-sm">Other</div>
@@ -25,7 +25,8 @@
             <x-blogs-card-grid href="/blogs/{{ $more_article->id }}/{{ $more_article->slug}}" 
             title="{{ $more_article->judul_blog }}" 
             date="{{ $more_article->created_at->diffForHumans() }}" 
-            image="{{ asset('storage/' . $more_article->gambar_blog) }}"></x-blogs-card-grid>
+            image="{{ asset('storage/' . $more_article->gambar_blog) }}"
+            alt="{{ $more_article->alt_gambar }}"></x-blogs-card-grid>
         @endforeach
     </div>
     <div class="flex justify-center">

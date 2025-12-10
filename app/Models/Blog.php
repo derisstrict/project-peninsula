@@ -11,5 +11,5 @@ class Blog extends Model
     use HasFactory;
     protected $table = 'blog';
     public $timestamps = true;
-    protected $fillable = ['id_user', 'judul_blog', 'slug', 'isi_blog', 'gambar_blog'];
+    protected $fillable = ['id_user', 'judul_blog', 'slug', 'isi_blog', 'gambar_blog', 'alt_gambar'];
 }

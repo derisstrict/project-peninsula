@@ -7,6 +7,7 @@ use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Hidden;
 use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\TextInput;
+use Filament\Schemas\Components\Grid;
 use Filament\Schemas\Schema;
 use Illuminate\Support\Str;
 use Filament\Schemas\Components\Utilities\Get;
@@ -35,7 +36,11 @@ class BlogForm
                 ->image()
                 ->directory('blogs')
                 ->visibility('public')
-                ->required()
+                ->required(),
+                Grid::make(4)->schema([
+                    TextInput::make('alt_gambar')
+                    ->belowContent('Deskripsi singkat tentang gambar'),
+                ])
             ])->columns(1);
     }
 }

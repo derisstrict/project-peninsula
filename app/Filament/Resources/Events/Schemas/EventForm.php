@@ -49,7 +49,11 @@ class EventForm
                 FileUpload::make('gambar_event')->label('Upload gambar')->required()
                 ->directory('events')
                 ->visibility('public')
-                ->image()
+                ->image(), 
+                Grid::make(4)->schema([
+                    TextInput::make('alt_gambar')
+                    ->belowContent('Deskripsi singkat tentang gambar'),
+                ]),
             ])->columns(1);
     }
 }
