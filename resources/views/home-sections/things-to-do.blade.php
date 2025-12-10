@@ -2,7 +2,7 @@
 
 <div>
     <p class="text-6xl font-semibold mb-9 text-center">
-        {!! __('things_to_do.title', ['accent' => '<span class="text-lime-600"> ' . __('things_to_do.title_accent') . ' </span>']) !!}
+        {!! __('things_to_do.title', ['accent' => '<span class="text-color-accent"> ' . __('things_to_do.title_accent') . ' </span>']) !!}
     </p>
     <p class="mt-6 max-w-4xl text-xl text-center mx-auto">
         {{ __('things_to_do.description') }}
@@ -27,7 +27,7 @@
         @endforeach
     </div>
     @else
-        <div class="flex justify-center w-full mt-6 text-lime-600">
+        <div class="flex justify-center w-full mt-6 text-color-accent">
             Belum ada data Things To Do.
         </div>
     @endif

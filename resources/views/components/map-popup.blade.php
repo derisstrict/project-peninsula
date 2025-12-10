@@ -28,7 +28,7 @@
     $watch("openMapPopup", value => { reset(runInterval) })' @click.outside="openMapPopup = false"
         class="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-[radial-gradient(circle,_rgba(94,165,0,1)_-600%,_rgba(238,238,238,1)_100%)] rounded-2xl shadow-lg w-[90%] max-w-[1000px] max-h-[100vh] scrollbar-hide border-2 border-dark-primary px-8 py-8 dark:bg-[radial-gradient(circle,_rgba(94,165,0,1)_-600%,_rgba(8,16,7,1)_100%)] dark:border-light-primary">
         <div class="relative flex flex-row gap-2">
-            <p class="text-xl font-semibold text-lime-600">About Place</p>
+            <p class="text-xl font-semibold text-color-accent">About Place</p>
         </div>
 
         <div class="flex">
@@ -63,7 +63,7 @@
                     <p class="text-xl" x-text="desc"></p>
                 </div>
                 <div class="infobox-accent p-5 gap-3 !w-full">
-                    <x-local-icon icon="info" class="text-lime-600" width="24px" height="24px" viewBox="0 0 24 24"
+                    <x-local-icon icon="info" class="text-color-accent" width="24px" height="24px" viewBox="0 0 24 24"
                         fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg"></x-local-icon>
                     <div>
                         <p class="font-semibold">Note</p>

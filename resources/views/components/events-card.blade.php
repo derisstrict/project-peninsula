@@ -4,7 +4,7 @@
     <p class="text-sm mr-auto">{{ $date }}</p>
     <p class="mt-2">{{ __('common.price') }}</p>
     <div class="flex items-center">
-        <p class="font-bold text-2xl mr-auto">IDR <span class="text-lime-600">{{ $price }}</span></p>
+        <p class="font-bold text-2xl mr-auto">IDR <span class="text-color-accent">{{ $price }}</span></p>
         <x-local-icon x-show="open" x-transition:enter="transition ease-out duration-100"
         x-transition:enter-start="opacity-0 translate-y-5"
         x-transition:enter-end="opacity-100 scale-100"

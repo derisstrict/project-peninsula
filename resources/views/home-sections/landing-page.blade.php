@@ -4,7 +4,7 @@
         <div class="text-6xl font-semibold md:text-8xl">
             @foreach ($gs->judul_utama as $judul)
                 @if ($loop->last)
-                    <p class="text-lime-600">
+                    <p class="text-color-accent">
                         {{ $judul }}
                     </p>
                 @else
@@ -17,14 +17,14 @@
         <p class="text-lg max-w-2xl md:text-2xl">{{ __('landing_page.description')}}</p>
         <div class="flex flex-col gap-4 md:flex-row">
             <div class="infobox-accent gap-3">
-                <x-local-icon icon="time" class="text-lime-600" width="24px" height="24px" viewBox="0 0 24 24" fill="currentColor" stroke="none" xmlns="http://www.w3.org/2000/svg"></x-local-icon>
+                <x-local-icon icon="time" class="text-color-accent" width="24px" height="24px" viewBox="0 0 24 24" fill="currentColor" stroke="none" xmlns="http://www.w3.org/2000/svg"></x-local-icon>
                 <div class="flex flex-col gap-2">
                     <p class="font-bold">{{ __('landing_page.open') }}</p>
                     <p>{{ __('landing_page.open_description') }}</p>
                 </div>
             </div>
             <div class="infobox-accent gap-3">
-                <x-local-icon icon="money" class="text-lime-600" width="24px" height="24px" viewBox="-0.5 0 25 25" fill="currentColor"
+                <x-local-icon icon="money" class="text-color-accent" width="24px" height="24px" viewBox="-0.5 0 25 25" fill="currentColor"
                     stroke="currentColor" xmlns="http://www.w3.org/2000/svg"></x-local-icon>
                 <div class="flex flex-col gap-2">
                     <p class="font-bold">{{ __('landing_page.fee') }}</p>

@@ -21,7 +21,7 @@ Carbon::setLocale(app()->getLocale());
     <div class="flex gap-5 mt-5">
         <div class="infobox-accent">
             <div class="flex gap-3">
-                <x-local-icon icon="time" class="text-lime-600" width="24px" height="24px" viewBox="0 0 24 24" fill="currentColor"
+                <x-local-icon icon="time" class="text-color-accent" width="24px" height="24px" viewBox="0 0 24 24" fill="currentColor"
                     outline="currentColor" xmlns="http://www.w3.org/2000/svg">
                 </x-local-icon>
                 <div class="flex flex-col gap">
@@ -32,7 +32,7 @@ Carbon::setLocale(app()->getLocale());
         </div>
         <div class="infobox-accent">
             <div class="flex gap-3">
-                <x-local-icon icon="money" class="text-lime-600" width="24px" height="24px" viewBox="-0.5 0 25 25" fill="currentColor"
+                <x-local-icon icon="money" class="text-color-accent" width="24px" height="24px" viewBox="-0.5 0 25 25" fill="currentColor"
                 stroke="currentColor" xmlns="http://www.w3.org/2000/svg">
                 </x-local-icon>
                 <div class="flex flex-col gap">

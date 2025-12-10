@@ -1,7 +1,7 @@
 <!-- Spots Map -->
 <div id="maps" x-data='{ title: "", desc: "", note: "", images: [], alt: "" }' class="mt-32">
     <p class="text-3xl font-semibold text-center mb-10 md:text-6xl">
-        {!! __('maps.title_1', ['accent' => '<span class="text-lime-600"> ' . __('maps.title_accent_1') . ' </span>']) !!}
+        {!! __('maps.title_1', ['accent' => '<span class="text-color-accent"> ' . __('maps.title_accent_1') . ' </span>']) !!}
     </p>
 
     <div class="h-[40rem] mx-auto mb-32 overflow-hidden rounded-2xl shadow-lg bg-gray-200">
@@ -56,7 +56,7 @@
 <!-- Where's the Location -->
 <div class="relative flex flex-col">
     <p class="text-3xl font-semibold md:text-6xl">
-        {!! __('maps.title_2', ['accent' => '<span class="text-lime-600"> ' . __('maps.title_accent_2') . ' </span>']) !!}
+        {!! __('maps.title_2', ['accent' => '<span class="text-color-accent"> ' . __('maps.title_accent_2') . ' </span>']) !!}
     </p>
     <div class="flex flex-col justify-between xl:flex-row xl:items-center">
         <p class="mt-6 text-lg max-w-4xl md:text-xl">
