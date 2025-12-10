@@ -1,5 +1,5 @@
 <a x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false" {{ $attributes }} class="flex flex-col gap-1 p-5 rounded-xl hover:bg-light-primary/5 dark:hover:bg-dark-primary/7 transition-colors">
-    <img class="rounded-lg object-cover" src="{{ $image }}" alt="image">
+    <img class="rounded-lg object-cover" src="{{ $image }}" alt="{{ $alt }}">
     <p class="text-lg font-semibold">{{ $slot }}</p>
     <p class="text-sm mr-auto">{{ $date }}</p>
     <p class="mt-2">{{ __('common.price') }}</p>

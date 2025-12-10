@@ -22,13 +22,14 @@ class EventFactory extends Factory
         $title = fake()->sentence(3);
         $slug = Str::slug($title);
         return [
-            'user_id' => '1',
+            'id_user' => '1',
             'tanggal_mulai' => fake()->date(),
             'tanggal_selesai' => fake()->date(),
             'deskripsi_event' => fake()->paragraph(50),
             'judul_event' => $title,
             'slug' => $slug,
             'gambar_event' => 'placeholder.jpg',
+            'alt_gambar' => 'Image of Peninsula Island',
             'nama_penyelenggara' => fake()->company(),
             'harga_tiket' => fake()->numberBetween(10000, 300000)
         ];

@@ -37,7 +37,7 @@ class SpotForm
                         ->preserveFilenames()
                         ->reorderable()
                         ->appendFiles(),
-                        TextInput::make('alt')
+                        TextInput::make('alt_gambar')
                         ->belowContent('Deskripsi singkat tentang gambar')
                         ->label('Alt gambar')
                ]),

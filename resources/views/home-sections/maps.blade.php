@@ -1,5 +1,5 @@
 <!-- Spots Map -->
-<div id="maps" x-data='{ title: "", desc: "", note: "", images: [] }' class="mt-32">
+<div id="maps" x-data='{ title: "", desc: "", note: "", images: [], alt: "" }' class="mt-32">
     <p class="text-3xl font-semibold text-center mb-10 md:text-6xl">
         {!! __('maps.title_1', ['accent' => '<span class="text-lime-600"> ' . __('maps.title_accent_1') . ' </span>']) !!}
     </p>
@@ -45,7 +45,7 @@
     <div>
         @foreach ($spots as $spot)
             <x-map-marker xpos="{{ $spot->xpos }}" ypos="{{ $spot->ypos }}" title="{{ $spot->title }}"
-                desc="{{ $spot->keterangan }}" note="{{ $spot->catatan }}" :images="$spot->url_media"></x-map-marker>
+                desc="{{ $spot->keterangan }}" note="{{ $spot->catatan }}" :images="$spot->url_media" alt="{{ $spot->alt_gambar }}"></x-map-marker>
         @endforeach
         <x-map-popup></x-map-popup>
     </div>
