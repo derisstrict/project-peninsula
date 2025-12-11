@@ -5,7 +5,7 @@
                 <h1 class="font-bold text-2xl text-color-accent">{{ $title }}</h1>
                 <span class="mt-2">{{ Str::limit($desc, 125) }}</span>
                 <div @click='openMapPopup = true, title = @json($title), desc = @json($desc), images = @json($images), note = @json($note), alt = @json($alt)' class="flex items-center gap-2 cursor-pointer bg-lime-600/15 w-fit rounded-lg py-1 px-2 mt-3 transition-colors hover:bg-lime-600/30">
-                    <span class="">See more</span>
+                    <span class="">{{ __('maps.see_more') }}</span>
                     <x-local-icon icon="arrow" width="16px" height="16px" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" xmlns="http://www.w3.org/2000/svg"></x-local-icon>
                 </div>
             </div>
