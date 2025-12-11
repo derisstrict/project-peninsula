@@ -1,7 +1,9 @@
 <!-- Spots Map -->
 <div id="maps" x-data='{ title: "", desc: "", note: "", images: [], alt: "" }' class="mt-32">
     <p class="text-3xl font-semibold text-center mb-10 md:text-6xl">
-        {!! __('maps.title_1', ['accent' => '<span class="text-color-accent"> ' . __('maps.title_accent_1') . ' </span>']) !!}
+        {!! __('maps.title_1', [
+            'accent' => '<span class="text-color-accent"> ' . __('maps.title_accent_1') . ' </span>',
+        ]) !!}
     </p>
 
     <div class="h-[40rem] mx-auto mb-32 overflow-hidden rounded-2xl shadow-lg bg-gray-200">
@@ -45,7 +47,8 @@
     <div>
         @foreach ($spots as $spot)
             <x-map-marker xpos="{{ $spot->xpos }}" ypos="{{ $spot->ypos }}" title="{{ $spot->title }}"
-                desc="{{ $spot->keterangan }}" note="{{ $spot->catatan }}" :images="$spot->url_media" alt="{{ $spot->alt_gambar }}"></x-map-marker>
+                teaser="{{ $spot->teaser }}" desc="{{ $spot->keterangan }}" note="{{ $spot->catatan }}"
+                :images="$spot->url_media" alt="{{ $spot->alt_gambar }}"></x-map-marker>
         @endforeach
         <x-map-popup></x-map-popup>
     </div>
@@ -56,7 +59,9 @@
 <!-- Where's the Location -->
 <div class="relative flex flex-col">
     <p class="text-3xl font-semibold md:text-6xl">
-        {!! __('maps.title_2', ['accent' => '<span class="text-color-accent"> ' . __('maps.title_accent_2') . ' </span>']) !!}
+        {!! __('maps.title_2', [
+            'accent' => '<span class="text-color-accent"> ' . __('maps.title_accent_2') . ' </span>',
+        ]) !!}
     </p>
     <div class="flex flex-col justify-between xl:flex-row xl:items-center">
         <p class="mt-6 text-lg max-w-4xl md:text-xl">

@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('xpos', 15)->nullable(false);
             $table->string('ypos', 15)->nullable(false);
             $table->string('title', 50)->nullable(false);
+            $table->string('teaser', 250)->nullable(false);
             $table->string('url_media', 255)->nullable(false);
             $table->string('alt_gambar', 255)->nullable(true);
             $table->string('catatan', 50)->nullable(true);

@@ -11,6 +11,7 @@ class MapMarker extends Component
     public $xpos;
     public $ypos;
     public $title;
+    public $teaser;
     public $desc;
     public $note;
     public $images;
@@ -23,6 +24,7 @@ class MapMarker extends Component
         $xpos = "", 
         $ypos = "", 
         $title = "", 
+        $teaser = "", 
         $desc = "", 
         $note = "", 
         $images = "",
@@ -32,6 +34,7 @@ class MapMarker extends Component
         $this->xpos = $xpos;
         $this->ypos = $ypos;
         $this->title = $title;
+        $this->teaser = $teaser;
         $this->desc = $desc;
         $this->note = $note;
         $this->images = $images;
