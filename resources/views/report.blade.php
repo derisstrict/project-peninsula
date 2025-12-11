@@ -6,10 +6,10 @@
 <div class="background-radial-blur left-0 transform -translate-y-70"></div>
 <div class="flex gap-8 my-10">
     <div class="flex flex-col gap-6 max-w-2xl">
-        <p class="text-5xl font-semibold">{!! __('report.title', ['accent' => '<span class="text-lime-600"> '. __('report.title_accent') .' </span>']) !!}
+        <p class="text-5xl font-semibold">{!! __('report.title', ['accent' => '<span class="text-color-accent"> '. __('report.title_accent') .' </span>']) !!}
         <p class="text-xl">{{ __('report.description') }}</p>
         <div class="infobox-accent gap-3">
-            <x-local-icon icon="info" class="text-lime-600" width="28px" height="28px" viewBox="0 0 24 24" fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg"></x-local-icon>
+            <x-local-icon icon="info" class="text-color-accent" width="28px" height="28px" viewBox="0 0 24 24" fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg"></x-local-icon>
             <div class="flex flex-col gap-2">
                 <p class="font-semibold">{{ __('report.box_title') }}</p>
                 <p>{{ __('report.box_description') }}</p>

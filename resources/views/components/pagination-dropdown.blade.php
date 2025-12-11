@@ -1,9 +1,9 @@
 <div class="relative" x-data="{ isDrop: false }">
     <button @click="isDrop = !isDrop" @click.outside="isDrop = false" id="dropdown" aria-expanded="false" class="relative flex gap-2 bg-light-primary/10 p-2 px-3 rounded-xl items-center cursor-pointer hover:bg-light-primary/15 dark:bg-dark-primary/7 dark:hover:bg-dark-primary/15 transition-colors" type="button">
-        <span class="font-semibold text-lime-600">View: </span> {{ $page }}
+        <span class="font-semibold text-color-accent">View: </span> {{ $page }}
         <x-local-icon icon="arrow-head" class="transition-transform rotate-90" x-bind:class="isDrop ? 'rotate-270' : ''" width="16px" height="16px" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"></x-local-icon>
     </button>
-    <div x-show="isDrop" id="lang-menu" class="absolute z-10 right-50 left-0 mt-4 h-10 bg-bglight p-3 gap-2 w-30 h-fit rounded-xl outline-2 outline-light-primary/10 dark:bg-bgdark dark:outline-dark-primary/10">
+    <div x-cloak x-show="isDrop" id="lang-menu" class="absolute z-10 right-50 left-0 mt-4 h-10 bg-bglight p-3 gap-2 w-30 h-fit rounded-xl outline-2 outline-light-primary/10 dark:bg-bgdark dark:outline-dark-primary/10">
         <form id="maxResultForm" method="GET">
             <ul class="flex flex-col gap-2">
                 <li id="li-1" class="radio-li text-left p-2 rounded-md cursor-pointer hover:bg-light-primary/5 dark:hover:bg-dark-primary/10">
@@ -26,7 +26,6 @@
         </form>
     </div>
 </div>
-<p id="debug1"></p>
 
 <script>
     // document.querySelector('#list-1').form.submit()
@@ -54,9 +53,9 @@
 
         if (radioForms[i].value === "{{ $page }}") {
             radioForms[i].checked = true;
-            allLi[i].classList.add('text-lime-600');
+            allLi[i].classList.add('text-color-accent');
             allLi[i].classList.add('font-semibold');
-            allLi[i].classList.add('bg-lime-600/15');
+            allLi[i].classList.add('bg-color-accent/15');
             allLi[i].classList.remove('hover:bg-light-primary/5');
             allLi[i].classList.remove('dark:hover:bg-dark-primary/10');
         }

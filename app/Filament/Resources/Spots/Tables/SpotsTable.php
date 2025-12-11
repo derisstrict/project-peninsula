@@ -3,9 +3,12 @@
 namespace App\Filament\Resources\Spots\Tables;
 
 use Filament\Actions\BulkActionGroup;
+use Filament\Actions\DeleteAction;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
-use Filament\Forms\Components\TextInput;
+use Filament\Actions\ViewAction;
+use Filament\Support\Colors\Color;
+use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 
@@ -19,12 +22,21 @@ class SpotsTable
                 TextColumn::make('title')->label("Nama Spot")
                 ->searchable()
                 ->sortable(),
+                ImageColumn::make('url_media')
+                ->label('Gambar')
+                ->disk('public_img')
+                ->circular()
+                ->stacked()
+                ->limit(3)
+                ->limitedRemainingText(),
                 TextColumn::make('xpos')->label("Koordinat X")
                 ->searchable()
-                ->sortable(),
+                ->sortable()
+                ->badge(),
                 TextColumn::make('ypos')->label("Koordinat Y")
                 ->searchable()
-                ->sortable(),
+                ->sortable()
+                ->badge()->color(Color::Fuchsia),
                 TextColumn::make('catatan')->label("Catatan")
                 ->searchable()
                 ->sortable(),
@@ -37,7 +49,9 @@ class SpotsTable
                 //
             ])
             ->recordActions([
+                ViewAction::make(),
                 EditAction::make(),
+                DeleteAction::make(),
             ])
             ->toolbarActions([
                 BulkActionGroup::make([

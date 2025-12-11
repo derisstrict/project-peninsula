@@ -54,7 +54,13 @@ class ReportForm extends Component implements HasSchemas
                 ->rows(5)
                 ->required(),
                 FileUpload::make('foto_fasilitas')
-                ->required(),
+                ->required()
+                ->multiple()
+                ->maxFiles(6)
+                ->image()
+                ->directory('img')
+                ->visibility('public')
+                ->belowContent(__('report.fu_note')),
             ])
             ->statePath('data');
     }
