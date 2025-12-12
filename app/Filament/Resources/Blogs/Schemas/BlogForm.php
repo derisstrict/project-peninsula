@@ -7,6 +7,7 @@ use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Hidden;
 use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\TextInput;
+use Filament\Schemas\Components\Grid;
 use Filament\Schemas\Schema;
 use Illuminate\Support\Str;
 use Filament\Schemas\Components\Utilities\Get;
@@ -28,18 +29,18 @@ class BlogForm
                     }
                 
                     $set('slug', Str::slug($state));
-                })->label('Judul Blog')->required(),
-                RichEditor::make('isi_blog')->label('Ketik Isi Blog')->required(),
+                })->label('Judul blog')->required(),
+                RichEditor::make('isi_blog')->label('Ketik isi blog')->required(),
                 FileUpload::make('gambar_blog')
-                ->label('Gambar Blog')
+                ->label('Gambar blog')
                 ->image()
                 ->directory('blogs')
                 ->visibility('public')
-                ->nullable()
-                ->dehydrateStateUsing(fn ($state, $record) =>
-                    $state ?: $record->gambar_blog  
-                )
-                ->preserveFilenames()
+                ->required(),
+                Grid::make(4)->schema([
+                    TextInput::make('alt_gambar')
+                    ->belowContent('Deskripsi singkat tentang gambar'),
+                ])
             ])->columns(1);
     }
 }

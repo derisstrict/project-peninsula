@@ -2,9 +2,10 @@
 <div class="mt-32 relative">
     <div class="flex justify-center items-center mx-auto mb-5">
         <h1 class="text-3xl font-semibold md:text-6xl">
-            {{-- Enjoy the <span class="text-lime-600">Fresh Air</span> of Nusa Dua --}}
-            {!! __('gallery.title', ['accent' => '<span class="text-lime-600">'. __('gallery.title_accent'). '</span>']) !!}
+            {{-- Enjoy the <span class="text-color-accent">Fresh Air</span> of Nusa Dua --}}
+            {!! __('gallery.title', ['accent' => '<span class="text-color-accent">'. __('gallery.title_accent'). '</span>']) !!}
         </h1>
+        <div class="background-radial-blur -translate-y-80"></div>
     </div>
 
     <p class="text-center text-lg mb-5 mx-auto md:text-xl">

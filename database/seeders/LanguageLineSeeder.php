@@ -587,6 +587,14 @@ class LanguageLineSeeder extends Seeder
                 'id' => 'Serahkan', 
                 'en' => 'Submit']
         ]);
+
+        LanguageLine::create([
+            'group' => 'report', 
+            'key' => 'fu_note', 
+            'text' => [
+                'id' => 'Maksimal gambar berukuran 11MB, 6 gambar.', 
+                'en' => 'Maximum image size 11MB, 6 images']
+        ]);
         //// Report
 
         // Components
@@ -666,5 +674,8 @@ class LanguageLineSeeder extends Seeder
                 'en' => 'results']
         ]);
         //// Pagination
+
+        // Miscellaneous
+        //// Miscellaneous
     }
 }

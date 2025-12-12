@@ -12,6 +12,7 @@ class MapPopup extends Component
     public $desc;
     public $note;
     public $images;
+    public $alt;
     /**
      * Create a new component instance.
      */
@@ -20,12 +21,14 @@ class MapPopup extends Component
         $desc = "",
         $note = "",
         $images = "",
+        $alt = "",
     )
     {
         $this->title = $title;
         $this->desc = $desc;
         $this->note = $note;
         $this->images = $images;
+        $this->alt = $alt;
     }
 
     /**

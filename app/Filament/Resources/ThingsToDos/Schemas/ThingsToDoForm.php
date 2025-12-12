@@ -25,6 +25,8 @@ class ThingsToDoForm
                 FileUpload::make('icon')->label('Upload Icon/Gambar')
                 ->image()
                 ->required()
+                ->disk('public_img')
+                ->directory('/')
                 ->preserveFilenames(),
             ])->columns(1);
     }
