@@ -10,8 +10,11 @@ class EventController extends Controller
 {
     public function index (Request $request) {
         $query = Event::query();
-        $today = now();
-        $onGoingEvents = Event::where('tanggal_mulai', '<=', $today)->where('tanggal_selesai', '>=', $today)->get();
+        if(!$search = $request->search){
+            $today = now();
+            $onGoingEvents = Event::where('tanggal_mulai', '<=', $today)->where('tanggal_selesai', '>=', $today)->get();
+        }
+        
 
         if ($search = $request->search) {
             $query->where('judul_event', 'like', "%$search%")
