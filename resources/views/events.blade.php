@@ -20,7 +20,7 @@ Carbon::setLocale(app()->getLocale());
         {{ $events->onEachSide(0)->links() }}
     </div>
 </div>
-@foreach ($onGoingEvents as $onGoingEvent) //event yang sedang berlangsung
+@foreach ($onGoingEvents as $onGoingEvent)
 <a x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false" href="/events/{{ $onGoingEvent->id }}/{{ $onGoingEvent->slug }}" class="flex bg-lime-600/5 p-8 rounded-lg mt-10 gap-5 w-full items-center hover:bg-lime-600/10 transition-colors">
     <img src={{ asset('storage/' . $onGoingEvent->gambar_event) }} alt="event-image" class="w-80 h-60 object-cover rounded-xl">
     <div class="flex flex-col gap-3">
