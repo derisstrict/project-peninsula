@@ -10,4 +10,7 @@
     @include('home-sections.maps')
     @include('home-sections.things-to-do')
 
+</section>
+
+
 @endsection

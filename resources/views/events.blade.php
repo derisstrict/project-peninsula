@@ -20,8 +20,8 @@ Carbon::setLocale(app()->getLocale());
         {{ $events->onEachSide(0)->links() }}
     </div>
 </div>
-@foreach ($onGoingEvents as $onGoingEvent)
-<a x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false" href="/events/{{ $onGoingEvent['slug']}}" class="flex bg-lime-600/5 p-8 rounded-lg mt-10 gap-5 w-full items-center hover:bg-lime-600/10 transition-colors">
+@foreach ($onGoingEvents as $onGoingEvent) //event yang sedang berlangsung
+<a x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false" href="/events/{{ $onGoingEvent->id }}/{{ $onGoingEvent->slug }}" class="flex bg-lime-600/5 p-8 rounded-lg mt-10 gap-5 w-full items-center hover:bg-lime-600/10 transition-colors">
     <img src={{ asset('storage/' . $onGoingEvent->gambar_event) }} alt="event-image" class="w-80 h-60 object-cover rounded-xl">
     <div class="flex flex-col gap-3">
         <p class="">{{ __('events.ongoing') }}</p>
@@ -47,27 +47,6 @@ Carbon::setLocale(app()->getLocale());
         x-transition:leave="transition ease-in duration-200" x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 -translate-x-5" icon="arrow" width="24px" height="24px" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" class="ml-auto mr-10 transform rotate-45" xmlns="http://www.w3.org/2000/svg">
     </x-local-icon> 
 </a>
-<script>
-    const events = @json($onGoingEvents);
-    let index = 0;
-
-    function showNextEvent() {
-        if (events.length === 0) return;
-
-        document.getElementById('event-box').innerHTML = `
-            <h3>${events[index].nama_event}</h3>
-            <p>${events[index].deskripsi}</p>
-        `;
-
-        index = (index + 1) % events.length; // looping
-    }
-
-    // tampilkan pertama kali
-    showNextEvent();
-
-    // ganti event setiap 5 detik
-    setInterval(showNextEvent, 5000);
-</script>
 @endforeach
 <div class="grid grid-cols-1 mt-10 gap-4 lg:grid-cols-3 md:grid-cols-2">
     @foreach ($events as $event)
