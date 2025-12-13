@@ -1,10 +1,10 @@
 <!--Things You Can Do-->
 
 <div class="relative">
-    <p class="text-6xl font-semibold mb-9 text-center">
+    <p class="text-3xl font-semibold mb-9 text-center md:text-6xl">
         {!! __('things_to_do.title', ['accent' => '<span class="text-color-accent"> ' . __('things_to_do.title_accent') . ' </span>']) !!}
     </p>
-    <p class="mt-6 max-w-4xl text-xl text-center mx-auto">
+    <p class="mt-6 max-w-4xl text-md text-center mx-auto md:text-xl">
         {{ __('things_to_do.description') }}
     </p>
     <div class="background-radial-blur -translate-y-60"></div>
@@ -12,7 +12,7 @@
 
 <!--Isi activity-->
 @if(isset($thingstodos) && count($thingstodos))
-    <div class="grid grid-cols-2 gap-6 mt-6">
+    <div class="grid grid-cols gap-6 mt-6 md:grid-cols-2">
         @foreach ($thingstodos as $thingstodo)
             <div class="infobox-accent">
                 <div class="m-2 flex flex-col items-center text-center">

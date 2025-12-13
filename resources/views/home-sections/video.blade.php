@@ -2,7 +2,7 @@
 <div id="videoSection" class="relative mt-32 rounded-xl overflow-hidden group">
     <video 
         id="myVideo"
-        class="h-170 w-full object-cover"
+        class="h-120 w-full object-cover md:h-170"
         poster="/img/thumbnail.png">
         <source src="/img/peninsula.mp4" type="video/mp4">
         Your browser does not support the video tag.

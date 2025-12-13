@@ -34,6 +34,10 @@ class EventController extends Controller
         }
 
         $events = $query->paginate($page);
+
+        $today = now();
+        $onGoingEvents = Event::where('tanggal_mulai', '<=', $today)->where('tanggal_selesai', '>=', $today)->get();
+
         return view('events', compact('events', 'search', 'page', 'onGoingEvents'));
     }
 
