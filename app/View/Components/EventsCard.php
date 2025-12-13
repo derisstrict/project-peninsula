@@ -10,14 +10,22 @@ class EventsCard extends Component
 {
     public $date;
     public $image;
+    public $price;
+    public $alt;
     /**
      * Create a new component instance.
      */
-    public function __construct($date = "", $image = "")
+    public function __construct(
+        $date = "", 
+        $image = "",
+        $price = "",
+        $alt = ""
+    )
     {
         $this->date = $date;
         $this->image = $image;
-        //
+        $this->price = $price;
+        $this->alt = $alt;
     }
 
     /**

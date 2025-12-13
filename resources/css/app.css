@@ -1,4 +1,31 @@
 @import 'tailwindcss';
+@plugin "@tailwindcss/typography";
+
+/* Required by all components */
+@import '../../vendor/filament/support/resources/css/index.css';
+
+/* Required by actions and tables */
+@import '../../vendor/filament/actions/resources/css/index.css';
+
+/* Required by actions, forms and tables */
+@import '../../vendor/filament/forms/resources/css/index.css';
+
+/* Required by actions and infolists */
+@import '../../vendor/filament/infolists/resources/css/index.css';
+
+/* Required by notifications */
+@import '../../vendor/filament/notifications/resources/css/index.css';
+
+/* Required by actions, infolists, forms, schemas and tables */
+@import '../../vendor/filament/schemas/resources/css/index.css';
+
+/* Required by tables */
+@import '../../vendor/filament/tables/resources/css/index.css';
+
+/* Required by widgets */
+@import '../../vendor/filament/widgets/resources/css/index.css';
+
+@variant dark (&:where(.dark, .dark *));
 
 @custom-variant dark (&:where(.dark, .dark *));
 
@@ -14,7 +41,18 @@
     --color-bglight: #EEEEEE;
     --color-light-primary: #162600;
     --color-dark-primary: #E5E5E5;
-    --color-bgdark: #081007
+    --color-bgdark: #081007;
+    --color-color-accent: oklch(64.8% 0.2 131.684);
+}
+
+[x-cloak] { display: none !important; }
+
+.footer-outline {
+    @apply bg-[radial-gradient(circle,_rgba(94,165,0,0.80)_0%,_rgba(94,165,0,0)_80%)];
+}
+
+.footer-background {
+    @apply bg-[radial-gradient(circle,_rgba(94,165,0,1)_-900%,_rgba(238,238,238,1)_80%)] dark:bg-[radial-gradient(circle,_rgba(94,165,0,1)_-700%,_rgba(8,16,7,1)_80%)];
 }
 
 .btn-primary {
@@ -22,9 +60,20 @@
 }
 
 .infobox-accent {
-    @apply flex bg-lime-600/10 w-fit p-4 rounded-lg outline outline-lime-600/35;
+    @apply flex bg-color-accent/10 w-fit p-4 rounded-lg outline outline-color-accent/35;
 }
 
 .background-radial-blur {
-    @apply absolute z-[-1] w-300 h-300 right-0 top-0 rounded-full bg-[radial-gradient(circle,_rgba(94,165,0,0.10)_0%,_rgba(94,165,0,0)_60%)];
+    @apply absolute z-[-1] w-300 h-300 right-0 top-0 rounded-full bg-[radial-gradient(circle,_rgba(94,165,0,0.14)_0%,_rgba(94,165,0,0)_60%)];
+}
+
+.background-radial-blur-dashboard {
+    @apply absolute z-[-1] w-300 h-300 right-0 top-0 rounded-full bg-[radial-gradient(circle,_rgba(0,166,244,0.10)_0%,_rgba(94,165,0,0)_60%)];
+}
+
+.leaflet-popup-content {
+    margin: 0px 0px 0px 0px;
+    width: 400px !important;
+    font-family: 'Poppins', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+        'Segoe UI Symbol', 'Noto Color Emoji';
 }
