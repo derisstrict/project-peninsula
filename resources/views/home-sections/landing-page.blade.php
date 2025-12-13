@@ -1,7 +1,7 @@
 <div class="background-radial-blur -translate-y-25"></div>
 <div class="relative pb-20">
     <div class="relative flex flex-col max-w-4xl gap-8">
-        <div class="text-6xl font-semibold md:text-8xl">
+        <div class="text-5xl text-center font-semibold md:text-8xl md:text-start">
             @foreach ($gs->judul_utama as $judul)
                 @if ($loop->last)
                     <p class="text-color-accent">
@@ -14,9 +14,9 @@
                 @endif
             @endforeach
         </div>
-        <p class="text-lg max-w-2xl md:text-2xl">{{ __('landing_page.description') }}</p>
-        <div class="flex flex-col gap-4 md:flex-row">
-            <div class="infobox-accent gap-3">
+        <p class="text-md text-center max-w-2xl md:text-2xl md:text-left">{{ __('landing_page.description') }}</p>
+        <div class="flex flex-col items-center gap-4 md:flex-row md:items-start">
+            <div class="infobox-accent gap-3 text-sm md:text-lg">
                 <x-local-icon icon="time" class="text-color-accent" width="24px" height="24px" viewBox="0 0 24 24"
                     fill="currentColor" stroke="none" xmlns="http://www.w3.org/2000/svg"></x-local-icon>
                 <div class="flex flex-col gap-2">
@@ -24,7 +24,7 @@
                     <p>{{ __('landing_page.open_description') }}</p>
                 </div>
             </div>
-            <div class="infobox-accent gap-3">
+            <div class="infobox-accent gap-3 text-sm md:text-lg">
                 <x-local-icon icon="money" class="text-color-accent" width="24px" height="24px"
                     viewBox="-0.5 0 25 25" fill="currentColor" stroke="currentColor"
                     xmlns="http://www.w3.org/2000/svg"></x-local-icon>
@@ -35,7 +35,7 @@
             </div>
         </div>
 
-        <div class="flex flex-col gap-2">
+        <div class="flex flex-col gap-2 items-center md:items-start">
             <p class="text-sm">{{ __('landing_page.links') }}</p>
             <div class="flex gap-2">
                 <a href="/events" class="btn-primary p-2">
