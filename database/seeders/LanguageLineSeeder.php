@@ -187,6 +187,14 @@ class LanguageLineSeeder extends Seeder
                 'id' => 'Lihat di Google Maps', 
                 'en' => 'Take me to Google Maps']
         ]);
+
+        LanguageLine::create([
+            'group' => 'maps', 
+            'key' => 'see_more', 
+            'text' => [
+                'id' => 'Lihat Selengkapnya', 
+                'en' => 'See More']
+        ]);
         //// Maps
 
         // Things to do

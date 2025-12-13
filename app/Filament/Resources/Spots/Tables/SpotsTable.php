@@ -22,6 +22,9 @@ class SpotsTable
                 TextColumn::make('title')->label("Nama Spot")
                 ->searchable()
                 ->sortable(),
+                TextColumn::make('teaser')->label("Teaser")
+                ->searchable()
+                ->sortable(),
                 ImageColumn::make('url_media')
                 ->label('Gambar')
                 ->disk('public_img')

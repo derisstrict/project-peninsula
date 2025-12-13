@@ -21,7 +21,6 @@ class DatabaseSeeder extends Seeder
             BlogSeeder::class,
             EventSeeder::class,
             SpotSeeder::class,
-            LandingPageSeeder::class,
             LanguageLineSeeder::class,
             ThingsToDoSeeder::class,
             GeneralSettingsSeeder::class,
