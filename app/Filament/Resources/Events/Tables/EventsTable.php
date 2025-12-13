@@ -23,7 +23,7 @@ class EventsTable
                 ->label('Judul Event'),
                 ImageColumn::make('gambar_event')
                 ->label('Gambar')
-                ->disk('public_img')
+                ->disk('public')
                 ->square()
                 ->stacked()
                 ->limit(3)
