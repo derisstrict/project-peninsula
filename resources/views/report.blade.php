@@ -3,12 +3,12 @@
 @section('title', 'The Peninsula Island')
 
 @section('content')
-<div class="background-radial-blur left-0 transform -translate-y-70"></div>
-<div class="flex gap-8 my-10">
+<div class="background-radial-blur left-0 transform -translate-x-70 -translate-y-70 scale-60 md:scale-60 md:-translate-x-100 md:translate-x-0 lg:scale-100"></div>
+<div class="flex flex-col gap-8 my-10 lg:flex-row">
     <div class="flex flex-col gap-6 max-w-2xl">
-        <p class="text-5xl font-semibold">{!! __('report.title', ['accent' => '<span class="text-color-accent"> '. __('report.title_accent') .' </span>']) !!}
-        <p class="text-xl">{{ __('report.description') }}</p>
-        <div class="infobox-accent gap-3">
+        <p class="text-4xl text-center font-semibold md:text-5xl md:text-start">{!! __('report.title', ['accent' => '<span class="text-color-accent"> '. __('report.title_accent') .' </span>']) !!}
+        <p class="text-lg text-center md:text-xl md:text-start">{{ __('report.description') }}</p>
+        <div class="infobox-accent gap-3 self-center">
             <x-local-icon icon="info" class="text-color-accent" width="28px" height="28px" viewBox="0 0 24 24" fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg"></x-local-icon>
             <div class="flex flex-col gap-2">
                 <p class="font-semibold">{{ __('report.box_title') }}</p>
