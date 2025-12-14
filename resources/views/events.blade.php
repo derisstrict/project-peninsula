@@ -11,41 +11,47 @@ Carbon::setLocale(app()->getLocale());
 
 @section('content')
 <div class="background-radial-blur -translate-x-100 -translate-y-25"></div>
-<p class="text-5xl text-center font-semibold">{!! __('events.title', ['accent' => '<span class="text-lime-600"> '. __('events.title_accent') .' </span>']) !!}
+<p class="text-3xl text-center font-semibold md:text-5xl">{!! __('events.title', ['accent' => '<span class="text-color-accent"> '. __('events.title_accent') .' </span>']) !!}
 </p>
-<div class="flex mt-20 ml-5 gap-2">
-    <x-search-bar accent="text-lime-600" search="{{ $search }}"></x-search-bar>
+<div class="flex flex-wrap mt-20 ml-5 gap-2 xl:flex-row">
+    <x-search-bar accent="text-color-accent" search="{{ $search }}"></x-search-bar>
     <x-pagination-dropdown page="{{ $page }}"></x-pagination-dropdown>
-    <div class="ml-auto">
+    <div class="xl:ml-auto">
         {{ $events->onEachSide(0)->links() }}
     </div>
 </div>
 @foreach ($onGoingEvents as $onGoingEvent)
-<a x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false" href="/events/{{ $onGoingEvent->id }}/{{ $onGoingEvent->slug }}" class="flex bg-lime-600/5 p-8 rounded-lg mt-10 gap-5 w-full items-center hover:bg-lime-600/10 transition-colors">
-    <img src={{ asset('storage/' . $onGoingEvent->gambar_event) }} alt="event-image" class="w-80 h-60 object-cover rounded-xl">
-    <div class="flex flex-col gap-3">
-        <p class="">{{ __('events.ongoing') }}</p>
-        <div class="flex gap-4">
-            <p class="text-5xl font-semibold">{{ $onGoingEvent->judul_event }}</p>
-            <p class="self-end font-light">{{ __('events.by') }} {{ $onGoingEvent->nama_penyelenggara }}</p>
+<a x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false" href="/events/{{ $onGoingEvent->id }}/{{ $onGoingEvent->slug }}" class="flex flex-col bg-color-accent/5 p-4 rounded-lg mt-10 gap-5 w-full hover:bg-color-accent/10 transition-colors md:p-8 lg:flex-row">
+    <img src={{ asset('storage/' . $onGoingEvent->gambar_event) }} alt="event-image" class="w-full h-60 object-cover rounded-xl self-start md:h-80 lg:h-60 lg:w-80">
+    <div class="flex flex-col gap-2 lg:gap-3">
+        <p class="text-sm text-color-accent font-semibold md:text-md">{{ __('events.ongoing') }}</p>
+        <div class="flex flex-col gap-2 lg:gap-4 xl:flex-row">
+            <p class="text-2xl font-semibold md:text-3xl lg:text-4xl">{{ $onGoingEvent->judul_event }}</p>
+            <p class="self-start font-light text-sm xl:self-end">{{ __('common.by') }} {{ $onGoingEvent->nama_penyelenggara }}</p>
         </div>
-        <div class="flex items-center gap-2">
-            <div class="bg-lime-600/10 w-fit mt-auto px-5 py-1 rounded-xl text-sm">
+        <div class="flex items-center gap-1 md:gap-2">
+            <div class="bg-color-accent/10 w-fit mt-auto px-5 py-1 rounded-xl text-xs">
                 <p>{{ date('d F Y', strtotime($onGoingEvent->tanggal_mulai)) }}</p>
             </div>
             <x-local-icon icon="arrow-head" width="16px" height="16px" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" xmlns="http://www.w3.org/2000/svg"></x-local-icon>
-            <div class="bg-lime-600/10 w-fit mt-auto px-5 py-1 rounded-xl text-sm">
+            <div class="bg-color-accent/10 w-fit mt-auto px-5 py-1 rounded-xl text-xs">
                 <p>{{ date('d F Y', strtotime($onGoingEvent->tanggal_selesai)) }}</p>
             </div>
         </div>
-        <p class="mt-5">{{ __('common.price') }}</p>
-        <p class="text-3xl font-semibold">IDR <span class="text-lime-600">{{ number_format($onGoingEvent->harga_tiket, 0, '.', '.') }}</span></p>
+        <p class="mt-auto">{{ __('common.price') }}</p>
+        <p class="text-2xl font-bold lg:text-3xl">IDR <span class="text-color-accent">{{ number_format($onGoingEvent->harga_tiket, 0, '.', '.') }}</span></p>
     </div>
-    <x-local-icon x-show="open" x-transition:enter="transition ease-out duration-300"
-        x-transition:enter-start="opacity-0 -translate-x-5"
-        x-transition:enter-end="opacity-100 scale-100"
-        x-transition:leave="transition ease-in duration-200" x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 -translate-x-5" icon="arrow" width="24px" height="24px" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" class="ml-auto mr-10 transform rotate-45" xmlns="http://www.w3.org/2000/svg">
-    </x-local-icon> 
+    <div class="hidden ml-auto mr-8 items-center justify-center xl:flex">
+        <x-local-icon x-show="open" x-transition:enter="transition ease-out duration-300"
+            x-transition:enter-start="opacity-0 -translate-x-5"
+            x-transition:enter-end="opacity-100 scale-100"
+            x-transition:leave="transition ease-in duration-200" x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 -translate-x-5" icon="arrow" width="24px" height="24px" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" class="rotate-45" xmlns="http://www.w3.org/2000/svg">
+        </x-local-icon> 
+    </div>
+    <div class="flex ml-auto items-center justify-center lg:mr-8 xl:hidden">
+        <x-local-icon icon="arrow" width="24px" height="24px" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" class="rotate-45" xmlns="http://www.w3.org/2000/svg">
+        </x-local-icon> 
+    </div>
 </a>
 @endforeach
 <div class="grid grid-cols-1 mt-10 gap-4 lg:grid-cols-3 md:grid-cols-2">

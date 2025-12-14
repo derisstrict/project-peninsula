@@ -3,7 +3,7 @@
         <button type="submit">
             <x-local-icon icon="search" class="{{ $accent }} hover:brightness-120 cursor-pointer" width="24px" height="24px" stroke="currentColor" viewBox="0 0 24 24" id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg"></x-local-icon>
         </button>
-        <input @focus="focused = true" @blur="focused = false" id="search" type="text" name="search" value="{{ $search }}" class="w-70 outline-none" placeholder="{{ __('search_bar.search') }}">
+        <input @focus="focused = true" @blur="focused = false" id="search" type="text" name="search" value="{{ $search }}" class="w-50 outline-none md:w-70" placeholder="{{ __('search_bar.search') }}">
     </form>        
     <button id="clear_content" class="hidden bg-light-primary/5 p-1 rounded-xl transition-colors cursor-pointer dark:bg-dark-primary/5 hover:bg-light-primary/10 dark:hover:bg-dark-primary/10">
         <x-local-icon icon="x-cross" width="16px" height="16px" viewBox="0 0 200 200" fill="currentColor" stroke="currentColor" xmlns="http://www.w3.org/2000/svg"></x-local-icon>
