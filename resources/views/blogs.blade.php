@@ -10,15 +10,15 @@ use Illuminate\Support\Facades\Storage;
 
 @section('content')
 <div class="background-radial-blur -translate-x-100 -translate-y-25"></div>
-<p class="text-5xl text-center font-semibold">{!! __('blogs.title', ['accent' => '<span class="text-color-accent"> '. __('blogs.title_accent') .' </span>']) !!}</p>
-<div class="flex mt-20 ml-5 gap-2">
+<p class="text-3xl text-center font-semibold md:text-5xl">{!! __('blogs.title', ['accent' => '<span class="text-color-accent"> '. __('blogs.title_accent') .' </span>']) !!}</p>
+<div class="flex flex-wrap mt-20 ml-5 gap-2 xl:flex-row">
     <x-search-bar accent="text-color-accent" search="{{ $search }}"></x-search-bar>
     <x-pagination-dropdown page="{{ $page }}"></x-pagination-dropdown>
-    <div class="ml-auto">
+    <div class="xl:ml-auto">
         {{ $blogs->onEachSide(0)->links() }}
     </div>
 </div>
-<div class="grid grid-cols-1 mt-10 gap-4">
+<div class="grid grid-cols-1 mt-10 gap-4 md:grid-cols-2 lg:grid-cols-1">
     @foreach ($blogs as $blog)
         <x-blogs-card href="/blogs/{{ $blog->id }}/{{ $blog->slug }}" 
         date="{{ $blog->created_at->diffForHumans() }}" 
