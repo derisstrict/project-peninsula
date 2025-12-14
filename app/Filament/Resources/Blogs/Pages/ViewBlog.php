@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Filament\Resources\Events\Pages;
+namespace App\Filament\Resources\Blogs\Pages;
 
 use App\Filament\Resources\Blogs\BlogResource;
 use Filament\Actions\EditAction;

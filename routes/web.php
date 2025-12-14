@@ -20,7 +20,7 @@ Route::get('/blogs', [BlogController::class, 'searchRequest']);
 
 Route::get('/blogs/{id}/{slug}', [BlogController::class, 'findIDSlug']);
 
-Route::get('/events', [EventController::class, 'searchRequest']);
+Route::get('/events', [EventController::class, 'index']); 
 
 Route::get('/events/{id}/{slug}', [EventController::class, 'findIDSlug']);
 

@@ -22,7 +22,6 @@ class DatabaseSeeder extends Seeder
             EventSeeder::class,
             FotoVideoSeeder::class,
             SpotSeeder::class,
-            LandingPageSeeder::class,
             LanguageLineSeeder::class,
             ThingsToDoSeeder::class,
             GeneralSettingsSeeder::class,

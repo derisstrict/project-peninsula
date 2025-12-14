@@ -23,7 +23,7 @@ class BlogsTable
                 ->label('Judul Blog'),
                 ImageColumn::make('gambar_blog')
                 ->label('Gambar')
-                ->disk('public_img')
+                ->disk('public')
                 ->square()
                 ->stacked()
                 ->limit(3)

@@ -48,7 +48,7 @@
 [x-cloak] { display: none !important; }
 
 .footer-outline {
-    @apply bg-[radial-gradient(circle,_rgba(94,165,0,0.80)_0%,_rgba(94,165,0,0)_80%)];
+    @apply bg-[radial-gradient(circle,_rgba(94,165,0,0.80)_0%,_rgba(94,165,0,0)_110%)] md:bg-[radial-gradient(circle,_rgba(94,165,0,0.80)_0%,_rgba(94,165,0,0)_80%)];
 }
 
 .footer-background {

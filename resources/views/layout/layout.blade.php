@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html x-data="{ toggleTheme: $persist(false), openMapPopup: false }" :class="toggleTheme ? '' : 'dark'" lang="en">
+<html x-data="{ toggleTheme: $persist(false), openMapPopup: false, isHamOpen: false }" :class="toggleTheme ? '' : 'dark'" lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,7 +18,7 @@
 <body class="bg-bglight text-light-primary dark:bg-bgdark dark:text-dark-primary">
     @include('common.navbar')
     <div class="flex justify-center items-center">
-        <div class="flex flex-col max-w-[80rem] w-full mt-30 mx-20">
+        <div class="flex flex-col max-w-[80rem] w-full mt-10 mx-5 md:mx-20 md:mt-30">
             @yield('content')
         </div>
     </div>

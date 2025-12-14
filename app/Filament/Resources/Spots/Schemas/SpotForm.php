@@ -21,8 +21,8 @@ class SpotForm
         return $schema
             ->components([
                 Hidden::make('user_id')->default(auth()->id()),
-                TextInput::make('title')
-                ->label('Nama Spot')->required(),
+                TextInput::make('title'),
+                Textarea::make('teaser')->label('Teaser')->required(),
                 Fieldset::make('Koordinat Spot')->schema([
                    TextInput::make('xpos')->label("Koordinat X")->required(),
                    TextInput::make('ypos')->label("Koordinat Y")->required(),
