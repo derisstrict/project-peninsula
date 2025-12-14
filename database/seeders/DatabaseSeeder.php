@@ -4,8 +4,8 @@ namespace Database\Seeders;
 
 use App\Models\GeneralSetting;
 use App\Models\User;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 class DatabaseSeeder extends Seeder
 {
@@ -20,6 +20,7 @@ class DatabaseSeeder extends Seeder
             UserSeeder::class,
             BlogSeeder::class,
             EventSeeder::class,
+            FotoVideoSeeder::class,
             SpotSeeder::class,
             LandingPageSeeder::class,
             LanguageLineSeeder::class,
