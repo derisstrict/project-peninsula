@@ -17,11 +17,11 @@
             <div class="infobox-accent">
                 <div class="m-2 flex flex-col items-center text-center">
                     <img 
-                        src="{{ asset('img/' . $thingstodo->icon) }}" 
-                        alt="{{ $thingstodo->title }}" 
+                        src="{{ asset('img/' . $thingstodo->ikon) }}" 
+                        alt="{{ __('things_to_do.box_title_' . $loop->iteration) }}" 
                         class="w-[45px] h-[45px] object-contain mb-2"
                     >
-                    <h3 class="font-bold mt-2">{{ $thingstodo->title }}</h3>
+                    <h3 class="font-bold mt-2">{{ __('things_to_do.box_title_' . $loop->iteration) }}</h3>
                     <p class="mt-2">{{ __('things_to_do.box_description_' . $loop->iteration .'') }}</p>
                 </div>
             </div>
