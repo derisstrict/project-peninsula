@@ -35,7 +35,7 @@
         </div>
 
         <div class="flex flex-col md:flex-row">
-            <h2 class="text-2xl font-semibold mb-1 md:text-4xl" x-text="title"></h2>
+            <h2 class="text-2xl font-semibold mb-1 md:text-4xl" x-text="l10nTitle"></h2>
             <button @click="openMapPopup = false, disableScrollOnBody(false)" class="!hidden btn-primary px-4 py-2 ml-auto cursor-pointer md:!flex">
                 <x-local-icon icon="x-cross" width="16px" height="16px" viewBox="0 0 200 200" fill="currentColor"
                     stroke="currentColor" xmlns="http://www.w3.org/2000/svg"></x-local-icon>
@@ -63,7 +63,7 @@
 
             <div class="flex flex-col gap-5">
                 <div class="w-fit max-w-4xl bg-light-primary/5 rounded-xl p-5 dark:bg-dark-primary/5">
-                    <p class="text-md md:text-xl" x-text="desc"></p>
+                    <p class="text-md md:text-xl" x-text="l10nDescription"></p>
                 </div>
                 <div class="infobox-accent p-5 gap-3 !w-full">
                     <x-local-icon icon="info" class="text-color-accent w-fit min-w-[20px] max-w-[24px]" width="24px" height="24px"
@@ -71,7 +71,7 @@
                         xmlns="http://www.w3.org/2000/svg"></x-local-icon>
                     <div>
                         <p class="text-md font-semibold md:text-xl">{{ __('common.note') }}</p>
-                        <p class="text-md md:text-xl" x-text="note"></p>
+                        <p class="text-md md:text-xl" x-text="l10nNote"></p>
                     </div>
                 </div>
             </div>

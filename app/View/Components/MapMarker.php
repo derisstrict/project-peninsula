@@ -10,10 +10,10 @@ class MapMarker extends Component
 {
     public $xpos;
     public $ypos;
-    public $title;
-    public $teaser;
-    public $desc;
-    public $note;
+    public $l10nTitle;
+    public $l10nTeaser;
+    public $l10nDescription;
+    public $l10nNote;
     public $images;
     public $alt;
 
@@ -23,20 +23,20 @@ class MapMarker extends Component
     public function __construct(
         $xpos = "", 
         $ypos = "", 
-        $title = "", 
-        $teaser = "", 
-        $desc = "", 
-        $note = "", 
+        $l10nTitle = "", 
+        $l10nTeaser = "", 
+        $l10nDescription = "", 
+        $l10nNote = "", 
         $images = "",
         $alt = "",
     )
     {
         $this->xpos = $xpos;
         $this->ypos = $ypos;
-        $this->title = $title;
-        $this->teaser = $teaser;
-        $this->desc = $desc;
-        $this->note = $note;
+        $this->l10nTitle = $l10nTitle;
+        $this->l10nTeaser = $l10nTeaser;
+        $this->l10nDescription = $l10nDescription;
+        $this->l10nNote = $l10nNote;
         $this->images = $images;
         $this->alt = $alt;
     }
