@@ -13,11 +13,11 @@ return new class extends Migration
     {
         Schema::create('things_to_dos', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('user_id');
+            $table->bigInteger('id_user');
             $table->timestamps();
-            $table->string('title', 100)->nullable(false);
-            $table->string('icon', 100)->nullable(false);
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->string('kunci_judul', 100)->nullable(false);
+            $table->string('ikon', 100)->nullable(false);
+            $table->foreign('id_user')->references('id')->on('users')->onDelete('cascade');
         });
     }
 

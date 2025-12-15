@@ -14,35 +14,35 @@ class ThingsToDoSeeder extends Seeder
     public function run(): void
     {
         ThingsToDo::create([
-            'user_id' => 1,
-            'title' => 'Jogging',
-            'icon' => 'running.png'
+            'id_user' => 1,
+            'kunci_judul' => 'box_title_1',
+            'ikon' => 'running.png'
         ]);
 
         ThingsToDo::create([
-            'user_id' => 1,
-            'title' => 'Sunbathing',
-            'icon' => 'sun.png'
+            'id_user' => 1,
+            'kunci_judul' => 'box_title_2',
+            'ikon' => 'sun.png'
         ]);
         ThingsToDo::create([
-            'user_id' => 1,
-            'title' => 'Cycling',
-            'icon' => 'cycling.png'
+            'id_user' => 1,
+            'kunci_judul' => 'box_title_3',
+            'ikon' => 'cycling.png'
         ]);
         ThingsToDo::create([
-            'user_id' => 1,
-            'title' => 'Family Picnic',
-            'icon' => 'picnic.png'
+            'id_user' => 1,
+            'kunci_judul' => 'box_title_4',
+            'ikon' => 'picnic.png'
         ]);
         ThingsToDo::create([
-            'user_id' => 1,
-            'title' => 'Yoga',
-            'icon' => 'meditation.png'
+            'id_user' => 1,
+            'kunci_judul' => 'box_title_5',
+            'ikon' => 'meditation.png'
         ]);
         ThingsToDo::create([
-            'user_id' => 1,
-            'title' => 'Children Games',
-            'icon' => 'park.png'
+            'id_user' => 1,
+            'kunci_judul' => 'box_title_6',
+            'ikon' => 'park.png'
         ]);
 
     }

@@ -10,6 +10,8 @@ use Filament\Actions\ViewAction;
 use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
+use Illuminate\Database\Eloquent\Model;
+use stdClass;
 
 class ThingsToDosTable
 {
@@ -18,8 +20,13 @@ class ThingsToDosTable
         return $table
             ->columns([
                 TextColumn::make('title')
-                ->label('Judul'),
-                ImageColumn::make('icon')
+                ->label('Judul')
+                ->state(function (?Model $record) {
+                    return __('things_to_do.' . $record->kunci_judul);
+                }),
+                TextColumn::make('kunci_judul')
+                ->label('Kunci Judul'),
+                ImageColumn::make('ikon')
                 ->label('Ikon')
                 ->disk('public_img')
                 ->square()

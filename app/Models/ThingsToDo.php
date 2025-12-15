@@ -9,10 +9,9 @@ class ThingsToDo extends Model
     protected $table = 'things_to_dos';
 
     protected $fillable = [
-        'user_id',
-        'slug',
-        'title',
-        'icon'
+        'id_user',
+        'ikon',
+        'kunci_judul',
     ];
 
 }

@@ -10,7 +10,7 @@ use Filament\Schemas\Components\Utilities\Get;
 use Filament\Schemas\Components\Utilities\Set;
 use Illuminate\Support\Str;
 use Filament\Schemas\Schema;
-
+use Illuminate\Database\Eloquent\Model;
 
 class ThingsToDoForm
 {
@@ -19,8 +19,8 @@ class ThingsToDoForm
         return $schema
             ->components([
                 Hidden::make('user_id')->default(fn () => auth()->id()),
-                TextInput::make('title')
-                    ->label('Judul')
+                TextInput::make('kunci_judul')
+                    ->label('Kunci Judul')
                     ->required(),
                 FileUpload::make('icon')->label('Upload Icon/Gambar')
                 ->image()
