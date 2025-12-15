@@ -195,6 +195,13 @@ class LanguageLineSeeder extends Seeder
                 'id' => 'Lihat Selengkapnya', 
                 'en' => 'See More']
         ]);
+        LanguageLine::create([
+            'group' => 'maps', 
+            'key' => 'about_place', 
+            'text' => [
+                'id' => 'Tentang Tempat', 
+                'en' => 'About Place']
+        ]);
         //// Maps
 
         // Things to do
@@ -646,6 +653,13 @@ class LanguageLineSeeder extends Seeder
             'text' => [
                 'id' => 'Harga mulai dari', 
                 'en' => 'Starting price']
+        ]);
+        LanguageLine::create([
+            'group' => 'common', 
+            'key' => 'note', 
+            'text' => [
+                'id' => 'Catatan', 
+                'en' => 'Note']
         ]);
         //// Common
 
