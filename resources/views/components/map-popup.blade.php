@@ -67,7 +67,7 @@
                     <p class="text-xl" x-text="desc"></p>
                 </div>
                 <div class="infobox-accent p-5 gap-3 !w-full">
-                    <x-local-icon icon="info" class="text-color-accent" width="24px" height="24px"
+                    <x-local-icon icon="info" class="text-color-accent w-fit min-w-[20px] max-w-[24px]" width="24px" height="24px"
                         viewBox="0 0 24 24" fill="none" stroke="currentColor"
                         xmlns="http://www.w3.org/2000/svg"></x-local-icon>
                     <div>
