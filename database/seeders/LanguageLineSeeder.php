@@ -195,12 +195,301 @@ class LanguageLineSeeder extends Seeder
                 'id' => 'Lihat Selengkapnya', 
                 'en' => 'See More']
         ]);
+
         LanguageLine::create([
             'group' => 'maps', 
             'key' => 'about_place', 
             'text' => [
                 'id' => 'Tentang Tempat', 
                 'en' => 'About Place']
+        ]);
+
+        LanguageLine::create([
+            'group' => 'spots', 
+            'key' => 'title_spot_1', 
+            'text' => [
+                'id' => 'Pura Bias Tugel', 
+                'en' => 'Bias Tugel Temple']
+        ]);
+
+        LanguageLine::create([
+            'group' => 'spots', 
+            'key' => 'teaser_spot_1', 
+            'text' => [
+                'id' => 'Demi Website Bebas', 
+                'en' => 'Anything for The Website']
+        ]);
+
+        LanguageLine::create([
+            'group' => 'spots', 
+            'key' => 'note_spot_1', 
+            'text' => [
+                'id' => 'Untuk memasuki area ini, pengunjung wajib mengenakan pakaian adat atau pakaian yang rapi.', 
+                'en' => 'Visitors must wear appropriate clothing or balinese attire (sarong and sash).']
+        ]);
+
+        LanguageLine::create([
+            'group' => 'spots', 
+            'key' => 'description_spot_1', 
+            'text' => [
+                'id' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae itaque iste pariatur nobis sint voluptatibus eveniet inventore qui nesciunt adipisci, rem exercitationem necessitatibus dolorem quisquam! Corrupti laudantium dignissimos aliquid officiis, dolorum sapiente laborum laboriosam sed.', 
+                'en' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae itaque iste pariatur nobis sint voluptatibus eveniet inventore qui nesciunt adipisci, rem exercitationem necessitatibus dolorem quisquam! Corrupti laudantium dignissimos aliquid officiis, dolorum sapiente laborum laboriosam sed.']
+        ]);
+
+        LanguageLine::create([
+            'group' => 'spots', 
+            'key' => 'title_spot_2', 
+            'text' => [
+                'id' => 'Helipad', 
+                'en' => 'Helipad']
+        ]);
+
+        LanguageLine::create([
+            'group' => 'spots', 
+            'key' => 'teaser_spot_2', 
+            'text' => [
+                'id' => 'Demi Website Bebas', 
+                'en' => 'Anything for The Website']
+        ]);
+
+        LanguageLine::create([
+            'group' => 'spots', 
+            'key' => 'note_spot_2', 
+            'text' => [
+                'id' => 'Untuk memasuki area ini, pengunjung wajib mengenakan pakaian adat atau pakaian yang rapi.', 
+                'en' => 'Visitors must wear appropriate clothing or balinese attire (sarong and sash).']
+        ]);
+
+        LanguageLine::create([
+            'group' => 'spots', 
+            'key' => 'description_spot_2', 
+            'text' => [
+                'id' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae itaque iste pariatur nobis sint voluptatibus eveniet inventore qui nesciunt adipisci, rem exercitationem necessitatibus dolorem quisquam! Corrupti laudantium dignissimos aliquid officiis, dolorum sapiente laborum laboriosam sed.', 
+                'en' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae itaque iste pariatur nobis sint voluptatibus eveniet inventore qui nesciunt adipisci, rem exercitationem necessitatibus dolorem quisquam! Corrupti laudantium dignissimos aliquid officiis, dolorum sapiente laborum laboriosam sed.']
+        ]);
+
+        LanguageLine::create([
+            'group' => 'spots', 
+            'key' => 'title_spot_3', 
+            'text' => [
+                'id' => 'Patung Arjuna dan Kresna', 
+                'en' => 'Arjuna dan Kresna Statue']
+        ]);
+
+        LanguageLine::create([
+            'group' => 'spots', 
+            'key' => 'teaser_spot_3', 
+            'text' => [
+                'id' => 'Demi Website Bebas', 
+                'en' => 'Anything for The Website']
+        ]);
+
+        LanguageLine::create([
+            'group' => 'spots', 
+            'key' => 'note_spot_3', 
+            'text' => [
+                'id' => 'Untuk memasuki area ini, pengunjung wajib mengenakan pakaian adat atau pakaian yang rapi.', 
+                'en' => 'Visitors must wear appropriate clothing or balinese attire (sarong and sash).']
+        ]);
+
+        LanguageLine::create([
+            'group' => 'spots', 
+            'key' => 'description_spot_3', 
+            'text' => [
+                'id' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae itaque iste pariatur nobis sint voluptatibus eveniet inventore qui nesciunt adipisci, rem exercitationem necessitatibus dolorem quisquam! Corrupti laudantium dignissimos aliquid officiis, dolorum sapiente laborum laboriosam sed.', 
+                'en' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae itaque iste pariatur nobis sint voluptatibus eveniet inventore qui nesciunt adipisci, rem exercitationem necessitatibus dolorem quisquam! Corrupti laudantium dignissimos aliquid officiis, dolorum sapiente laborum laboriosam sed.']
+        ]);
+
+        LanguageLine::create([
+            'group' => 'spots', 
+            'key' => 'title_spot_4', 
+            'text' => [
+                'id' => 'Tari Kecak dan Barong', 
+                'en' => 'Kecak and Barong Dance']
+        ]);
+
+        LanguageLine::create([
+            'group' => 'spots', 
+            'key' => 'teaser_spot_4', 
+            'text' => [
+                'id' => 'Demi Website Bebas', 
+                'en' => 'Anything for The Website']
+        ]);
+
+        LanguageLine::create([
+            'group' => 'spots', 
+            'key' => 'note_spot_4', 
+            'text' => [
+                'id' => 'Untuk memasuki area ini, pengunjung wajib mengenakan pakaian adat atau pakaian yang rapi.', 
+                'en' => 'Visitors must wear appropriate clothing or balinese attire (sarong and sash).']
+        ]);
+
+        LanguageLine::create([
+            'group' => 'spots', 
+            'key' => 'description_spot_4', 
+            'text' => [
+                'id' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae itaque iste pariatur nobis sint voluptatibus eveniet inventore qui nesciunt adipisci, rem exercitationem necessitatibus dolorem quisquam! Corrupti laudantium dignissimos aliquid officiis, dolorum sapiente laborum laboriosam sed.', 
+                'en' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae itaque iste pariatur nobis sint voluptatibus eveniet inventore qui nesciunt adipisci, rem exercitationem necessitatibus dolorem quisquam! Corrupti laudantium dignissimos aliquid officiis, dolorum sapiente laborum laboriosam sed.']
+        ]);
+
+        LanguageLine::create([
+            'group' => 'spots', 
+            'key' => 'title_spot_5', 
+            'text' => [
+                'id' => 'Pantai Suryodaya', 
+                'en' => 'Suryodaya Beach']
+        ]);
+
+        LanguageLine::create([
+            'group' => 'spots', 
+            'key' => 'teaser_spot_5', 
+            'text' => [
+                'id' => 'Demi Website Bebas', 
+                'en' => 'Anything for The Website']
+        ]);
+
+        LanguageLine::create([
+            'group' => 'spots', 
+            'key' => 'note_spot_5', 
+            'text' => [
+                'id' => 'Untuk memasuki area ini, pengunjung wajib mengenakan pakaian adat atau pakaian yang rapi.', 
+                'en' => 'Visitors must wear appropriate clothing or balinese attire (sarong and sash).']
+        ]);
+
+        LanguageLine::create([
+            'group' => 'spots', 
+            'key' => 'description_spot_5', 
+            'text' => [
+                'id' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae itaque iste pariatur nobis sint voluptatibus eveniet inventore qui nesciunt adipisci, rem exercitationem necessitatibus dolorem quisquam! Corrupti laudantium dignissimos aliquid officiis, dolorum sapiente laborum laboriosam sed.', 
+                'en' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae itaque iste pariatur nobis sint voluptatibus eveniet inventore qui nesciunt adipisci, rem exercitationem necessitatibus dolorem quisquam! Corrupti laudantium dignissimos aliquid officiis, dolorum sapiente laborum laboriosam sed.']
+        ]);
+
+        LanguageLine::create([
+            'group' => 'spots', 
+            'key' => 'title_spot_6', 
+            'text' => [
+                'id' => 'Taman Harapan', 
+                'en' => 'Garden of Hope']
+        ]);
+
+        LanguageLine::create([
+            'group' => 'spots', 
+            'key' => 'teaser_spot_6', 
+            'text' => [
+                'id' => 'Demi Website Bebas', 
+                'en' => 'Anything for The Website']
+        ]);
+
+        LanguageLine::create([
+            'group' => 'spots', 
+            'key' => 'note_spot_6', 
+            'text' => [
+                'id' => 'Untuk memasuki area ini, pengunjung wajib mengenakan pakaian adat atau pakaian yang rapi.', 
+                'en' => 'Visitors must wear appropriate clothing or balinese attire (sarong and sash).']
+        ]);
+
+        LanguageLine::create([
+            'group' => 'spots', 
+            'key' => 'description_spot_6', 
+            'text' => [
+                'id' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae itaque iste pariatur nobis sint voluptatibus eveniet inventore qui nesciunt adipisci, rem exercitationem necessitatibus dolorem quisquam! Corrupti laudantium dignissimos aliquid officiis, dolorum sapiente laborum laboriosam sed.', 
+                'en' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae itaque iste pariatur nobis sint voluptatibus eveniet inventore qui nesciunt adipisci, rem exercitationem necessitatibus dolorem quisquam! Corrupti laudantium dignissimos aliquid officiis, dolorum sapiente laborum laboriosam sed.']
+        ]);
+
+        LanguageLine::create([
+            'group' => 'spots', 
+            'key' => 'title_spot_7', 
+            'text' => [
+                'id' => 'Taman Bunga', 
+                'en' => 'Garden of Flowers']
+        ]);
+
+        LanguageLine::create([
+            'group' => 'spots', 
+            'key' => 'teaser_spot_7', 
+            'text' => [
+                'id' => 'Demi Website Bebas', 
+                'en' => 'Anything for The Website']
+        ]);
+
+        LanguageLine::create([
+            'group' => 'spots', 
+            'key' => 'note_spot_7', 
+            'text' => [
+                'id' => 'Untuk memasuki area ini, pengunjung wajib mengenakan pakaian adat atau pakaian yang rapi.', 
+                'en' => 'Visitors must wear appropriate clothing or balinese attire (sarong and sash).']
+        ]);
+
+        LanguageLine::create([
+            'group' => 'spots', 
+            'key' => 'description_spot_7', 
+            'text' => [
+                'id' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae itaque iste pariatur nobis sint voluptatibus eveniet inventore qui nesciunt adipisci, rem exercitationem necessitatibus dolorem quisquam! Corrupti laudantium dignissimos aliquid officiis, dolorum sapiente laborum laboriosam sed.', 
+                'en' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae itaque iste pariatur nobis sint voluptatibus eveniet inventore qui nesciunt adipisci, rem exercitationem necessitatibus dolorem quisquam! Corrupti laudantium dignissimos aliquid officiis, dolorum sapiente laborum laboriosam sed.']
+        ]);
+
+        LanguageLine::create([
+            'group' => 'spots', 
+            'key' => 'title_spot_8', 
+            'text' => [
+                'id' => 'Monumen Persaudaraan', 
+                'en' => 'Brothership Monument']
+        ]);
+
+        LanguageLine::create([
+            'group' => 'spots', 
+            'key' => 'teaser_spot_8', 
+            'text' => [
+                'id' => 'Demi Website Bebas', 
+                'en' => 'Anything for The Website']
+        ]);
+
+        LanguageLine::create([
+            'group' => 'spots', 
+            'key' => 'note_spot_8', 
+            'text' => [
+                'id' => 'Untuk memasuki area ini, pengunjung wajib mengenakan pakaian adat atau pakaian yang rapi.', 
+                'en' => 'Visitors must wear appropriate clothing or balinese attire (sarong and sash).']
+        ]);
+
+        LanguageLine::create([
+            'group' => 'spots', 
+            'key' => 'description_spot_8', 
+            'text' => [
+                'id' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae itaque iste pariatur nobis sint voluptatibus eveniet inventore qui nesciunt adipisci, rem exercitationem necessitatibus dolorem quisquam! Corrupti laudantium dignissimos aliquid officiis, dolorum sapiente laborum laboriosam sed.', 
+                'en' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae itaque iste pariatur nobis sint voluptatibus eveniet inventore qui nesciunt adipisci, rem exercitationem necessitatibus dolorem quisquam! Corrupti laudantium dignissimos aliquid officiis, dolorum sapiente laborum laboriosam sed.']
+        ]);
+
+        LanguageLine::create([
+            'group' => 'spots', 
+            'key' => 'title_spot_9', 
+            'text' => [
+                'id' => 'Waterblow', 
+                'en' => 'Waterblow']
+        ]);
+
+        LanguageLine::create([
+            'group' => 'spots', 
+            'key' => 'teaser_spot_9', 
+            'text' => [
+                'id' => 'Demi Website Bebas', 
+                'en' => 'Anything for The Website']
+        ]);
+
+        LanguageLine::create([
+            'group' => 'spots', 
+            'key' => 'note_spot_9', 
+            'text' => [
+                'id' => 'Untuk memasuki area ini, pengunjung wajib mengenakan pakaian adat atau pakaian yang rapi.', 
+                'en' => 'Visitors must wear appropriate clothing or balinese attire (sarong and sash).']
+        ]);
+
+        LanguageLine::create([
+            'group' => 'spots', 
+            'key' => 'description_spot_9', 
+            'text' => [
+                'id' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae itaque iste pariatur nobis sint voluptatibus eveniet inventore qui nesciunt adipisci, rem exercitationem necessitatibus dolorem quisquam! Corrupti laudantium dignissimos aliquid officiis, dolorum sapiente laborum laboriosam sed.', 
+                'en' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae itaque iste pariatur nobis sint voluptatibus eveniet inventore qui nesciunt adipisci, rem exercitationem necessitatibus dolorem quisquam! Corrupti laudantium dignissimos aliquid officiis, dolorum sapiente laborum laboriosam sed.']
         ]);
         //// Maps
 
