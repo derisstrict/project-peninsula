@@ -19,7 +19,9 @@ class LanguageLineResource extends Resource
 {
     protected static ?string $model = LanguageLine::class;
 
-    protected static ?string $modelLabel = 'Localization';
+    protected static ?string $modelLabel = 'Lokalisasi';
+
+    protected static ?string $pluralModelLabel = 'Lokalisasi';
 
     protected static string | UnitEnum | null $navigationGroup = 'Settings';
 
