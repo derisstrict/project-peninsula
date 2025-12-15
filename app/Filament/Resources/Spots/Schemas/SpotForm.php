@@ -21,8 +21,6 @@ class SpotForm
         return $schema
             ->components([
                 Hidden::make('user_id')->default(auth()->id()),
-                TextInput::make('title'),
-                Textarea::make('teaser')->label('Teaser')->required(),
                 Fieldset::make('Koordinat Spot')->schema([
                    TextInput::make('xpos')->label("Koordinat X")->required(),
                    TextInput::make('ypos')->label("Koordinat Y")->required(),
@@ -41,10 +39,13 @@ class SpotForm
                         ->belowContent('Deskripsi singkat tentang gambar')
                         ->label('Alt gambar')
                ]),
-                Textarea::make('catatan')->label('Catatan')->required(),
-                Textarea::make('keterangan')->label('Keterangan')->required(),
+               Fieldset::make('Lokalisasi')->schema([
+                    TextInput::make('kunci_judul')->label('Kunci Judul')->required(),
+                    Textarea::make('kunci_teaser')->label('Kunci Teaser')->required(),
+                    Textarea::make('kunci_catatan')->label('Kunci Catatan')->required(),
+                    Textarea::make('kunci_keterangan')->label('Kunci Keterangan')->required(),
+               ])
                 // RichEditor::make('keterangan')->label('Keterangan')->required(),
-
             ])->columns(1);
     }
 }

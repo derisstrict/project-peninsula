@@ -11,7 +11,8 @@ use Filament\Support\Colors\Color;
 use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
-
+use Illuminate\Database\Eloquent\Model;
+use stdClass;
 
 class SpotsTable
 {
@@ -19,10 +20,13 @@ class SpotsTable
     {
         return $table
             ->columns([
-                TextColumn::make('title')->label("Nama Spot")
+                TextColumn::make('nama_spot')->label("Nama Spot")
                 ->searchable()
-                ->sortable(),
-                TextColumn::make('teaser')->label("Teaser")
+                ->sortable()
+                ->state(function (?Model $record) {
+                    return __('spots.' . $record->kunci_judul);
+                }),
+                TextColumn::make('kunci_judul')->label("Kunci Judul")
                 ->searchable()
                 ->sortable(),
                 ImageColumn::make('url_media')
@@ -40,13 +44,6 @@ class SpotsTable
                 ->searchable()
                 ->sortable()
                 ->badge()->color(Color::Fuchsia),
-                TextColumn::make('catatan')->label("Catatan")
-                ->searchable()
-                ->sortable(),
-                TextColumn::make('keterangan')->label("Keterangan")
-                ->searchable()
-                ->sortable()
-                ->limit(100),
             ])
             ->filters([
                 //

@@ -16,12 +16,12 @@ return new class extends Migration
             $table->bigInteger('user_id');
             $table->string('xpos', 15)->nullable(false);
             $table->string('ypos', 15)->nullable(false);
-            $table->string('title', 50)->nullable(false);
-            $table->string('teaser', 250)->nullable(false);
+            $table->string('kunci_judul', 50)->nullable(false);
+            $table->string('kunci_teaser', 250)->nullable(false);
             $table->string('url_media', 255)->nullable(false);
             $table->string('alt_gambar', 255)->nullable(true);
-            $table->string('catatan', 50)->nullable(true);
-            $table->text('keterangan')->nullable(false);
+            $table->string('kunci_catatan', 50)->nullable(true);
+            $table->text('kunci_keterangan')->nullable(false);
         });
     }
 

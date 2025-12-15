@@ -13,6 +13,8 @@ use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
 use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Table;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Contracts\Support\Htmlable;
 
 class SpotResource extends Resource
 {
@@ -20,7 +22,12 @@ class SpotResource extends Resource
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedMapPin;
 
-    protected static ?string $recordTitleAttribute = 'title';
+    protected static ?string $recordTitleAttribute = 'kunci_judul';
+
+    public static function getRecordTitle(?Model $record): string|Htmlable|null
+    {
+        return __('spots.' . $record->kunci_judul);
+    }
 
     public static function form(Schema $schema): Schema
     {
