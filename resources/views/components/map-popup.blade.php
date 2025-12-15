@@ -56,7 +56,7 @@
                     <template x-for="(img, index) in imgs">
                         <div @click="active = index; reset(runInterval)"
                             :class="index === active ? 'bg-white' : 'bg-white/30'"
-                            class="w-7 h-1 rounded cursor-pointer transition"></div>
+                            class="w-7 h-[6px] rounded cursor-pointer transition"></div>
                     </template>
                 </div>
             </div>
