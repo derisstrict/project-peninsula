@@ -20,9 +20,9 @@ class ThingsToDoForm
             ->components([
                 Hidden::make('user_id')->default(fn () => auth()->id()),
                 TextInput::make('kunci_judul')
-                    ->label('Kunci Judul')
+                    ->label('Kunci judul')
                     ->required(),
-                FileUpload::make('icon')->label('Upload Icon/Gambar')
+                FileUpload::make('icon')->label('Upload ikon/gambar')
                 ->image()
                 ->required()
                 ->disk('public_img')
