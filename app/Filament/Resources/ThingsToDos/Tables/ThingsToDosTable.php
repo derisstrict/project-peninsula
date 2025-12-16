@@ -7,6 +7,7 @@ use Filament\Actions\DeleteAction;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
 use Filament\Actions\ViewAction;
+use Filament\Support\Colors\Color;
 use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
@@ -25,7 +26,9 @@ class ThingsToDosTable
                     return __('things_to_do.' . $record->kunci_judul);
                 }),
                 TextColumn::make('kunci_judul')
-                ->label('Kunci Judul'),
+                ->label('Kunci Judul')
+                ->badge()
+                ->color(Color::Green),
                 ImageColumn::make('ikon')
                 ->label('Ikon')
                 ->disk('public_img')

@@ -28,7 +28,9 @@ class SpotsTable
                 }),
                 TextColumn::make('kunci_judul')->label("Kunci Judul")
                 ->searchable()
-                ->sortable(),
+                ->sortable()
+                ->badge()
+                ->color(Color::Green),
                 ImageColumn::make('url_media')
                 ->label('Gambar')
                 ->disk('public_img')
