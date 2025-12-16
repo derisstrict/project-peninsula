@@ -6,6 +6,7 @@ use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Hidden;
 use Filament\Forms\Components\FileUpload;
+use Filament\Schemas\Components\Fieldset;
 use Filament\Schemas\Components\Utilities\Get;
 use Filament\Schemas\Components\Utilities\Set;
 use Illuminate\Support\Str;
@@ -19,9 +20,14 @@ class ThingsToDoForm
         return $schema
             ->components([
                 Hidden::make('user_id')->default(fn () => auth()->id()),
-                TextInput::make('kunci_judul')
+                Fieldset::make('Lokalisasi')->schema([
+                    TextInput::make('kunci_judul')
                     ->label('Kunci judul')
                     ->required(),
+                    TextInput::make('kunci_deskripsi')
+                    ->label('Kunci deskripsi')
+                    ->required(),
+                ]),
                 FileUpload::make('icon')->label('Upload ikon/gambar')
                 ->image()
                 ->required()

@@ -16,6 +16,7 @@ return new class extends Migration
             $table->bigInteger('id_user');
             $table->timestamps();
             $table->string('kunci_judul', 100)->nullable(false);
+            $table->string('kunci_deskripsi', 100)->nullable(false);
             $table->string('ikon', 100)->nullable(false);
             $table->foreign('id_user')->references('id')->on('users')->onDelete('cascade');
         });

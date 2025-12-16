@@ -12,6 +12,7 @@ class ThingsToDo extends Model
         'id_user',
         'ikon',
         'kunci_judul',
+        'kunci_deskripsi',
     ];
 
 }

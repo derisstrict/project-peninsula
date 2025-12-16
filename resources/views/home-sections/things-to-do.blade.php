@@ -18,11 +18,11 @@
                 <div class="m-2 flex flex-col items-center text-center">
                     <img 
                         src="{{ asset('img/' . $thingstodo->ikon) }}" 
-                        alt="{{ __('things_to_do.box_title_' . $loop->iteration) }}" 
+                        alt="{{ __('things_to_do.' . $thingstodo->kunci_judul) }}" 
                         class="w-[45px] h-[45px] object-contain mb-2"
                     >
-                    <h3 class="font-bold mt-2">{{ __('things_to_do.box_title_' . $loop->iteration) }}</h3>
-                    <p class="mt-2">{{ __('things_to_do.box_description_' . $loop->iteration .'') }}</p>
+                    <h3 class="font-bold mt-2">{{ __('things_to_do.' . $thingstodo->kunci_judul) }}</h3>
+                    <p class="mt-2">{{ __('things_to_do.' . $thingstodo->kunci_deskripsi.'') }}</p>
                 </div>
             </div>
         @endforeach
