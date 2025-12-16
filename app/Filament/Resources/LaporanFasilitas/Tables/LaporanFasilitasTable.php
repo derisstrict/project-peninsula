@@ -2,14 +2,18 @@
 
 namespace App\Filament\Resources\LaporanFasilitas\Tables;
 
+use Filament\Actions\Action;
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
 use Filament\Actions\ViewAction;
+use Filament\Forms\Components\Textarea;
+use Filament\Forms\Components\TextInput;
 use Filament\Support\Colors\Color;
 use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
+use Illuminate\Support\Facades\Mail;
 
 class LaporanFasilitasTable
 {
@@ -61,6 +65,35 @@ class LaporanFasilitasTable
             ->recordActions([
                 ViewAction::make(),
                 EditAction::make(),
+                Action::make('email')
+                ->label('Kirim Email')
+                ->icon(Heroicon::Envelope)
+                ->color(Color::Amber)
+                ->schema([
+                    TextInput::make('to')
+                    ->label('Email penerima')
+                    ->required()
+                    ->default(function ($record) {
+                        return $record->email_pelapor;
+                    })
+                    ->disabled(false),
+                    TextInput::make('subject')
+                        ->label('Subjek')
+                        ->required(),
+                    Textarea::make('message')
+                        ->label('Pesan')
+                        ->required()
+                        ->rows(6),
+                ])
+                ->action(function (array $data, $record) {
+                    Mail::raw($data['message'], function ($mail) use ($record, $data) {
+                        $mail->to($data['to'])
+                            ->subject($data['subject']);
+                    });
+                })
+                ->modalHeading('Kirim Email')
+                ->modalSubmitActionLabel('Kirim')
+                ->modalCancelActionLabel('Batalkan')
             ])
             ->toolbarActions([
                 BulkActionGroup::make([
