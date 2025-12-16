@@ -28,7 +28,7 @@ class ThingsToDoForm
                     ->label('Kunci deskripsi')
                     ->required(),
                 ]),
-                FileUpload::make('icon')->label('Upload ikon/gambar')
+                FileUpload::make('ikon')->label('Upload ikon/gambar')
                 ->image()
                 ->required()
                 ->disk('public_img')
