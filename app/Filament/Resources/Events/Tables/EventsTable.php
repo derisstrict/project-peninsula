@@ -45,6 +45,7 @@ class EventsTable
                 TextColumn::make('harga_tiket')
                 ->label('Harga Tiket')
                 ->money('IDR', decimalPlaces: 0, locale: 'id')
+                ->sortable()
             ])
             ->filters([
                 //
