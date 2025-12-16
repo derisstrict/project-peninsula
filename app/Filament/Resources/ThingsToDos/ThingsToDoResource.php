@@ -36,11 +36,6 @@ class ThingsToDoResource extends Resource
         return ThingsToDoForm::configure($schema);
     }
 
-    public static function infolist(Schema $schema): Schema
-    {
-        return ThingsToDoInfolist::configure($schema);
-    }
-
     public static function table(Table $table): Table
     {
         return ThingsToDosTable::configure($table);
@@ -58,7 +53,6 @@ class ThingsToDoResource extends Resource
         return [
             'index' => ListThingsToDos::route('/'),
             'create' => CreateThingsToDo::route('/create'),
-            'view' => ViewThingsToDo::route('/{record}'),
             'edit' => EditThingsToDo::route('/{record}/edit'),
         ];
     }
