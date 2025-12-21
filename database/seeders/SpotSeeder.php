@@ -14,6 +14,7 @@ class SpotSeeder extends Seeder
     public function run(): void
     {
         Spot::truncate();
+        // 
         Spot::create(
             [
                 'user_id' => 1,'xpos' => '113', 'ypos' => '-56', 'kunci_judul' => 'title_spot_1', 'kunci_teaser' => 'teaser_spot_1', 'url_media' => ["gallery1.jpg", "gallery2.jpg", "gallery3.jpg"], 'kunci_catatan' => 'note_spot_1', 'kunci_keterangan' => 'description_spot_1', 'alt_gambar' => 'The Image of Peninsula Island'
@@ -58,6 +59,36 @@ class SpotSeeder extends Seeder
         Spot::create(
             [
                'user_id' => 1,'xpos' => '105.8', 'ypos' => '-37.5', 'kunci_judul' => 'title_spot_9','kunci_teaser' => 'teaser_spot_9', 'url_media' => ["gallery1.jpg", "gallery2.jpg", "gallery3.jpg"], 'kunci_catatan' => 'note_spot_9', 'kunci_keterangan' => 'description_spot_9', 'alt_gambar' => 'The Image of Peninsula Island'
+            ]
+        );
+        // Toilet 1
+        Spot::create(
+            [
+               'user_id' => 1,'xpos' => '80.8', 'ypos' => '-80', 'kunci_judul' => 'title_spot_10','kunci_teaser' => 'teaser_spot_10', 'url_media' => ["gallery1.jpg", "gallery2.jpg", "gallery3.jpg"], 'kunci_catatan' => 'note_spot_10', 'kunci_keterangan' => 'description_spot_10', 'alt_gambar' => 'The Image of Peninsula Island'
+            ]
+        );
+        // Toilet 2
+        Spot::create(
+            [
+               'user_id' => 1,'xpos' => '109', 'ypos' => '-66.2', 'kunci_judul' => 'title_spot_11','kunci_teaser' => 'teaser_spot_11', 'url_media' => ["gallery1.jpg", "gallery2.jpg", "gallery3.jpg"], 'kunci_catatan' => 'note_spot_11', 'kunci_keterangan' => 'description_spot_11', 'alt_gambar' => 'The Image of Peninsula Island'
+            ]
+        );
+        // Vending Machine
+        Spot::create(
+            [
+               'user_id' => 1,'xpos' => '83.5', 'ypos' => '-78.9', 'kunci_judul' => 'title_spot_12','kunci_teaser' => 'teaser_spot_12', 'url_media' => ["gallery1.jpg", "gallery2.jpg", "gallery3.jpg"], 'kunci_catatan' => 'note_spot_12', 'kunci_keterangan' => 'description_spot_12', 'alt_gambar' => 'The Image of Peninsula Island'
+            ]
+        );
+        // Balebengong
+        Spot::create(
+            [
+               'user_id' => 1,'xpos' => '95.2', 'ypos' => '-54', 'kunci_judul' => 'title_spot_13','kunci_teaser' => 'teaser_spot_13', 'url_media' => ["gallery1.jpg", "gallery2.jpg", "gallery3.jpg"], 'kunci_catatan' => 'note_spot_13', 'kunci_keterangan' => 'description_spot_13', 'alt_gambar' => 'The Image of Peninsula Island'
+            ]
+        );
+        //Gapura
+        Spot::create(
+            [
+               'user_id' => 1,'xpos' => '91.8', 'ypos' => '-78.5', 'kunci_judul' => 'title_spot_14','kunci_teaser' => 'teaser_spot_14', 'url_media' => ["gallery1.jpg", "gallery2.jpg", "gallery3.jpg"], 'kunci_catatan' => 'note_spot_14', 'kunci_keterangan' => 'description_spot_14', 'alt_gambar' => 'The Image of Peninsula Island'
             ]
         );
     }

@@ -491,8 +491,169 @@ class LanguageLineSeeder extends Seeder
                 'id' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae itaque iste pariatur nobis sint voluptatibus eveniet inventore qui nesciunt adipisci, rem exercitationem necessitatibus dolorem quisquam! Corrupti laudantium dignissimos aliquid officiis, dolorum sapiente laborum laboriosam sed.', 
                 'en' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae itaque iste pariatur nobis sint voluptatibus eveniet inventore qui nesciunt adipisci, rem exercitationem necessitatibus dolorem quisquam! Corrupti laudantium dignissimos aliquid officiis, dolorum sapiente laborum laboriosam sed.']
         ]);
-        //// Maps
+        
+        // baru
+        LanguageLine::create([
+            'group' => 'spots', 
+            'key' => 'title_spot_10', 
+            'text' => [
+                'id' => 'Toilet', 
+                'en' => 'Toilet']
+        ]);
 
+        LanguageLine::create([
+            'group' => 'spots', 
+            'key' => 'teaser_spot_10', 
+            'text' => [
+                'id' => 'Demi Website Bebas', 
+                'en' => 'Anything for The Website']
+        ]);
+
+        LanguageLine::create([
+            'group' => 'spots', 
+            'key' => 'note_spot_10', 
+            'text' => [
+                'id' => 'bjir tong sampah ada 3 warna', 
+                'en' => 'Sheesh There are three colors of Rubbish bin ']
+        ]);
+
+        LanguageLine::create([
+            'group' => 'spots', 
+            'key' => 'description_spot_10', 
+            'text' => [
+                'id' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae itaque iste pariatur nobis sint voluptatibus eveniet inventore qui nesciunt adipisci, rem exercitationem necessitatibus dolorem quisquam! Corrupti laudantium dignissimos aliquid officiis, dolorum sapiente laborum laboriosam sed.', 
+                'en' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae itaque iste pariatur nobis sint voluptatibus eveniet inventore qui nesciunt adipisci, rem exercitationem necessitatibus dolorem quisquam! Corrupti laudantium dignissimos aliquid officiis, dolorum sapiente laborum laboriosam sed.']
+        ]);
+
+        LanguageLine::create([
+            'group' => 'spots', 
+            'key' => 'title_spot_11', 
+            'text' => [
+                'id' => 'Toilet', 
+                'en' => 'Toilet']
+        ]);
+
+        LanguageLine::create([
+            'group' => 'spots', 
+            'key' => 'teaser_spot_11', 
+            'text' => [
+                'id' => 'Demi Website Bebas', 
+                'en' => 'Anything for The Website']
+        ]);
+
+        LanguageLine::create([
+            'group' => 'spots', 
+            'key' => 'note_spot_11', 
+            'text' => [
+                'id' => 'bjir tong sampah ada 3 warna', 
+                'en' => 'Sheesh There are three colors of Rubbish bin ']
+        ]);
+
+        LanguageLine::create([
+            'group' => 'spots', 
+            'key' => 'description_spot_11', 
+            'text' => [
+                'id' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae itaque iste pariatur nobis sint voluptatibus eveniet inventore qui nesciunt adipisci, rem exercitationem necessitatibus dolorem quisquam! Corrupti laudantium dignissimos aliquid officiis, dolorum sapiente laborum laboriosam sed.', 
+                'en' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae itaque iste pariatur nobis sint voluptatibus eveniet inventore qui nesciunt adipisci, rem exercitationem necessitatibus dolorem quisquam! Corrupti laudantium dignissimos aliquid officiis, dolorum sapiente laborum laboriosam sed.']
+        ]);
+
+        LanguageLine::create([
+            'group' => 'spots', 
+            'key' => 'title_spot_12', 
+            'text' => [
+                'id' => 'Mesin Penjual Otomatis', 
+                'en' => 'Vending Machine']
+        ]);
+
+        LanguageLine::create([
+            'group' => 'spots', 
+            'key' => 'teaser_spot_12', 
+            'text' => [
+                'id' => 'Demi Website Bebas', 
+                'en' => 'Anything for The Website']
+        ]);
+
+        LanguageLine::create([
+            'group' => 'spots', 
+            'key' => 'note_spot_12', 
+            'text' => [
+                'id' => 'bjir tong sampah ada 3 warna', 
+                'en' => 'Sheesh There are three colors of Rubbish bin ']
+        ]);
+
+        LanguageLine::create([
+            'group' => 'spots', 
+            'key' => 'description_spot_12', 
+            'text' => [
+                'id' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae itaque iste pariatur nobis sint voluptatibus eveniet inventore qui nesciunt adipisci, rem exercitationem necessitatibus dolorem quisquam! Corrupti laudantium dignissimos aliquid officiis, dolorum sapiente laborum laboriosam sed.', 
+                'en' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae itaque iste pariatur nobis sint voluptatibus eveniet inventore qui nesciunt adipisci, rem exercitationem necessitatibus dolorem quisquam! Corrupti laudantium dignissimos aliquid officiis, dolorum sapiente laborum laboriosam sed.']
+        ]);
+
+        LanguageLine::create([
+            'group' => 'spots', 
+            'key' => 'title_spot_13', 
+            'text' => [
+                'id' => 'Balebengong', 
+                'en' => 'Balebengong']
+        ]);
+
+        LanguageLine::create([
+            'group' => 'spots', 
+            'key' => 'teaser_spot_13', 
+            'text' => [
+                'id' => 'Demi Website Bebas', 
+                'en' => 'Anything for The Website']
+        ]);
+
+        LanguageLine::create([
+            'group' => 'spots', 
+            'key' => 'note_spot_13', 
+            'text' => [
+                'id' => 'bjir tong sampah ada 3 warna', 
+                'en' => 'Sheesh There are three colors of Rubbish bin ']
+        ]);
+
+        LanguageLine::create([
+            'group' => 'spots', 
+            'key' => 'description_spot_13', 
+            'text' => [
+                'id' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae itaque iste pariatur nobis sint voluptatibus eveniet inventore qui nesciunt adipisci, rem exercitationem necessitatibus dolorem quisquam! Corrupti laudantium dignissimos aliquid officiis, dolorum sapiente laborum laboriosam sed.', 
+                'en' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae itaque iste pariatur nobis sint voluptatibus eveniet inventore qui nesciunt adipisci, rem exercitationem necessitatibus dolorem quisquam! Corrupti laudantium dignissimos aliquid officiis, dolorum sapiente laborum laboriosam sed.']
+        ]);
+
+        LanguageLine::create([
+            'group' => 'spots', 
+            'key' => 'title_spot_14', 
+            'text' => [
+                'id' => 'Gapura', 
+                'en' => 'Gateway']
+        ]);
+
+        LanguageLine::create([
+            'group' => 'spots', 
+            'key' => 'teaser_spot_14', 
+            'text' => [
+                'id' => 'Demi Website Bebas', 
+                'en' => 'Anything for The Website']
+        ]);
+
+        LanguageLine::create([
+            'group' => 'spots', 
+            'key' => 'note_spot_14', 
+            'text' => [
+                'id' => 'Untuk memasuki area ini, pengunjung wajib mengenakan pakaian adat atau pakaian yang rapi.', 
+                'en' => 'Visitors must wear appropriate clothing or balinese attire (sarong and sash).']
+        ]);
+
+        LanguageLine::create([
+            'group' => 'spots', 
+            'key' => 'description_spot_14', 
+            'text' => [
+                'id' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae itaque iste pariatur nobis sint voluptatibus eveniet inventore qui nesciunt adipisci, rem exercitationem necessitatibus dolorem quisquam! Corrupti laudantium dignissimos aliquid officiis, dolorum sapiente laborum laboriosam sed.', 
+                'en' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae itaque iste pariatur nobis sint voluptatibus eveniet inventore qui nesciunt adipisci, rem exercitationem necessitatibus dolorem quisquam! Corrupti laudantium dignissimos aliquid officiis, dolorum sapiente laborum laboriosam sed.']
+        ]);
+        //// Maps
+        
         // Things to do
         LanguageLine::create([
             'group' => 'things_to_do', 
