@@ -56,6 +56,16 @@ Carbon::setLocale(app()->getLocale());
         </a>
     @endif
 @endforeach
+@if ($countAllVisible === 0 || $events->isEmpty())
+    <div class="flex flex-col w-full gap-3 h-[450px] bg-color-accent/2 p-5 rounded-xl mt-10 mb-15 justify-center items-center">
+        <x-local-icon class="bg-color-accent/10 rounded-full w-[150px] md:w-[220px]" icon="storyset-empty-box" xmlns="http://www.w3.org/2000/svg" viewBox="-25 170 300 300"></x-local-icon>
+        <p class="text-center text-lg font-bold text-color-accent">Belum Terdapat Event</p>
+        <p class="text-center">Saat ini belum terdapat event pada Peninsula Island. Cek kembali di lain hari!</p>
+        <a href="/" class="btn-primary p-3">
+            <x-local-icon icon="arrow" width="16px" height="16px" class="rotate-225" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" xmlns="http://www.w3.org/2000/svg"></x-local-icon> 
+            Kembali ke home</a>
+    </div>
+@endif
 <div class="grid grid-cols-1 mt-10 gap-4 lg:grid-cols-3 md:grid-cols-2">
     @foreach ($events as $event)
         @if ($event->tampilkan_event)
