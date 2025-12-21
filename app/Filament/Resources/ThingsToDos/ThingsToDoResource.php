@@ -32,6 +32,16 @@ class ThingsToDoResource extends Resource
 
     protected static ?string $recordTitleAttribute = 'kunci_judul';
 
+    public static function getNavigationLabel(): string
+    {
+        return 'Things To Do';
+    }
+
+    public static function getPluralModelLabel(): string
+    {
+        return 'Things To Do';
+    }
+
     public static function infolist(Schema $schema): Schema
     {
         $data = \App\Models\GeneralSetting::first();

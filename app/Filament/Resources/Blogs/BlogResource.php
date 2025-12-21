@@ -27,6 +27,16 @@ class BlogResource extends Resource
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedNewspaper;
 
+    public static function getNavigationLabel(): string
+    {
+        return 'Blog';
+    }
+
+    public static function getPluralModelLabel(): string
+    {
+        return 'Blog';
+    }
+
     public static function infolist(Schema $schema): Schema
     {
         return $schema->components([

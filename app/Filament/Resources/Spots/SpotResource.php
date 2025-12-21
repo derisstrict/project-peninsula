@@ -32,6 +32,16 @@ class SpotResource extends Resource
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedMapPin;
 
     protected static ?string $recordTitleAttribute = 'kunci_judul';
+    
+    public static function getNavigationLabel(): string
+    {
+        return 'Spot';
+    }
+
+    public static function getPluralModelLabel(): string
+    {
+        return 'Spot';
+    }
 
     public static function getRecordTitle(?Model $record): string|Htmlable|null
     {
