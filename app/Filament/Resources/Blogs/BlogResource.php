@@ -45,6 +45,11 @@ class BlogResource extends Resource
                 ->weight(FontWeight::SemiBold)
                 ->size(TextSize::Large)
                 ->icon(Heroicon::InformationCircle),
+                TextEntry::make('created_at')
+                ->dateTime('d F Y')
+                ->label('Tanggal upload')
+                ->badge()
+                ->icon(Heroicon::Calendar),
             ])
             ->description('Informasi mengenai blog')
             ->icon(Heroicon::Star)
