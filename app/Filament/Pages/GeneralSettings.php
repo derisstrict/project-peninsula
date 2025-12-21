@@ -26,6 +26,8 @@ class GeneralSettings extends Page
     
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedCog6Tooth;
 
+    protected static ?string $navigationLabel = 'Settingan';
+
     /**
      * @var array<string, mixed> | null
      */
