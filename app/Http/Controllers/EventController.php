@@ -38,7 +38,9 @@ class EventController extends Controller
         $today = now();
         $onGoingEvents = Event::where('tanggal_mulai', '<=', $today)->where('tanggal_selesai', '>=', $today)->get();
 
-        return view('events', compact('events', 'search', 'page', 'onGoingEvents'));
+        $countAllVisible = Event::where('tampilkan_event', '1')->count();
+
+        return view('events', compact('events', 'search', 'page', 'onGoingEvents', 'countAllVisible'));
     }
 
     public function findIDSlug ($id, $slug) {

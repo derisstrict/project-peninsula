@@ -6,6 +6,7 @@ use Filament\Forms\Components\DatePicker;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Hidden;
 use Filament\Forms\Components\RichEditor;
+use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
 use Filament\Schemas\Components\Fieldset;
 use Filament\Schemas\Components\Grid;
@@ -22,7 +23,7 @@ class EventForm
     {
         return $schema
             ->components([
-                Hidden::make('user_id')->default(fn () => auth()->id()),
+                Hidden::make('id_user')->default(fn () => auth()->id()),
                 TextInput::make('judul_event')
                 ->live(onBlur: true)
                 ->afterStateUpdated(function (Get $get, Set $set, ?string $old, ?string $state) {
@@ -43,8 +44,12 @@ class EventForm
                 RichEditor::make('deskripsi_event')
                 ->required(),
                 Grid::make(4)->schema([
-                    TextInput::make('nama_penyelenggara'),
-                    TextInput::make('harga_tiket')->prefix('Rp.')->belowContent('Tanpa tanda titik')
+                    TextInput::make('nama_penyelenggara')
+                    ->required(),
+                    TextInput::make('harga_tiket')
+                    ->prefix('Rp.')
+                    ->belowContent('Tanpa tanda titik')
+                    ->required()
                 ]),
                 FileUpload::make('gambar_event')->label('Upload gambar')->required()
                 ->directory('events')
@@ -53,6 +58,13 @@ class EventForm
                 Grid::make(4)->schema([
                     TextInput::make('alt_gambar')
                     ->belowContent('Deskripsi singkat tentang gambar'),
+                ]),
+                Select::make('tampilkan_event')
+                ->label('Visibilitas')
+                ->required()
+                ->options([
+                    '0' => 'Sembunyikan',
+                    '1' => 'Tampilkan',
                 ]),
             ])->columns(1);
     }

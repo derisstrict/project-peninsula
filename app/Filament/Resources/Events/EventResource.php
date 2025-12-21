@@ -39,6 +39,21 @@ class EventResource extends Resource
                 ->weight(FontWeight::SemiBold)
                 ->size(TextSize::Large)
                 ->icon(Heroicon::InformationCircle),
+                TextEntry::make('tampilkan_event')
+                ->label('Visibilitas')
+                ->badge()
+                ->formatStateUsing(fn (string $state): string => match ($state) {
+                    '0' => 'Sembunyikan',
+                    '1' => 'Tampilkan'
+                })
+                ->color(fn (string $state): string => match ($state) {
+                    '0' => 'gray',
+                    '1' => 'primary'
+                })
+                ->icon(fn (string $state): string => match ($state) {
+                    '0' => 'heroicon-o-eye-slash',
+                    '1' => 'heroicon-o-eye'
+                }),
                 Grid::make(2)->schema([
                     TextEntry::make('tanggal_mulai')
                     ->badge()

@@ -23,6 +23,7 @@ return new class extends Migration
             $table->string('alt_gambar', 100)->nullable(true);
             $table->string('nama_penyelenggara', 50)->nullable(true);
             $table->integer('harga_tiket')->nullable(false);
+            $table->integer('tampilkan_event')->nullable(false);
             $table->timestamps();
             $table->foreign('id_user')->references('id')->on('users')->onDelete('cascade');
         }); 

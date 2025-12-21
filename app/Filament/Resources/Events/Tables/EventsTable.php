@@ -45,7 +45,23 @@ class EventsTable
                 TextColumn::make('harga_tiket')
                 ->label('Harga Tiket')
                 ->money('IDR', decimalPlaces: 0, locale: 'id')
+                ->sortable(),
+                TextColumn::make('tampilkan_event')
+                ->label('Visibilitas')
                 ->sortable()
+                ->badge()
+                ->color(fn (string $state): string => match ($state) {
+                    '0' => 'gray',
+                    '1' => 'primary',
+                })
+                ->formatStateUsing(fn (string $state): string => match ($state) {
+                    '0' => 'Sembunyikan',
+                    '1' => 'Tampilkan',
+                })
+                ->icon(fn (string $state): string => match ($state) {
+                    '0' => 'heroicon-o-eye-slash',
+                    '1' => 'heroicon-o-eye',
+                }),
             ])
             ->filters([
                 //
