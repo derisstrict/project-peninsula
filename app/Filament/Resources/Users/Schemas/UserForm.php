@@ -26,6 +26,8 @@ class UserForm
                     '0' => 'Superadmin',
                     '1' => 'Admin'
                 ]),
+                TextInput::make('password')
+                ->required()
             ]);
     }
 }
