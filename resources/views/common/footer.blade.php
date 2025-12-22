@@ -45,13 +45,13 @@
                 <h4 class="font-semibold text-color-accent mb-1">{{ __('footer.menu') }}</h4>
                 <ul class="flex flex-col gap-4 text-sm">
                     <li class="flex items-center gap-2">
-                        <a href="#" class="hover:text-color-accent transition-colors">{{ __('footer.menu_list_1') }}</a>
+                        <a href="/" class="hover:text-color-accent transition-colors">{{ __('footer.menu_list_1') }}</a>
                     </li>
                     <li class="flex items-center gap-2">
-                        <a href="#" class="hover:text-color-accent transition-colors">{{ __('footer.menu_list_2') }}</a>
+                        <a href="/events" class="hover:text-color-accent transition-colors">{{ __('footer.menu_list_2') }}</a>
                     </li>
                     <li class="flex items-center gap-2">
-                        <a href="#" class="hover:text-color-accent transition-colors">{{ __('footer.menu_list_3') }}</a>
+                        <a href="/blogs" class="hover:text-color-accent transition-colors">{{ __('footer.menu_list_3') }}</a>
                     </li>
                 </ul>
             </div>
