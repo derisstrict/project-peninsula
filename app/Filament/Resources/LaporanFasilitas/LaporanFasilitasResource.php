@@ -73,10 +73,10 @@ class LaporanFasilitasResource extends Resource
             ->iconColor('primary'),
             Section::make('Gambar')->schema([
                 ImageEntry::make('foto_fasilitas')
-                ->imageHeight(500)
-                ->square(false)
                 ->alignCenter()
                 ->hiddenLabel()
+                ->extraAttributes(['class' => 'w-full'])
+                ->extraImgAttributes(['class' => 'h-120', 'style' => 'width: 100%; height: auto;'])
             ])
             ->description('Gambar dari fasilitas')
             ->icon(Heroicon::Photo)
