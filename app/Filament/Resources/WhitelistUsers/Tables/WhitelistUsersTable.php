@@ -3,9 +3,11 @@
 namespace App\Filament\Resources\WhitelistUsers\Tables;
 
 use Filament\Actions\BulkActionGroup;
+use Filament\Actions\DeleteAction;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
 use Filament\Actions\ViewAction;
+use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 
@@ -22,7 +24,11 @@ class WhitelistUsersTable
                 TextColumn::make('email')
                 ->label('Email')
                 ->searchable()
-                ->sortable(),
+                ->sortable()
+                ->icon(Heroicon::OutlinedClipboard)
+                ->copyable()
+                ->tooltip('Email dapat dicopy')
+                ->copyMessage("Email sudah dicopy!"),
             ])
             ->filters([
                 //
@@ -30,6 +36,7 @@ class WhitelistUsersTable
             ->recordActions([
                 ViewAction::make(),
                 EditAction::make(),
+                DeleteAction::make(),
             ])
             ->toolbarActions([
                 BulkActionGroup::make([
