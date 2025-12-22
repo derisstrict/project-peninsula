@@ -58,8 +58,10 @@ class LaporanFasilitasTable
                     '2' => 'heroicon-o-check',
                 }),
                 TextColumn::make('created_at')
-                ->dateTime('d M Y')
+                ->dateTime('d F Y')
                 ->label('Tanggal Dibuat')
+                ->badge()
+                ->icon(Heroicon::Calendar)
                 ->sortable(),
             ])
             ->filters([

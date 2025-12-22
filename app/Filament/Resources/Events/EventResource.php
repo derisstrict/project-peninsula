@@ -68,11 +68,13 @@ class EventResource extends Resource
                     TextEntry::make('tanggal_mulai')
                     ->badge()
                     ->icon(Heroicon::Calendar)
-                    ->color('primary'),
+                    ->color('primary')
+                    ->dateTime('d F Y'),
                     TextEntry::make('tanggal_selesai')
                     ->badge()
                     ->icon(Heroicon::Calendar)
-                    ->color('primary'),
+                    ->color('primary')
+                    ->dateTime('d F Y'),
                 ]),
                 TextEntry::make('nama_penyelenggara')
                 ->icon(Heroicon::User)

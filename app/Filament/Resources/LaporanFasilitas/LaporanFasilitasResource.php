@@ -60,6 +60,10 @@ class LaporanFasilitasResource extends Resource
                     '1' => 'heroicon-o-clock',
                     '2' => 'heroicon-o-check',
                 }),
+                TextEntry::make('created_at')
+                ->badge()
+                ->icon(Heroicon::Calendar)
+                ->dateTime('d F Y')
             ])
             ->description('Informasi mengenai pelapor')
             ->icon(Heroicon::Star)

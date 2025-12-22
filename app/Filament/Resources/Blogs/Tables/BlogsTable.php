@@ -8,6 +8,7 @@ use Filament\Actions\ViewAction;
 use Filament\Actions\DeleteAction;
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteBulkAction;
+use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Columns\TextColumn;
 
@@ -29,9 +30,11 @@ class BlogsTable
                 ->limit(3)
                 ->limitedRemainingText(),
                 TextColumn::make('created_at')
-                ->dateTime('d M Y')
+                ->dateTime('d F Y')
                 ->label('Tanggal Upload')
                 ->searchable()
+                ->badge()
+                ->icon(Heroicon::Calendar)
                 ->sortable(),
                 TextColumn::make('isi_blog')
                 ->limit(50)

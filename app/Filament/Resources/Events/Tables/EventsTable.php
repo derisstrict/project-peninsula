@@ -8,6 +8,7 @@ use Filament\Actions\ViewAction;
 use Filament\Actions\DeleteAction;
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteBulkAction;
+use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Columns\TextColumn;
 
@@ -33,14 +34,18 @@ class EventsTable
                 ->sortable()
                 ->label('Nama Penyelenggara'),
                 TextColumn::make('tanggal_mulai')
-                ->date('d M Y')
+                ->date('d F Y')
                 ->sortable()
                 ->searchable()
+                ->badge()
+                ->icon(Heroicon::Calendar)
                 ->label('Tanggal Mulai'),
                 TextColumn::make('tanggal_selesai')
-                ->date('d M Y')
+                ->date('d F Y')
                 ->sortable()
                 ->searchable()
+                ->badge()
+                ->icon(Heroicon::Calendar)
                 ->label('Tanggal Selesai'),
                 TextColumn::make('harga_tiket')
                 ->label('Harga Tiket')
