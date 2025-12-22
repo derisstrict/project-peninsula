@@ -11,8 +11,9 @@ use Filament\Forms\Components\TextInput;
 use Filament\Schemas\Components\Component;
 use Filament\Schemas\Components\Icon;
 use Filament\Schemas\Schema;
-use Filament\Support\Icons\Heroicon;
+use Illuminate\Validation\Rules\Password;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Hash;
 
 class Register extends BaseRegister
 {
@@ -35,7 +36,7 @@ class Register extends BaseRegister
     protected function getNameFormComponent(): Component
     {
         return TextInput::make('name')
-            ->label(__('filament-panels::auth/pages/register.form.name.label'))
+            ->label('Nama')
             ->required()
             ->maxLength(255)
             ->autofocus()
@@ -48,7 +49,7 @@ class Register extends BaseRegister
     protected function getEmailFormComponent(): Component
     {
         return TextInput::make('email')
-            ->label(__('filament-panels::auth/pages/register.form.email.label'))
+            ->label('Email')
             ->email()
             ->live(onBlur: true)
             ->required()
@@ -62,10 +63,34 @@ class Register extends BaseRegister
     public function getRegisterFormAction(): Action
     {
         return Action::make('register')
-            ->label(__('filament-panels::auth/pages/register.form.actions.register.label'))
+            ->label('Daftar')
             ->submit('register')
             ->disabled(function () {
                 return !($this->isNameExists && $this->isEmailExists);
             });
+    }
+
+    protected function getPasswordFormComponent(): Component
+    {
+        return TextInput::make('password')
+            ->label('Password')
+            ->password()
+            ->revealable(filament()->arePasswordsRevealable())
+            ->required()
+            ->rule(Password::default())
+            ->showAllValidationMessages()
+            ->dehydrateStateUsing(fn ($state) => Hash::make($state))
+            ->same('passwordConfirmation')
+            ->validationAttribute(__('filament-panels::auth/pages/register.form.password.validation_attribute'));
+    }
+
+    protected function getPasswordConfirmationFormComponent(): Component
+    {
+        return TextInput::make('passwordConfirmation')
+            ->label('Konfirmasi password')
+            ->password()
+            ->revealable(filament()->arePasswordsRevealable())
+            ->required()
+            ->dehydrated(false);
     }
 }
