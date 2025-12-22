@@ -35,6 +35,7 @@ class LaporanFasilitasTable
                 ->label('Email Pelapor')
                 ->icon(Heroicon::OutlinedClipboard)
                 ->copyable()
+                ->tooltip('Email dapat dicopy')
                 ->copyMessage("Email sudah dicopy!")
                 ->copyMessageDuration(1000),
                 TextColumn::make('status_laporan')
