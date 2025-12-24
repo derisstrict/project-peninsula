@@ -43,9 +43,6 @@ class BlogsTable
                 ->badge()
                 ->icon(Heroicon::Calendar)
                 ->sortable(),
-                TextColumn::make('isi_blog')
-                ->limit(50)
-                ->label('Isi Blog'),
             ])
             ->filters([
                 //
