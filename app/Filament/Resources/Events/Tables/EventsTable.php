@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources\Events\Tables;
 
+use App\Models\User;
 use Filament\Tables\Table;
 use Filament\Actions\EditAction;
 use Filament\Actions\ViewAction;
@@ -64,8 +65,8 @@ class EventsTable
                     '1' => 'Tampilkan',
                 })
                 ->icon(fn (string $state): string => match ($state) {
-                    '0' => 'heroicon-o-eye-slash',
-                    '1' => 'heroicon-o-eye',
+                    '0' => 'heroicon-m-eye-slash',
+                    '1' => 'heroicon-m-eye',
                 }),
                 TextColumn::make('id_user')
                 ->label('Dibuat Oleh')

@@ -82,8 +82,8 @@ class EventResource extends Resource
                     '1' => 'primary'
                 })
                 ->icon(fn (string $state): string => match ($state) {
-                    '0' => 'heroicon-o-eye-slash',
-                    '1' => 'heroicon-o-eye'
+                    '0' => 'heroicon-m-eye-slash',
+                    '1' => 'heroicon-m-eye'
                 }),
                 TextEntry::make('created_at')
                 ->dateTime('d F Y')

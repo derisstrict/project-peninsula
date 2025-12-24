@@ -54,9 +54,9 @@ class LaporanFasilitasTable
                     '2' => 'Selesai',
                 })
                 ->icon(fn (string $state): string => match ($state) {
-                    '0' => 'heroicon-o-eye',
-                    '1' => 'heroicon-o-clock',
-                    '2' => 'heroicon-o-check',
+                    '0' => 'heroicon-m-eye',
+                    '1' => 'heroicon-m-clock',
+                    '2' => 'heroicon-m-check',
                 }),
                 TextColumn::make('created_at')
                 ->dateTime('d F Y')
