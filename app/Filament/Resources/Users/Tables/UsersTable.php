@@ -41,6 +41,31 @@ class UsersTable
                     '0' => 'warning',
                     '1' => 'primary' 
                 }),
+                TextColumn::make('email_verified_at')
+                ->label('Email terverifikasi')
+                ->badge()
+                ->default('empty')
+                ->formatStateUsing(function (?string $state) {
+                    if ($state === 'empty') {
+                        return 'Tidak terverifikasi';
+                    } else {
+                        return 'Terverifikasi';
+                    }
+                })
+                ->color(function (?string $state) {
+                    if ($state === 'empty') {
+                        return 'gray';
+                    } else {
+                        return 'success';
+                    }
+                })
+                ->icon(function (?string $state) {
+                    if ($state === 'empty') {
+                        return Heroicon::XMark;
+                    } else {
+                        return Heroicon::Check;
+                    }
+                }),
             ])
             ->filters([
                 //
