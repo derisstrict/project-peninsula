@@ -9,19 +9,23 @@ use App\Filament\Resources\Events\Pages\ViewEvent;
 use App\Filament\Resources\Events\Schemas\EventForm;
 use App\Filament\Resources\Events\Tables\EventsTable;
 use App\Models\Event;
+use App\Models\User;
 use BackedEnum;
 use Filament\Infolists\Components\ImageEntry;
 use Filament\Infolists\Components\TextEntry;
 use Filament\Resources\Resource;
 use Filament\Schemas\Components\Fieldset;
+use Filament\Schemas\Components\Flex;
 use Filament\Schemas\Components\Grid;
 use Filament\Schemas\Components\Section;
 use Filament\Schemas\Schema;
+use Filament\Support\Colors\Color;
 use Filament\Support\Enums\FontWeight;
 use Filament\Support\Enums\Size;
 use Filament\Support\Enums\TextSize;
 use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Table;
+use Illuminate\Database\Eloquent\Model;
 
 class EventResource extends Resource
 {
@@ -49,6 +53,23 @@ class EventResource extends Resource
                 ->weight(FontWeight::SemiBold)
                 ->size(TextSize::Large)
                 ->icon(Heroicon::InformationCircle),
+                Grid::make(1)->schema([
+                TextEntry::make('Dibuat oleh'),
+                Flex::make([
+                    TextEntry::make('id_user')
+                    ->hiddenLabel()
+                    ->icon(Heroicon::User)
+                    ->formatStateUsing(fn (?string $state): string => match ($state) {
+                        $state => User::find($state)->name
+                    })->grow(false),
+                    TextEntry::make('email')
+                    ->hiddenLabel()
+                    ->badge()
+                    ->color(Color::Purple)
+                    ->state(fn (?Model $record) => User::find($record->id_user)->email)
+                    ->gap(2), 
+                    ]),
+                ])->gap(false),
                 TextEntry::make('tampilkan_event')
                 ->label('Visibilitas')
                 ->badge()
@@ -64,7 +85,12 @@ class EventResource extends Resource
                     '0' => 'heroicon-o-eye-slash',
                     '1' => 'heroicon-o-eye'
                 }),
-                Grid::make(2)->schema([
+                TextEntry::make('created_at')
+                ->dateTime('d F Y')
+                ->label('Tanggal dibuat')
+                ->badge()
+                ->icon(Heroicon::Calendar),
+                Fieldset::make('Tanggal event')->schema([
                     TextEntry::make('tanggal_mulai')
                     ->badge()
                     ->icon(Heroicon::Calendar)

@@ -67,6 +67,19 @@ class EventsTable
                     '0' => 'heroicon-o-eye-slash',
                     '1' => 'heroicon-o-eye',
                 }),
+                TextColumn::make('id_user')
+                ->label('Dibuat Oleh')
+                ->icon(Heroicon::User)
+                ->formatStateUsing(fn (?string $state): string => match ($state) {
+                    $state => User::find($state)->name
+                }),
+                TextColumn::make('created_at')
+                ->dateTime('d F Y')
+                ->label('Tanggal Upload')
+                ->searchable()
+                ->badge()
+                ->icon(Heroicon::Calendar)
+                ->sortable(),
             ])
             ->filters([
                 //

@@ -9,16 +9,21 @@ use App\Filament\Resources\Blogs\Schemas\BlogForm;
 use App\Filament\Resources\Blogs\Tables\BlogsTable;
 use App\Filament\Resources\Blogs\Pages\ViewBlog;
 use App\Models\Blog;
+use App\Models\User;
 use BackedEnum;
 use Filament\Infolists\Components\ImageEntry;
 use Filament\Infolists\Components\TextEntry;
 use Filament\Resources\Resource;
+use Filament\Schemas\Components\Flex;
+use Filament\Schemas\Components\Grid;
 use Filament\Schemas\Components\Section;
 use Filament\Schemas\Schema;
+use Filament\Support\Colors\Color;
 use Filament\Support\Enums\FontWeight;
 use Filament\Support\Enums\TextSize;
 use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Table;
+use Illuminate\Database\Eloquent\Model;
 
 class BlogResource extends Resource
 {
@@ -45,6 +50,23 @@ class BlogResource extends Resource
                 ->weight(FontWeight::SemiBold)
                 ->size(TextSize::Large)
                 ->icon(Heroicon::InformationCircle),
+                Grid::make(1)->schema([
+                    TextEntry::make('Dibuat oleh'),
+                    Flex::make([
+                        TextEntry::make('id_user')
+                        ->hiddenLabel()
+                        ->icon(Heroicon::User)
+                        ->formatStateUsing(fn (?string $state): string => match ($state) {
+                            $state => User::find($state)->name
+                        })->grow(false),
+                        TextEntry::make('email')
+                        ->hiddenLabel()
+                        ->badge()
+                        ->color(Color::Purple)
+                        ->state(fn (?Model $record) => User::find($record->id_user)->email)
+                        ->gap(2), 
+                    ]),
+                ])->gap(false),
                 TextEntry::make('created_at')
                 ->dateTime('d F Y')
                 ->label('Tanggal upload')

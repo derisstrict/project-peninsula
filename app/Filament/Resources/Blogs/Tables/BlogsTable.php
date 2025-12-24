@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources\Blogs\Tables;
 
+use App\Models\User;
 use Filament\Tables\Table;
 use Filament\Actions\EditAction;
 use Filament\Actions\ViewAction;
@@ -29,6 +30,12 @@ class BlogsTable
                 ->stacked()
                 ->limit(3)
                 ->limitedRemainingText(),
+                TextColumn::make('id_user')
+                ->label('Dibuat Oleh')
+                ->icon(Heroicon::User)
+                ->formatStateUsing(fn (?string $state): string => match ($state) {
+                    $state => User::find($state)->name
+                }),
                 TextColumn::make('created_at')
                 ->dateTime('d F Y')
                 ->label('Tanggal Upload')
