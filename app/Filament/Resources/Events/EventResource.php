@@ -90,6 +90,11 @@ class EventResource extends Resource
                 ->label('Tanggal dibuat')
                 ->badge()
                 ->icon(Heroicon::Calendar),
+                TextEntry::make('updated_at')
+                ->dateTime('d F Y')
+                ->label('Terakhir diubah')
+                ->badge()
+                ->icon(Heroicon::Calendar),
                 Fieldset::make('Tanggal event')->schema([
                     TextEntry::make('tanggal_mulai')
                     ->badge()

@@ -69,7 +69,12 @@ class BlogResource extends Resource
                 ])->gap(false),
                 TextEntry::make('created_at')
                 ->dateTime('d F Y')
-                ->label('Tanggal upload')
+                ->label('Tanggal dibuat')
+                ->badge()
+                ->icon(Heroicon::Calendar),
+                TextEntry::make('updated_at')
+                ->dateTime('d F Y')
+                ->label('Terakhir diubah')
                 ->badge()
                 ->icon(Heroicon::Calendar),
             ])

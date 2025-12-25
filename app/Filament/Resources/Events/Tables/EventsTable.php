@@ -76,7 +76,14 @@ class EventsTable
                 }),
                 TextColumn::make('created_at')
                 ->dateTime('d F Y')
-                ->label('Tanggal Upload')
+                ->label('Tanggal Dibuat')
+                ->searchable()
+                ->badge()
+                ->icon(Heroicon::Calendar)
+                ->sortable(),
+                TextColumn::make('updated_at')
+                ->dateTime('d F Y')
+                ->label('Terakhir Diubah')
                 ->searchable()
                 ->badge()
                 ->icon(Heroicon::Calendar)
