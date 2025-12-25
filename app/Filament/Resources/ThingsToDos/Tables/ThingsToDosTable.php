@@ -2,12 +2,14 @@
 
 namespace App\Filament\Resources\ThingsToDos\Tables;
 
+use App\Models\User;
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteAction;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
 use Filament\Actions\ViewAction;
 use Filament\Support\Colors\Color;
+use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
@@ -22,17 +24,43 @@ class ThingsToDosTable
             ->columns([
                 TextColumn::make('title')
                 ->label('Judul')
+                ->sortable()
+                ->searchable()
                 ->state(function (?Model $record) {
                     return __('things_to_do.' . $record->kunci_judul);
                 }),
                 TextColumn::make('kunci_judul')
                 ->label('Kunci Judul')
                 ->badge()
-                ->color(Color::Green),
+                ->color(Color::Green)
+                ->sortable()
+                ->searchable(),
                 ImageColumn::make('ikon')
                 ->label('Ikon')
                 ->disk('public_img')
-                ->square()
+                ->square(),
+                TextColumn::make('id_user')
+                ->label('Dibuat Oleh')
+                ->icon(Heroicon::User)
+                ->sortable()
+                ->searchable()
+                ->formatStateUsing(fn (?string $state): string => match ($state) {
+                    $state => User::find($state)->name
+                }),
+                TextColumn::make('created_at')
+                ->dateTime('d F Y')
+                ->label('Tanggal Dibuat')
+                ->searchable()
+                ->badge()
+                ->icon(Heroicon::Calendar)
+                ->sortable(),
+                TextColumn::make('updated_at')
+                ->dateTime('d F Y')
+                ->label('Terakhir Diubah')
+                ->searchable()
+                ->badge()
+                ->icon(Heroicon::Calendar)
+                ->sortable(),
             ])
             ->filters([
                 //

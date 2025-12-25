@@ -9,11 +9,13 @@ use App\Filament\Resources\Spots\Pages\ViewSpot;
 use App\Filament\Resources\Spots\Schemas\SpotForm;
 use App\Filament\Resources\Spots\Tables\SpotsTable;
 use App\Models\Spot;
+use App\Models\User;
 use BackedEnum;
 use Filament\Infolists\Components\ImageEntry;
 use Filament\Infolists\Components\TextEntry;
 use Filament\Resources\Resource;
 use Filament\Schemas\Components\Fieldset;
+use Filament\Schemas\Components\Flex;
 use Filament\Schemas\Components\Grid;
 use Filament\Schemas\Components\Section;
 use Filament\Schemas\Schema;
@@ -53,6 +55,33 @@ class SpotResource extends Resource
         $data = \App\Models\GeneralSetting::first();
         return $schema->components([
             Section::make('Spot')->schema([
+                Grid::make(1)->schema([
+                    TextEntry::make('Dibuat oleh'),
+                    Flex::make([
+                        TextEntry::make('id_user')
+                        ->hiddenLabel()
+                        ->icon(Heroicon::User)
+                        ->formatStateUsing(fn (?string $state): string => match ($state) {
+                            $state => User::find($state)->name
+                        })->grow(false),
+                        TextEntry::make('email')
+                        ->hiddenLabel()
+                        ->badge()
+                        ->color(Color::Purple)
+                        ->state(fn (?Model $record) => User::find($record->id_user)->email)
+                        ->gap(2), 
+                        ]),
+                ])->gap(false),
+                TextEntry::make('created_at')
+                ->dateTime('d F Y')
+                ->label('Tanggal dibuat')
+                ->badge()
+                ->icon(Heroicon::Calendar),
+                TextEntry::make('updated_at')
+                ->dateTime('d F Y')
+                ->label('Terakhir diubah')
+                ->badge()
+                ->icon(Heroicon::Calendar),
                 Fieldset::make('Koordinat')->schema([
                     Grid::make(2)->schema([
                         TextEntry::make('xpos')

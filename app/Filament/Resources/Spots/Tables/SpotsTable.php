@@ -2,12 +2,14 @@
 
 namespace App\Filament\Resources\Spots\Tables;
 
+use App\Models\User;
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteAction;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
 use Filament\Actions\ViewAction;
 use Filament\Support\Colors\Color;
+use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
@@ -46,6 +48,28 @@ class SpotsTable
                 ->searchable()
                 ->sortable()
                 ->badge()->color(Color::Fuchsia),
+                TextColumn::make('id_user')
+                ->label('Dibuat Oleh')
+                ->icon(Heroicon::User)
+                ->sortable()
+                ->searchable()
+                ->formatStateUsing(fn (?string $state): string => match ($state) {
+                    $state => User::find($state)->name
+                }),
+                TextColumn::make('created_at')
+                ->dateTime('d F Y')
+                ->label('Tanggal Dibuat')
+                ->searchable()
+                ->badge()
+                ->icon(Heroicon::Calendar)
+                ->sortable(),
+                TextColumn::make('updated_at')
+                ->dateTime('d F Y')
+                ->label('Terakhir Diubah')
+                ->searchable()
+                ->badge()
+                ->icon(Heroicon::Calendar)
+                ->sortable(),
             ])
             ->filters([
                 //
