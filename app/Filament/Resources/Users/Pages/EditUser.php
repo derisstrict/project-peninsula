@@ -19,14 +19,20 @@ class EditUser extends EditRecord
             ViewAction::make(),
             DeleteAction::make(),
             Action::make('Verifikasi email')
+            ->label(fn ($record) => $record->email_verified_at ? 'Hapus Verifikasi Email' : 'Verifikasi Email')
+            ->color(fn ($record) => $record->email_verified_at ? 'danger' : 'primary')
             ->icon(Heroicon::Envelope)
             ->requiresConfirmation()
-            ->modalHeading('Bypass Verifikasi Email')
-            ->modalDescription('Apakah anda yakin ingin melakukan bypass verifikasi email?')
+            ->modalHeading(fn ($record) => $record->email_verified_at ? 'Hilangkan Verifikasi Email' : 'Bypass Verifikasi Email')
+            ->modalDescription(fn ($record) => $record->email_verified_at ? 'Email sudah terverifikasi. Apakah anda yakin ingin menghilangkan verifikasi email?' : 'Apakah anda yakin ingin melakukan bypass verifikasi email?')
             ->modalSubmitActionLabel('Iya')
             ->modalCancelActionLabel('Tidak')
             ->action(function ($record) {
-                $record->markEmailAsVerified();
+                if ($record->email_verified_at) {
+                    $record->update(['email_verified_at' => null]);
+                } else  {
+                    $record->markEmailAsVerified();
+                }
             }),
         ];
     }
