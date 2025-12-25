@@ -71,6 +71,8 @@ class EventsTable
                 TextColumn::make('id_user')
                 ->label('Dibuat Oleh')
                 ->icon(Heroicon::User)
+                ->sortable()
+                ->searchable()
                 ->formatStateUsing(fn (?string $state): string => match ($state) {
                     $state => User::find($state)->name
                 }),
