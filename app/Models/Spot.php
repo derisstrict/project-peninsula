@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Spot extends Model
 {
     protected $table = 'spot';
-    public $timestamps = false;
+    public $timestamps = true;
     protected $casts = [
         'url_media' => 'array',
     ];

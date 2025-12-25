@@ -22,6 +22,7 @@ return new class extends Migration
             $table->string('alt_gambar', 255)->nullable(true);
             $table->string('kunci_catatan', 50)->nullable(true);
             $table->text('kunci_keterangan')->nullable(false);
+            $table->timestamps();
         });
     }
 
