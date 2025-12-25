@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('spot', function (Blueprint $table){
             $table->id();
-            $table->bigInteger('user_id');
+            $table->bigInteger('id_user');
             $table->string('xpos', 15)->nullable(false);
             $table->string('ypos', 15)->nullable(false);
             $table->string('kunci_judul', 50)->nullable(false);

@@ -20,7 +20,7 @@ class SpotForm
     {
         return $schema
             ->components([
-                Hidden::make('user_id')->default(auth()->id()),
+                Hidden::make('id_user')->default(auth()->id()),
                 Fieldset::make('Koordinat spot')->schema([
                    TextInput::make('xpos')->label("Koordinat X")->required(),
                    TextInput::make('ypos')->label("Koordinat Y")->required(),
