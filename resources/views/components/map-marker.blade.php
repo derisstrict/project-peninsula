@@ -4,10 +4,12 @@
             <div class="flex flex-col max-w-2xl w-full mr-2">
                 <h1 class="font-bold text-2xl text-color-accent">{{ $l10nTitle }}</h1>
                 <span class="mt-2">{{ __($l10nTeaser) }}</span>
-                <div @click='openMapPopup = true, l10nTitle = @json($l10nTitle), l10nDescription = @json($l10nDescription), images = @json($images), l10nNote = @json($l10nNote), alt = @json($alt)' class="flex items-center gap-2 cursor-pointer bg-lime-600/15 w-fit rounded-lg py-1 px-2 mt-3 transition-colors hover:bg-lime-600/30">
+                @if ($showModal)
+                   <div @click='openMapPopup = true, l10nTitle = @json($l10nTitle), l10nDescription = @json($l10nDescription), images = @json($images), l10nNote = @json($l10nNote), alt = @json($alt)' class="flex items-center gap-2 cursor-pointer bg-lime-600/15 w-fit rounded-lg py-1 px-2 mt-3 transition-colors hover:bg-lime-600/30">
                     <span class="">{{ __('maps.see_more') }}</span>
                     <x-local-icon icon="arrow" width="16px" height="16px" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" xmlns="http://www.w3.org/2000/svg"></x-local-icon>
-                </div>
+                    </div> 
+                @endif
             </div>
             <div class="relative h-fit"
             x-data='{ 
