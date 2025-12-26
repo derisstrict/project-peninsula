@@ -49,7 +49,7 @@
             <x-map-marker xpos="{{ $spot->xpos }}" ypos="{{ $spot->ypos }}"
                 l10nTitle="{{ __('spots.' . $spot->kunci_judul) }}" l10nTeaser="{{ __('spots.' . $spot->kunci_teaser) }}"
                 l10nDescription="{{ __('spots.' . $spot->kunci_keterangan) }}"
-                l10nNote="{{ __('spots.' . $spot->kunci_catatan) }}" :images="$spot->url_media" alt="{{ $spot->alt_gambar }}" showModal="{{ $spot->tampilkan_modal }}"></x-map-marker>
+                l10nNote="{{ __('spots.' . $spot->kunci_catatan) }}" :images="$spot->url_media" alt="{{ $spot->alt_gambar }}"></x-map-marker>
         @endforeach
         <x-map-popup></x-map-popup>
     </div>

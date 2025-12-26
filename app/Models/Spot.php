@@ -12,6 +12,6 @@ class Spot extends Model
         'url_media' => 'array',
     ];
     protected $fillable = [
-    'id_user','xpos', 'ypos', 'kunci_judul','kunci_teaser', 'url_media', 'kunci_catatan', 'kunci_keterangan', 'alt_gambar', 'tampilkan_modal'
+    'id_user','xpos', 'ypos', 'kunci_judul','kunci_teaser', 'url_media', 'kunci_catatan', 'kunci_keterangan', 'alt_gambar'
     ];
 }

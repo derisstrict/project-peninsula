@@ -16,7 +16,6 @@ class MapMarker extends Component
     public $l10nNote;
     public $images;
     public $alt;
-    public $showModal;
 
     /**
      * Create a new component instance.
@@ -30,7 +29,6 @@ class MapMarker extends Component
         $l10nNote = "", 
         $images = "",
         $alt = "",
-        $showModal = "",
     )
     {
         $this->xpos = $xpos;
@@ -41,7 +39,6 @@ class MapMarker extends Component
         $this->l10nNote = $l10nNote;
         $this->images = $images;
         $this->alt = $alt;
-        $this->showModal = $showModal;
     }
 
     /**

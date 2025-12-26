@@ -82,21 +82,6 @@ class SpotResource extends Resource
                 ->label('Terakhir diubah')
                 ->badge()
                 ->icon(Heroicon::Calendar),
-                TextEntry::make('tampilkan_modal')
-                ->label('Tampilkan modal')
-                ->badge()
-                ->icon(fn (?string $state): string => match ($state) {
-                    '0' => 'heroicon-m-eye-slash',
-                    '1' => 'heroicon-m-eye'
-                })
-                ->color(fn (?string $state): string => match ($state) {
-                    '0' => 'gray',
-                    '1' => 'primary'
-                })
-                ->formatStateUsing(fn (?string $state): string => match ($state) {
-                    '0' => 'Sembunyikan',
-                    '1' => 'Tampilkan'
-                }),
                 Fieldset::make('Koordinat')->schema([
                     Grid::make(2)->schema([
                         TextEntry::make('xpos')
