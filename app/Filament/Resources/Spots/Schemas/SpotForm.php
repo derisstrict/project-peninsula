@@ -31,7 +31,7 @@ class SpotForm
                         ->label('Upload Gambar Gallery')
                         ->required()
                         ->disk('public_img')
-                        ->directory('/')
+                        ->directory('/spots')
                         ->preserveFilenames()
                         ->reorderable()
                         ->appendFiles(),
