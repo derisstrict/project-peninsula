@@ -8,6 +8,7 @@ use Filament\Forms\Components\Hidden;
 use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
+use Filament\Forms\Components\ToggleButtons;
 use Filament\Schemas\Components\Fieldset;
 use Filament\Schemas\Components\Grid;
 use Filament\Schemas\Components\Icon;
@@ -24,6 +25,18 @@ class EventForm
         return $schema
             ->components([
                 Hidden::make('id_user')->default(fn () => auth()->id()),
+                ToggleButtons::make('tampilkan_event')
+                ->label('Visibilitas')
+                ->required()
+                ->inline()
+                ->options([
+                    '1' => 'Tampilkan',
+                    '0' => 'Sembunyikan',
+                ])
+                ->icons([
+                    '1' => 'heroicon-m-eye',
+                    '0' => 'heroicon-m-eye-slash',
+                ]),
                 TextInput::make('judul_event')
                 ->live(onBlur: true)
                 ->afterStateUpdated(function (Get $get, Set $set, ?string $old, ?string $state) {
@@ -58,13 +71,6 @@ class EventForm
                 Grid::make(4)->schema([
                     TextInput::make('alt_gambar')
                     ->belowContent('Deskripsi singkat tentang gambar'),
-                ]),
-                Select::make('tampilkan_event')
-                ->label('Visibilitas')
-                ->required()
-                ->options([
-                    '0' => 'Sembunyikan',
-                    '1' => 'Tampilkan',
                 ]),
             ])->columns(1);
     }
