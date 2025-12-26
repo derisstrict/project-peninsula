@@ -216,8 +216,8 @@ class LanguageLineSeeder extends Seeder
             'group' => 'spots', 
             'key' => 'teaser_spot_1', 
             'text' => [
-                'id' => 'Demi Website Bebas', 
-                'en' => 'Anything for The Website']
+                'id' => 'Pura Bias Tugel, simbol spiritual dengan panorama laut.', 
+                'en' => 'Bias Tugel Temple, a spiritual symbol with a panoramic view of the sea.']
         ]);
 
         LanguageLine::create([
@@ -232,8 +232,8 @@ class LanguageLineSeeder extends Seeder
             'group' => 'spots', 
             'key' => 'description_spot_1', 
             'text' => [
-                'id' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae itaque iste pariatur nobis sint voluptatibus eveniet inventore qui nesciunt adipisci, rem exercitationem necessitatibus dolorem quisquam! Corrupti laudantium dignissimos aliquid officiis, dolorum sapiente laborum laboriosam sed.', 
-                'en' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae itaque iste pariatur nobis sint voluptatibus eveniet inventore qui nesciunt adipisci, rem exercitationem necessitatibus dolorem quisquam! Corrupti laudantium dignissimos aliquid officiis, dolorum sapiente laborum laboriosam sed.']
+                'id' => 'Pura Bias Tugel adalah tempat suci umat Hindu yang berlokasi di kawasan Peninsula Island dan menghadap langsung ke laut. Pura ini dikenal dengan suasana yang tenang, nilai spiritual yang kuat, serta keindahan alam sekitarnya, sehingga menjadi salah satu titik penting bagi wisatawan yang ingin mengenal budaya dan spiritualitas Bali.', 
+                'en' => 'Bias Tugel Temple is a sacred place for Hindus located on Peninsula Island, facing the sea. This temple is known for its peaceful atmosphere, strong spiritual values, and natural beauty, making it an important destination for tourists who want to learn about Balinese culture and spirituality.']
         ]);
 
         LanguageLine::create([
@@ -248,8 +248,8 @@ class LanguageLineSeeder extends Seeder
             'group' => 'spots', 
             'key' => 'teaser_spot_2', 
             'text' => [
-                'id' => 'Demi Website Bebas', 
-                'en' => 'Anything for The Website']
+                'id' => 'Helipad Peninsula Island merupakan area terbuka yang menawarkan pemandangan laut lepas secara langsung.', 
+                'en' => 'Helipad Peninsula Island is an open area offering direct views of the open sea.']
         ]);
 
         LanguageLine::create([
@@ -264,8 +264,8 @@ class LanguageLineSeeder extends Seeder
             'group' => 'spots', 
             'key' => 'description_spot_2', 
             'text' => [
-                'id' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae itaque iste pariatur nobis sint voluptatibus eveniet inventore qui nesciunt adipisci, rem exercitationem necessitatibus dolorem quisquam! Corrupti laudantium dignissimos aliquid officiis, dolorum sapiente laborum laboriosam sed.', 
-                'en' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae itaque iste pariatur nobis sint voluptatibus eveniet inventore qui nesciunt adipisci, rem exercitationem necessitatibus dolorem quisquam! Corrupti laudantium dignissimos aliquid officiis, dolorum sapiente laborum laboriosam sed.']
+                'id' => 'Helipad Peninsula Island merupakan area terbuka yang berlokasi di tepi tebing, menawarkan panorama laut lepas dengan sudut pandang luas. Spot ini sering menjadi pilihan wisatawan untuk menikmati pemandangan, berfoto, serta menyaksikan matahari terbit maupun terbenam dalam suasana yang tenang.', 
+                'en' => 'Helipad Peninsula Island is an open area located on the edge of a cliff, offering panoramic views of the open sea. This spot is often chosen by tourists to enjoy the scenery, take photos, and watch the sunrise or sunset in a peaceful atmosphere.']
         ]);
 
         LanguageLine::create([
@@ -280,8 +280,8 @@ class LanguageLineSeeder extends Seeder
             'group' => 'spots', 
             'key' => 'teaser_spot_3', 
             'text' => [
-                'id' => 'Demi Website Bebas', 
-                'en' => 'Anything for The Website']
+                'id' => 'Patung Arjuna dan Krisna, simbol persahabatan dan kebijaksanaan.', 
+                'en' => 'The statues of Arjuna and Krishna, symbols of friendship and wisdom.']
         ]);
 
         LanguageLine::create([
@@ -296,8 +296,8 @@ class LanguageLineSeeder extends Seeder
             'group' => 'spots', 
             'key' => 'description_spot_3', 
             'text' => [
-                'id' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae itaque iste pariatur nobis sint voluptatibus eveniet inventore qui nesciunt adipisci, rem exercitationem necessitatibus dolorem quisquam! Corrupti laudantium dignissimos aliquid officiis, dolorum sapiente laborum laboriosam sed.', 
-                'en' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae itaque iste pariatur nobis sint voluptatibus eveniet inventore qui nesciunt adipisci, rem exercitationem necessitatibus dolorem quisquam! Corrupti laudantium dignissimos aliquid officiis, dolorum sapiente laborum laboriosam sed.']
+                'id' => 'Patung Arjuna dan Krisna di Peninsula Island menggambarkan tokoh penting dalam kisah Mahabharata yang melambangkan kebijaksanaan, keberanian, dan persahabatan. Keberadaan patung ini menjadi daya tarik budaya sekaligus sarana edukasi bagi wisatawan untuk mengenal nilai-nilai filosofi yang terkandung dalam tradisi Hindu.', 
+                'en' => 'The statues of Arjuna and Krishna on Peninsula Island depict important figures in the Mahabharata story who symbolize wisdom, courage, and friendship. These statues are a cultural attraction and an educational tool for tourists to learn about the philosophical values contained in Hindu tradition.']
         ]);
 
         LanguageLine::create([
@@ -312,8 +312,8 @@ class LanguageLineSeeder extends Seeder
             'group' => 'spots', 
             'key' => 'teaser_spot_4', 
             'text' => [
-                'id' => 'Demi Website Bebas', 
-                'en' => 'Anything for The Website']
+                'id' => 'Kecak and Tarian Barong, pertunjukan seni tradisional Bali.', 
+                'en' => 'Kecak and Barong Dance, traditional Balinese art performances.']
         ]);
 
         LanguageLine::create([
@@ -328,8 +328,8 @@ class LanguageLineSeeder extends Seeder
             'group' => 'spots', 
             'key' => 'description_spot_4', 
             'text' => [
-                'id' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae itaque iste pariatur nobis sint voluptatibus eveniet inventore qui nesciunt adipisci, rem exercitationem necessitatibus dolorem quisquam! Corrupti laudantium dignissimos aliquid officiis, dolorum sapiente laborum laboriosam sed.', 
-                'en' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae itaque iste pariatur nobis sint voluptatibus eveniet inventore qui nesciunt adipisci, rem exercitationem necessitatibus dolorem quisquam! Corrupti laudantium dignissimos aliquid officiis, dolorum sapiente laborum laboriosam sed.']
+                'id' => 'Kecak and Barong Dance di Peninsula Island merupakan pertunjukan seni tradisional Bali yang menampilkan perpaduan gerak tari, irama vokal, dan kisah budaya yang sarat makna. Pertunjukan ini menjadi daya tarik bagi wisatawan untuk menyaksikan secara langsung kekayaan seni dan tradisi Bali dalam suasana yang autentik.', 
+                'en' => 'Kecak and Barong Dance on Peninsula Island is a traditional Balinese art performance that features a combination of dance movements, vocal rhythms, and cultural stories rich in meaning. This performance attracts tourists who want to witness firsthand the richness of Balinese art and tradition in an authentic atmosphere.']
         ]);
 
         LanguageLine::create([
@@ -344,8 +344,8 @@ class LanguageLineSeeder extends Seeder
             'group' => 'spots', 
             'key' => 'teaser_spot_5', 
             'text' => [
-                'id' => 'Demi Website Bebas', 
-                'en' => 'Anything for The Website']
+                'id' => 'Pantai Suryodaya, spot pantai dengan nuansa menenangkan.', 
+                'en' => 'Suryodaya Beach, a beach spot with a calming atmosphere.']
         ]);
 
         LanguageLine::create([
@@ -360,8 +360,8 @@ class LanguageLineSeeder extends Seeder
             'group' => 'spots', 
             'key' => 'description_spot_5', 
             'text' => [
-                'id' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae itaque iste pariatur nobis sint voluptatibus eveniet inventore qui nesciunt adipisci, rem exercitationem necessitatibus dolorem quisquam! Corrupti laudantium dignissimos aliquid officiis, dolorum sapiente laborum laboriosam sed.', 
-                'en' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae itaque iste pariatur nobis sint voluptatibus eveniet inventore qui nesciunt adipisci, rem exercitationem necessitatibus dolorem quisquam! Corrupti laudantium dignissimos aliquid officiis, dolorum sapiente laborum laboriosam sed.']
+                'id' => 'Pantai Suryodaya merupakan kawasan pantai di Peninsula Island yang menawarkan suasana tenang dengan hamparan pasir dan pemandangan laut yang alami. Pantai ini cocok bagi wisatawan yang ingin menikmati keindahan alam, bersantai, serta merasakan suasana pantai yang lebih privat dan nyaman.', 
+                'en' => 'Suryodaya Beach is a beach area on Peninsula Island that offers a tranquil atmosphere with stretches of sand and natural sea views. This beach is suitable for tourists who want to enjoy natural beauty, relax, and experience a more private and comfortable beach atmosphere.']
         ]);
 
         LanguageLine::create([
@@ -376,8 +376,8 @@ class LanguageLineSeeder extends Seeder
             'group' => 'spots', 
             'key' => 'teaser_spot_6', 
             'text' => [
-                'id' => 'Demi Website Bebas', 
-                'en' => 'Anything for The Website']
+                'id' => 'Taman Harapan, area taman untuk bersantai dan menikmati alam.', 
+                'en' => 'Garden Of Hope, a park area for relaxing and enjoying nature.']
         ]);
 
         LanguageLine::create([
@@ -392,8 +392,8 @@ class LanguageLineSeeder extends Seeder
             'group' => 'spots', 
             'key' => 'description_spot_6', 
             'text' => [
-                'id' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae itaque iste pariatur nobis sint voluptatibus eveniet inventore qui nesciunt adipisci, rem exercitationem necessitatibus dolorem quisquam! Corrupti laudantium dignissimos aliquid officiis, dolorum sapiente laborum laboriosam sed.', 
-                'en' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae itaque iste pariatur nobis sint voluptatibus eveniet inventore qui nesciunt adipisci, rem exercitationem necessitatibus dolorem quisquam! Corrupti laudantium dignissimos aliquid officiis, dolorum sapiente laborum laboriosam sed.']
+                'id' => 'Taman Harapan atau Garden of Hope merupakan ruang terbuka hijau di kawasan Peninsula Island yang dirancang sebagai area bersantai dengan suasana tenang dan asri. Taman ini menjadi tempat yang nyaman bagi wisatawan untuk beristirahat, berjalan santai, serta menikmati keindahan alam di sekitarnya.', 
+                'en' => 'Taman Harapan or Garden of Hope is a green open space on Peninsula Island designed as a relaxing area with a calm and beautiful atmosphere. This park is a comfortable place for tourists to rest, take a leisurely stroll, and enjoy the natural beauty of the surrounding area.']
         ]);
 
         LanguageLine::create([
@@ -408,8 +408,8 @@ class LanguageLineSeeder extends Seeder
             'group' => 'spots', 
             'key' => 'teaser_spot_7', 
             'text' => [
-                'id' => 'Demi Website Bebas', 
-                'en' => 'Anything for The Website']
+                'id' => 'Taman Bunga, area taman dengan beragam tanaman hias.', 
+                'en' => 'Flower Garden, a garden area with a variety of ornamental plants.']
         ]);
 
         LanguageLine::create([
@@ -424,8 +424,8 @@ class LanguageLineSeeder extends Seeder
             'group' => 'spots', 
             'key' => 'description_spot_7', 
             'text' => [
-                'id' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae itaque iste pariatur nobis sint voluptatibus eveniet inventore qui nesciunt adipisci, rem exercitationem necessitatibus dolorem quisquam! Corrupti laudantium dignissimos aliquid officiis, dolorum sapiente laborum laboriosam sed.', 
-                'en' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae itaque iste pariatur nobis sint voluptatibus eveniet inventore qui nesciunt adipisci, rem exercitationem necessitatibus dolorem quisquam! Corrupti laudantium dignissimos aliquid officiis, dolorum sapiente laborum laboriosam sed.']
+                'id' => 'Taman Bunga di Peninsula Island merupakan area taman yang menampilkan berbagai jenis tanaman hias dengan penataan yang rapi dan menarik. Taman ini menjadi salah satu spot yang nyaman bagi wisatawan untuk berjalan santai, berfoto, serta menikmati suasana alam yang segar.', 
+                'en' => 'The Flower Garden on Peninsula Island is a park area that displays various types of ornamental plants in a neat and attractive arrangement. This park is a comfortable spot for tourists to take a leisurely stroll, take photos, and enjoy the fresh natural atmosphere.']
         ]);
 
         LanguageLine::create([
@@ -440,8 +440,8 @@ class LanguageLineSeeder extends Seeder
             'group' => 'spots', 
             'key' => 'teaser_spot_8', 
             'text' => [
-                'id' => 'Demi Website Bebas', 
-                'en' => 'Anything for The Website']
+                'id' => 'Monumen Persaudaraan, simbol kebersamaan dan persatuan.', 
+                'en' => 'Monument of Brotherhood, a symbol of togetherness and unity.']
         ]);
 
         LanguageLine::create([
@@ -456,8 +456,8 @@ class LanguageLineSeeder extends Seeder
             'group' => 'spots', 
             'key' => 'description_spot_8', 
             'text' => [
-                'id' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae itaque iste pariatur nobis sint voluptatibus eveniet inventore qui nesciunt adipisci, rem exercitationem necessitatibus dolorem quisquam! Corrupti laudantium dignissimos aliquid officiis, dolorum sapiente laborum laboriosam sed.', 
-                'en' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae itaque iste pariatur nobis sint voluptatibus eveniet inventore qui nesciunt adipisci, rem exercitationem necessitatibus dolorem quisquam! Corrupti laudantium dignissimos aliquid officiis, dolorum sapiente laborum laboriosam sed.']
+                'id' => 'Monumen Persaudaraan di Peninsula Island merupakan simbol kebersamaan dan persatuan yang mencerminkan nilai-nilai harmoni. Monumen ini menjadi salah satu titik refleksi bagi wisatawan untuk memahami makna persaudaraan dalam keberagaman, sekaligus menikmati suasana kawasan sekitarnya.', 
+                'en' => 'The Brotherhood Monument on Peninsula Island is a symbol of togetherness and unity that reflects the values of harmony. This monument is a place of reflection for tourists to understand the meaning of brotherhood in diversity, while enjoying the atmosphere of the surrounding area.']
         ]);
 
         LanguageLine::create([
@@ -472,8 +472,8 @@ class LanguageLineSeeder extends Seeder
             'group' => 'spots', 
             'key' => 'teaser_spot_9', 
             'text' => [
-                'id' => 'Demi Website Bebas', 
-                'en' => 'Anything for The Website']
+                'id' => 'Waterblow, spot alam dengan semburan ombak alami.', 
+                'en' => 'Waterblow, a natural spot with natural wave bursts.']
         ]);
 
         LanguageLine::create([
@@ -488,8 +488,8 @@ class LanguageLineSeeder extends Seeder
             'group' => 'spots', 
             'key' => 'description_spot_9', 
             'text' => [
-                'id' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae itaque iste pariatur nobis sint voluptatibus eveniet inventore qui nesciunt adipisci, rem exercitationem necessitatibus dolorem quisquam! Corrupti laudantium dignissimos aliquid officiis, dolorum sapiente laborum laboriosam sed.', 
-                'en' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae itaque iste pariatur nobis sint voluptatibus eveniet inventore qui nesciunt adipisci, rem exercitationem necessitatibus dolorem quisquam! Corrupti laudantium dignissimos aliquid officiis, dolorum sapiente laborum laboriosam sed.']
+                'id' => 'Waterblow di Peninsula Island merupakan fenomena alam yang terjadi akibat hempasan ombak besar yang menghantam celah batuan karang, sehingga menghasilkan semburan air laut ke udara. Spot ini menjadi salah satu daya tarik utama bagi wisatawan untuk menyaksikan kekuatan alam secara langsung dengan tetap memperhatikan aspek keselamatan.', 
+                'en' => 'Waterblow on Peninsula Island is a natural phenomenon that occurs when large waves crash against the crevices of coral rocks, causing seawater to spray into the air. This spot is one of the main attractions for tourists who want to witness the power of nature firsthand while still paying attention to safety.']
         ]);
         
         // baru
@@ -505,8 +505,8 @@ class LanguageLineSeeder extends Seeder
             'group' => 'spots', 
             'key' => 'teaser_spot_10', 
             'text' => [
-                'id' => 'Demi Website Bebas', 
-                'en' => 'Anything for The Website']
+                'id' => 'Fasilitas toilet disediakan untuk mendukung kenyamanan wisatawan.', 
+                'en' => 'Toilet facilities are provided for the convenience of tourists.']
         ]);
 
         LanguageLine::create([
@@ -537,8 +537,8 @@ class LanguageLineSeeder extends Seeder
             'group' => 'spots', 
             'key' => 'teaser_spot_11', 
             'text' => [
-                'id' => 'Demi Website Bebas', 
-                'en' => 'Anything for The Website']
+                'id' => 'Fasilitas toilet disediakan untuk mendukung kenyamanan wisatawan.', 
+                'en' => 'Toilet facilities are provided for the convenience of tourists.']
         ]);
 
         LanguageLine::create([
@@ -569,8 +569,8 @@ class LanguageLineSeeder extends Seeder
             'group' => 'spots', 
             'key' => 'teaser_spot_12', 
             'text' => [
-                'id' => 'Demi Website Bebas', 
-                'en' => 'Anything for The Website']
+                'id' => 'Vending machine tersedia untuk kebutuhan minuman dan camilan.', 
+                'en' => 'Vending machines are available for beverages and snacks.']
         ]);
 
         LanguageLine::create([
@@ -601,8 +601,8 @@ class LanguageLineSeeder extends Seeder
             'group' => 'spots', 
             'key' => 'teaser_spot_13', 
             'text' => [
-                'id' => 'Demi Website Bebas', 
-                'en' => 'Anything for The Website']
+                'id' => 'Balé Bengong, area istirahat terbuka bagi pengunjung.', 
+                'en' => 'Balé Bengong, an open rest area for visitors.']
         ]);
 
         LanguageLine::create([
