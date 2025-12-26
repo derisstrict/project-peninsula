@@ -7,6 +7,7 @@ use Filament\Forms\Components\Hidden;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
+use Filament\Forms\Components\ToggleButtons;
 use Filament\Schemas\Schema;
 
 class LaporanFasilitasForm
@@ -24,11 +25,22 @@ class LaporanFasilitasForm
                 Textarea::make('deskripsi_laporan'),
                 TextInput::make('email_pelapor'),
                 TextInput::make('nama_pelapor'),
-                Select::make('status_laporan')
+                ToggleButtons::make('status_laporan')
+                ->inline()
                 ->options([
                     '0' => 'Belum Ditanggapi',
                     '1' => 'Sedang Ditanggapi',
                     '2' => 'Selesai',
+                ])
+                ->icons([
+                    '0' => 'heroicon-m-eye',
+                    '1' => 'heroicon-m-clock',
+                    '2' => 'heroicon-m-check',
+                ])
+                ->colors([
+                    '0' => 'gray',
+                    '1' => 'warning',
+                    '2' => 'success',
                 ]),
             ])->columns(1);
     }

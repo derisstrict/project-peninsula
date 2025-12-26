@@ -48,6 +48,21 @@ class SpotsTable
                 ->searchable()
                 ->sortable()
                 ->badge()->color(Color::Fuchsia),
+                TextColumn::make('tampilkan_modal')
+                ->label('Tampilkan Modal')
+                ->badge()
+                ->icon(fn (?string $state): string => match ($state) {
+                    '0' => 'heroicon-m-eye-slash',
+                    '1' => 'heroicon-m-eye'
+                })
+                ->color(fn (?string $state): string => match ($state) {
+                    '0' => 'gray',
+                    '1' => 'primary'
+                })
+                ->formatStateUsing(fn (?string $state): string => match ($state) {
+                    '0' => 'Sembunyikan',
+                    '1' => 'Tampilkan'
+                }),
                 TextColumn::make('id_user')
                 ->label('Dibuat Oleh')
                 ->icon(Heroicon::User)
