@@ -17,6 +17,7 @@ class UserForm
                 ToggleButtons::make('role')
                 ->required()
                 ->label('Role')
+                ->default('1')
                 ->inline()
                 ->options([
                     '0' => 'Superadmin',

@@ -27,6 +27,8 @@ class SpotForm
                 Grid::make(3)->schema([
                     ToggleButtons::make('tampilkan_modal')
                     ->label('Tampilkan modal')
+                    ->required()
+                    ->default('1')
                     ->inline()
                     ->belowContent('Tampilkan/sembunyikan tombol \'lihat selengkapnya\'')
                     ->options([

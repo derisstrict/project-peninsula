@@ -28,6 +28,7 @@ class EventForm
                 ToggleButtons::make('tampilkan_event')
                 ->label('Visibilitas')
                 ->required()
+                ->default('1')
                 ->inline()
                 ->options([
                     '1' => 'Tampilkan',
