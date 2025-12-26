@@ -76,7 +76,7 @@ class SpotSeeder extends Seeder
         // Vending Machine
         Spot::create(
             [
-               'id_user' => 1,'xpos' => '83.5', 'ypos' => '-78.9', 'kunci_judul' => 'title_spot_12','kunci_teaser' => 'teaser_spot_12', 'url_media' => ["gallery1.jpg", "gallery2.jpg", "gallery3.jpg"], 'kunci_catatan' => 'note_spot_12', 'kunci_keterangan' => 'description_spot_12', 'alt_gambar' => 'The Image of Peninsula Island'
+               'id_user' => 1,'xpos' => '83.5', 'ypos' => '-78.9', 'kunci_judul' => 'title_spot_12','kunci_teaser' => 'teaser_spot_12', 'url_media' => ["helipad2.jpg", "helipad3.jpg", "helipad3.jpg"], 'kunci_catatan' => 'note_spot_12', 'kunci_keterangan' => 'description_spot_12', 'alt_gambar' => 'The Image of Peninsula Island'
             ]
         );
         // Balebengong
