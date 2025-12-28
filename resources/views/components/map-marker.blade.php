@@ -33,7 +33,7 @@
             x-init="start()">
                 <div class="relative w-40 h-40 rounded-2xl overflow-hidden">
                     <template x-for="(img, index) in imgs">
-                    <img :src="'img/spots/' + img" :class="active == index ? 'opacity-100' : 'opacity-0'" class="absolute inset-0 h-full w-full object-cover transition duration-700" :alt="alt + ' ' + (index + 1)">
+                    <img :src="'/img/' + img" :class="active == index ? 'opacity-100' : 'opacity-0'" class="absolute inset-0 h-full w-full object-cover transition duration-700" :alt="alt + ' ' + (index + 1)">
                     </template>
                     <div class="absolute w-full h-full bg-[linear-gradient(_rgba(0,0,0,0)_75%,_rgba(0,0,0,1)_110%)]"></div>
                 </div>

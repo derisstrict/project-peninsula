@@ -47,7 +47,7 @@
             <div class="relative h-fit">
                 <div class="relative w-full h-[300px] overflow-hidden rounded-2xl lg:w-80 lg:h-[350px]">
                     <template x-for="(img, index) in imgs">
-                        <img :src="'/img/spots/' + img" :class="active == index ? 'opacity-100' : 'opacity-0'"
+                        <img :src="'/img/' + img" :class="active == index ? 'opacity-100' : 'opacity-0'"
                             class="absolute inset-0 h-full w-full object-cover transition duration-700"
                             :alt="alt + ' ' + (index + 1)">
                     </template>
