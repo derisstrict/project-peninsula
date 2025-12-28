@@ -17,6 +17,9 @@
                 get showSelector() {
                     return this.imgs.length > 1;
                 },
+                get selectorLength() {
+                    return 100 / this.imgs.length;
+                },
                 alt: @json($alt), 
                 active: 0,
                 interval: null,
@@ -40,12 +43,12 @@
                     </template>
                     <div class="absolute w-full h-full bg-[linear-gradient(_rgba(0,0,0,0)_75%,_rgba(0,0,0,1)_110%)]"></div>
                 </div>
-                <div class="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1">
+                <div class="absolute w-full bottom-2 left-1/2 -translate-x-1/2 flex gap-1 px-3">
                     <template x-for="(img, index) in imgs">
                         <template x-if="showSelector">
-                            <div @click="active = index; reset()" :class="index === active ? 'bg-white' : 'bg-white/30'" class="w-7 h-[6px] rounded cursor-pointer transition"></div>
+                            <div @click="active = index; reset()" :class="index === active ? 'bg-white' : 'bg-white/30'" class="h-[5.5px] rounded cursor-pointer transition" :style="'width: ' + selectorLength + '%;'"></div>
                         </template>
-                    </template>
+                    </template> 
                 </div>
             </div>
         </div> 
