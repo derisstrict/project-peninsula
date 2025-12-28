@@ -13,15 +13,6 @@
     </p>
 
     <div class="grid grid-cols-1 md:grid-cols-[2fr_1fr] gap-6 mx-auto">
-        <!-- Image 1 -->
-        <div class="relative group overflow-hidden rounded-xl">
-            <img src="./img/gallery1.jpg" alt="Beach View" class="w-full h-120 object-cover transition duration-300 group-hover:scale-110">
-        </div>
-        
-        <!-- Image 2 -->
-        <div class="relative group overflow-hidden rounded-xl">
-            <img src="./img/gallery2.jpg" alt="Beach View" class="w-full h-120 object-cover transition duration-300 group-hover:scale-110">
-        </div>
         
         <!-- Image 3 -->
         <div class="relative group/bg overflow-hidden rounded-xl md:col-span-2">
@@ -30,7 +21,7 @@
             <div class="absolute inset-0 bg-black/45 transition duration-700 group-hover/bg:bg-black/60"></div>
             <div class="absolute inset-0 flex flex-col items-center justify-center text-white text-center">
                 <h2 class="font-bold text-2xl mb-4">{{ __('gallery.collections') }}</h2>
-                <a onclick="openModal(1)"
+                <a onclick="openModal()"
                 class="bg-white/30 px-5 py-2 rounded-full font-medium cursor-pointer hover:bg-lime-600 hover:text-white transition duration-500 flex items-center justify-center group/button">
                 {{ __('gallery.explore') }}
                 <x-local-icon icon="arrow-head" fill="currentColor" viewBox="0 0 24 24" stroke="none" xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 transform transition-transform duration-300 group-hover/button:translate-x-1"></x-local-icon>
@@ -38,8 +29,50 @@
             </div>
         </div>
     </div>
-      <!-- pop up -->
-    <div id="galleryModal" class="fixed inset-0 z-[9999] flex items-center justify-center bg-black/50 backdrop-blur-[2px] hidden">
+    <!-- pop up -->
+    
+</div>
+
+<!-- /Gallery -->
+<script>
+    const galleries = @json($galleries);
+
+    let images = galleries
+        .filter(item => item.tipe_media === 'foto')
+        .map(item => `/storage/${item.url_media}`);
+
+    let currentImage = 0;
+
+    function openModal(startIndex = 0) {
+        currentImage = startIndex;
+        document.getElementById('galleryModal').classList.remove('hidden');
+        document.body.classList.add('overflow-hidden');
+        showImage();
+    }
+
+    function closeModal() {
+        document.getElementById('galleryModal').classList.add('hidden');
+        document.body.classList.remove('overflow-hidden');
+    }
+
+    function showImage() {
+        if (!images.length) return;
+        document.getElementById('modalImg').src = images[currentImage];
+    }
+
+    function prevImage() {
+        currentImage = (currentImage - 1 + images.length) % images.length;
+        showImage();
+    }
+
+    function nextImage() {
+        currentImage = (currentImage + 1) % images.length;
+        showImage();
+    }
+</script>
+
+
+<div id="galleryModal" class="fixed inset-0 z-[9999] flex items-center justify-center bg-black/50 backdrop-blur-[2px] hidden">
 
         <button onclick="closeModal()" 
             class="absolute top-15 w-10 h-10 cursor-pointer flex items-center justify-center 
@@ -80,50 +113,3 @@
         </button>
 
     </div>
-</div>
-<!-- /Gallery -->
-
-<script>
-    //galery
-    const images = [
-        "{{ asset('img/gallery1.jpg') }}",
-        "{{ asset('img/gallery2.jpg') }}",
-        "{{ asset('img/gallery3.jpg') }}"
-    ];
-    let current = 0;
-
-    function openModal(idx) {
-        current = idx - 1;
-        document.getElementById('galleryModal').classList.remove('hidden');
-
-        // scroll lock (open modal)
-        document.body.classList.add('overflow-hidden');
-
-        showImage();
-    }
-
-    function closeModal() {
-        document.getElementById('galleryModal').classList.add('hidden');
-
-        // scroll open (exit modal)
-        document.body.classList.remove('overflow-hidden');
-    }
-
-    function showImage() {
-        document.getElementById('modalImg').src = images[current];
-    }
-
-    function prevImage() {
-        current = (current - 1 + images.length) % images.length;
-        showImage();
-    }
-
-    function nextImage() {
-        current = (current + 1) % images.length;
-        showImage();
-    }
-
-    document.addEventListener('keydown', function(e) {
-        if (e.key === "Escape") closeModal();
-    });
-</script>

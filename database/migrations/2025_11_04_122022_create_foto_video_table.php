@@ -15,10 +15,11 @@ return new class extends Migration
             $table->id();
             $table->bigInteger('id_user');
             $table->string('tipe_media', 100)->nullable(false);
-            $table->string('url_media', 255)->nullable(false);
+            $table->string('url_media')->nullable(false);
             $table->text('keterangan')->nullable(true);
-            $table->string('tanggal_upload', 50)->nullable(false);
-            $table->foreign('id_user')->references('id')->on('admin')->onDelete('cascade');
+            $table->foreign('id_user')->references('id')->on('users')->onDelete('cascade');
+            $table->timestamps();
+
         }); 
     }
 
