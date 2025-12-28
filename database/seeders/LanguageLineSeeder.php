@@ -633,8 +633,8 @@ class LanguageLineSeeder extends Seeder
             'group' => 'spots', 
             'key' => 'teaser_spot_14', 
             'text' => [
-                'id' => 'Demi Website Bebas', 
-                'en' => 'Anything for The Website']
+                'id' => 'Gapura Peninsula menjadi pintu masuk ikonik yang menyambut wisatawan menuju keindahan.', 
+                'en' => 'The Gapura Peninsula is an iconic gateway that welcomes tourists to beauty.']
         ]);
 
         LanguageLine::create([
@@ -666,7 +666,7 @@ class LanguageLineSeeder extends Seeder
             'key' => 'teaser_spot_15', 
             'text' => [
                 'id' => 'Area wastafel tersedia untuk menjaga kebersihan dan kenyamanan selama berkunjung.', 
-                'en' => 'AA sink area is available to maintain cleanliness and comfort during your visit.']
+                'en' => 'A sink area is available to maintain cleanliness and comfort during your visit.']
         ]);
 
         LanguageLine::create([
