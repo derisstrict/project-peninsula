@@ -652,6 +652,38 @@ class LanguageLineSeeder extends Seeder
                 'id' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae itaque iste pariatur nobis sint voluptatibus eveniet inventore qui nesciunt adipisci, rem exercitationem necessitatibus dolorem quisquam! Corrupti laudantium dignissimos aliquid officiis, dolorum sapiente laborum laboriosam sed.', 
                 'en' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae itaque iste pariatur nobis sint voluptatibus eveniet inventore qui nesciunt adipisci, rem exercitationem necessitatibus dolorem quisquam! Corrupti laudantium dignissimos aliquid officiis, dolorum sapiente laborum laboriosam sed.']
         ]);
+
+         LanguageLine::create([
+            'group' => 'spots', 
+            'key' => 'title_spot_15', 
+            'text' => [
+                'id' => 'Wastafel', 
+                'en' => 'Sink']
+        ]);
+
+        LanguageLine::create([
+            'group' => 'spots', 
+            'key' => 'teaser_spot_15', 
+            'text' => [
+                'id' => 'Area wastafel tersedia untuk menjaga kebersihan dan kenyamanan selama berkunjung.', 
+                'en' => 'AA sink area is available to maintain cleanliness and comfort during your visit.']
+        ]);
+
+        LanguageLine::create([
+            'group' => 'spots', 
+            'key' => 'note_spot_15', 
+            'text' => [
+                'id' => 'Untuk memasuki area ini, pengunjung wajib mengenakan pakaian adat atau pakaian yang rapi.', 
+                'en' => 'Visitors must wear appropriate clothing or balinese attire (sarong and sash).']
+        ]);
+
+        LanguageLine::create([
+            'group' => 'spots', 
+            'key' => 'description_spot_15', 
+            'text' => [
+                'id' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae itaque iste pariatur nobis sint voluptatibus eveniet inventore qui nesciunt adipisci, rem exercitationem necessitatibus dolorem quisquam! Corrupti laudantium dignissimos aliquid officiis, dolorum sapiente laborum laboriosam sed.', 
+                'en' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae itaque iste pariatur nobis sint voluptatibus eveniet inventore qui nesciunt adipisci, rem exercitationem necessitatibus dolorem quisquam! Corrupti laudantium dignissimos aliquid officiis, dolorum sapiente laborum laboriosam sed.']
+        ]);
         //// Maps
         
         // Things to do
