@@ -14,6 +14,9 @@
             <div class="relative h-fit"
             x-data='{ 
                 imgs: @json($images),
+                get showSelector() {
+                    return this.imgs.length > 1;
+                },
                 alt: @json($alt), 
                 active: 0,
                 interval: null,
@@ -39,7 +42,9 @@
                 </div>
                 <div class="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1">
                     <template x-for="(img, index) in imgs">
-                        <div @click="active = index; reset()" :class="index === active ? 'bg-white' : 'bg-white/30'" class="w-7 h-[6px] rounded cursor-pointer transition"></div>
+                        <template x-if="showSelector">
+                            <div @click="active = index; reset()" :class="index === active ? 'bg-white' : 'bg-white/30'" class="w-7 h-[6px] rounded cursor-pointer transition"></div>
+                        </template>
                     </template>
                 </div>
             </div>

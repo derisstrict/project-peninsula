@@ -5,6 +5,9 @@
     class="fixed inset-0 bg-black/50 z-1000 backdrop-blur-xs dark:bg-black/75">
     <div x-data='{
         imgs: [],
+        get showSelector() {
+            return this.imgs.length > 1;
+        },
         active: 0,
         interval: null,
         delay: 4000,
@@ -56,9 +59,11 @@
                 </div>
                 <div class="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1">
                     <template x-for="(img, index) in imgs">
-                        <div @click="active = index; reset(runInterval)"
+                        <template x-if="showSelector">
+                            <div @click="active = index; reset(runInterval)"
                             :class="index === active ? 'bg-white' : 'bg-white/30'"
                             class="w-7 h-[6px] rounded cursor-pointer transition"></div>
+                        </template>
                     </template>
                 </div>
             </div>
