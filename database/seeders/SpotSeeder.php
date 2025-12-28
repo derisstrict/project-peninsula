@@ -96,7 +96,7 @@ class SpotSeeder extends Seeder
         //Gapura
         Spot::create(
             [
-               'id_user' => 1,'xpos' => '91.8', 'ypos' => '-78.5', 'kunci_judul' => 'title_spot_14','kunci_teaser' => 'teaser_spot_14', 'url_media' => ["/spots/gapura1.jpg", "/spots/nusagede1.jpg", "/spots/nusagede2.jpg"], 'kunci_catatan' => 'note_spot_14', 'kunci_keterangan' => 'description_spot_14', 'alt_gambar' => 'Image for gapura', 'tampilkan_modal' => '0'
+               'id_user' => 1,'xpos' => '91.8', 'ypos' => '-78.5', 'kunci_judul' => 'title_spot_14','kunci_teaser' => 'teaser_spot_14', 'url_media' => ["/spots/gapura1.jpg"], 'kunci_catatan' => 'note_spot_14', 'kunci_keterangan' => 'description_spot_14', 'alt_gambar' => 'Image for gapura', 'tampilkan_modal' => '0'
             ]
         );
         //Wastafel
