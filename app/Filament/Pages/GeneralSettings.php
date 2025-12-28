@@ -73,6 +73,7 @@ class GeneralSettings extends Page
                             ->required()
                             ->disk('public_img')
                             ->visibility('public')
+                            ->preserveFilenames()
                         ])
                     ]),
                 ])->columns(1)
