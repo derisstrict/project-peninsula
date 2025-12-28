@@ -2,16 +2,19 @@
 
 namespace App\Filament\Resources\Spots\Tables;
 
+use App\Models\User;
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteAction;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
 use Filament\Actions\ViewAction;
 use Filament\Support\Colors\Color;
+use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
-
+use Illuminate\Database\Eloquent\Model;
+use stdClass;
 
 class SpotsTable
 {
@@ -19,12 +22,17 @@ class SpotsTable
     {
         return $table
             ->columns([
-                TextColumn::make('title')->label("Nama Spot")
+                TextColumn::make('nama_spot')->label("Nama Spot")
                 ->searchable()
-                ->sortable(),
-                TextColumn::make('teaser')->label("Teaser")
+                ->sortable()
+                ->state(function (?Model $record) {
+                    return __('spots.' . $record->kunci_judul);
+                }),
+                TextColumn::make('kunci_judul')->label("Kunci Judul")
                 ->searchable()
-                ->sortable(),
+                ->sortable()
+                ->badge()
+                ->color(Color::Green),
                 ImageColumn::make('url_media')
                 ->label('Gambar')
                 ->disk('public_img')
@@ -40,13 +48,43 @@ class SpotsTable
                 ->searchable()
                 ->sortable()
                 ->badge()->color(Color::Fuchsia),
-                TextColumn::make('catatan')->label("Catatan")
-                ->searchable()
-                ->sortable(),
-                TextColumn::make('keterangan')->label("Keterangan")
-                ->searchable()
+                TextColumn::make('tampilkan_modal')
+                ->label('Tampilkan Modal')
+                ->badge()
+                ->icon(fn (?string $state): string => match ($state) {
+                    '0' => 'heroicon-m-eye-slash',
+                    '1' => 'heroicon-m-eye'
+                })
+                ->color(fn (?string $state): string => match ($state) {
+                    '0' => 'gray',
+                    '1' => 'primary'
+                })
+                ->formatStateUsing(fn (?string $state): string => match ($state) {
+                    '0' => 'Sembunyikan',
+                    '1' => 'Tampilkan'
+                }),
+                TextColumn::make('id_user')
+                ->label('Dibuat Oleh')
+                ->icon(Heroicon::User)
                 ->sortable()
-                ->limit(100),
+                ->searchable()
+                ->formatStateUsing(fn (?string $state): string => match ($state) {
+                    $state => User::find($state)->name
+                }),
+                TextColumn::make('created_at')
+                ->dateTime('d F Y')
+                ->label('Tanggal Dibuat')
+                ->searchable()
+                ->badge()
+                ->icon(Heroicon::Calendar)
+                ->sortable(),
+                TextColumn::make('updated_at')
+                ->dateTime('d F Y')
+                ->label('Terakhir Diubah')
+                ->searchable()
+                ->badge()
+                ->icon(Heroicon::Calendar)
+                ->sortable(),
             ])
             ->filters([
                 //

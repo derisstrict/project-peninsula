@@ -8,7 +8,6 @@ use Filament\Resources\Pages\ViewRecord;
 
 class ViewThingsToDo extends ViewRecord
 {
-
     protected static string $resource = ThingsToDoResource::class;
 
     protected function getHeaderActions(): array

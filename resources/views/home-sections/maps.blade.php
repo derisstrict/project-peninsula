@@ -1,5 +1,5 @@
 <!-- Spots Map -->
-<div id="maps" x-data='{ title: "", desc: "", note: "", images: [], alt: "" }' class="mt-32">
+<div id="maps" x-data='{ l10nTitle: "", l10nDescription: "", l10nNote: "", images: [], alt: "" }' class="mt-32">
     <p class="text-3xl font-semibold text-center mb-10 md:text-6xl">
         {!! __('maps.title_1', [
             'accent' => '<span class="text-color-accent"> ' . __('maps.title_accent_1') . ' </span>',
@@ -46,9 +46,10 @@
 
     <div>
         @foreach ($spots as $spot)
-            <x-map-marker xpos="{{ $spot->xpos }}" ypos="{{ $spot->ypos }}" title="{{ $spot->title }}"
-                teaser="{{ $spot->teaser }}" desc="{{ $spot->keterangan }}" note="{{ $spot->catatan }}"
-                :images="$spot->url_media" alt="{{ $spot->alt_gambar }}"></x-map-marker>
+            <x-map-marker xpos="{{ $spot->xpos }}" ypos="{{ $spot->ypos }}"
+                l10nTitle="{{ __('spots.' . $spot->kunci_judul) }}" l10nTeaser="{{ __('spots.' . $spot->kunci_teaser) }}"
+                l10nDescription="{{ __('spots.' . $spot->kunci_keterangan) }}"
+                l10nNote="{{ __('spots.' . $spot->kunci_catatan) }}" :images="$spot->url_media" alt="{{ $spot->alt_gambar }}" showModal="{{ $spot->tampilkan_modal }}"></x-map-marker>
         @endforeach
         <x-map-popup></x-map-popup>
     </div>
@@ -81,7 +82,8 @@
 <!-- /Where's the Location -->
 
 <!-- Google Maps -->
-<div class="relative w-full h-[25rem] mt-10 mx-auto mb-32 overflow-hidden rounded-2xl shadow-lg bg-gray-200 md:h-[40rem]">
+<div
+    class="relative w-full h-[25rem] mt-10 mx-auto mb-32 overflow-hidden rounded-2xl shadow-lg bg-gray-200 md:h-[40rem]">
     <iframe class="w-full h-full"
         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1807.793096453511!2d115.2374891438277!3d-8.802587533390318!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd242d7ab709d33%3A0x39de1606c19ad392!2sPeninsula%20Island!5e0!3m2!1sen!2sid!4v1763101198309!5m2!1sen!2sid"
         style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>

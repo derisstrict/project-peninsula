@@ -7,11 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 class Spot extends Model
 {
     protected $table = 'spot';
-    public $timestamps = false;
+    public $timestamps = true;
     protected $casts = [
         'url_media' => 'array',
     ];
     protected $fillable = [
-    'user_id','xpos', 'ypos', 'title','teaser', 'url_media', 'catatan', 'keterangan', 'alt_gambar'
+    'id_user','xpos', 'ypos', 'kunci_judul','kunci_teaser', 'url_media', 'kunci_catatan', 'kunci_keterangan', 'alt_gambar', 'tampilkan_modal'
     ];
 }

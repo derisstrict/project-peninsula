@@ -24,7 +24,7 @@
                 d="M9 6.5 C8 5.8, 7 6.5, 7 7.7 V16.3 C7 17.5, 8 18.2, 9 17.5 L16.5 12.6 C17.4 12, 17.4 10.9, 16.5 10.3 Z"/>
         </svg>
 
-        <p class="text-white text-lg">Play/Pause</p>
+        <p class="text-white text-lg">{{ __('video.play') }}</p>
     </div>
 
 

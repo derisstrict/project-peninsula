@@ -12,7 +12,10 @@ use Filament\Schemas\Components\Utilities\Get;
 use Filament\Schemas\Components\Utilities\Set;
 use Filament\Schemas\Components\Fieldset;
 use Filament\Forms\Components\RichEditor;
+use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
+use Filament\Forms\Components\ToggleButtons;
+use Filament\Schemas\Components\Grid;
 
 class SpotForm
 {
@@ -20,31 +23,47 @@ class SpotForm
     {
         return $schema
             ->components([
-                Hidden::make('user_id')->default(auth()->id()),
-                TextInput::make('title'),
-                Textarea::make('teaser')->label('Teaser')->required(),
-                Fieldset::make('Koordinat Spot')->schema([
+                Hidden::make('id_user')->default(auth()->id()),
+                Grid::make(3)->schema([
+                    ToggleButtons::make('tampilkan_modal')
+                    ->label('Tampilkan modal')
+                    ->required()
+                    ->default('1')
+                    ->inline()
+                    ->belowContent('Tampilkan/sembunyikan tombol \'lihat selengkapnya\'')
+                    ->options([
+                    '1' => 'Tampilkan',   
+                    '0' => 'Sembunyikan',
+                    ])
+                    ->icons([
+                        '1' => 'heroicon-m-eye',
+                        '0' => 'heroicon-m-eye-slash',
+                    ]),
+               ]), 
+                Fieldset::make('Koordinat spot')->schema([
                    TextInput::make('xpos')->label("Koordinat X")->required(),
                    TextInput::make('ypos')->label("Koordinat Y")->required(),
                 ]),
-               Fieldset::make('Gambar')->schema([
+                Fieldset::make('Lokalisasi')->schema([
+                        TextInput::make('kunci_judul')->label('Kunci Judul')->required(),
+                        Textarea::make('kunci_teaser')->label('Kunci Teaser')->required(),
+                        Textarea::make('kunci_catatan')->label('Kunci Catatan')->required(),
+                        Textarea::make('kunci_keterangan')->label('Kunci Keterangan')->required(),
+                ]), 
+                Fieldset::make('Gambar')->schema([
                         FileUpload::make('url_media')
                         ->multiple()
                         ->label('Upload Gambar Gallery')
                         ->required()
                         ->disk('public_img')
-                        ->directory('/')
+                        ->directory('/spots')
                         ->preserveFilenames()
                         ->reorderable()
                         ->appendFiles(),
                         TextInput::make('alt_gambar')
                         ->belowContent('Deskripsi singkat tentang gambar')
                         ->label('Alt gambar')
-               ]),
-                Textarea::make('catatan')->label('Catatan')->required(),
-                Textarea::make('keterangan')->label('Keterangan')->required(),
-                // RichEditor::make('keterangan')->label('Keterangan')->required(),
-
+                ]),       
             ])->columns(1);
     }
 }

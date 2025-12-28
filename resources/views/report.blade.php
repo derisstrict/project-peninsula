@@ -9,7 +9,7 @@
         <p class="text-4xl text-center font-semibold md:text-5xl md:text-start">{!! __('report.title', ['accent' => '<span class="text-color-accent"> '. __('report.title_accent') .' </span>']) !!}
         <p class="text-lg text-center md:text-xl md:text-start">{{ __('report.description') }}</p>
         <div class="infobox-accent gap-3 self-center">
-            <x-local-icon icon="info" class="text-color-accent" width="28px" height="28px" viewBox="0 0 24 24" fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg"></x-local-icon>
+            <x-local-icon icon="info" class="text-color-accent min-w-[20px] max-w-[28px]" width="28px" height="28px" viewBox="0 0 24 24" fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg"></x-local-icon>
             <div class="flex flex-col gap-2">
                 <p class="font-semibold">{{ __('report.box_title') }}</p>
                 <p>{{ __('report.box_description') }}</p>

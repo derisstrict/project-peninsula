@@ -13,7 +13,7 @@
     <img class="rounded-xl self-center w-500 h-100 object-cover md:h-150" src={{ asset('storage/' . $blogs->gambar_blog) }} alt="{{ $blogs->alt_gambar }}">
     <p class="text-xl font-semibold mt-5 md:text-4xl">{{ $blogs->judul_blog }}</p>
     <p class="text-xs md:text-sm"> {{ $blogs->created_at->diffForHumans() }} </p>
-    <div class="bg-color-accent/25 outline-2 outline-color-accent/50 w-fit rounded-lg px-2 text-xs md:text-sm">Other</div>
+    {{-- <div class="bg-color-accent/25 outline-2 outline-color-accent/50 w-fit rounded-lg px-2 text-xs md:text-sm">Other</div> --}}
     <div class="prose prose-zinc prose-md prose-strong:font-medium dark:prose-invert mt-6 !max-w-none md:prose-lg lg:prose-xl">
         {!! $blogs->isi_blog !!}
     </div>

@@ -6,11 +6,12 @@ use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Hidden;
 use Filament\Forms\Components\FileUpload;
+use Filament\Schemas\Components\Fieldset;
 use Filament\Schemas\Components\Utilities\Get;
 use Filament\Schemas\Components\Utilities\Set;
 use Illuminate\Support\Str;
 use Filament\Schemas\Schema;
-
+use Illuminate\Database\Eloquent\Model;
 
 class ThingsToDoForm
 {
@@ -19,10 +20,15 @@ class ThingsToDoForm
         return $schema
             ->components([
                 Hidden::make('user_id')->default(fn () => auth()->id()),
-                TextInput::make('title')
-                    ->label('Judul')
+                Fieldset::make('Lokalisasi')->schema([
+                    TextInput::make('kunci_judul')
+                    ->label('Kunci judul')
                     ->required(),
-                FileUpload::make('icon')->label('Upload Icon/Gambar')
+                    TextInput::make('kunci_deskripsi')
+                    ->label('Kunci deskripsi')
+                    ->required(),
+                ]),
+                FileUpload::make('ikon')->label('Upload ikon/gambar')
                 ->image()
                 ->required()
                 ->disk('public_img')
