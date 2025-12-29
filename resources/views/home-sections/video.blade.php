@@ -1,5 +1,5 @@
 <!-- VIDEO -->
-<div id="videoSection" class="relative mt-32 rounded-xl overflow-hidden group">
+<div id="videoSection" class="relative mt-42 rounded-xl overflow-hidden group">
     <video 
         id="myVideo"
         class="h-120 w-full object-cover md:h-170"
