@@ -3,41 +3,32 @@
 namespace Database\Seeders;
 
 use App\Models\FotoVideo;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Storage;
 
 class FotoVideoSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     */
     public function run(): void
     {
-        FotoVideo::truncate();
-        FotoVideo::create(
-            [
-                'id_user' => 1,
-                'tipe_media' => 'foto',
-                'url_media' => ["gallery1.jpg"],
-                'keterangan' => 'Foto panorama pantai Waterblow di sore hari.',
-                
-            ]
+        $path = database_path('seeders/assets/gallery/*');
+
+        foreach (glob($path) as $file) {
+            $filename = basename($file);
+
+            // copy ke storage/app/public/foto_video
+            Storage::disk('public')->put(
+                'foto_video/'.$filename,
+                file_get_contents($file)
             );
-        FotoVideo::create(
-            [
-                'id_user' => 1,
-                'tipe_media' => 'video',
-                'url_media' => ["video1.mp4"],
-                'keterangan' => 'Video ombak besar di Pura Bias Tugel.',
-            ]
-            );
-        FotoVideo::create(
-            [
-                'id_user' => 1,
-                'tipe_media' => 'foto',
-                'url_media' => ["gallery4.jpg"],
-                'keterangan' => 'Patung Arjuna dan Kresna dari sisi utara.',
-            ]
-            );
+
+            // tentukan tipe
+            $ext = pathinfo($filename, PATHINFO_EXTENSION);
+            $type = in_array($ext, ['mp4','webm','ogg']) ? 'video' : 'foto';
+
+            FotoVideo::create([
+                'tipe_media' => $type,
+                'url_media'  => 'foto_video/'.$filename,
+            ]);
+        }
     }
 }
