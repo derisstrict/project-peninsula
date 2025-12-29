@@ -1,5 +1,5 @@
 <div id="galleryModal" class="fixed inset-0 z-[9999] flex items-center justify-center bg-black/50 backdrop-blur-[2px] hidden">
-
+    <div class="w-screen h-screen" onclick="closeModal()"></div>
     <button onclick="closeModal()" 
         class="absolute top-15 w-10 h-10 cursor-pointer flex items-center justify-center 
             text-black text-3xl font-bold z-[60] 
@@ -24,7 +24,7 @@
     </button>
 
     <img id="modalImg" src="" alt="Gallery Popup" 
-        class="max-h-[80vh] max-w-[90vw] rounded-xl shadow-lg transition-all duration-300">
+        class="fixed max-h-[80vh] max-w-[90vw] rounded-xl shadow-lg transition-all duration-300">
 
     <button onclick="nextImage()" 
         class="absolute w-10 h-10 right-4 md:right-12 cursor-pointer flex items-center justify-center
@@ -35,12 +35,9 @@
             <polyline points="9 6 15 12 9 18" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
     </button>
-
 </div>
-<!-- /Gallery -->
 
 <script>
-    //galery
     var imgsModal = [];
     let currentImgsModal = 0;
 
