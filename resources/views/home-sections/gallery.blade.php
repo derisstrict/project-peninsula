@@ -21,7 +21,7 @@
             class="w-full h-120 object-cover transition duration-300 group-hover:scale-110"
         >
     </div>
-@endif
+    @endif
 
 
     @if($galleries->count() > 1)
@@ -31,7 +31,7 @@
             class="w-full h-120 object-cover transition duration-300 group-hover:scale-110"
         >
     </div>
-@endif
+    @endif
 
 
     {{-- EXPLORE / FOTO BESAR --}}
@@ -59,12 +59,12 @@
                     <x-local-icon 
                         icon="arrow-head"
                         class="w-5 h-5 transform transition-transform duration-300
-                                group-hover/button:translate-x-1"/>
+                                group-hover/button:translate-x-1" fill="currentColor" viewBox="0 0 24 24" stroke="none" xmlns="http://www.w3.org/2000/svg"/>
                 </a>
             </div>
         </div>
     @endif
-
+    </div>
 </div>
 
 
