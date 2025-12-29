@@ -221,7 +221,8 @@ class SpotResource extends Resource
             ->iconColor('primary'),
             Section::make('Gambar')->schema([
                 ImageEntry::make('url_media')
-                ->imageHeight(400)
+                ->imageWidth('100%')
+                ->imageHeight('100%')
                 ->square(false)
                 ->alignCenter()
                 ->hiddenLabel()

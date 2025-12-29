@@ -57,6 +57,7 @@ class SpotForm
                         ->required()
                         ->disk('public_img')
                         ->directory('/spots')
+                        ->maxFiles(7)
                         ->preserveFilenames()
                         ->reorderable()
                         ->appendFiles(),
