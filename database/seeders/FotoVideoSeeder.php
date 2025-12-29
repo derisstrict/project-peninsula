@@ -15,14 +15,12 @@ class FotoVideoSeeder extends Seeder
         foreach (glob($path) as $file) {
             $filename = basename($file);
 
-            // copy ke storage/app/public/foto_video
             Storage::disk('public')->put(
                 'foto_video/'.$filename,
                 file_get_contents($file)
             );
 
-            // tentukan tipe
-            $ext = pathinfo($filename, PATHINFO_EXTENSION);
+            $ext = strtolower(pathinfo($filename, PATHINFO_EXTENSION));
             $type = in_array($ext, ['mp4','webm','ogg']) ? 'video' : 'foto';
 
             FotoVideo::create([
