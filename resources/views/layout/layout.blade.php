@@ -15,13 +15,13 @@
     @filamentStyles
     @livewireStyles
 </head>
-<body class="bg-bglight text-light-primary dark:bg-bgdark dark:text-dark-primary">
+<body class="min-h-screen flex flex-col bg-bglight text-light-primary dark:bg-bgdark dark:text-dark-primary">
     @include('common.navbar')
-    <div class="flex justify-center items-center">
+    <main class="flex-1 flex justify-center">
         <div class="flex flex-col max-w-[80rem] w-full mt-10 mx-5 lg:mx-20 md:mt-30">
             @yield('content')
         </div>
-    </div>
+    </main>
     @include('common.footer')
     @livewire('notifications') 
     @filamentScripts

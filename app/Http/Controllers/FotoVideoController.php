@@ -12,24 +12,14 @@ class FotoVideoController extends Controller
 {
     $galleries = FotoVideo::latest()->get();
 
-    $$galleries = $galleries
-        ->pluck('url_media')
-        ->flatMap(function ($item) {
-            if (is_array($item)) {
-                return $item;
-            }
-
-            if (is_string($item) && str_starts_with($item, '[')) {
-                return json_decode($item, true) ?? [];
-            }
-
-            return [$item];
-        })
-        ->map(fn ($img) => asset('storage/' . $img))
-        ->values();
+   
+    $exploreBg = $galleries
+        ->where('tipe_media', 'foto')
+        ->first();
 
     return view('home', [
-        'galleries'   => $galleries,
+        'galleries'   => $galleries,   
+        'exploreBg'   => $exploreBg,   
         'spots'       => Spot::all(),
         'thingstodos' => ThingsToDo::all(),
     ]);

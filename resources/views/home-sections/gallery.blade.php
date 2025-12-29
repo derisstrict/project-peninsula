@@ -11,48 +11,62 @@
     <p class="text-center text-md mb-5 mx-auto md:text-xl">
         {{ __('gallery.description') }}
     </p>
-<div class="grid grid-cols-1 md:grid-cols-[2fr_1fr] gap-6 mx-auto">
 
-    @if($galleries->where('tipe_media','foto')->count() > 0)
-        <div class="relative group overflow-hidden rounded-xl">
-            <img 
-                src="{{ asset('storage/'.$galleries->where('tipe_media','foto')->values()[0]->url_media) }}"
-                class="w-full h-[30rem] object-cover transition duration-300 group-hover:scale-110">
-        </div>
-    @endif
+    <div class="grid grid-cols-1 md:grid-cols-[2fr_1fr] gap-6 mx-auto">
 
-    @if($galleries->where('tipe_media','foto')->count() > 1)
-        <div class="relative group overflow-hidden rounded-xl">
-            <img 
-                src="{{ asset('storage/'.$galleries->where('tipe_media','foto')->values()[1]->url_media) }}"
-                class="w-full h-[30rem] object-cover transition duration-300 group-hover:scale-110">
-        </div>
-    @endif
+    @if($galleries->count() > 0)
+    <div class="relative group overflow-hidden rounded-xl">
+        <img 
+            src="{{ asset('storage/'.$galleries[0]->url_media) }}"
+            class="w-full h-120 object-cover transition duration-300 group-hover:scale-110"
+        >
+    </div>
+@endif
 
-    @if($galleries->where('tipe_media','foto')->count() > 2)
-        <div class="relative group/bg overflow-hidden rounded-xl md:col-span-2">
-            <img 
-                src="{{ asset('storage/'.$galleries->where('tipe_media','foto')->values()[2]->url_media) }}"
-                class="w-full h-[25rem] object-cover transition duration-300 
-                       group-hover/bg:blur-[2px] group-hover/bg:scale-110">
+
+    @if($galleries->count() > 1)
+    <div class="relative group overflow-hidden rounded-xl">
+        <img 
+            src="{{ asset('storage/'.$galleries[1]->url_media) }}"
+            class="w-full h-120 object-cover transition duration-300 group-hover:scale-110"
+        >
+    </div>
+@endif
+
+
+    {{-- EXPLORE / FOTO BESAR --}}
+    @if($galleries->count() > 0)
+    <div class="relative group/bg overflow-hidden rounded-xl md:col-span-2">
+        <img 
+            src="{{ asset('storage/'.$galleries[0]->url_media) }}"
+            class="w-full h-[420px] md:h-[520px] object-cover transition duration-300
+                   group-hover/bg:blur-[2px] group-hover/bg:scale-110">
 
             <div class="absolute inset-0 bg-black/45 transition duration-700 group-hover/bg:bg-black/60"></div>
 
             <div class="absolute inset-0 flex flex-col items-center justify-center text-white text-center">
-                <h2 class="font-bold text-2xl mb-4">{{ __('gallery.collections') }}</h2>
+                <h2 class="font-bold text-2xl mb-4">
+                    {{ __('gallery.collections') }}
+                </h2>
 
-                <a onclick="openModal(0)"
+                <a onclick="openModal()"
                     class="bg-white/30 px-5 py-2 rounded-full font-medium cursor-pointer
                             hover:bg-lime-600 hover:text-white transition duration-500
                             flex items-center justify-center group/button">
+
                     {{ __('gallery.explore') }}
-                   
+
+                    <x-local-icon 
+                        icon="arrow-head"
+                        class="w-5 h-5 transform transition-transform duration-300
+                                group-hover/button:translate-x-1"/>
                 </a>
             </div>
         </div>
     @endif
 
 </div>
+
 
 <!-- /Gallery -->
 <script>
@@ -159,4 +173,3 @@
                 </svg>
             </button>
 </div>
-
