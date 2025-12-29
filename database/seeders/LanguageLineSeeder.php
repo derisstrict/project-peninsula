@@ -1136,12 +1136,21 @@ class LanguageLineSeeder extends Seeder
                 'id' => 'Harga mulai dari', 
                 'en' => 'Starting price']
         ]);
+
         LanguageLine::create([
             'group' => 'common', 
             'key' => 'note', 
             'text' => [
                 'id' => 'Catatan', 
                 'en' => 'Note']
+        ]);
+
+        LanguageLine::create([
+            'group' => 'common', 
+            'key' => 'back_to_home', 
+            'text' => [
+                'id' => 'Kembali ke halaman utama', 
+                'en' => 'Back to home']
         ]);
         //// Common
 
@@ -1180,6 +1189,21 @@ class LanguageLineSeeder extends Seeder
         //// Pagination
 
         // Miscellaneous
+        LanguageLine::create([
+            'group' => 'error', 
+            'key' => 'heading', 
+            'text' => [
+                'id' => 'Oops, sepertinya kamu tersesat...', 
+                'en' => 'Oops, I think we\'re lost...']
+        ]);
+
+        LanguageLine::create([
+            'group' => 'error', 
+            'key' => 'description', 
+            'text' => [
+                'id' => 'Halaman ini tidak tersedia atau sudah dihapus. Cek kembali URL Anda atau kembali ke halaman utama.', 
+                'en' => 'This page doesn\'t exist or has been removed. Please check the URL or return to the homepage.']
+        ]);
         //// Miscellaneous
     }
 }
