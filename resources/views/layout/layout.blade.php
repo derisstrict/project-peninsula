@@ -23,6 +23,16 @@
         </div>
     </main>
     @include('common.footer')
+<body class="bg-bglight text-light-primary dark:bg-bgdark dark:text-dark-primary">
+    <div x-cloak>
+        @include('common.navbar')
+        <div class="flex justify-center items-center">
+            <div class="flex flex-col max-w-[80rem] w-full mt-10 mx-5 lg:mx-20 md:mt-30">
+                @yield('content')
+            </div>
+        </div>
+        @include('common.footer')
+    </div>
     @livewire('notifications') 
     @filamentScripts
     @livewireScripts

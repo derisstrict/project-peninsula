@@ -84,4 +84,5 @@
         </div>
     </div>
 </footer>
+<x-modal-popup></x-modal-popup>
 

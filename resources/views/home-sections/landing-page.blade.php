@@ -1,7 +1,6 @@
-<div class="background-radial-blur -translate-y-25"></div>
 <div class="relative pb-20">
     <div class="relative flex flex-col max-w-4xl gap-8">
-        <div class="text-5xl text-center font-semibold md:text-8xl md:text-start">
+        <div class="text-5xl text-center font-semibold md:text-7xl 2xl:text-8xl md:text-start">
             @foreach ($gs->judul_utama as $judul)
                 @if ($loop->last)
                     <p class="text-color-accent">
@@ -54,6 +53,7 @@
         <x-local-icon icon="double-arrow" class="rotate-90" width="16px" height="16px" viewBox="0 0 24 24"
             fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg"></x-local-icon>
     </div>
-</div>
-<img class="absolute h-135 w-[calc((27vw-10rem)*2)] hidden top-40 right-0 object-cover rounded-xl outline-4 outline-lime-600/15 xl:block"
+    <img class="absolute w-full h-full max-h-[calc(25vw+4rem)] max-w-3xl hidden top-0 right-0 translate-x-90 object-cover rounded-xl outline-4 outline-lime-600/15 xl:block"
     src="{{ asset('/img/' . $gs->hero_image) }}" alt="{{ $gs->hero_image_alt }}">
+    <div class="background-radial-blur -translate-y-80 translate-x-50"></div>
+</div>
