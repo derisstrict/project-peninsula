@@ -24,6 +24,7 @@
                 active: 0,
                 interval: null,
                 delay: 4000,
+                showExpand: false,
                 
                 start() {
                     this.interval = setInterval(() =&gt; {
@@ -37,11 +38,16 @@
                 }
             }' 
             x-init="start()">
-                <div class="relative w-40 h-40 rounded-2xl overflow-hidden">
+                <div @mouseenter="showExpand = true" @mouseleave="showExpand = false" class="group relative w-40 h-40 rounded-2xl overflow-hidden">
                     <template x-for="(img, index) in imgs">
-                    <img :src="'/img/' + img" :class="active == index ? 'opacity-100' : 'opacity-0'" class="absolute inset-0 h-full w-full object-cover transition duration-700" :alt="alt + ' ' + (index + 1)">
+                        <img :src="'/img/' + img" :class="active == index ? 'opacity-100' : 'opacity-0'" class="absolute inset-0 h-full w-full object-cover transition ease-in-out duration-300 group-hover:brightness-80" :alt="alt + ' ' + (index + 1)">
                     </template>
                     <div class="absolute w-full h-full bg-[linear-gradient(_rgba(0,0,0,0)_75%,_rgba(0,0,0,1)_110%)]"></div>
+                    <div x-show="showExpand" x-transition @click="openModal(imgs, active)" class="absolute flex items-center justify-center inset-0">
+                        <button class="bg-color-accent/70 text-dark-primary p-2 rounded-full transition-colors hover:bg-color-accent">
+                            <x-local-icon icon="expand" width="22px" height="22px" viewBox="0 0 24 24" stroke="currentColor" fill="none" xmlns="http://www.w3.org/2000/svg"></x-local-icon>
+                        </button>
+                    </div>
                 </div>
                 <div class="absolute w-full bottom-2 left-1/2 -translate-x-1/2 flex gap-1 px-3">
                     <template x-for="(img, index) in imgs">
@@ -51,7 +57,7 @@
                     </template> 
                 </div>
             </div>
-        </div> 
+        </div>
     `;
 
     L.marker([{{ $ypos }}, {{ $xpos }}]).addTo(map)
@@ -59,3 +65,4 @@
             closeButton: false
         })
 </script>
+

@@ -1,4 +1,4 @@
-<div x-cloak x-show="openMapPopup" x-transition:enter="transition ease-in-out duration-100"
+<div x-cloak x-show="openMapPopup" @keydown.escape.document="openMapPopup = false"  x-transition:enter="transition ease-in-out duration-100"
     x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100"
     x-transition:leave="transition ease-in-out duration-100" x-transition:leave-start="opacity-100"
     x-transition:leave-end="opacity-0" id="overlay"
@@ -14,6 +14,7 @@
         active: 0,
         interval: null,
         delay: 4000,
+        showExpand: false,
     
         get runInterval() {
             return openMapPopup;
@@ -34,7 +35,7 @@
     }'
         x-init='$watch("images", value => { imgs = value });
     $watch("openMapPopup", value => { reset(runInterval) })'
-        @click.outside="openMapPopup = false, disableScrollOnBody(false)"
+        @click.outside="disableScrollOnBody(false)"
         class="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-[radial-gradient(circle,_rgba(94,165,0,1)_-600%,_rgba(238,238,238,1)_100%)] rounded-2xl shadow-lg w-[90%] max-w-[1000px] max-h-[100vh] border-2 border-dark-primary px-8 py-4 dark:bg-[radial-gradient(circle,_rgba(94,165,0,1)_-600%,_rgba(8,16,7,1)_100%)] dark:border-light-primary md:py-8">
         <div class="relative flex flex-row gap-2">
             <p class="text-lg font-semibold text-color-accent md:text-xl">{{ __('maps.about_place') }}</p>
@@ -51,19 +52,24 @@
         <div id="modalContent" class="flex flex-col p-2 overflow-y-auto max-h-[560px] gap-3 lg:flex-row lg:mt-5"
             onmouseenter="disableScrollOnBody(true)">
             <div class="relative h-fit">
-                <div class="relative w-full h-[300px] overflow-hidden rounded-2xl lg:w-80 lg:h-[350px]">
+                <div @mouseenter="showExpand = true" @mouseleave="showExpand = false" class="group relative w-full h-[300px] overflow-hidden rounded-2xl lg:w-80 lg:h-[350px]">
                     <template x-for="(img, index) in imgs">
                         <img :src="'/img/' + img" :class="active == index ? 'opacity-100' : 'opacity-0'"
-                            class="absolute inset-0 h-full w-full object-cover transition duration-700"
+                            class="absolute inset-0 h-full w-full object-cover transition ease-in-out duration-300 group-hover:brightness-80"
                             :alt="alt + ' ' + (index + 1)">
                     </template>
                     <div class="absolute w-full h-full bg-[linear-gradient(_rgba(0,0,0,0)_75%,_rgba(0,0,0,1)_110%)]">
+                    </div>
+                    <div x-show="showExpand" x-transition @click="openModal(imgs, active)" class="absolute flex items-center justify-center inset-0">
+                        <button class="bg-color-accent/70 text-dark-primary p-2 rounded-full transition-colors hover:bg-color-accent">
+                            <x-local-icon icon="expand" width="22px" height="22px" viewBox="0 0 24 24" stroke="currentColor" fill="none" xmlns="http://www.w3.org/2000/svg"></x-local-icon>
+                        </button>
                     </div>
                 </div>
                 <div class="absolute w-full bottom-2 left-1/2 -translate-x-1/2 flex gap-1 px-3">
                     <template x-for="(img, index) in imgs">
                         <template x-if="showSelector">
-                            <div @click="active = index; reset()" :class="index === active ? 'bg-white' : 'bg-white/30'" class="h-[5.5px] rounded cursor-pointer transition" :style="'width: ' + selectorLength + '%;'"></div>
+                            <div @click="active = index; reset(runInterval)" :class="index === active ? 'bg-white' : 'bg-white/30'" class="h-[5.5px] rounded cursor-pointer transition" :style="'width: ' + selectorLength + '%;'"></div>
                         </template>
                     </template> 
                 </div>
@@ -91,6 +97,7 @@
             </button>
         </div>
     </div>
+    <div @click="openMapPopup = false, disableScrollOnBody(false)" class="w-screen h-screen"></div>
 </div>
 <script>
     // Not the best way to do this, fix when in priority.

@@ -52,6 +52,7 @@
                 l10nNote="{{ __('spots.' . $spot->kunci_catatan) }}" :images="$spot->url_media" alt="{{ $spot->alt_gambar }}" showModal="{{ $spot->tampilkan_modal }}"></x-map-marker>
         @endforeach
         <x-map-popup></x-map-popup>
+        <x-modal-popup></x-modal-popup> 
     </div>
 
 </div>
