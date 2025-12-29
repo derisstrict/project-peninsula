@@ -30,7 +30,7 @@
             <div class="absolute inset-0 bg-black/45 transition duration-700 group-hover/bg:bg-black/60"></div>
             <div class="absolute inset-0 flex flex-col items-center justify-center text-white text-center">
                 <h2 class="font-bold text-2xl mb-4">{{ __('gallery.collections') }}</h2>
-                <a onclick="openModal(1)"
+                <a onclick="openModal(['gallery1.jpg', 'gallery2.jpg', 'gallery3.jpg'], 0)"
                 class="bg-white/30 px-5 py-2 rounded-full font-medium cursor-pointer hover:bg-lime-600 hover:text-white transition duration-500 flex items-center justify-center group/button">
                 {{ __('gallery.explore') }}
                 <x-local-icon icon="arrow-head" fill="currentColor" viewBox="0 0 24 24" stroke="none" xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 transform transition-transform duration-300 group-hover/button:translate-x-1"></x-local-icon>
@@ -83,7 +83,7 @@
 </div>
 <!-- /Gallery -->
 
-<script>
+{{-- <script>
     //galery
     const images = [
         "{{ asset('img/gallery1.jpg') }}",
@@ -126,4 +126,4 @@
     document.addEventListener('keydown', function(e) {
         if (e.key === "Escape") closeModal();
     });
-</script>
+</script> --}}
