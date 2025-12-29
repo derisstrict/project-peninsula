@@ -1,19 +1,19 @@
 <?php
 
-namespace App\Filament\Resources\FotoVideos\Pages;
+namespace App\Filament\Resources\ThingsToDos\Pages;
 
 use App\Filament\Resources\FotoVideos\FotoVideoResource;
-use Filament\Actions\DeleteAction;
-use Filament\Resources\Pages\EditRecord;
+use Filament\Actions\EditAction;
+use Filament\Resources\Pages\ViewRecord;
 
-class EditFotoVideo extends EditRecord
+class ViewFotoVideo extends ViewRecord
 {
     protected static string $resource = FotoVideoResource::class;
 
     protected function getHeaderActions(): array
     {
         return [
-            DeleteAction::make(),
+            EditAction::make(),
         ];
     }
 }

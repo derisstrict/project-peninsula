@@ -2,10 +2,11 @@
 
 namespace App\Filament\Resources\FotoVideos;
 
-use App\Filament\Resources\FotoVideos\Pages\CreateFotoVideo;
-use App\Filament\Resources\FotoVideos\Pages\EditFotoVideo;
+use App\Filament\Resources\FotoVideos\Pages\CreateFotoVideos;
+use App\Filament\Resources\FotoVideos\Pages\EditFotoVideos;
 use App\Filament\Resources\FotoVideos\Pages\ListFotoVideos;
 use App\Filament\Resources\FotoVideos\Schemas\FotoVideoForm;
+use App\Filament\Resources\FotoVideos\Schemas\ViewFotoVideo;
 use App\Filament\Resources\FotoVideos\Tables\FotoVideosTable;
 use App\Models\FotoVideo;
 use BackedEnum;
@@ -44,8 +45,8 @@ class FotoVideoResource extends Resource
     {
         return [
             'index' => ListFotoVideos::route('/'),
-            'create' => CreateFotoVideo::route('/create'),
-            'edit' => EditFotoVideo::route('/{record}/edit'),
+            'create' => CreateFotoVideos::route('/create'),
+            'edit' => EditFotoVideos::route('/{record}/edit'),
         ];
     }
 }
