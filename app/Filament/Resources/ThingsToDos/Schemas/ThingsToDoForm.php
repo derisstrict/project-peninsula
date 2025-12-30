@@ -19,7 +19,7 @@ class ThingsToDoForm
     {
         return $schema
             ->components([
-                Hidden::make('user_id')->default(fn () => auth()->id()),
+                Hidden::make('id_user')->default(fn () => auth()->id()),
                 Fieldset::make('Lokalisasi')->schema([
                     TextInput::make('kunci_judul')
                     ->label('Kunci judul')
