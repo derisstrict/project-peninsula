@@ -20,7 +20,7 @@ class DatabaseSeeder extends Seeder
             UserSeeder::class,
             BlogSeeder::class,
             EventSeeder::class,
-            FotoVideoSeeder::class,
+            GaleriSeeder::class,
             SpotSeeder::class,
             LanguageLineSeeder::class,
             ThingsToDoSeeder::class,
