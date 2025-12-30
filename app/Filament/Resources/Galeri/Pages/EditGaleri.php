@@ -1,15 +1,15 @@
 <?php
 
-namespace App\Filament\Resources\FotoVideos\Pages;
+namespace App\Filament\Resources\Galeri\Pages;
 
-use App\Filament\Resources\FotoVideos\FotoVideoResource;
+use App\Filament\Resources\Galeri\GaleriResource;
 use Filament\Actions\DeleteAction;
 use Filament\Actions\ViewAction;
 use Filament\Resources\Pages\EditRecord;
 
-class EditFotoVideos extends EditRecord
+class EditGaleri extends EditRecord
 {
-    protected static string $resource = FotoVideoResource::class;
+    protected static string $resource = GaleriResource::class;
 
     protected function getHeaderActions(): array
     {

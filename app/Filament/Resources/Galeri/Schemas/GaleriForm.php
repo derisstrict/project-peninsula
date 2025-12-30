@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Filament\Resources\FotoVideos\Schemas;
+namespace App\Filament\Resources\Galeri\Schemas;
 
 use Filament\Forms\Components\DatePicker;
 use Filament\Forms\Components\FileUpload;
@@ -17,7 +17,7 @@ use Filament\Schemas\Schema;
 use Filament\Support\Icons\Heroicon;
 use Illuminate\Support\Str;
 
-class FotoVideoForm
+class GaleriForm
 {
     public static function configure(Schema $schema): Schema
 {
@@ -26,27 +26,22 @@ class FotoVideoForm
             Hidden::make('id_user')
             ->default(fn () => auth()
             ->id()),
-
-            // Tipe Media
-            Select::make('tipe_media')
-            ->label('Tipe Media')
-            ->options(['foto' => 'Foto','video' => 'Video',])
-            ->required(),
-            
-            // Keterangan
-            RichEditor::make('keterangan')
-            ->label('Isi Keterangan Foto/Video')
-            ->required(),
             
             //upload 
             FileUpload::make('url_media')
-            ->label('Upload gambar/video')
-            ->disk('public')
-            ->directory('foto_video')
-            ->visibility('public')
             ->required()
-            
-            ])
+            ->label('Upload gambar')
+            ->disk('public_img')
+            ->directory('/gallery')
+            ->visibility('public')
+            ->preserveFilenames()
+            ->maxFiles(1)
+            ->required(),
+            Grid::make(4)->schema([
+                    TextInput::make('alt_gambar')
+                    ->belowContent('Deskripsi singkat tentang gambar'),
+            ]),
+        ])
         ->columns(1);
 }
 }

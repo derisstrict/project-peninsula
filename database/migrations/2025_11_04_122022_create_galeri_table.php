@@ -11,12 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('foto_video', function (Blueprint $table){
+        Schema::create('galeri', function (Blueprint $table){
             $table->id();
             $table->bigInteger('id_user');
-            $table->string('tipe_media', 100)->nullable(false);
             $table->string('url_media')->nullable(false);
-            $table->text('keterangan')->nullable(true);
+            $table->string('alt_gambar')->nullable(true);
             $table->foreign('id_user')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
 
@@ -28,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('foto_video');
+        Schema::dropIfExists('galeri');
     }
 };

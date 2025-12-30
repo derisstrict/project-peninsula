@@ -5,11 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-class FotoVideo extends Model
+class Galeri extends Model
 {
     use HasFactory;
-    protected $table = 'foto_video';
+    protected $table = 'galeri';
     public $timestamps = true;
-    protected $fillable = ['id_user', 'tipe_media', 'url_media', 'keterangan', 'tanggal_upload'];
+    protected $fillable = ['id_user', 'url_media', 'tanggal_upload', 'alt_gambar'];
 }
 
