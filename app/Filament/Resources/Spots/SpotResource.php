@@ -228,7 +228,8 @@ class SpotResource extends Resource
                 ->hiddenLabel()
                 ->disk('public_img'),
                 TextEntry::make('alt_gambar')
-                ->badge(),
+                ->badge()
+                ->color('gray'),
             ])
             ->description('Gambar dari spot')
             ->icon(Heroicon::Photo)
