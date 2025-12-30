@@ -2,18 +2,12 @@
 
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\EventController;
-use App\Http\Controllers\FotoVideoController;
-use App\Models\Blog;
-use App\Models\Event;
-use App\Models\GeneralSetting;
-use App\Models\LandingPage;
-use App\Models\Spot;
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Session;
-use App\Models\ThingsToDo;
 
-Route::get('/', [FotoVideoController::class, 'index']);
+Route::get('/', [HomeController::class, 'index']);
 
 
 Route::get('/blogs', [BlogController::class, 'searchRequest']);
