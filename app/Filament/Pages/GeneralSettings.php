@@ -13,6 +13,7 @@ use Filament\Notifications\Notification;
 use Filament\Pages\Page;
 use Filament\Schemas\Components\Actions;
 use Filament\Schemas\Components\Form;
+use Filament\Schemas\Components\Grid;
 use Filament\Schemas\Components\Icon;
 use Filament\Schemas\Components\Tabs;
 use Filament\Schemas\Components\Tabs\Tab;
@@ -68,12 +69,33 @@ class GeneralSettings extends Page
                         Tab::make('Gambar Hero')
                         ->icon(Icon::make(Heroicon::OutlinedPhoto))
                         ->schema([
-                            FileUpload::make('hero_image')
+                            FileUpload::make('gambar_hero')
                             ->label('Gambar')
                             ->required()
                             ->disk('public_img')
                             ->visibility('public')
+                            ->preserveFilenames(),
+                            Grid::make(4)->schema([
+                                TextInput::make('gambar_hero_alt')
+                                ->belowContent('Deskripsi singkat tentang gambar'),
+                            ]),
+                        ]),
+                        Tab::make('Video di Home')
+                        ->icon(Icon::make(Heroicon::OutlinedPhoto))
+                        ->schema([
+                            FileUpload::make('video_home_thumbnail')
+                            ->label('Thumbnail video')
+                            ->required()
+                            ->disk('public_img')
+                            ->visibility('public')
+                            ->preserveFilenames(),
+                            FileUpload::make('video_home')
+                            ->label('Video')
+                            ->required()
+                            ->disk('public_img')
+                            ->visibility('public')
                             ->preserveFilenames()
+                            ->belowContent('Maksimum ukuran file upload adalah ~11MB'),
                         ])
                     ]),
                 ])->columns(1)

@@ -11,6 +11,6 @@ class GeneralSetting extends Model
         'judul_utama' => 'array'
     ];
     protected $fillable = [
-        'bahasa_tersedia', 'is_gs', 'judul_utama', 'warna_aksen_judul_utama', 'hero_image', 'hero_image_alt'
+        'bahasa_tersedia', 'is_gs', 'judul_utama', 'warna_aksen_judul_utama', 'gambar_hero', 'gambar_hero_alt', 'video_home', 'video_home_thumbnail'
     ];
 }

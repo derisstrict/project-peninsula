@@ -3,8 +3,8 @@
     <video 
         id="myVideo"
         class="h-120 w-full object-cover md:h-170"
-        poster="/img/thumbnail.png">
-        <source src="/img/peninsula.mp4" type="video/mp4">
+        poster="{{ asset('img/' . $gs->video_home_thumbnail) }}">
+        <source src="{{ asset('img/' . $gs->video_home) }}" type="video/mp4">
         Your browser does not support the video tag.
     </video>
 

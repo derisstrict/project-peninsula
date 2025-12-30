@@ -54,6 +54,6 @@
             fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg"></x-local-icon>
     </div>
     <img class="absolute w-full h-full max-h-[calc(25vw+4rem)] max-w-3xl hidden top-0 right-0 translate-x-90 object-cover rounded-xl outline-4 outline-lime-600/15 xl:block"
-    src="{{ asset('/img/' . $gs->hero_image) }}" alt="{{ $gs->hero_image_alt }}">
+    src="{{ asset('/img/' . $gs->gambar_hero) }}" alt="{{ $gs->gambar_hero_alt }}">
     <div class="background-radial-blur -translate-y-80 translate-x-50 hidden xl:block"></div>
 </div>
