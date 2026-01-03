@@ -30,7 +30,7 @@ class LaporanFasilitasResource extends Resource
 
     protected static ?string $modelLabel = 'Facility Report';
 
-    protected static ?string $pluralModelLabel = 'Facility Report';
+    protected static ?string $pluralModelLabel = 'Facility Reports';
 
     public static function infolist(Schema $schema): Schema
     {

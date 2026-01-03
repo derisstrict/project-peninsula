@@ -37,7 +37,7 @@ class EventResource extends Resource
 
     protected static ?string $modelLabel = 'Event';
 
-    protected static ?string $pluralModelLabel = 'Event';
+    protected static ?string $pluralModelLabel = 'Events';
 
     public static function infolist(Schema $schema): Schema
     {
