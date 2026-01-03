@@ -22,34 +22,38 @@ class SpotsTable
     {
         return $table
             ->columns([
-                TextColumn::make('nama_spot')->label("Nama Spot")
+                TextColumn::make('nama_spot')
+                ->label('Spot')
                 ->searchable()
                 ->sortable()
                 ->state(function (?Model $record) {
                     return __('spots.' . $record->kunci_judul);
                 }),
-                TextColumn::make('kunci_judul')->label("Kunci Judul")
+                TextColumn::make('kunci_judul')
+                ->label('Title Key')
                 ->searchable()
                 ->sortable()
                 ->badge()
                 ->color(Color::Green),
                 ImageColumn::make('url_media')
-                ->label('Gambar')
+                ->label('Image')
                 ->disk('public_img')
                 ->circular()
                 ->stacked()
                 ->limit(3)
                 ->limitedRemainingText(),
-                TextColumn::make('xpos')->label("Koordinat X")
+                TextColumn::make('xpos')
+                ->label('X Coordinate')
                 ->searchable()
                 ->sortable()
                 ->badge(),
-                TextColumn::make('ypos')->label("Koordinat Y")
+                TextColumn::make('ypos')
+                ->label('Y Coordinate')
                 ->searchable()
                 ->sortable()
                 ->badge()->color(Color::Fuchsia),
                 TextColumn::make('tampilkan_modal')
-                ->label('Tampilkan Modal')
+                ->label('Show Modal')
                 ->badge()
                 ->icon(fn (?string $state): string => match ($state) {
                     '0' => 'heroicon-m-eye-slash',
@@ -60,11 +64,11 @@ class SpotsTable
                     '1' => 'primary'
                 })
                 ->formatStateUsing(fn (?string $state): string => match ($state) {
-                    '0' => 'Sembunyikan',
-                    '1' => 'Tampilkan'
+                    '0' => 'Hidden',
+                    '1' => 'Show'
                 }),
                 TextColumn::make('id_user')
-                ->label('Dibuat Oleh')
+                ->label('Made By')
                 ->icon(Heroicon::User)
                 ->sortable()
                 ->searchable()
@@ -73,14 +77,14 @@ class SpotsTable
                 }),
                 TextColumn::make('created_at')
                 ->dateTime('d F Y')
-                ->label('Tanggal Dibuat')
+                ->label('Created At')
                 ->searchable()
                 ->badge()
                 ->icon(Heroicon::Calendar)
                 ->sortable(),
                 TextColumn::make('updated_at')
                 ->dateTime('d F Y')
-                ->label('Terakhir Diubah')
+                ->label('Last Updated')
                 ->searchable()
                 ->badge()
                 ->icon(Heroicon::Calendar)

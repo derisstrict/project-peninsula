@@ -47,44 +47,46 @@ class GeneralSettings extends Page
             ->components([
                 Form::make([
                     Tabs::make()->tabs([
-                        Tab::make('Judul Halaman')
+                        Tab::make('Main Title')
                         ->icon(Icon::make(Heroicon::OutlinedPencilSquare))
                         ->schema([
-                            Repeater::make('judul_utama')->simple(
+                            Repeater::make('judul_utama')
+                            ->simple(
                                 TextInput::make('Judul'),
                                 TextInput::make('Judul Aksen'),
                             )
                             ->reorderable(false)
-                            ->label('Judul utama:')
+                            ->label('Main title:')
                             ->maxItems(3),
                         ]),
-                        Tab::make('Bahasa Tersedia')
+                        Tab::make('Available Languages')
                         ->icon(Icon::make(Heroicon::OutlinedLanguage))
                         ->schema([
                             KeyValue::make('bahasa_tersedia')
-                                ->label('Bahasa yang tersedia:')
-                                ->keyLabel('Nama bahasa')
-                                ->valueLabel('Kode bahasa')
+                                ->label('Available languages:')
+                                ->keyLabel('Language name')
+                                ->valueLabel('Language code')
                         ]),
-                        Tab::make('Gambar Hero')
+                        Tab::make('Hero Image')
                         ->icon(Icon::make(Heroicon::OutlinedPhoto))
                         ->schema([
                             FileUpload::make('gambar_hero')
-                            ->label('Gambar')
+                            ->label('Image')
                             ->required()
                             ->disk('public_img')
                             ->visibility('public')
                             ->preserveFilenames(),
                             Grid::make(4)->schema([
                                 TextInput::make('gambar_hero_alt')
-                                ->belowContent('Deskripsi singkat tentang gambar'),
+                                ->label('Hero image alt')
+                                ->belowContent('Describe the image in short'),
                             ]),
                         ]),
-                        Tab::make('Video di Home')
+                        Tab::make('Home Video')
                         ->icon(Icon::make(Heroicon::OutlinedPhoto))
                         ->schema([
                             FileUpload::make('video_home_thumbnail')
-                            ->label('Thumbnail video')
+                            ->label('Video thumbnail')
                             ->required()
                             ->disk('public_img')
                             ->image()
@@ -97,7 +99,7 @@ class GeneralSettings extends Page
                             ->disk('public_img')
                             ->visibility('public')
                             ->preserveFilenames()
-                            ->belowContent('Maksimum ukuran file upload adalah ~11MB'),
+                            ->belowContent('File upload maximum size is ~11MB'),
                         ])
                     ]),
                 ])->columns(1)

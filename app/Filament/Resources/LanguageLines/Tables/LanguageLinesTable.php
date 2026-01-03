@@ -3,6 +3,7 @@
 namespace App\Filament\Resources\LanguageLines\Tables;
 
 use Filament\Actions\BulkActionGroup;
+use Filament\Actions\DeleteAction;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
 use Filament\Tables\Columns\TextColumn;
@@ -16,19 +17,23 @@ class LanguageLinesTable
             ->columns([
                 TextColumn::make('group')
                 ->searchable()
-                ->label('Grup'),
+                ->label('Group'),
                 TextColumn::make('key')
                 ->searchable()
-                ->label('Kata Kunci'),
+                ->sortable()
+                ->label('Key'),
                 TextColumn::make('text')
                 ->searchable()
-                ->label('Teks')
+                ->sortable()
+                ->limit(50)
+                ->label('Text')
             ])
             ->filters([
                 //
             ])
             ->recordActions([
                 EditAction::make(),
+                DeleteAction::make()
             ])
             ->toolbarActions([
                 BulkActionGroup::make([

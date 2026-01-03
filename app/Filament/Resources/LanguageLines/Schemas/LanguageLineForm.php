@@ -20,13 +20,15 @@ class LanguageLineForm
         return $schema
             ->components([
                 TextInput::make('group')
-                ->label('Grup'),
-                TextInput::make('key'),
+                ->label('Group'),
+                TextInput::make('key')
+                ->label('Key'),
                 KeyValue::make('text')
-                ->keyLabel('ID Bahasa')
+                ->label('Text')
+                ->keyLabel('Language code')
                 ->valueLabel('Text')
-                ->addActionLabel('+ Tambah baris'),
-                Text::make('Grup tersedia:')
+                ->addActionLabel('+ Add row'),
+                Text::make('Available groups:')
                 ->color('neutral')
                 ->weight(FontWeight::Bold),
                 Grid::make(4)->schema([
@@ -46,6 +48,7 @@ class LanguageLineForm
                     Text::make('blogs_card'),
                     Text::make('common'),
                     Text::make('pagination'),
+                    Text::make('error'),
                 ])  
             ])->columns(1);
     }

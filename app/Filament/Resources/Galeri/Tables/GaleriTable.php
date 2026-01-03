@@ -21,13 +21,13 @@ class GaleriTable
         return $table
             ->columns([
                 ImageColumn::make('url_media')
-                ->label('Gambar')
+                ->label('Image')
                 ->disk('public_img')
                 ->square(),
                 TextColumn::make('alt_gambar')
-                ->label('Alt Gambar'),
+                ->label('Image Alt'),
                 TextColumn::make('id_user')
-                ->label('Dibuat Oleh')
+                ->label('Made By')
                 ->icon(Heroicon::User)
                 ->sortable()
                 ->searchable()
@@ -36,14 +36,14 @@ class GaleriTable
                 }),
                 TextColumn::make('created_at')
                 ->dateTime('d F Y')
-                ->label('Tanggal Dibuat')
+                ->label('Created At')
                 ->searchable()
                 ->badge()
                 ->icon(Heroicon::Calendar)
                 ->sortable(),
                 TextColumn::make('updated_at')
                 ->dateTime('d F Y')
-                ->label('Terakhir Diubah')
+                ->label('Last Updated')
                 ->searchable()
                 ->badge()
                 ->icon(Heroicon::Calendar)

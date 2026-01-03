@@ -16,17 +16,17 @@ class EditUser extends EditRecord
     protected function getHeaderActions(): array
     {
         return [
-            ViewAction::make(),
+            // ViewAction::make(),
             DeleteAction::make(),
             Action::make('Verifikasi email')
-            ->label(fn ($record) => $record->email_verified_at ? 'Hapus Verifikasi Email' : 'Verifikasi Email')
+            ->label(fn ($record) => $record->email_verified_at ? 'Remove Email Verification' : 'Verify Email')
             ->color(fn ($record) => $record->email_verified_at ? 'danger' : 'primary')
             ->icon(Heroicon::Envelope)
             ->requiresConfirmation()
-            ->modalHeading(fn ($record) => $record->email_verified_at ? 'Hilangkan Verifikasi Email' : 'Bypass Verifikasi Email')
-            ->modalDescription(fn ($record) => $record->email_verified_at ? 'Email sudah terverifikasi. Apakah anda yakin ingin menghilangkan verifikasi email?' : 'Apakah anda yakin ingin melakukan bypass verifikasi email?')
-            ->modalSubmitActionLabel('Iya')
-            ->modalCancelActionLabel('Tidak')
+            ->modalHeading(fn ($record) => $record->email_verified_at ? 'Remove Email Verification' : 'Bypass Email Verification')
+            ->modalDescription(fn ($record) => $record->email_verified_at ? 'Email has been verified. Are you sure you want to remove email verification?' : 'Are you sure you want to bypass email verification?')
+            ->modalSubmitActionLabel('Yes')
+            ->modalCancelActionLabel('No')
             ->action(function ($record) {
                 if ($record->email_verified_at) {
                     $record->update(['email_verified_at' => null]);

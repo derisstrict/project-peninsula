@@ -25,6 +25,7 @@ use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Contracts\Support\Htmlable;
+use PhpParser\Node\Stmt\Label;
 
 class ThingsToDoResource extends Resource
 {
@@ -36,21 +37,21 @@ class ThingsToDoResource extends Resource
 
     public static function getNavigationLabel(): string
     {
-        return 'Things To Do';
+        return 'Things to Do';
     }
 
     public static function getPluralModelLabel(): string
     {
-        return 'Things To Do';
+        return 'Things to Do';
     }
 
     public static function infolist(Schema $schema): Schema
     {
         $data = \App\Models\GeneralSetting::first();
         return $schema->components([
-            Section::make('Spot')->schema([
+            Section::make('Things to Do')->schema([
                 Grid::make(1)->schema([
-                    TextEntry::make('Dibuat oleh'),
+                    TextEntry::make('Made by'),
                     Flex::make([
                         TextEntry::make('id_user')
                         ->hiddenLabel()
@@ -68,16 +69,17 @@ class ThingsToDoResource extends Resource
                 ])->gap(false),
                 TextEntry::make('created_at')
                 ->dateTime('d F Y')
-                ->label('Tanggal dibuat')
+                ->label('Created at')
                 ->badge()
                 ->icon(Heroicon::Calendar),
                 TextEntry::make('updated_at')
                 ->dateTime('d F Y')
-                ->label('Terakhir diubah')
+                ->label('Last updated')
                 ->badge()
                 ->icon(Heroicon::Calendar),
-                Fieldset::make('Judul')->schema([
+                Fieldset::make('Title')->schema([
                     TextEntry::make('kunci_judul')
+                    ->label('Title key')
                     ->badge()
                     ->color(Color::Green)
                     ->size(TextSize::Large),
@@ -89,7 +91,7 @@ class ThingsToDoResource extends Resource
                                 ->badge()
                                 ->state('' . $local_name)
                                 ->icon(Heroicon::GlobeAlt)
-                                ->tooltip('Judul dari lokalisasi')
+                                ->tooltip('Title from localization')
                                 ->color('primary'),
                                 TextEntry::make('kunci_judul_' . $locale_code)
                                 ->hiddenLabel()
@@ -103,8 +105,9 @@ class ThingsToDoResource extends Resource
                     }),
                 ])
                 ->columns(1),
-                Fieldset::make('Deskripsi')->schema([
+                Fieldset::make('Description')->schema([
                     TextEntry::make('kunci_deskripsi')
+                    ->label('Description key')
                     ->badge()
                     ->color(Color::Green)
                     ->size(TextSize::Large),
@@ -116,7 +119,7 @@ class ThingsToDoResource extends Resource
                                 ->badge()
                                 ->state('' . $local_name)
                                 ->icon(Heroicon::GlobeAlt)
-                                ->tooltip('Deskripsi dari lokalisasi')
+                                ->tooltip('Description from localization')
                                 ->color('primary'),
                                 TextEntry::make('kunci_deskripsi' . $locale_code)
                                 ->hiddenLabel()
@@ -131,10 +134,10 @@ class ThingsToDoResource extends Resource
                 ])
                 ->columns(1),
             ])
-            ->description('Informasi mengenai spot')
+            ->description('Basic information about the list')
             ->icon(Heroicon::Star)
             ->iconColor('primary'),
-            Section::make('Gambar')->schema([
+            Section::make('Icon')->schema([
                 ImageEntry::make('ikon')
                 ->imageHeight(400)
                 ->square(false)
@@ -142,7 +145,7 @@ class ThingsToDoResource extends Resource
                 ->hiddenLabel()
                 ->disk('public_img'),
             ])
-            ->description('Gambar dari spot')
+            ->description('Icon of the list')
             ->icon(Heroicon::Photo)
             ->iconColor('primary'),
         ]);

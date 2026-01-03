@@ -26,13 +26,13 @@ class EventForm
             ->components([
                 Hidden::make('id_user')->default(fn () => auth()->id()),
                 ToggleButtons::make('tampilkan_event')
-                ->label('Visibilitas')
+                ->label('Visibility')
                 ->required()
                 ->default('1')
                 ->inline()
                 ->options([
-                    '1' => 'Tampilkan',
-                    '0' => 'Sembunyikan',
+                    '1' => 'Show',
+                    '0' => 'Hidden',
                 ])
                 ->icons([
                     '1' => 'heroicon-m-eye',
@@ -47,31 +47,39 @@ class EventForm
                 
                     $set('slug', Str::slug($state));
                 })
+                ->label('Title')
                 ->required(),
                 Hidden::make('slug')->required(),
-                Fieldset::make('Tanggal')->schema([
+                Fieldset::make('Event\'s Date')->schema([
                     DatePicker::make('tanggal_mulai')
+                    ->label('Start Date')
                     ->required(),
                     DatePicker::make('tanggal_selesai')
+                    ->label('End Date')
                     ->required(),
                 ]),
                 RichEditor::make('deskripsi_event')
+                ->label('Description')
                 ->required(),
                 Grid::make(4)->schema([
                     TextInput::make('nama_penyelenggara')
+                    ->label('Organized by')
                     ->required(),
                     TextInput::make('harga_tiket')
+                    ->label('Ticket price')
                     ->prefix('Rp.')
-                    ->belowContent('Tanpa tanda titik')
+                    ->belowContent('Without dot separator (e.g. 50000)')
                     ->required()
                 ]),
-                FileUpload::make('gambar_event')->label('Upload gambar')->required()
+                FileUpload::make('gambar_event')
+                ->label('Upload image')->required()
                 ->directory('events')
                 ->visibility('public')
                 ->image(), 
                 Grid::make(4)->schema([
                     TextInput::make('alt_gambar')
-                    ->belowContent('Deskripsi singkat tentang gambar'),
+                    ->label('Image alt')
+                    ->belowContent('Describe the image in short'),
                 ]),
             ])->columns(1);
     }

@@ -20,15 +20,16 @@ class ThingsToDoForm
         return $schema
             ->components([
                 Hidden::make('id_user')->default(fn () => auth()->id()),
-                Fieldset::make('Lokalisasi')->schema([
+                Fieldset::make('Localization')->schema([
                     TextInput::make('kunci_judul')
-                    ->label('Kunci judul')
+                    ->label('Title key')
                     ->required(),
                     TextInput::make('kunci_deskripsi')
-                    ->label('Kunci deskripsi')
+                    ->label('Description key')
                     ->required(),
                 ]),
-                FileUpload::make('ikon')->label('Upload ikon/gambar')
+                FileUpload::make('ikon')
+                ->label('Upload image/icon')
                 ->image()
                 ->required()
                 ->disk('public_img')

@@ -42,7 +42,7 @@ class EventResource extends Resource
 
     public static function getPluralModelLabel(): string
     {
-        return 'Event';
+        return 'Events';
     }
 
     public static function infolist(Schema $schema): Schema
@@ -50,11 +50,12 @@ class EventResource extends Resource
         return $schema->components([
             Section::make('Event')->schema([
                 TextEntry::make('judul_event')
+                ->label('Title')
                 ->weight(FontWeight::SemiBold)
                 ->size(TextSize::Large)
                 ->icon(Heroicon::InformationCircle),
                 Grid::make(1)->schema([
-                TextEntry::make('Dibuat oleh'),
+                TextEntry::make('Made by'),
                 Flex::make([
                     TextEntry::make('id_user')
                     ->hiddenLabel()
@@ -69,13 +70,14 @@ class EventResource extends Resource
                     ->state(fn (?Model $record) => User::find($record->id_user)->email)
                     ->gap(2), 
                     ]),
-                ])->gap(false),
+                ])
+                ->gap(false),
                 TextEntry::make('tampilkan_event')
-                ->label('Visibilitas')
+                ->label('Visibility')
                 ->badge()
                 ->formatStateUsing(fn (string $state): string => match ($state) {
-                    '0' => 'Sembunyikan',
-                    '1' => 'Tampilkan'
+                    '0' => 'Hidden',
+                    '1' => 'Show'
                 })
                 ->color(fn (string $state): string => match ($state) {
                     '0' => 'gray',
@@ -87,52 +89,59 @@ class EventResource extends Resource
                 }),
                 TextEntry::make('created_at')
                 ->dateTime('d F Y')
-                ->label('Tanggal dibuat')
+                ->label('Created at')
                 ->badge()
                 ->icon(Heroicon::Calendar),
                 TextEntry::make('updated_at')
                 ->dateTime('d F Y')
-                ->label('Terakhir diubah')
+                ->label('Last updated')
                 ->badge()
                 ->icon(Heroicon::Calendar),
-                Fieldset::make('Tanggal event')->schema([
+                Fieldset::make('Event\'s Date')->schema([
                     TextEntry::make('tanggal_mulai')
+                    ->label('Start Date')
                     ->badge()
                     ->icon(Heroicon::Calendar)
                     ->color('primary')
                     ->dateTime('d F Y'),
                     TextEntry::make('tanggal_selesai')
+                    ->label('End Date')
                     ->badge()
                     ->icon(Heroicon::Calendar)
                     ->color('primary')
                     ->dateTime('d F Y'),
                 ]),
                 TextEntry::make('nama_penyelenggara')
+                ->label('Organized by')
                 ->icon(Heroicon::User)
                 ->iconColor('gray'),
                 TextEntry::make('harga_tiket')
+                ->label('Ticket price')
                 ->money('IDR', decimalPlaces: 0, locale: 'id')
                 ->color('primary')
                 ->size(TextSize::Large)
                 ->weight(FontWeight::Bold),
             ])
-            ->description('Informasi mengenai event')
+            ->description('Basic information about the event')
             ->icon(Heroicon::Star)
             ->iconColor('primary'),
-            Section::make('Gambar')->schema([
-                ImageEntry::make('gambar_event'),
+            Section::make('Image')->schema([
+                ImageEntry::make('gambar_event')
+                ->label('Image')
+                ->hiddenLabel(),
                 TextEntry::make('alt_gambar')
+                ->label('Image alt')
                 ->badge()
                 ->color('gray'),
             ])
-            ->description('Gambar dari event')
+            ->description('Image of the event')
             ->icon(Heroicon::Photo)
             ->iconColor('primary'),
-            Section::make('Deskripsi')->schema([
+            Section::make('Description')->schema([
                 TextEntry::make('deskripsi_event')
                 ->hiddenLabel(),
             ])
-            ->description('Deskripsi dari event')
+            ->description('Description of the event')
             ->icon(Heroicon::DocumentText)
             ->iconColor('primary')
             ->columnSpanFull()

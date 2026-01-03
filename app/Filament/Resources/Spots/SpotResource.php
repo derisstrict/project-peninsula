@@ -42,7 +42,7 @@ class SpotResource extends Resource
 
     public static function getPluralModelLabel(): string
     {
-        return 'Spot';
+        return 'Spots';
     }
 
     public static function getRecordTitle(?Model $record): string|Htmlable|null
@@ -56,7 +56,7 @@ class SpotResource extends Resource
         return $schema->components([
             Section::make('Spot')->schema([
                 Grid::make(1)->schema([
-                    TextEntry::make('Dibuat oleh'),
+                    TextEntry::make('Made by'),
                     Flex::make([
                         TextEntry::make('id_user')
                         ->hiddenLabel()
@@ -74,16 +74,16 @@ class SpotResource extends Resource
                 ])->gap(false),
                 TextEntry::make('created_at')
                 ->dateTime('d F Y')
-                ->label('Tanggal dibuat')
+                ->label('Created at')
                 ->badge()
                 ->icon(Heroicon::Calendar),
                 TextEntry::make('updated_at')
                 ->dateTime('d F Y')
-                ->label('Terakhir diubah')
+                ->label('Last updated')
                 ->badge()
                 ->icon(Heroicon::Calendar),
                 TextEntry::make('tampilkan_modal')
-                ->label('Tampilkan modal')
+                ->label('Show modal')
                 ->badge()
                 ->icon(fn (?string $state): string => match ($state) {
                     '0' => 'heroicon-m-eye-slash',
@@ -94,28 +94,29 @@ class SpotResource extends Resource
                     '1' => 'primary'
                 })
                 ->formatStateUsing(fn (?string $state): string => match ($state) {
-                    '0' => 'Sembunyikan',
-                    '1' => 'Tampilkan'
+                    '0' => 'Hidden',
+                    '1' => 'Show'
                 }),
-                Fieldset::make('Koordinat')->schema([
+                Fieldset::make('Coordinates')->schema([
                     Grid::make(2)->schema([
                         TextEntry::make('xpos')
-                        ->label('Koordinat X')
+                        ->label('X coordinate')
                         ->badge()
                         ->size(TextSize::Large)
                         ->color('primary'),
                         TextEntry::make('ypos')
-                        ->label('Koordinat Y')
+                        ->label('Y coordinate')
                         ->badge()
                         ->size(TextSize::Large)
                         ->color(Color::Fuchsia),
                     ]),
                 ]),
-                Fieldset::make('Judul')->schema([
+                Fieldset::make('Title')->schema([
                     TextEntry::make('kunci_judul')
-                        ->badge()
-                        ->size(TextSize::Large)
-                        ->color(Color::Green),
+                    ->label('Title key')
+                    ->badge()
+                    ->size(TextSize::Large)
+                    ->color(Color::Green),
                     Grid::make(1)->schema(function () use ($data) {
                         return collect($data->bahasa_tersedia)->map(fn ($locale_code, $local_name) => [
                             Grid::make(1)->schema([
@@ -124,7 +125,7 @@ class SpotResource extends Resource
                                 ->badge()
                                 ->state('' . $local_name)
                                 ->icon(Heroicon::GlobeAlt)
-                                ->tooltip('Judul dari lokalisasi')
+                                ->tooltip('Title from localization')
                                 ->color('primary'),
                                 TextEntry::make('kunci_judul_' . $locale_code)
                                 ->hiddenLabel()
@@ -139,6 +140,7 @@ class SpotResource extends Resource
                 ])->columns(1),
                 Fieldset::make('Teaser')->schema([
                     TextEntry::make('kunci_teaser')
+                    ->label('Teaser key')
                     ->badge()
                     ->size(TextSize::Large)
                     ->color(Color::Green),
@@ -150,7 +152,7 @@ class SpotResource extends Resource
                                 ->badge()
                                 ->state('' . $local_name)
                                 ->icon(Heroicon::GlobeAlt)
-                                ->tooltip('Teaser dari lokalisasi')
+                                ->tooltip('Teaser from localization')
                                 ->color('primary'),
                                 TextEntry::make('kunci_teaser_' . $locale_code)
                                 ->hiddenLabel()
@@ -163,8 +165,9 @@ class SpotResource extends Resource
                     ->toArray();
                     }),    
                 ])->columns(1),
-                Fieldset::make('Keterangan')->schema([
+                Fieldset::make('Description')->schema([
                     TextEntry::make('kunci_keterangan')
+                    ->label('Description key')
                     ->badge()
                     ->size(TextSize::Large)
                     ->color(Color::Green),
@@ -176,7 +179,7 @@ class SpotResource extends Resource
                                 ->badge()
                                 ->state('' . $local_name)
                                 ->icon(Heroicon::GlobeAlt)
-                                ->tooltip('Keterangan dari lokalisasi')
+                                ->tooltip('Description from localization')
                                 ->color('primary'),
                                 TextEntry::make('kunci_keterangan_' . $locale_code)
                                 ->hiddenLabel()
@@ -189,8 +192,9 @@ class SpotResource extends Resource
                     ->toArray();
                     }),
                 ])->columns(1),
-                Fieldset::make('Catatan')->schema([
+                Fieldset::make('Note')->schema([
                     TextEntry::make('kunci_catatan')
+                    ->label('Description key')
                     ->badge()
                     ->size(TextSize::Large)
                     ->color(Color::Green),
@@ -202,7 +206,7 @@ class SpotResource extends Resource
                                 ->badge()
                                 ->state('' . $local_name)
                                 ->icon(Heroicon::GlobeAlt)
-                                ->tooltip('Catatan dari lokalisasi')
+                                ->tooltip('Description from localization')
                                 ->color('primary'),
                                 TextEntry::make('kunci_catatan_' . $locale_code)
                                 ->hiddenLabel()
@@ -216,10 +220,10 @@ class SpotResource extends Resource
                     }),   
                 ])->columns(1),
             ])
-            ->description('Informasi mengenai spot')
+            ->description('Basic information about the spot')
             ->icon(Heroicon::Star)
             ->iconColor('primary'),
-            Section::make('Gambar')->schema([
+            Section::make('Image')->schema([
                 ImageEntry::make('url_media')
                 ->imageWidth('100%')
                 ->imageHeight('100%')
@@ -231,7 +235,7 @@ class SpotResource extends Resource
                 ->badge()
                 ->color('gray'),
             ])
-            ->description('Gambar dari spot')
+            ->description('Image of the spot')
             ->icon(Heroicon::Photo)
             ->iconColor('primary'),
         ]);

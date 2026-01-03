@@ -18,7 +18,7 @@ class UsersTable
         return $table
             ->columns([
                 TextColumn::make('name')
-                ->label('Nama')
+                ->label('Name')
                 ->searchable()
                 ->sortable(),
                 TextColumn::make('email')
@@ -27,8 +27,8 @@ class UsersTable
                 ->sortable()
                 ->icon(Heroicon::OutlinedClipboard)
                 ->copyable()
-                ->tooltip('Email dapat dicopy')
-                ->copyMessage("Email sudah dicopy!"),
+                ->tooltip('Email can be copied')
+                ->copyMessage("Email has been copied!"),
                 TextColumn::make('role')
                 ->badge()
                 ->searchable()
@@ -42,14 +42,14 @@ class UsersTable
                     '1' => 'primary' 
                 }),
                 TextColumn::make('email_verified_at')
-                ->label('Email terverifikasi')
+                ->label('Email Verified')
                 ->badge()
                 ->default('empty')
                 ->formatStateUsing(function (?string $state) {
                     if ($state === 'empty') {
-                        return 'Tidak terverifikasi';
+                        return 'Not verified';
                     } else {
-                        return 'Terverifikasi';
+                        return 'Verified';
                     }
                 })
                 ->color(function (?string $state) {

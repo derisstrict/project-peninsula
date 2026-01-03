@@ -18,19 +18,30 @@ class LaporanFasilitasForm
             ->components([
                 Hidden::make('id_user')->default(auth()->id()),
                 FileUpload::make('foto_fasilitas')
+                ->label('Facility Image(s)')
                 ->multiple()
                 ->directory('img')
-                ->visibility('public'),
-                TextInput::make('judul_laporan'),
-                Textarea::make('deskripsi_laporan'),
-                TextInput::make('email_pelapor'),
-                TextInput::make('nama_pelapor'),
+                ->visibility('public')
+                ->required(),
+                TextInput::make('judul_laporan')
+                ->required()
+                ->label('Report Title'),
+                Textarea::make('deskripsi_laporan')
+                ->required()
+                ->label('Report Description'),
+                TextInput::make('email_pelapor')
+                ->required(),
+                TextInput::make('nama_pelapor')
+                ->label('Submitter')
+                ->required(),
                 ToggleButtons::make('status_laporan')
+                ->label('Report Status')
                 ->inline()
+                ->required()
                 ->options([
-                    '0' => 'Belum Ditanggapi',
-                    '1' => 'Sedang Ditanggapi',
-                    '2' => 'Selesai',
+                    '0' => 'Unreviewed',
+                    '1' => 'In progress',
+                    '2' => 'Done',
                 ])
                 ->icons([
                     '0' => 'heroicon-m-eye',

@@ -30,7 +30,7 @@ class GaleriForm
             //upload 
             FileUpload::make('url_media')
             ->required()
-            ->label('Upload gambar')
+            ->label('Upload image')
             ->disk('public_img')
             ->directory('/gallery')
             ->visibility('public')
@@ -39,7 +39,8 @@ class GaleriForm
             ->required(),
             Grid::make(4)->schema([
                     TextInput::make('alt_gambar')
-                    ->belowContent('Deskripsi singkat tentang gambar'),
+                    ->label('Image alt')
+                    ->belowContent('Describe the image in short'),
             ]),
         ])
         ->columns(1);

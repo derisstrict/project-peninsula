@@ -13,7 +13,7 @@ class WhitelistUserForm
             ->components([
                 TextInput::make('nama')
                 ->required()
-                ->label('Nama'),
+                ->label('Name'),
                 TextInput::make('email')
                 ->required()
                 ->label('Email'),

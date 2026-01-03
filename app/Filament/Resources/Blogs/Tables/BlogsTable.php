@@ -22,16 +22,16 @@ class BlogsTable
                 TextColumn::make('judul_blog')
                 ->searchable()
                 ->sortable()
-                ->label('Judul Blog'),
+                ->label('Title'),
                 ImageColumn::make('gambar_blog')
-                ->label('Gambar')
+                ->label('Image')
                 ->disk('public')
                 ->square()
                 ->stacked()
                 ->limit(3)
                 ->limitedRemainingText(),
                 TextColumn::make('id_user')
-                ->label('Dibuat Oleh')
+                ->label('Made By')
                 ->icon(Heroicon::User)
                 ->sortable()
                 ->searchable()
@@ -40,14 +40,14 @@ class BlogsTable
                 }),
                 TextColumn::make('created_at')
                 ->dateTime('d F Y')
-                ->label('Tanggal Dibuat')
+                ->label('Created At')
                 ->searchable()
                 ->badge()
                 ->icon(Heroicon::Calendar)
                 ->sortable(),
                 TextColumn::make('updated_at')
                 ->dateTime('d F Y')
-                ->label('Terakhir Diubah')
+                ->label('Last Updated')
                 ->searchable()
                 ->badge()
                 ->icon(Heroicon::Calendar)

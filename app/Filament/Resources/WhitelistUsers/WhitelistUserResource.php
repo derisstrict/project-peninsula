@@ -30,12 +30,12 @@ class WhitelistUserResource extends Resource
 
     public static function getNavigationLabel(): string
     {
-        return 'Whitelist Pengguna';
+        return 'User Whitelist';
     }
 
     public static function getPluralModelLabel(): string
     {
-        return 'Whitelist Pengguna';
+        return 'User Whitelist';
     }
 
     public static function form(Schema $schema): Schema
@@ -53,11 +53,13 @@ class WhitelistUserResource extends Resource
         return $schema->components([
             Section::make('Whitelist Pengguna')->schema([
                 TextEntry::make('nama')
-                ->label('Nama'),
+                ->label('Name'),
                 TextEntry::make('email')
                 ->icon(Heroicon::Clipboard)
                 ->copyable()
-                ->tooltip('Copy email')
+                ->tooltip('Email can be copied')
+                ->copyMessage('Email has been copied!')
+                ->copyMessageDuration(1000)
                 ->iconColor('gray'),
             ])
             ->description('Informasi mengenai pengguna')

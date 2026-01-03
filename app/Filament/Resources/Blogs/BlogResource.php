@@ -32,26 +32,21 @@ class BlogResource extends Resource
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedNewspaper;
 
-    public static function getNavigationLabel(): string
-    {
-        return 'Blog';
-    }
+    protected static ?string $modelLabel = 'Blog';
 
-    public static function getPluralModelLabel(): string
-    {
-        return 'Blog';
-    }
+    protected static ?string $pluralModelLabel = 'Blogs';
 
     public static function infolist(Schema $schema): Schema
     {
         return $schema->components([
             Section::make('Blog')->schema([
                 TextEntry::make('judul_blog')
+                ->label('Title')
                 ->weight(FontWeight::SemiBold)
                 ->size(TextSize::Large)
                 ->icon(Heroicon::InformationCircle),
                 Grid::make(1)->schema([
-                    TextEntry::make('Dibuat oleh'),
+                    TextEntry::make('Made by'),
                     Flex::make([
                         TextEntry::make('id_user')
                         ->hiddenLabel()
@@ -69,32 +64,35 @@ class BlogResource extends Resource
                 ])->gap(false),
                 TextEntry::make('created_at')
                 ->dateTime('d F Y')
-                ->label('Tanggal dibuat')
+                ->label('Created at')
                 ->badge()
                 ->icon(Heroicon::Calendar),
                 TextEntry::make('updated_at')
                 ->dateTime('d F Y')
-                ->label('Terakhir diubah')
+                ->label('Last updated')
                 ->badge()
                 ->icon(Heroicon::Calendar),
             ])
-            ->description('Informasi mengenai blog')
+            ->description('Basic information about the blog')
             ->icon(Heroicon::Star)
             ->iconColor('primary'),
-            Section::make('Gambar')->schema([
-                ImageEntry::make('gambar_blog'),
+            Section::make('Image')->schema([
+                ImageEntry::make('gambar_blog')
+                ->label('Image')
+                ->hiddenLabel(),
                 TextEntry::make('alt_gambar')
+                ->label('Image alt')
                 ->badge()
                 ->color('gray'),
             ])
-            ->description('Gambar dari blog')
+            ->description('Image of the blog')
             ->icon(Heroicon::Photo)
             ->iconColor('primary'),
-            Section::make('Deskripsi')->schema([
+            Section::make('Description')->schema([
                 TextEntry::make('isi_blog')
                 ->hiddenLabel(),
             ])
-            ->description('Deskripsi dari blog')
+            ->description('Description of the blog')
             ->icon(Heroicon::DocumentText)
             ->iconColor('primary')
             ->columnSpanFull()

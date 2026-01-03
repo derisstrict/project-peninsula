@@ -23,24 +23,24 @@ class ThingsToDosTable
         return $table
             ->columns([
                 TextColumn::make('title')
-                ->label('Judul')
+                ->label('Title')
                 ->sortable()
                 ->searchable()
                 ->state(function (?Model $record) {
                     return __('things_to_do.' . $record->kunci_judul);
                 }),
                 TextColumn::make('kunci_judul')
-                ->label('Kunci Judul')
+                ->label('Title Key')
                 ->badge()
                 ->color(Color::Green)
                 ->sortable()
                 ->searchable(),
                 ImageColumn::make('ikon')
-                ->label('Ikon')
+                ->label('Icon')
                 ->disk('public_img')
                 ->square(),
                 TextColumn::make('id_user')
-                ->label('Dibuat Oleh')
+                ->label('Made By')
                 ->icon(Heroicon::User)
                 ->sortable()
                 ->searchable()
@@ -49,14 +49,14 @@ class ThingsToDosTable
                 }),
                 TextColumn::make('created_at')
                 ->dateTime('d F Y')
-                ->label('Tanggal Dibuat')
+                ->label('Created At')
                 ->searchable()
                 ->badge()
                 ->icon(Heroicon::Calendar)
                 ->sortable(),
                 TextColumn::make('updated_at')
                 ->dateTime('d F Y')
-                ->label('Terakhir Diubah')
+                ->label('Last Updated')
                 ->searchable()
                 ->badge()
                 ->icon(Heroicon::Calendar)

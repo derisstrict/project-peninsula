@@ -31,12 +31,12 @@ class UserResource extends Resource
 
     public static function getNavigationLabel(): string
     {
-        return 'Pengguna';
+        return 'User';
     }
 
     public static function getPluralModelLabel(): string
     {
-        return 'Pengguna';
+        return 'Users';
     }
 
     public static function canAccess(): bool
@@ -47,13 +47,15 @@ class UserResource extends Resource
     public static function infolist(Schema $schema): Schema
     {
         return $schema->components([
-            Section::make('Pengguna')->schema([
+            Section::make('User')->schema([
                 TextEntry::make('name')
-                ->label('Nama'),
+                ->label('Name'),
                 TextEntry::make('email')
                 ->icon(Heroicon::Clipboard)
                 ->copyable()
-                ->tooltip('Copy email')
+                ->tooltip('Email can be copied')
+                ->copyMessage('Email has been copied!')
+                ->copyMessageDuration(1000)
                 ->iconColor('gray'),
                 TextEntry::make('role')
                 ->badge()
@@ -66,7 +68,7 @@ class UserResource extends Resource
                     '1' => 'primary'
                 }),
             ])
-            ->description('Informasi mengenai pengguna')
+            ->description('Basic information about the user')
             ->icon(Heroicon::Star)
             ->iconColor('primary'),
         ]);

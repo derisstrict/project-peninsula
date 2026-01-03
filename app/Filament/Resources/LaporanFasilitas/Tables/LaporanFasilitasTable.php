@@ -24,34 +24,34 @@ class LaporanFasilitasTable
                 TextColumn::make('judul_laporan')
                 ->searchable()
                 ->sortable()
-                ->label('Judul Laporan'),
+                ->label('Report Title'),
                 TextColumn::make('nama_pelapor')
                 ->searchable()
                 ->sortable()
-                ->label('Nama Pelapor'),
+                ->label('Submitter'),
                 TextColumn::make('email_pelapor')
                 ->searchable()
                 ->sortable()
-                ->label('Email Pelapor')
+                ->label('Submitter Email')
                 ->icon(Heroicon::OutlinedClipboard)
                 ->copyable()
-                ->tooltip('Email dapat dicopy')
-                ->copyMessage("Email sudah dicopy!")
+                ->tooltip('Email can be copied')
+                ->copyMessage('Email has been copied!')
                 ->copyMessageDuration(1000),
                 TextColumn::make('status_laporan')
                 ->badge()
                 ->searchable()
                 ->sortable()
-                ->label('Status Laporan')
+                ->label('Report Status')
                 ->color(fn (string $state): string => match ($state) {
                     '0' => 'gray',
                     '1' => 'warning',
                     '2' => 'success',
                 })
                 ->formatStateUsing(fn (string $state): string => match ($state) {
-                    '0' => 'Belum Ditanggapi',
-                    '1' => 'Sedang Ditanggapi',
-                    '2' => 'Selesai',
+                    '0' => 'Unreviewed',
+                    '1' => 'In progress',
+                    '2' => 'Done',
                 })
                 ->icon(fn (string $state): string => match ($state) {
                     '0' => 'heroicon-m-eye',
@@ -60,8 +60,9 @@ class LaporanFasilitasTable
                 }),
                 TextColumn::make('created_at')
                 ->dateTime('d F Y')
-                ->label('Tanggal Dibuat')
+                ->label('Created at')
                 ->badge()
+                ->searchable()
                 ->icon(Heroicon::Calendar)
                 ->sortable(),
             ])
@@ -72,22 +73,19 @@ class LaporanFasilitasTable
                 ViewAction::make(),
                 EditAction::make(),
                 Action::make('email')
-                ->label('Kirim Email')
+                ->label('Send Email')
                 ->icon(Heroicon::Envelope)
                 ->color(Color::Amber)
                 ->schema([
                     TextInput::make('to')
-                    ->label('Email penerima')
                     ->required()
                     ->default(function ($record) {
                         return $record->email_pelapor;
                     })
                     ->disabled(false),
                     TextInput::make('subject')
-                        ->label('Subjek')
                         ->required(),
                     Textarea::make('message')
-                        ->label('Pesan')
                         ->required()
                         ->rows(6),
                 ])
@@ -97,9 +95,7 @@ class LaporanFasilitasTable
                             ->subject($data['subject']);
                     });
                 })
-                ->modalHeading('Kirim Email')
-                ->modalSubmitActionLabel('Kirim')
-                ->modalCancelActionLabel('Batalkan')
+                ->modalHeading('Send Email')
             ])
             ->toolbarActions([
                 BulkActionGroup::make([

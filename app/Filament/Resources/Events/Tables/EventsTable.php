@@ -22,9 +22,9 @@ class EventsTable
                 TextColumn::make('judul_event')
                 ->searchable()
                 ->sortable()
-                ->label('Judul Event'),
+                ->label('Title'),
                 ImageColumn::make('gambar_event')
-                ->label('Gambar')
+                ->label('Image')
                 ->disk('public')
                 ->square()
                 ->stacked()
@@ -33,27 +33,27 @@ class EventsTable
                 TextColumn::make('nama_penyelenggara')
                 ->searchable()
                 ->sortable()
-                ->label('Nama Penyelenggara'),
+                ->label('Organized By'),
                 TextColumn::make('tanggal_mulai')
                 ->date('d F Y')
                 ->sortable()
                 ->searchable()
                 ->badge()
                 ->icon(Heroicon::Calendar)
-                ->label('Tanggal Mulai'),
+                ->label('Start Date'),
                 TextColumn::make('tanggal_selesai')
                 ->date('d F Y')
                 ->sortable()
                 ->searchable()
                 ->badge()
                 ->icon(Heroicon::Calendar)
-                ->label('Tanggal Selesai'),
+                ->label('End Date'),
                 TextColumn::make('harga_tiket')
-                ->label('Harga Tiket')
+                ->label('Ticket Price')
                 ->money('IDR', decimalPlaces: 0, locale: 'id')
                 ->sortable(),
                 TextColumn::make('tampilkan_event')
-                ->label('Visibilitas')
+                ->label('Visibility')
                 ->sortable()
                 ->badge()
                 ->color(fn (string $state): string => match ($state) {
@@ -61,15 +61,15 @@ class EventsTable
                     '1' => 'primary',
                 })
                 ->formatStateUsing(fn (string $state): string => match ($state) {
-                    '0' => 'Sembunyikan',
-                    '1' => 'Tampilkan',
+                    '0' => 'Hidden',
+                    '1' => 'Show',
                 })
                 ->icon(fn (string $state): string => match ($state) {
                     '0' => 'heroicon-m-eye-slash',
                     '1' => 'heroicon-m-eye',
                 }),
                 TextColumn::make('id_user')
-                ->label('Dibuat Oleh')
+                ->label('Made By')
                 ->icon(Heroicon::User)
                 ->sortable()
                 ->searchable()
@@ -78,14 +78,14 @@ class EventsTable
                 }),
                 TextColumn::make('created_at')
                 ->dateTime('d F Y')
-                ->label('Tanggal Dibuat')
+                ->label('Created At')
                 ->searchable()
                 ->badge()
                 ->icon(Heroicon::Calendar)
                 ->sortable(),
                 TextColumn::make('updated_at')
                 ->dateTime('d F Y')
-                ->label('Terakhir Diubah')
+                ->label('Last Updated')
                 ->searchable()
                 ->badge()
                 ->icon(Heroicon::Calendar)

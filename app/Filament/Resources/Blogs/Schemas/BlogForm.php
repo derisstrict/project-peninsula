@@ -29,17 +29,19 @@ class BlogForm
                     }
                 
                     $set('slug', Str::slug($state));
-                })->label('Judul blog')->required(),
-                RichEditor::make('isi_blog')->label('Ketik isi blog')->required(),
+                })->label('Title')->required(),
+                RichEditor::make('isi_blog')
+                ->label('Content')->required(),
                 FileUpload::make('gambar_blog')
-                ->label('Gambar blog')
+                ->label('Upload image')
                 ->image()
                 ->directory('blogs')
                 ->visibility('public')
                 ->required(),
                 Grid::make(4)->schema([
                     TextInput::make('alt_gambar')
-                    ->belowContent('Deskripsi singkat tentang gambar'),
+                    ->label('Image alt')
+                    ->belowContent('Describe the image in short'),
                 ])
             ])->columns(1);
     }

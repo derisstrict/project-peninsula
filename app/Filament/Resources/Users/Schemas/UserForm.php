@@ -29,7 +29,7 @@ class UserForm
                 ]),
                 TextInput::make('name')
                 ->required()
-                ->label('Nama'),
+                ->label('Name'),
                 TextInput::make('email')
                 ->required()
                 ->label('Email'),

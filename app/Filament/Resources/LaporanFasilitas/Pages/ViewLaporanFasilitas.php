@@ -20,20 +20,17 @@ class ViewLaporanFasilitas extends ViewRecord
         return [
             EditAction::make(),
             Action::make('email')
-            ->label('Kirim Email')
+            ->label('Send Email')
             ->icon('heroicon-o-envelope')
             ->schema([
                 TextInput::make('to')
-                ->label('Email penerima')
                 ->default(function ($record) {
                     return $record->email_pelapor;
                 })
                 ->disabled(false),
                 TextInput::make('subject')
-                    ->label('Subjek')
                     ->required(),
                 Textarea::make('message')
-                    ->label('Pesan')
                     ->required()
                     ->rows(6),
             ])
@@ -43,9 +40,7 @@ class ViewLaporanFasilitas extends ViewRecord
                         ->subject($data['subject']);
                 });
             })
-            ->modalHeading('Kirim Email')
-            ->modalSubmitActionLabel('Kirim')
-            ->modalCancelActionLabel('Batalkan')
+            ->modalHeading('Send Email')
         ];
     }
 }

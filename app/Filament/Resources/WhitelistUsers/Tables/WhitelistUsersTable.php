@@ -18,7 +18,7 @@ class WhitelistUsersTable
         return $table
             ->columns([
                 TextColumn::make('nama')
-                ->label('Nama')
+                ->label('Name')
                 ->searchable()
                 ->sortable(),
                 TextColumn::make('email')
@@ -27,8 +27,9 @@ class WhitelistUsersTable
                 ->sortable()
                 ->icon(Heroicon::OutlinedClipboard)
                 ->copyable()
-                ->tooltip('Email dapat dicopy')
-                ->copyMessage("Email sudah dicopy!"),
+                ->tooltip('Email can be copied')
+                ->copyMessage('Email has been copied!')
+                ->copyMessageDuration(1000)
             ])
             ->filters([
                 //

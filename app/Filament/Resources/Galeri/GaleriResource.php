@@ -31,17 +31,17 @@ class GaleriResource extends Resource
 
     // protected static ?string $recordTitleAttribute = 'url_media';
 
-    protected static ?string $modelLabel = 'Galeri';
+    protected static ?string $modelLabel = 'Gallery';
 
-    protected static ?string $pluralModelLabel = 'Galeri';
+    protected static ?string $pluralModelLabel = 'Gallery';
 
     public static function infolist(Schema $schema): Schema
     {
         $data = \App\Models\GeneralSetting::first();
         return $schema->components([
-            Section::make('Spot')->schema([
+            Section::make('Gallery')->schema([
                 Grid::make(1)->schema([
-                    TextEntry::make('Dibuat oleh'),
+                    TextEntry::make('Made by'),
                     Flex::make([
                         TextEntry::make('id_user')
                         ->hiddenLabel()
@@ -59,7 +59,7 @@ class GaleriResource extends Resource
                 ])->gap(false),
                 TextEntry::make('created_at')
                 ->dateTime('d F Y')
-                ->label('Tanggal dibuat')
+                ->label('Created at')
                 ->badge()
                 ->icon(Heroicon::Calendar),
                 TextEntry::make('updated_at')
@@ -68,21 +68,23 @@ class GaleriResource extends Resource
                 ->badge()
                 ->icon(Heroicon::Calendar),
             ])
-            ->description('Informasi mengenai spot')
+            ->description('Basic information about the spot')
             ->icon(Heroicon::Star)
             ->iconColor('primary'),
-            Section::make('Gambar')->schema([
+            Section::make('Image')->schema([
                 ImageEntry::make('url_media')
+                ->imageWidth('100%')
                 ->imageHeight(400)
                 ->square(false)
                 ->alignCenter()
                 ->hiddenLabel()
                 ->disk('public_img'),
                 TextEntry::make('alt_gambar')
+                ->label('Image alt')
                 ->badge()
                 ->color('gray'),
             ])
-            ->description('Gambar dari spot')
+            ->description('Image of the spot')
             ->icon(Heroicon::Photo)
             ->iconColor('primary'),
         ]);

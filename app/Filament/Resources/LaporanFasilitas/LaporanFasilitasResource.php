@@ -28,22 +28,38 @@ class LaporanFasilitasResource extends Resource
 
     protected static ?string $recordTitleAttribute = 'judul_laporan';
 
+    public static function getNavigationLabel(): string
+    {
+        return 'Facility Report';
+    }
+
+    public static function getPluralModelLabel(): string
+    {
+        return 'Facility Report';
+    }
+
     public static function infolist(Schema $schema): Schema
     {
         return $schema->components([
-            Section::make('Laporan Fasilitas')->schema([
+            Section::make('Facility Report')->schema([
                 TextEntry::make('judul_laporan')
+                ->label('Report Title')
                 ->weight(FontWeight::SemiBold)
                 ->size(TextSize::Large)
                 ->icon(Heroicon::InformationCircle),
                 TextEntry::make('nama_pelapor')
+                ->label('Submitter')
                 ->icon(Heroicon::User)
                 ->iconColor('gray'),
                 TextEntry::make('email_pelapor')
+                ->label('Submitter email')
                 ->icon(Heroicon::Clipboard)
-                ->tooltip('Copy email')
+                ->tooltip('Email can be copied')
+                ->copyMessage('Email has been copied!')
+                ->copyMessageDuration(1000)
                 ->copyable(),
                 TextEntry::make('status_laporan')
+                ->label('Report status')
                 ->badge()
                 ->color(fn (string $state): string => match ($state) {
                     '0' => 'gray',
@@ -51,9 +67,9 @@ class LaporanFasilitasResource extends Resource
                     '2' => 'success',
                 })
                 ->formatStateUsing(fn (string $state): string => match ($state) {
-                    '0' => 'Belum Ditanggapi',
-                    '1' => 'Sedang Ditanggapi',
-                    '2' => 'Selesai',
+                    '0' => 'Unreviewed',
+                    '1' => 'In progress',
+                    '2' => 'Done',
                 })
                 ->icon(fn (string $state): string => match ($state) {
                     '0' => 'heroicon-m-eye',
@@ -61,18 +77,19 @@ class LaporanFasilitasResource extends Resource
                     '2' => 'heroicon-m-check',
                 }),
                 TextEntry::make('created_at')
+                ->label('Created at')
                 ->badge()
                 ->icon(Heroicon::Calendar)
                 ->dateTime('d F Y')
             ])
-            ->description('Informasi mengenai pelapor')
+            ->description('Basic information about the report')
             ->icon(Heroicon::Star)
             ->iconColor('primary'),
-            Section::make('Deskripsi')->schema([
+            Section::make('Description')->schema([
                 TextEntry::make('deskripsi_laporan')
                 ->hiddenLabel(),
             ])
-            ->description('Deskripsi dari kerusakan fasilitas')
+            ->description('Description of the report')
             ->icon(Heroicon::DocumentText)
             ->iconColor('primary'),
             Section::make('Gambar')->schema([
@@ -82,7 +99,7 @@ class LaporanFasilitasResource extends Resource
                 ->extraAttributes(['class' => 'w-full'])
                 ->extraImgAttributes(['class' => 'h-120', 'style' => 'width: 100%; height: auto;'])
             ])
-            ->description('Gambar dari fasilitas')
+            ->description('Facility image(s)')
             ->icon(Heroicon::Photo)
             ->iconColor('primary')
             ->columnSpanFull(),
@@ -106,7 +123,7 @@ class LaporanFasilitasResource extends Resource
 
     public static function getNavigationBadgeTooltip(): ?string
     {
-        return 'Jumlah yang belum ditanggapi';
+        return 'The amount of unreviewed report(s)';
     }
 
     public static function getRelations(): array
@@ -118,14 +135,14 @@ class LaporanFasilitasResource extends Resource
 
     public static function canCreate(): bool
     {
-        return false;
+        return true;
     }
 
     public static function getPages(): array
     {
         return [
             'index' => ListLaporanFasilitas::route('/'),
-            // 'create' => CreateLaporanFasilitas::route('/create'),
+            'create' => CreateLaporanFasilitas::route('/create'),
             'view' => ViewLaporanFasilitas::route('/{record}'),
             'edit' => EditLaporanFasilitas::route('/{record}/edit'),
         ];
