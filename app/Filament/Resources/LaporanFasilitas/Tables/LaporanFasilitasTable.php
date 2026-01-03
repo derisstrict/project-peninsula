@@ -4,6 +4,7 @@ namespace App\Filament\Resources\LaporanFasilitas\Tables;
 
 use Filament\Actions\Action;
 use Filament\Actions\BulkActionGroup;
+use Filament\Actions\DeleteAction;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
 use Filament\Actions\ViewAction;
@@ -72,6 +73,7 @@ class LaporanFasilitasTable
             ->recordActions([
                 ViewAction::make(),
                 EditAction::make(),
+                DeleteAction::make(),
                 Action::make('email')
                 ->label('Send Email')
                 ->icon(Heroicon::Envelope)
