@@ -6,7 +6,9 @@ use Filament\Forms\Components\Hidden;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\ToggleButtons;
+use Filament\Resources\Pages\CreateRecord;
 use Filament\Schemas\Schema;
+use Illuminate\Database\Eloquent\Model;
 
 class UserForm
 {
@@ -34,7 +36,10 @@ class UserForm
                 ->required()
                 ->label('Email'),
                 TextInput::make('password')
-                ->required()
+                ->required(fn ($livewire) => $livewire instanceof CreateRecord)
+                ->dehydrated(fn ($state) => filled($state))
+                ->password()
+                ->placeholder(fn ($livewire) => $livewire instanceof CreateRecord ? '' : 'Keep it empty to keep the current password')
             ]);
     }
 }
