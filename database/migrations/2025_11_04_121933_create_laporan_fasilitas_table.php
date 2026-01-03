@@ -16,7 +16,7 @@ return new class extends Migration
             $table->bigInteger('id_user')->nullable(true);
             $table->string('judul_laporan', 100)->nullable(false);
             $table->text('deskripsi_laporan')->nullable(false);
-            $table->string('foto_fasilitas', 100)->nullable(true);
+            $table->string('foto_fasilitas', 100)->nullable(false);
             $table->string('email_pelapor', 100)->nullable(false);
             $table->string('nama_pelapor', 60)->nullable(false);
             $table->tinyInteger('status_laporan')->default(0);
