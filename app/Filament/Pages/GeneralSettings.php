@@ -87,10 +87,12 @@ class GeneralSettings extends Page
                             ->label('Thumbnail video')
                             ->required()
                             ->disk('public_img')
+                            ->image()
                             ->visibility('public')
                             ->preserveFilenames(),
                             FileUpload::make('video_home')
                             ->label('Video')
+                            ->acceptedFileTypes(['video/mp4'])
                             ->required()
                             ->disk('public_img')
                             ->visibility('public')
