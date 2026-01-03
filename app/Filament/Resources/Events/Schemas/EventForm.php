@@ -39,7 +39,7 @@ class EventForm
                     '0' => 'heroicon-m-eye-slash',
                 ]),
                 ToggleButtons::make('event_pasti')
-                ->label('Recurring Event')
+                ->label('Recurring event')
                 ->required()
                 ->default('0')
                 ->inline()
@@ -71,12 +71,12 @@ class EventForm
                 ->belowContent('e.g. Everyday | 12.00 PM - 14.00 PM'),
                 Fieldset::make('Event\'s date')->schema([
                     DatePicker::make('tanggal_mulai')
-                    ->label('Start Date')
+                    ->label('Start date')
                     ->required(function ($get) {
                     return !$get('event_pasti');
                 }),
                     DatePicker::make('tanggal_selesai')
-                    ->label('End Date')
+                    ->label('End date')
                     ->required(function ($get) {
                     return !$get('event_pasti');
                 }),

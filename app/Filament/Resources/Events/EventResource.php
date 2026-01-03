@@ -104,13 +104,13 @@ class EventResource extends Resource
                 ->icon(Heroicon::Calendar),
                 Fieldset::make('Event\'s Date')->schema([
                     TextEntry::make('tanggal_mulai')
-                    ->label('Start Date')
+                    ->label('Start date')
                     ->badge()
                     ->icon(Heroicon::Calendar)
                     ->color('primary')
                     ->dateTime('d F Y'),
                     TextEntry::make('tanggal_selesai')
-                    ->label('End Date')
+                    ->label('End date')
                     ->badge()
                     ->icon(Heroicon::Calendar)
                     ->color('primary')

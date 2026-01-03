@@ -36,7 +36,7 @@ class Register extends BaseRegister
     protected function getNameFormComponent(): Component
     {
         return TextInput::make('name')
-            ->label('Nama')
+            ->label('Name')
             ->required()
             ->maxLength(255)
             ->autofocus()
@@ -63,7 +63,7 @@ class Register extends BaseRegister
     public function getRegisterFormAction(): Action
     {
         return Action::make('register')
-            ->label('Daftar')
+            ->label('Register')
             ->submit('register')
             ->disabled(function () {
                 return !($this->isNameExists && $this->isEmailExists);
@@ -87,7 +87,7 @@ class Register extends BaseRegister
     protected function getPasswordConfirmationFormComponent(): Component
     {
         return TextInput::make('passwordConfirmation')
-            ->label('Konfirmasi password')
+            ->label('Confirm password')
             ->password()
             ->revealable(filament()->arePasswordsRevealable())
             ->required()

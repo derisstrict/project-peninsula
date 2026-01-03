@@ -88,11 +88,11 @@ class BlogResource extends Resource
             ->description('Image of the blog')
             ->icon(Heroicon::Photo)
             ->iconColor('primary'),
-            Section::make('Description')->schema([
+            Section::make('Content')->schema([
                 TextEntry::make('isi_blog')
                 ->hiddenLabel(),
             ])
-            ->description('Description of the blog')
+            ->description('Content of the blog')
             ->icon(Heroicon::DocumentText)
             ->iconColor('primary')
             ->columnSpanFull()
