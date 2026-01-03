@@ -25,13 +25,19 @@ Carbon::setLocale(app()->getLocale());
                     <p class="text-sm font-light h-fit md:ml-2">{{ __('common.by') }} {{ $event->nama_penyelenggara }}</p>
                 </div>
                 <div class="flex items-center gap-1 md:gap-2">
-                    <div class="bg-color-accent/10 w-fit mt-auto px-5 py-1 rounded-xl text-xs">
+                    @if(!$event->event_pasti)
+                    <div class="bg-color-accent/10 w-fit mt-auto px-5 py-1 rounded-xl text-sm">
                         <p>{{ date('d F Y', strtotime($event->tanggal_mulai)) }}</p>
                     </div>
                     <x-local-icon icon="arrow-head" width="16px" height="16px" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" xmlns="http://www.w3.org/2000/svg"></x-local-icon>
-                    <div class="bg-color-accent/10 w-fit mt-auto px-5 py-1 rounded-xl text-xs">
+                    <div class="bg-color-accent/10 w-fit mt-auto px-5 py-1 rounded-xl text-sm">
                         <p>{{ date('d F Y', strtotime($event->tanggal_selesai)) }}</p>
                     </div>
+                    @else
+                    <div class="bg-color-accent/10 w-fit mt-auto px-5 py-1 rounded-xl text-md">
+                        <p>{{ $event->waktu_event_pasti }}</p>
+                    </div>
+                    @endif
                 </div>
             </div>
             <div class="mt-5 lg:ml-auto">

@@ -1,0 +1,15 @@
+<a x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false" {{ $attributes }} class="flex flex-col gap-1 p-5 rounded-xl bg-color-accent/10 hover:bg-color-accent/15 transition-colors">
+    <p class="text-center font-semibold text-lg">Recurring <span class="text-color-accent">Event</span></p>
+    <img class="rounded-lg h-80 object-cover" src="{{ $image }}" alt="{{ $alt }}">
+    <p class="text-lg font-semibold">{{ $slot }}</p>
+    <p class="text-sm mr-auto">{{ $date }}</p>
+    <p class="mt-2">{{ __('common.price') }}</p>
+    <div class="flex items-center">
+        <p class="font-bold text-2xl mr-auto">IDR <span class="text-color-accent">{{ $price }}</span></p>
+        <x-local-icon class="hidden xl:flex" x-show="open" x-transition:enter="transition ease-out duration-100"
+        x-transition:enter-start="opacity-0 translate-y-5"
+        x-transition:enter-end="opacity-100 scale-100"
+        x-transition:leave="transition ease-in duration-100" x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 translate-y-5" icon="arrow" width="24px" height="24px" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" xmlns="http://www.w3.org/2000/svg"></x-local-icon> 
+        <x-local-icon class="xl:hidden" icon="arrow" width="24px" height="24px" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" xmlns="http://www.w3.org/2000/svg"></x-local-icon>       
+    </div>
+</a>

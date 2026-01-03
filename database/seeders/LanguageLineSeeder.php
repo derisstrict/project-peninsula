@@ -1133,8 +1133,8 @@ class LanguageLineSeeder extends Seeder
             'group' => 'common', 
             'key' => 'price', 
             'text' => [
-                'id' => 'Harga mulai dari', 
-                'en' => 'Starting price']
+                'id' => 'Harga tiket', 
+                'en' => 'Ticket price']
         ]);
 
         LanguageLine::create([

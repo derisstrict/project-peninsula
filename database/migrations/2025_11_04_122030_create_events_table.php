@@ -14,8 +14,8 @@ return new class extends Migration
         Schema::create('events', function (Blueprint $table){
             $table->id();
             $table->bigInteger('id_user');
-            $table->string('tanggal_mulai', 50)->nullable(false);
-            $table->string('tanggal_selesai', 50)->nullable(false);
+            $table->string('tanggal_mulai', 50)->nullable(true);
+            $table->string('tanggal_selesai', 50)->nullable(true);
             $table->text('deskripsi_event')->nullable(false);
             $table->string('judul_event', 100)->nullable(false);
             $table->string('slug', 100)->nullable(false);
@@ -23,7 +23,9 @@ return new class extends Migration
             $table->string('alt_gambar', 100)->nullable(true);
             $table->string('nama_penyelenggara', 50)->nullable(true);
             $table->integer('harga_tiket')->nullable(false);
-            $table->integer('tampilkan_event')->nullable(false);
+            $table->tinyInteger('tampilkan_event')->nullable(false);
+            $table->tinyInteger('event_pasti')->nullable(false);
+            $table->string('waktu_event_pasti')->nullable(true);
             $table->timestamps();
             $table->foreign('id_user')->references('id')->on('users')->onDelete('cascade');
         }); 

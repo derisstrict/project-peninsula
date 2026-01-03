@@ -72,6 +72,17 @@ class EventResource extends Resource
                     ]),
                 ])
                 ->gap(false),
+                TextEntry::make('event_pasti')
+                ->label('Recurring event')
+                ->badge()
+                ->formatStateUsing(fn (string $state): string => match ($state) {
+                    '0' => 'No',
+                    '1' => 'Yes'
+                })
+                ->color(fn (string $state): string => match ($state) {
+                    '0' => 'gray',
+                    '1' => 'primary'
+                }),
                 TextEntry::make('tampilkan_event')
                 ->label('Visibility')
                 ->badge()
@@ -110,7 +121,15 @@ class EventResource extends Resource
                     ->icon(Heroicon::Calendar)
                     ->color('primary')
                     ->dateTime('d F Y'),
-                ]),
+                ])
+                ->hidden(function ($get) {
+                    return $get('event_pasti');
+                }),
+                TextEntry::make('waktu_event_pasti')
+                ->label('Recurring event time')
+                ->hidden(function ($get) {
+                    return !$get('event_pasti');
+                }),
                 TextEntry::make('nama_penyelenggara')
                 ->label('Organized by')
                 ->icon(Heroicon::User)

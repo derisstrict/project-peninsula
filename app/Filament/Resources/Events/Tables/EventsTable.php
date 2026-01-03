@@ -12,6 +12,9 @@ use Filament\Actions\DeleteBulkAction;
 use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Columns\TextColumn;
+use Illuminate\Database\Eloquent\Model;
+
+use function PHPUnit\Framework\isEmpty;
 
 class EventsTable
 {
@@ -52,6 +55,18 @@ class EventsTable
                 ->label('Ticket Price')
                 ->money('IDR', decimalPlaces: 0, locale: 'id')
                 ->sortable(),
+                TextColumn::make('event_pasti')
+                ->label('Recurring Event')
+                ->sortable()
+                ->badge()
+                ->color(fn (string $state): string => match ($state) {
+                    '0' => 'gray',
+                    '1' => 'primary',
+                })
+                ->formatStateUsing(fn (string $state): string => match ($state) {
+                    '0' => 'No',
+                    '1' => 'Yes',
+                }),
                 TextColumn::make('tampilkan_event')
                 ->label('Visibility')
                 ->sortable()

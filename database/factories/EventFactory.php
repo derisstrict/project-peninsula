@@ -32,7 +32,8 @@ class EventFactory extends Factory
             'alt_gambar' => 'Image of Peninsula Island',
             'nama_penyelenggara' => fake()->company(),
             'harga_tiket' => fake()->numberBetween(10000, 300000),
-            'tampilkan_event' => '1'
+            'tampilkan_event' => '1',
+            'event_pasti' => '0'
         ];
     }
 }

@@ -38,6 +38,16 @@ class EventForm
                     '1' => 'heroicon-m-eye',
                     '0' => 'heroicon-m-eye-slash',
                 ]),
+                ToggleButtons::make('event_pasti')
+                ->label('Recurring Event')
+                ->required()
+                ->default('0')
+                ->inline()
+                ->live()
+                ->options([
+                    '1' => 'Yes',
+                    '0' => 'No',
+                ]),
                 TextInput::make('judul_event')
                 ->live(onBlur: true)
                 ->afterStateUpdated(function (Get $get, Set $set, ?string $old, ?string $state) {
@@ -50,14 +60,30 @@ class EventForm
                 ->label('Title')
                 ->required(),
                 Hidden::make('slug')->required(),
-                Fieldset::make('Event\'s Date')->schema([
+                TextInput::make('waktu_event_pasti')
+                ->label('Recurring event time')
+                ->hidden(function ($get) {
+                    return !$get('event_pasti');
+                })
+                ->required(function ($get) {
+                    return $get('event_pasti');
+                })
+                ->belowContent('e.g. Everyday | 12.00 PM - 14.00 PM'),
+                Fieldset::make('Event\'s date')->schema([
                     DatePicker::make('tanggal_mulai')
                     ->label('Start Date')
-                    ->required(),
+                    ->required(function ($get) {
+                    return !$get('event_pasti');
+                }),
                     DatePicker::make('tanggal_selesai')
                     ->label('End Date')
-                    ->required(),
-                ]),
+                    ->required(function ($get) {
+                    return !$get('event_pasti');
+                }),
+                ])
+                ->hidden(function ($get) {
+                    return $get('event_pasti');
+                }),
                 RichEditor::make('deskripsi_event')
                 ->label('Description')
                 ->required(),
