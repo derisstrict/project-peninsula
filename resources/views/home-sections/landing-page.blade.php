@@ -53,7 +53,7 @@
         <x-local-icon icon="double-arrow" class="rotate-90" width="16px" height="16px" viewBox="0 0 24 24"
             fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg"></x-local-icon>
     </div>
-    <img class="absolute w-full h-full max-h-[30rem] max-w-2xl hidden top-0 right-0 mr-5 object-cover rounded-xl outline-4 outline-lime-600/15 xl:block xl:max-h-[25rem] xl:max-w-xl 2xl:max-h-[30rem] 2xl:max-w-2xl 2xl:translate-x-70"
+    <img class="absolute w-full h-full max-h-[30rem] max-w-2xl hidden top-0 right-0 mr-5 translate-x-20 object-cover rounded-xl outline-4 outline-lime-600/15 xl:block xl:max-h-[25rem] xl:max-w-[40vw] 2xl:max-h-[30rem] 2xl:max-w-2xl 2xl:translate-x-70"
     src="{{ asset('/img/' . $gs->gambar_hero) }}" alt="{{ $gs->gambar_hero_alt }}">
     <div class="background-radial-blur -translate-y-80 translate-x-50 hidden xl:block"></div>
 </div>
