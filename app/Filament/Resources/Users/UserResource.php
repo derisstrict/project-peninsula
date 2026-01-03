@@ -29,15 +29,9 @@ class UserResource extends Resource
 
     protected static ?string $recordTitleAttribute = 'name';
 
-    public static function getNavigationLabel(): string
-    {
-        return 'User';
-    }
+    protected static ?string $modelLabel = 'User';
 
-    public static function getPluralModelLabel(): string
-    {
-        return 'Users';
-    }
+    protected static ?string $pluralModelLabel = 'Users';
 
     public static function canAccess(): bool
     {

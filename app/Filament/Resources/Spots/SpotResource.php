@@ -35,15 +35,9 @@ class SpotResource extends Resource
 
     protected static ?string $recordTitleAttribute = 'kunci_judul';
     
-    public static function getNavigationLabel(): string
-    {
-        return 'Spot';
-    }
+    protected static ?string $modelLabel = 'Spot';
 
-    public static function getPluralModelLabel(): string
-    {
-        return 'Spots';
-    }
+    protected static ?string $pluralModelLabel = 'Spots';
 
     public static function getRecordTitle(?Model $record): string|Htmlable|null
     {

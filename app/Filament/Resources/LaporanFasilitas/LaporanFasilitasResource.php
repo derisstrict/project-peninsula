@@ -28,15 +28,9 @@ class LaporanFasilitasResource extends Resource
 
     protected static ?string $recordTitleAttribute = 'judul_laporan';
 
-    public static function getNavigationLabel(): string
-    {
-        return 'Facility Report';
-    }
+    protected static ?string $modelLabel = 'Facility Report';
 
-    public static function getPluralModelLabel(): string
-    {
-        return 'Facility Report';
-    }
+    protected static ?string $pluralModelLabel = 'Facility Report';
 
     public static function infolist(Schema $schema): Schema
     {

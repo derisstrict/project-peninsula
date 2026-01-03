@@ -35,15 +35,9 @@ class EventResource extends Resource
 
     protected static ?string $recordTitleAttribute = 'judul_event';
 
-    public static function getNavigationLabel(): string
-    {
-        return 'Event';
-    }
+    protected static ?string $modelLabel = 'Event';
 
-    public static function getPluralModelLabel(): string
-    {
-        return 'Events';
-    }
+    protected static ?string $pluralModelLabel = 'Event';
 
     public static function infolist(Schema $schema): Schema
     {

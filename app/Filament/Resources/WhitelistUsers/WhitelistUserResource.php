@@ -28,15 +28,9 @@ class WhitelistUserResource extends Resource
 
     protected static ?string $recordTitleAttribute = 'nama';
 
-    public static function getNavigationLabel(): string
-    {
-        return 'User Whitelist';
-    }
+    protected static ?string $modelLabel = 'User Whitelist';
 
-    public static function getPluralModelLabel(): string
-    {
-        return 'User Whitelist';
-    }
+    protected static ?string $pluralModelLabel = 'User Whitelist';
 
     public static function form(Schema $schema): Schema
     {
