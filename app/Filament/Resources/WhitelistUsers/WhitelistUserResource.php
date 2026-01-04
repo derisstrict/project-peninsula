@@ -45,7 +45,7 @@ class WhitelistUserResource extends Resource
     public static function infolist(Schema $schema): Schema
     {
         return $schema->components([
-            Section::make('Whitelist Pengguna')->schema([
+            Section::make('User Whitelist')->schema([
                 TextEntry::make('nama')
                 ->label('Name'),
                 TextEntry::make('email')
@@ -56,7 +56,7 @@ class WhitelistUserResource extends Resource
                 ->copyMessageDuration(1000)
                 ->iconColor('gray'),
             ])
-            ->description('Informasi mengenai pengguna')
+            ->description('Basic information about the user')
             ->icon(Heroicon::Star)
             ->iconColor('primary'),
         ]);

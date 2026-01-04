@@ -50,9 +50,9 @@ class SpotForm
                 ]),
                 Fieldset::make('Localization')->schema([
                         TextInput::make('kunci_judul')->label('Title key')->required(),
-                        Textarea::make('kunci_teaser')->label('Teaser key')->required(),
-                        Textarea::make('kunci_catatan')->label('Note key')->required(),
-                        Textarea::make('kunci_keterangan')->label('Description key')->required(),
+                        TextInput::make('kunci_teaser')->label('Teaser key')->required(),
+                        TextInput::make('kunci_catatan')->label('Note key')->required(),
+                        TextInput::make('kunci_keterangan')->label('Description key')->required(),
                 ]), 
                 Fieldset::make('Image')->schema([
                         FileUpload::make('url_media')

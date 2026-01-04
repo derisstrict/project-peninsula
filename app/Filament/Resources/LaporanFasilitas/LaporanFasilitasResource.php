@@ -37,7 +37,7 @@ class LaporanFasilitasResource extends Resource
         return $schema->components([
             Section::make('Facility Report')->schema([
                 TextEntry::make('judul_laporan')
-                ->label('Report Title')
+                ->label('Report title')
                 ->weight(FontWeight::SemiBold)
                 ->size(TextSize::Large)
                 ->icon(Heroicon::InformationCircle),

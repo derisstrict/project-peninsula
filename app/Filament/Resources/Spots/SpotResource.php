@@ -188,7 +188,7 @@ class SpotResource extends Resource
                 ])->columns(1),
                 Fieldset::make('Note')->schema([
                     TextEntry::make('kunci_catatan')
-                    ->label('Description key')
+                    ->label('Note key')
                     ->badge()
                     ->size(TextSize::Large)
                     ->color(Color::Green),

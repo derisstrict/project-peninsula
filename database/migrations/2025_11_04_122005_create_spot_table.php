@@ -23,6 +23,7 @@ return new class extends Migration
             $table->string('kunci_catatan', 50)->nullable(true);
             $table->string('kunci_keterangan')->nullable(false);
             $table->tinyInteger('tampilkan_modal')->nullable(false);
+            $table->foreign('id_user')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
     }

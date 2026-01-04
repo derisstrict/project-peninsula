@@ -895,8 +895,8 @@ class LanguageLineSeeder extends Seeder
             'group' => 'footer', 
             'key' => 'report_description', 
             'text' => [
-                'id' => 'Jika kamu menemukan fasilitas umum yang rusak, beritahu kami!', 
-                'en' => 'If you\'ve encountered a broken public facility let us know!']
+                'id' => 'Jika kamu menemukan fasilitas umum yang kurang layak atau rusak, beritahu kami!', 
+                'en' => 'If you\'ve encountered a public facility in a bad shape or broken let us know!']
         ]);
 
         LanguageLine::create([
@@ -993,7 +993,7 @@ class LanguageLineSeeder extends Seeder
             'group' => 'report', 
             'key' => 'title', 
             'text' => [
-                'id' => ':accent Kerusakan Fasilitas', 
+                'id' => ':accent Fasilitas', 
                 'en' => ':accent Report']
         ]);
 
@@ -1002,7 +1002,7 @@ class LanguageLineSeeder extends Seeder
             'key' => 'title_accent', 
             'text' => [
                 'id' => 'Pelaporan', 
-                'en' => 'Broken Facility']
+                'en' => 'Facility']
         ]);
 
         LanguageLine::create([
@@ -1010,7 +1010,7 @@ class LanguageLineSeeder extends Seeder
             'key' => 'description', 
             'text' => [
                 'id' => 'Jika kamu menemukan fasilitas umum yang rusak, tolong untuk dilaporkan sehingga dapat segera diperbaiki.', 
-                'en' => 'If you\'ve seen a broken public facility it\'ll be appreciated if you can file us a report!']
+                'en' => 'If you\'ve seen a facility that in a bad shape or it\'s broken it\'ll be appreciated if you can file us a report!']
         ]);
 
         LanguageLine::create([

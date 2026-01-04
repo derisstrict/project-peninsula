@@ -99,7 +99,7 @@ class GeneralSettings extends Page
                             ->disk('public_img')
                             ->visibility('public')
                             ->preserveFilenames()
-                            ->belowContent('File upload maximum size is ~11MB'),
+                            ->belowContent('Uploaded file maximum size is ~11MB'),
                         ])
                     ]),
                 ])->columns(1)

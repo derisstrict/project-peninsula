@@ -22,19 +22,22 @@ class SpotsTable
     {
         return $table
             ->columns([
-                TextColumn::make('nama_spot')
-                ->label('Spot')
-                ->searchable()
-                ->sortable()
-                ->state(function (?Model $record) {
-                    return __('spots.' . $record->kunci_judul);
-                }),
                 TextColumn::make('kunci_judul')
                 ->label('Title Key')
                 ->searchable()
                 ->sortable()
                 ->badge()
                 ->color(Color::Green),
+                TextColumn::make('nama_spot')
+                ->label('Spot')
+                ->searchable()
+                ->sortable()
+                ->badge()
+                ->tooltip('Spot\'s name from localization')
+                ->icon(Heroicon::GlobeAlt)
+                ->state(function (?Model $record) {
+                    return __('spots.' . $record->kunci_judul);
+                }),
                 ImageColumn::make('url_media')
                 ->label('Image')
                 ->disk('public_img')

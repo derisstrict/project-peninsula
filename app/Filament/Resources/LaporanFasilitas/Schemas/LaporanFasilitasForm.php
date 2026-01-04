@@ -18,24 +18,25 @@ class LaporanFasilitasForm
             ->components([
                 Hidden::make('id_user')->default(auth()->id()),
                 FileUpload::make('foto_fasilitas')
-                ->label('Facility Image(s)')
+                ->label('Facility image(s)')
                 ->multiple()
                 ->directory('img')
                 ->visibility('public')
                 ->required(),
                 TextInput::make('judul_laporan')
                 ->required()
-                ->label('Report Title'),
+                ->label('Report title'),
                 Textarea::make('deskripsi_laporan')
                 ->required()
-                ->label('Report Description'),
+                ->label('Report description'),
                 TextInput::make('email_pelapor')
+                ->label('Submitter email')
                 ->required(),
                 TextInput::make('nama_pelapor')
                 ->label('Submitter')
                 ->required(),
                 ToggleButtons::make('status_laporan')
-                ->label('Report Status')
+                ->label('Report status')
                 ->inline()
                 ->required()
                 ->options([
