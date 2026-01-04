@@ -1,5 +1,5 @@
 <a x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false" {{ $attributes }} class="flex flex-col gap-5 p-5 rounded-xl hover:bg-light-primary/5 dark:hover:bg-dark-primary/7 transition-colors lg:flex-row">
-    <img class="rounded-lg w-full h-60 object-cover md:h-80 lg:w-80 lg:h-60" src="{{ $image }}" alt="{{ $alt }}">
+    <img class="rounded-lg w-full h-60 object-cover md:h-80 lg:w-xl lg:h-60" src="{{ $image }}" alt="{{ $alt }}">
     <div class="flex flex-col gap-2 w-full h-full">
         <p class="text-2xl font-semibold">{{ $title }}</p>
         {{-- <div class="bg-color-accent/25 outline-2 outline-color-accent/50 w-fit rounded-lg px-2 text-sm">Other</div> --}}

@@ -256,8 +256,8 @@ class LanguageLineSeeder extends Seeder
             'group' => 'spots', 
             'key' => 'note_spot_2', 
             'text' => [
-                'id' => 'Untuk memasuki area ini, pengunjung wajib mengenakan pakaian adat atau pakaian yang rapi.', 
-                'en' => 'Visitors must wear appropriate clothing or balinese attire (sarong and sash).']
+                'id' => 'Demi kenyamanan bersama, mohon menjaga kebersihan area ini.', 
+                'en' => 'For everyone\'s comfort, please keep this area clean.']
         ]);
 
         LanguageLine::create([
@@ -288,8 +288,8 @@ class LanguageLineSeeder extends Seeder
             'group' => 'spots', 
             'key' => 'note_spot_3', 
             'text' => [
-                'id' => 'Untuk memasuki area ini, pengunjung wajib mengenakan pakaian adat atau pakaian yang rapi.', 
-                'en' => 'Visitors must wear appropriate clothing or balinese attire (sarong and sash).']
+                'id' => 'Mohon menjaga dan tidak merusak patung serta fasilitas di sekitarnya.c', 
+                'en' => 'Please take care of and do not damage the statue and surrounding facilities.c']
         ]);
 
         LanguageLine::create([
@@ -320,8 +320,8 @@ class LanguageLineSeeder extends Seeder
             'group' => 'spots', 
             'key' => 'note_spot_4', 
             'text' => [
-                'id' => 'Untuk memasuki area ini, pengunjung wajib mengenakan pakaian adat atau pakaian yang rapi.', 
-                'en' => 'Visitors must wear appropriate clothing or balinese attire (sarong and sash).']
+                'id' => 'Area ini digunakan untuk pertunjukan tari kecak dan barong pada waktu tertentu.', 
+                'en' => 'This area is used for kecak and barong dance performances at certain times.']
         ]);
 
         LanguageLine::create([
@@ -384,8 +384,8 @@ class LanguageLineSeeder extends Seeder
             'group' => 'spots', 
             'key' => 'note_spot_6', 
             'text' => [
-                'id' => 'Untuk memasuki area ini, pengunjung wajib mengenakan pakaian adat atau pakaian yang rapi.', 
-                'en' => 'Visitors must wear appropriate clothing or balinese attire (sarong and sash).']
+                'id' => 'Demi kenyamanan bersama, mohon menjaga kebersihan area ini.', 
+                'en' => 'For everyone\'s comfort, please keep this area clean.']
         ]);
 
         LanguageLine::create([
@@ -416,8 +416,8 @@ class LanguageLineSeeder extends Seeder
             'group' => 'spots', 
             'key' => 'note_spot_7', 
             'text' => [
-                'id' => 'Untuk memasuki area ini, pengunjung wajib mengenakan pakaian adat atau pakaian yang rapi.', 
-                'en' => 'Visitors must wear appropriate clothing or balinese attire (sarong and sash).']
+                'id' => 'Demi kenyamanan bersama, mohon menjaga kebersihan area ini.', 
+                'en' => 'For everyone\'s comfort, please keep this area clean.']
         ]);
 
         LanguageLine::create([
@@ -480,8 +480,8 @@ class LanguageLineSeeder extends Seeder
             'group' => 'spots', 
             'key' => 'note_spot_9', 
             'text' => [
-                'id' => 'Untuk memasuki area ini, pengunjung wajib mengenakan pakaian adat atau pakaian yang rapi.', 
-                'en' => 'Visitors must wear appropriate clothing or balinese attire (sarong and sash).']
+                'id' => 'Area ini memiliki gelombang yang kuat, harap tetap waspada.', 
+                'en' => 'This area has strong waves, please remain alert.']
         ]);
 
         LanguageLine::create([
