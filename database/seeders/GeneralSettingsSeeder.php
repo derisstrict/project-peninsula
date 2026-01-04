@@ -19,7 +19,7 @@ class GeneralSettingsSeeder extends Seeder
                 'is_gs' => true,
                 'judul_utama' => ['The', 'Peninsula Island'],
                 'warna_aksen_judul_utama' => '',
-                'gambar_hero' => 'placeholder.jpg',
+                'gambar_hero' => 'hero_image.jpg',
                 'gambar_hero_alt' => 'Image of Peninsula Island',
                 'video_home' => 'peninsula_compressed.mp4',
                 'video_home_thumbnail' => 'thumbnail.png'

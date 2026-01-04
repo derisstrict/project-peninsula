@@ -21,6 +21,14 @@ class GaleriSeeder extends Seeder
        Galeri::create([
         'id_user' => '1', 'url_media' => 'gallery/gallery3.jpg', 'alt_gambar' => 'Galeri 3'
        ]);
+
+       Galeri::create([
+        'id_user' => '1', 'url_media' => 'gallery/gallery4.jpg', 'alt_gambar' => 'Galeri 4'
+       ]);
+
+       Galeri::create([
+        'id_user' => '1', 'url_media' => 'gallery/gallery5.jpg', 'alt_gambar' => 'Galeri 5'
+       ]);
     }
 }
 

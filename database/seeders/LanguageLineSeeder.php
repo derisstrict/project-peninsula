@@ -839,8 +839,8 @@ class LanguageLineSeeder extends Seeder
             'group' => 'footer', 
             'key' => 'description', 
             'text' => [
-                'id' => 'Lorem ipsum dolor sit amet.', 
-                'en' => 'Lorem ipsum dolor sit amet.']
+                'id' => '', 
+                'en' => '']
         ]);
 
         LanguageLine::create([
