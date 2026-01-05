@@ -26,7 +26,7 @@ class BlogSeeder extends Seeder
             The Nusa Dua Festival 2025 merupakan bentuk nyata komitmen ITDC untuk menghadirkan kembali event ikonik yang telah dikenal sejak tahun 1996 dengan nama Nusa Dua Fiesta. “Kami berkomitmen untuk terus menghadirkan kegiatan yang berdampak positif bagi masyarakat, pelaku UMKM, serta industri pariwisata nasional. Melalui festival ini, kami ingin memperkuat posisi The Nusa Dua sebagai destinasi berkelas dunia yang tetap dekat dengan masyarakat,” tambahnya.
 
             Festival yang berlangsung selama dua hari, 25-26 Oktober 2025, ini sukses menghadirkan beragam penampilan menarik dan kolaborasi lintas genre yang memukau, meninggalkan kesan mendalam bagi para pengunjung hingga malam penutupan.',
-            'judul_blog' => '18 Ribu Pengunjung Padati The Nusa Dua Festival 2025 di Pulau Peninsula',
+            'judul_blog' => '18,000 Visitors Flocked to the Nusa Dua Festival 2025 on Peninsula Island',
             'slug' => 'the-nusa-dua-festival-2025',
             'gambar_blog' => 'blogs/nusa_dua_festival.webp',
             'alt_gambar' => 'The Image of 2025 The Nusa Dua Festival Parade'
@@ -52,7 +52,7 @@ class BlogSeeder extends Seeder
             Beragam kegiatan turut memeriahkan festival ini, seperti kompetisi penjor, lomba fotografi dan clay mask, body painting, hingga berbagai pertunjukan budaya yang menampilkan kreativitas masyarakat Bali.
 
             Sebagai puncak hiburan, hadir sejumlah artis ternama tanah air, yakni Bunga Citra Lestari (BCL) dan Tika Pagraky pada malam pembukaan, serta Kahitna, Navicula, dan Astera yang menutup rangkaian acara dengan meriah pada malam penutupan.',
-            'judul_blog' => 'Kolaborasi Banjar dan Hotel Warnai Parade Budaya The Nusa Dua Festival 2025',
+            'judul_blog' => 'Banjar and Hotel Collaboration Colors the Cultural Parade of The Nusa Dua Festival 2025',
             'slug' => 'parade-budaya-the-nusa-dua-festival-2025',
             'gambar_blog' => 'blogs/parade.jpg',
             'alt_gambar' => 'The Image of 2025 The Nusa Dua Festival Parade'
