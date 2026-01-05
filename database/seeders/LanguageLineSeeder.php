@@ -871,8 +871,8 @@ class LanguageLineSeeder extends Seeder
             'group' => 'footer', 
             'key' => 'menu_list_2', 
             'text' => [
-                'id' => 'Event', 
-                'en' => 'Event']
+                'id' => 'Events', 
+                'en' => 'Events']
         ]);
 
         LanguageLine::create([

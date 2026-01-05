@@ -18,5 +18,11 @@ class UserSeeder extends Seeder
             'email' => 'superadmin.peninsula@gmail.com',
             'role' => '0'
         ]);
+
+        User::factory()->create([
+            'name' => 'Admin',
+            'email' => 'admin.peninsula@gmail.com',
+            'role' => '1'
+        ]);
     }
 }
